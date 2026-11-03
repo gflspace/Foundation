@@ -80,7 +80,6 @@ export const stories: Story[] = [
   {
     slug: "first-outreach-2019", journeyIds: ["idps-2019"], programme: "displaced-families", pillar: "relief",
     date: "2019-07-11", location: "Mabanda, Bonaberi (Douala IV)", locationConfirmed: true, partners: [], video: "ldMHL4jSUSM",
-    gallery: [mmiPhoto("2019/07/IMG-20190714-WA0087.jpg", "Syndy Emade moved to tears after listening to displaced families, Mabanda-Bonaberi, 11 July 2019", mmi2019)],
     sources: [mmi2019, yt("ldMHL4jSUSM")],
   },
 ];

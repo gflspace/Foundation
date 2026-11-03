@@ -233,7 +233,7 @@ export const press: PressItem[] = [
     id: "cemac-2020-heart-to-heart", title: "Heart to heart with Syndy Emade", source: "CEMAC ECO FINANCE",
     url: "https://cemac-eco.finance/heart-to-heart-with-syndy-emade-2/", date: "2020-03-25", dateConfirmed: true, tag: "interview", lang: "en",
     highlight: "On creativity, her fans, her business and the Foundation",
-    image: { src: "https://cemac-eco.finance/wp-content/uploads/2020/03/syndy-emade-5.jpeg", alt: "Syndy Emade, CEMAC ECO FINANCE interview", credit: "CEMAC ECO FINANCE", sourceUrl: "https://cemac-eco.finance/heart-to-heart-with-syndy-emade-2/", license: "© CEMAC ECO FINANCE — used at the Foundation’s direction, credited", status: "approved" },
+    image: { src: "https://cemac-eco.finance/wp-content/uploads/2020/03/syndy-emade-5.jpeg", alt: "Syndy Emade, CEMAC ECO FINANCE interview", credit: "CEMAC ECO FINANCE", sourceUrl: "https://cemac-eco.finance/heart-to-heart-with-syndy-emade-2/", license: "© CEMAC ECO FINANCE — featured image is a photographer’s promotional graphic, not used", status: "pending" },
   },
   {
     id: "mmi-2023-visually-impaired-mother", title: "Syndy Emade offers relief to visually impaired mother in Douala", source: "Mimi Mefo Info",
@@ -244,7 +244,7 @@ export const press: PressItem[] = [
   {
     id: "mmi-2019-idps", title: "Anglophone Crisis: Cameroon’s talented actress, Syndy Emade weeps as IDPs present ordeal", source: "Mimi Mefo Info",
     url: "https://mimimefoinfos.com/anglophone-crisis-cameroons-talented-actress-syndy-emade-weeps-as-idps-present-ordeal/", date: "2019-07-14", dateConfirmed: true, tag: "foundation", lang: "en",
-    image: { src: "https://mimimefoinfos.com/wp-content/uploads/2019/07/IMG-20190714-WA0087.jpg", alt: "Syndy Emade moved to tears after listening to displaced families, Mabanda-Bonaberi, July 2019", credit: "Mimi Mefo Info", sourceUrl: "https://mimimefoinfos.com/anglophone-crisis-cameroons-talented-actress-syndy-emade-weeps-as-idps-present-ordeal/", license: "© Mimi Mefo Info — used at the Foundation’s direction, credited", status: "approved" },
+    image: ownFilm("ldMHL4jSUSM", "Syndy Emade Foundation film, July 2019"),
   },
   {
     id: "newsday-idps-douala", title: "Syndy Emade Foundation outreach to displaced families in Douala", source: "Newsday Cameroon",
@@ -257,7 +257,7 @@ export const press: PressItem[] = [
     originalUrl: "http://www.pulse.ng/movies/syndy-emade-actress-talks-film-industry-in-cameroon-challenges-as-a-female-filmmaker-getting-into-character-id4908980.html",
     date: "2016-04-12", dateConfirmed: true, tag: "interview", lang: "en",
     quote: "You have to solicit for sponsors and investors for the film.",
-    image: { src: "https://web.archive.org/web/20170814063936im_/https://static.pulse.ng/img/incoming/crop4104563/7504671947-chorizontal-w1200-h630/syndy-emade-2.jpg", alt: "Portrait of Syndy Emade from the Pulse Nigeria interview", credit: "Pulse Nigeria", sourceUrl: "https://web.archive.org/web/20170814063936/http://www.pulse.ng/movies/syndy-emade-actress-talks-film-industry-in-cameroon-challenges-as-a-female-filmmaker-getting-into-character-id4908980.html", license: "© Pulse Nigeria — used at the Foundation’s direction, credited", status: "approved" },
+    image: { src: "https://web.archive.org/web/20170814063936im_/https://static.pulse.ng/img/incoming/origs4908975/5981663307-w408-h960/Syndy-Emade.png", position: "50% 22%", alt: "Syndy Emade in the Pulse Nigeria studio", credit: "Pulse Nigeria", sourceUrl: "https://web.archive.org/web/20170814063936/http://www.pulse.ng/movies/syndy-emade-actress-talks-film-industry-in-cameroon-challenges-as-a-female-filmmaker-getting-into-character-id4908980.html", license: "© Pulse Nigeria — used at the Foundation’s direction, credited", status: "approved" },
   },
   {
     id: "njoka-2017-ranking", title: "Top five most active Cameroonian actresses", source: "Njoka TV",
@@ -286,12 +286,12 @@ export const press: PressItem[] = [
     originalUrl: "https://kamer360.com/2014/09/11/miss-heritage-cameroon-is-syndy-emade/",
     date: "2014-09-11", dateConfirmed: true, tag: "award", lang: "en",
     quote: "I think the purpose of Miss Heritage is to tour the country and show our culture.",
-    image: { src: "https://web.archive.org/web/20160409174646im_/https://kamer360.files.wordpress.com/2014/09/11325_732868690118734_5448433975523537178_n.jpg", alt: "Syndy Emade crowned Miss Heritage Cameroon 2014", credit: "Kamer360", sourceUrl: "https://web.archive.org/web/20160409174646/http://kamer360.com/2014/09/11/miss-heritage-cameroon-is-syndy-emade/", license: "© Kamer360 / photographer unknown — used at the Foundation’s direction, credited", status: "approved" },
+    image: { src: "https://web.archive.org/web/20160409174646im_/https://kamer360.files.wordpress.com/2014/09/11325_732868690118734_5448433975523537178_n.jpg", alt: "Syndy Emade crowned Miss Heritage Cameroon 2014", credit: "Kamer360", sourceUrl: "https://web.archive.org/web/20160409174646/http://kamer360.com/2014/09/11/miss-heritage-cameroon-is-syndy-emade/", license: "© Kamer360 / photographer unknown — image no longer online", status: "pending" },
   },
   {
     id: "culturebene-2016-profile", title: "Syndy Emade, la belle aux trois casquettes", source: "Culturebene",
     url: "https://www.culturebene.com/24576-syndy-emade-la-belle-aux-trois-casquettes.html", date: "2016-09-25", dateConfirmed: true, tag: "profile", lang: "fr",
-    image: { src: "https://www.culturebene.com/wp-content/uploads/sites/4/2016/09/IMG-20160816-WA0049.jpg", alt: "Syndy Emade, Culturebene profile", credit: "Culturebene", sourceUrl: "https://www.culturebene.com/24576-syndy-emade-la-belle-aux-trois-casquettes.html", license: "© Culturebene — used at the Foundation’s direction, credited", status: "approved", position: "50% 25%" },
+    image: ownFilm("45EkiHoQiN8", "“Rose on a Grave” official trailer, one of the films the profile cites"),
   },
   {
     id: "henriette-2017-instavoice", title: "Cameroon’s Syndy Emade becomes the new face for InstaVoice Celeb by Orange", source: "Henriette’s Lounge",

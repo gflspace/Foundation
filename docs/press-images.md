@@ -5,7 +5,17 @@ Verified November 2026. Every article below was opened (live, or through the Int
 > **Update, November 2026: publisher photos now in use.** At the Foundation's direction, every press card and the Christmas 2023 and July 2019 stories now show the photo from their own article. Each is credited on the page and links back to its source. The status of each is `approved` with the licence "used at the Foundation's direction, credited". Permission requests to the publishers (see the email template below) are still recommended.
 >
 > - **Christmas 2023 story:** the article's featured photo is the cover, and a gallery shows its other five photos (`Syndy.jpeg`, `Syndy1–4.jpeg` on mimimefoinfos.com).
-> - **July 2019 launch:** the featured photo ("Syndy Emade in tears…") is used on the story and its press card. The article's other images are small copies on a third-party site (joycing.com), several unrelated to the outreach, so they are not used.
+> - **July 2019 launch:** the article's featured photo has been deleted from mimimefoinfos.com and was never archived, so it cannot be shown. The article's other images are small copies on a third-party site (joycing.com), several unrelated to the outreach. The Foundation's July 2019 film stays as the cover.
+> - **Each image was checked on the live site** (loaded through the site's image optimiser and described by an image model):
+>   - Christmas 2023, all six photos ✅: the team in the family's room, the mother and children with a "house rent paid for one year" caption, food being handed over.
+>   - CEMAC 2026 ✅, Cameroon CEO ✅ (at her Blue Rain desk), Y! For Africa ✅, People237 ✅, Henriette's Lounge ✅ (the InstaVoice Celeb campaign visual), Dcoded best actress ✅, Dcoded A Man for the Weekend ✅ (the two leads in a film scene).
+>   - Pulse ✅: the archived og image was gone, so the article's in-body photo (her in the Pulse studio) is used instead.
+>   - Not usable:
+>     - Kamer360 (both archived images gone)
+>     - Culturebene (the server refuses the image; the Rose on a Grave trailer stays)
+>     - CEMAC 2020 (its featured image is a photographer's promotional graphic)
+>
+>     These keep designed covers.
 > - **Replaced with the article's own image:** Dcoded TV (both pieces), Culturebene, Y! For Africa and People237 previously showed founder-channel trailers.
 > - **Still held:** the Nexdim Empire orphanage photo, because it shows children in care and needs the orphanage's or guardians' consent.
 > - **Still not used:** Njoka TV's image, which shows a different actress.
