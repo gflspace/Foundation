@@ -40,12 +40,13 @@ Forms are sent to `FORMS_WEBHOOK_URL` (Zapier, Make, Slack or a CRM). If it isn'
 1. **Impact numbers.** `impact.stats` in `lib/content.ts` are **placeholders**. Replace them with real figures, then set `isPlaceholder: false`. That also removes the "Illustrative figures" note.
 2. **Facts marked `TODO(verify)`.** Check the "Netflix Producer" and "CFI Partner" roles, the contact email and the office location.
 3. **Founder quote.** The hero card shows a Foundation promise, not a quote. If you want a quote there, add a real one she has approved.
-4. **Photography.** Every image slot is currently a branded gradient (`components/ArtPanel.tsx`). Replace each with `next/image` using photos you own or have licensed: Foundation field photos, Blue Rain stills used with permission, or CC-licensed Wikimedia Commons images with attribution. Don't use scraped press or film images without the rights.
+4. **Photography.** The founder portrait is a CC BY-SA 4.0 photo from Wikimedia Commons, credited under the image (settings: `founderPhoto` in `lib/content.ts`). Every other image slot is a branded gradient (`components/ArtPanel.tsx`). Replace each with `next/image` using photos you own or have licensed: Foundation field photos, Blue Rain stills used with permission, or CC-licensed Wikimedia Commons images with attribution. Don't use scraped press or film images without the rights.
 5. **Hero video.** Add `public/media/hero.mp4` (muted, 4 MB or less) and `public/images/hero-poster.jpg`, then set `HERO_VIDEO = true` in `components/Hero.tsx`.
 6. **YouTube.** Add video IDs to `featuredVideos` in `lib/content.ts`. They embed on `/media` in privacy-enhanced mode.
 7. **Gamma decks.** Set `GAMMA_EMBED_URL` in `app/about/page.tsx` and in `app/donate/page.tsx`.
-8. **Press kit.** Put the zip at `public/press/syndy-emade-foundation-press-kit.zip`.
+8. **Press kit.** `public/press/` contains a generated fact sheet PDF and a logo pack. If the facts change, regenerate them with `NODE_PATH=$(npm root -g) node scripts/build-press-kit.mjs` (requires Playwright).
 9. **Domain.** Set `NEXT_PUBLIC_SITE_URL` to the production domain.
+10. **Legal pages.** `/privacy` and `/donation-policy` are sensible defaults. Have a lawyer review them (search for `TODO(legal)`) and add the Foundation's registered name and address.
 
 ## Quality
 
