@@ -54,6 +54,16 @@ Forms are sent to `FORMS_WEBHOOK_URL` (Zapier, Make, Slack or a CRM). If it isn'
 - Content works without JavaScript: impact figures are server-rendered, and the fade-in sections fall back to fully visible.
 - Preview deployments set `NEXT_PUBLIC_NOINDEX=true`, which adds `noindex` and blocks crawlers in robots.txt.
 
+## Deploy (Hostinger preview, current)
+
+The preview runs at https://forestgreen-owl-883522.hostingersite.com on the Hostinger Cloud Professional plan. The target is recorded in `.hostinger/site.json`. It isn't connected to a Hostinger Git installation, so deploys are done from an archive:
+
+1. `git archive --format=zip -o app.zip HEAD`, then commit `app.zip` alone to the `hostinger-archive` branch and push.
+2. Hostinger API: `POST /accounts/{user}/websites/{domain}/git/repositories/deploy` with `branch: hostinger-archive` and `directory: _deploy`. This pulls the archive into `public_html/_deploy/`.
+3. Hostinger API: `POST /accounts/{user}/websites/{domain}/nodejs/builds` with `app_type: next`, `source_type: archive` and `archive_path: _deploy/app.zip`.
+
+Environment variables on the preview are `NEXT_PUBLIC_SITE_URL`, `NEXT_PUBLIC_NOINDEX=true` and `NEXT_TELEMETRY_DISABLED=1`. If GitHub is later connected to this website in hPanel (Advanced → Git), switch to `source_type: git` on `main` so every push deploys automatically.
+
 ## Deploy (Vercel)
 
 ```bash
