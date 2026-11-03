@@ -8,6 +8,7 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import { featuredVideos, journey, press, profiles, projectMeta, type JourneyEntry, type MediaKind, type PressItem, type PressTag, type ProjectSlug } from "@/lib/content";
 import { CoverArt, type CoverTone } from "./CoverArt";
 import { cn } from "@/lib/cn";
+import { storyForJourney } from "@/lib/platform";
 import { fill } from "@/lib/i18n/format";
 import { useI18n } from "./I18nProvider";
 import { Modal, YouTubeEmbed } from "./Modal";
@@ -234,6 +235,9 @@ export function MediaHub() {
               <a href={item.url} target="_blank" rel="noopener noreferrer" className="btn-purple">
                 {m.readArticle} <ExternalLink className="h-4 w-4" aria-hidden /><span className="sr-only">{t.common.opensNewTab}</span>
               </a>
+            )}
+            {item.kind === "story" && storyForJourney(item.entry.id) && (
+              <Link href={href(`/stories/${storyForJourney(item.entry.id)!.slug}`)} className="btn-teal">{t.storiesUi.read}</Link>
             )}
             {item.kind === "video" && (
               <a href={profiles.youtube} target="_blank" rel="noopener noreferrer" className="btn-teal">

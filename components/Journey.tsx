@@ -7,6 +7,7 @@ import Link from "next/link";
 import { useMemo, useState } from "react";
 import { journey, projectMeta, ytThumb, type JourneyEntry, type ProjectSlug } from "@/lib/content";
 import { cn } from "@/lib/cn";
+import { storyForJourney } from "@/lib/platform";
 import { useI18n } from "./I18nProvider";
 import { Modal, YouTubeEmbed } from "./Modal";
 
@@ -83,6 +84,11 @@ export function Journey({ programme, limit, showFilters = true }: { programme?: 
                     </p>
                     <h3 className="mt-2 text-xl leading-snug">{copy.title}</h3>
                     <p className="mt-2 leading-relaxed text-plum/75">{copy.text}</p>
+                    {storyForJourney(e.id) && (
+                      <Link href={href(`/stories/${storyForJourney(e.id)!.slug}`)} className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-purple-700 underline-offset-4 hover:underline">
+                        {t.storiesUi.read} <ArrowUpRight className="h-4 w-4" aria-hidden />
+                      </Link>
+                    )}
                     <p className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-plum/70">
                       <span className="font-semibold">{e.sources.length > 1 ? j.sources : j.source}:</span>
                       {e.sources.map((s) => (

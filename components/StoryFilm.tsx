@@ -20,11 +20,12 @@ export function StoryFilm() {
           <VideoFeature id={story.id} title={story.title[locale]} className="ring-1 ring-white/15" />
         </div>
         <div className="lg:col-span-4">
-          <p className="eyebrow text-teal-300">{h.storyEyebrow}</p>
-          <h2 id="story-title" className="mt-3 text-3xl sm:text-4xl">{story.title[locale]}</h2>
-          <p className="mt-5 leading-relaxed text-white/80">{h.storyText}</p>
-          <Link href={href("/projects")} className="mt-8 inline-flex items-center gap-2 font-semibold text-teal-300 underline-offset-4 hover:underline">
-            {h.storyCta} <ArrowRight className="h-4 w-4" aria-hidden />
+          <p className="eyebrow text-teal-300">{t.home2.missionEyebrow}</p>
+          <h2 id="story-title" className="mt-3 text-3xl sm:text-4xl">{t.home2.missionTitle}</h2>
+          <p className="mt-5 text-lg leading-relaxed text-white/80">{t.home2.missionText}</p>
+          <p className="mt-4 text-sm text-white/65">{story.title[locale]} · SYNDY EMADE TV</p>
+          <Link href={href("/founder")} className="mt-8 inline-flex items-center gap-2 font-semibold text-teal-300 underline-offset-4 hover:underline">
+            {t.home2.missionCta} <ArrowRight className="h-4 w-4" aria-hidden />
           </Link>
         </div>
       </div>

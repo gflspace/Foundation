@@ -3,11 +3,11 @@ import { NextResponse } from "next/server";
 export const runtime = "nodejs";
 
 const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-const TYPES = new Set(["newsletter", "volunteer", "partner", "press"]);
+const TYPES = new Set(["newsletter", "volunteer", "partner", "collaboration", "press"]);
 const clip = (v: unknown, n = 2000) => (typeof v === "string" ? v.trim().slice(0, n) : undefined);
 
 /**
- * Receives newsletter, volunteer and partnership submissions and forwards them
+ * Receives newsletter, volunteer, partnership and collaboration-proposal submissions and forwards them
  * to FORMS_WEBHOOK_URL (Zapier / Make / Slack / CRM). Without a webhook, it logs.
  */
 export async function POST(req: Request) {
@@ -37,6 +37,7 @@ export async function POST(req: Request) {
     phone: clip(data.phone, 50),
     location: clip(data.location, 200),
     organisation: clip(data.organisation, 200),
+    orgType: clip(data.orgType, 40),
     interest: clip(data.interest, 200),
     message: clip(data.message),
     deadline: clip(data.deadline, 20),

@@ -23,6 +23,12 @@ export const translatedSegments: Partial<Record<Locale, SegmentMap>> = {
       donate: "faire-un-don",
       privacy: "confidentialite",
       "donation-policy": "conditions-de-don",
+      stories: "histoires",
+      impact: "impact",
+      founder: "fondatrice",
+      "get-involved": "s-engager",
+      partners: "partenaires",
+      accountability: "transparence",
     },
     children: {
       projects: {

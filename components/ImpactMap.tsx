@@ -7,6 +7,7 @@ import { useState } from "react";
 import { cameroonPath, cityPoints, mapViewBox, neighbourPaths } from "@/lib/cameroon-map";
 import { impactCentres, type CentreId } from "@/lib/content";
 import { cn } from "@/lib/cn";
+import { storyForJourney } from "@/lib/platform";
 import { useI18n } from "./I18nProvider";
 
 const [, , VB_W, VB_H] = mapViewBox.split(" ").map(Number);
@@ -140,7 +141,7 @@ export function ImpactMap() {
                     <ul className="mt-3 space-y-2">
                       {centre.journey.map((id) => (
                         <li key={id}>
-                          <Link href={`${href("/media")}#story-${id}`} className="flex items-start gap-3 text-sm text-white/90 underline-offset-4 hover:text-white hover:underline">
+                          <Link href={storyForJourney(id) ? href(`/stories/${storyForJourney(id)!.slug}`) : `${href("/media")}#story-${id}`} className="flex items-start gap-3 text-sm text-white/90 underline-offset-4 hover:text-white hover:underline">
                             <Sparkles className="mt-0.5 h-4 w-4 shrink-0 text-teal" aria-hidden />
                             <span><span className="text-white/60">{t.journey.entries[id as keyof typeof t.journey.entries].when} · </span>{t.journey.entries[id as keyof typeof t.journey.entries].title}</span>
                           </Link>

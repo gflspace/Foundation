@@ -1,10 +1,12 @@
 import type { Dictionary } from "./en";
+import { platformFr } from "./fr-platform";
 
 /**
  * Version française. Doit garder exactement la même structure que en.ts.
  * Les espaces insécables ( ) précèdent « : ; ! ? » et entourent les guillemets, selon l’usage français.
  */
 const fr: Dictionary = {
+  ...platformFr,
   locale: "fr",
   meta: {
     siteName: "Fondation Syndy Emade",
@@ -114,7 +116,7 @@ const fr: Dictionary = {
     readMore: "Voir tout notre parcours",
     entries: {
       "limbe-orphanage-2015": { when: "Octobre 2015", title: "Avant la Fondation : une journée à l’orphelinat de Limbe", text: "Des années avant la création de la Fondation, Syndy Emade et l’équipe de Blue Rain Entertainment passent une journée avec les enfants de l’orphelinat de Bota, à Limbe, à partager des moments de joie et à écouter leurs rêves." },
-      "idps-2019": { when: "Juillet 2019", title: "La première action : des vivres pour plus de 200 déplacés", text: "La première action de la Fondation. Plus de 200 personnes qui ont fui la crise du Nord-Ouest et du Sud-Ouest, installées à Douala, reçoivent des vivres et une oreille attentive. Émue par leurs récits, Syndy Emade annonce une campagne de rentrée scolaire pour leurs enfants." },
+      "idps-2019": { when: "11 juillet 2019", title: "Lancement : des vivres pour plus de 200 déplacés", text: "La Fondation est lancée à Mabanda-Bonaberi, Douala. Plus de 200 personnes qui ont fui la crise du Nord-Ouest et du Sud-Ouest reçoivent des vivres et une oreille attentive. Émue par leurs récits, Syndy Emade annonce une campagne de rentrée scolaire pour leurs enfants." },
       launch: { when: "Août 2019", title: "La Fondation présente sa cause", text: "Un mois après sa première action, la Fondation se présente dans un court film sur Syndy Emade TV. Sa cause : protéger les enfants vulnérables, à commencer par les enfants des rues exposés à l’exploitation." },
       "school-materials": { when: "Août 2019", title: "Des fournitures pour plus de 600 enfants déplacés", text: "Quelques semaines après sa création, la campagne de rentrée de la Fondation atteint des enfants déplacés du Nord-Ouest et du Sud-Ouest. Des élèves de maternelle et de primaire, choisis de porte en porte parmi les familles les plus pauvres, reçoivent cahiers, livres et sacs : plus de 600 enfants au total." },
       "school-fees": { when: "Août 2019", title: "Les frais de scolarité de 300 enfants", text: "Au-delà des fournitures, les parents reçoivent une aide pour payer la scolarité de leurs enfants, afin que 300 enfants commencent l’année en classe. La Fondation parle de sa deuxième action et annonce un suivi de santé pour les familles déplacées." },

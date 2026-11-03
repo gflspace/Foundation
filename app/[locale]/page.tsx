@@ -1,20 +1,20 @@
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Building2 } from "lucide-react";
 import type { Metadata } from "next";
 import Link from "next/link";
-import { CtaBand } from "@/components/CtaBand";
+import { CampaignBanner } from "@/components/CampaignBanner";
 import { Hero } from "@/components/Hero";
-import { IdentityMatrix } from "@/components/IdentityMatrix";
+import { ImpactHighlights } from "@/components/ImpactHighlights";
 import { ImpactMap } from "@/components/ImpactMap";
+import { InvolvePaths } from "@/components/InvolvePaths";
 import { Journey } from "@/components/Journey";
+import { NewsletterForm } from "@/components/NewsletterForm";
 import { PillarCards } from "@/components/PillarCards";
 import { PressHighlights } from "@/components/PressHighlights";
-import { ProjectCard } from "@/components/ProjectCard";
 import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";
 import { SocialProof } from "@/components/SocialProof";
+import { StoryCard } from "@/components/StoryCard";
 import { StoryFilm } from "@/components/StoryFilm";
-import { VideoFeature } from "@/components/VideoFeature";
-import { featuredVideos, projectSlugs } from "@/lib/content";
 import { localePath } from "@/lib/i18n/config";
 import { alternatesFor, getDictionary, pageLocale, type LocaleParams } from "@/lib/i18n";
 
@@ -23,81 +23,102 @@ export function generateMetadata(props: LocaleParams): Metadata {
 }
 
 /**
- * Home: hero · story film · press strip · the five programmes · our films · map · latest journey moments ·
- * founder's two stages · what drives us · CTA. The full media library lives on /media.
+ * Home, in the order of the platform brief: hero · mission · impact · featured stories · focus areas ·
+ * latest activities (with the impact map) · become a partner · get involved · press & recognition · newsletter.
  */
 export default function HomePage(props: LocaleParams) {
   const locale = pageLocale(props);
   const t = getDictionary(locale);
-  const h = t.home;
+  const h = t.home2;
+  const link = (path: string) => localePath(locale, path);
+  const More = ({ to, children }: { to: string; children: React.ReactNode }) => (
+    <Link href={link(to)} className="inline-flex items-center gap-1 text-sm font-semibold text-purple-700 hover:underline">{children} <ArrowRight className="h-4 w-4" aria-hidden /></Link>
+  );
+
   return (
     <>
       <Hero />
+      <CampaignBanner />
       <StoryFilm />
-      <SocialProof />
 
-      <section className="bg-white py-24">
+      <section className="container-page py-24" aria-labelledby="impact-title">
+        <div className="flex flex-wrap items-end justify-between gap-6">
+          <div className="max-w-2xl">
+            <p className="eyebrow">{h.impactEyebrow}</p>
+            <h2 id="impact-title" className="mt-3 text-3xl sm:text-4xl">{h.impactTitle}</h2>
+            <p className="mt-4 text-lg text-plum/75">{h.impactIntro}</p>
+          </div>
+          <More to="/impact">{h.impactCta}</More>
+        </div>
+        <ImpactHighlights keys={["children-school", "school-fees", "first-outreach", "family-housed"]} className="mt-10" />
+      </section>
+
+      <section className="bg-white py-24" aria-labelledby="stories-title">
         <div className="container-page">
           <div className="flex flex-wrap items-end justify-between gap-6">
-            <SectionHeading eyebrow={h.programmesEyebrow} title={h.programmesTitle} />
-            <Link href={localePath(locale, "/projects")} className="inline-flex items-center gap-1 text-sm font-semibold text-purple-700 hover:underline">
-              {t.common.allProgrammes} <ArrowRight className="h-4 w-4" aria-hidden />
-            </Link>
+            <div>
+              <p className="eyebrow">{h.storiesEyebrow}</p>
+              <h2 id="stories-title" className="mt-3 text-3xl sm:text-4xl">{h.storiesTitle}</h2>
+            </div>
+            <More to="/stories">{h.storiesCta}</More>
           </div>
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {projectSlugs.map((slug, i) => (
-              <Reveal key={slug} delay={i * 0.06} className="h-full"><ProjectCard slug={slug} /></Reveal>
+          <div className="mt-10 grid gap-6 lg:grid-cols-3">
+            {(["a-home-for-a-family-2023", "first-outreach-2019", "back-to-school-2019"] as const).map((slug, i) => (
+              <Reveal key={slug} delay={i * 0.06} className="h-full"><StoryCard slug={slug} /></Reveal>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="bubbles bg-mist py-24" aria-labelledby="videos-title">
-        <div className="container-page">
-          <div className="flex flex-wrap items-end justify-between gap-6">
-            <div className="max-w-2xl">
-              <p className="eyebrow">{h.videosEyebrow}</p>
-              <h2 id="videos-title" className="mt-3 text-3xl sm:text-4xl">{h.videosTitle}</h2>
-              <p className="mt-4 text-lg text-plum/75">{h.videosIntro}</p>
-            </div>
-            <Link href={localePath(locale, "/media")} className="inline-flex items-center gap-1 text-sm font-semibold text-purple-700 hover:underline">
-              {h.seeAllMedia} <ArrowRight className="h-4 w-4" aria-hidden />
-            </Link>
-          </div>
-          <div className="mt-12 grid gap-6 md:grid-cols-3">
-            {featuredVideos.filter((v) => v.home).map((v, i) => (
-              <Reveal key={v.id} delay={i * 0.08}>
-                <VideoFeature id={v.id} title={v.title[locale]} />
-                <Link href={localePath(locale, `/projects/${v.programme}`)} className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-teal-700 hover:underline">
-                  {t.projects[v.programme].title} <ArrowRight className="h-3.5 w-3.5" aria-hidden />
-                </Link>
-              </Reveal>
-            ))}
-          </div>
+      <section className="container-page py-24">
+        <SectionHeading eyebrow={h.focusEyebrow} title={h.focusTitle} intro={h.focusIntro} />
+        <div className="mt-12"><PillarCards /></div>
+      </section>
+
+      <section className="bg-mist py-24" aria-labelledby="latest-title">
+        <div className="container-page max-w-4xl">
+          <p className="eyebrow">{h.latestEyebrow}</p>
+          <h2 id="latest-title" className="mt-3 text-3xl sm:text-4xl">{h.latestTitle}</h2>
+          <div className="mt-10"><Journey limit={3} showFilters={false} /></div>
         </div>
       </section>
 
       <ImpactMap />
 
-      <section className="py-24" aria-labelledby="journey-teaser">
-        <div className="container-page max-w-4xl">
-          <p className="eyebrow">{t.journey.eyebrow}</p>
-          <h2 id="journey-teaser" className="mt-3 text-3xl sm:text-4xl">{t.journey.title}</h2>
-          <p className="mt-4 max-w-2xl text-lg text-plum/75">{t.journey.intro}</p>
-          <div className="mt-10"><Journey limit={3} showFilters={false} /></div>
+      <section className="container-page py-24" aria-labelledby="partner-title">
+        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-teal-700 via-teal-700 to-plum px-6 py-14 text-white sm:px-12">
+          <span aria-hidden className="absolute -right-16 -top-16 h-64 w-64 rounded-full border-[16px] border-white/10" />
+          <div className="relative grid items-center gap-8 lg:grid-cols-12">
+            <div className="lg:col-span-8">
+              <p className="eyebrow text-teal-100">{h.partnerEyebrow}</p>
+              <h2 id="partner-title" className="mt-3 text-3xl sm:text-4xl">{h.partnerTitle}</h2>
+              <p className="mt-4 max-w-2xl text-lg text-white/90">{h.partnerText}</p>
+            </div>
+            <div className="lg:col-span-4 lg:text-right">
+              <Link href={link("/partners")} className="btn bg-white px-7 py-4 text-base text-plum hover:bg-mist"><Building2 className="h-5 w-5" aria-hidden />{h.partnerCta}</Link>
+            </div>
+          </div>
         </div>
       </section>
 
-      <PressHighlights ids={["mmi-2023-visually-impaired-mother", "cemac-2026-big-business", "mmi-2019-idps"]} className="bg-white py-24" />
-
-      <IdentityMatrix />
-
-      <section className="container-page py-24">
-        <SectionHeading eyebrow={h.pillarsEyebrow} title={h.pillarsTitle} intro={h.pillarsIntro} />
-        <div className="mt-12"><PillarCards /></div>
+      <section className="bg-white py-24" aria-labelledby="involve-title">
+        <div className="container-page">
+          <p className="eyebrow">{t.involveUi.eyebrow}</p>
+          <h2 id="involve-title" className="mt-3 text-3xl sm:text-4xl">{t.involveUi.title}</h2>
+          <InvolvePaths className="mt-10" />
+        </div>
       </section>
 
-      <CtaBand />
+      <PressHighlights ids={["mmi-2023-visually-impaired-mother", "cemac-2026-big-business", "yafrica-2021-netflix"]} className="pb-10 pt-24" />
+      <SocialProof />
+
+      <section className="container-page py-24" aria-labelledby="newsletter-title">
+        <div className="card mx-auto max-w-3xl p-8 text-center sm:p-12">
+          <h2 id="newsletter-title" className="text-3xl">{h.newsletterTitle}</h2>
+          <p className="mx-auto mt-3 max-w-xl text-plum/75">{h.newsletterText}</p>
+          <div className="mx-auto max-w-md text-left"><NewsletterForm id="nl-home" light /></div>
+        </div>
+      </section>
     </>
   );
 }

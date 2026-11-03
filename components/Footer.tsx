@@ -6,18 +6,24 @@ import { profiles, projectSlugs, site } from "@/lib/content";
 import { useI18n } from "./I18nProvider";
 import { Logo } from "./Logo";
 import { NewsletterForm } from "./NewsletterForm";
+import { WhatsAppButton } from "./WhatsAppButton";
 
 export function Footer() {
   const { t, href } = useI18n();
   const nav = [
     { path: "/about", label: t.nav.about },
-    { path: "/projects", label: t.nav.projects },
-    { path: "/creative-legacy", label: t.nav.legacy },
+    { path: "/founder", label: t.nav2.founder },
+    { path: "/stories", label: t.nav2.stories },
+    { path: "/impact", label: t.nav2.impact },
+    { path: "/accountability", label: t.nav2.accountability },
+    { path: "/partners", label: t.nav2.partners },
+    { path: "/get-involved", label: t.nav.getInvolved },
     { path: "/media", label: t.nav.media },
-    { path: "/donate", label: t.nav.donate },
+    { path: "/creative-legacy", label: t.nav.legacy },
   ];
   return (
     <footer className="bg-plum-900 text-white/70">
+      <WhatsAppButton />
       <div className="container-page grid gap-12 py-16 md:grid-cols-12">
         <div className="md:col-span-4">
           <Link href={href("/")} className="inline-block rounded-2xl bg-white p-3 shadow-card"><Logo className="h-16 w-auto" /></Link>

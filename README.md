@@ -40,6 +40,21 @@ Colours come from the logo (`tailwind.config.ts`):
 
 Headings use Poppins; body text uses Plus Jakarta Sans. The tagline is "Together we can." / « Ensemble, nous pouvons. »
 
+## Platform structure
+
+The site is organised around stories, evidence and participation:
+
+| Page | Route (EN · FR) | Data |
+| --- | --- | --- |
+| Stories of Impact | `/stories` · `/fr/histoires`, one page per story | `stories` in `lib/platform.ts`, copy in `lib/i18n/dictionaries/{en,fr}-platform.ts` (`storyEntries`) |
+| Impact dashboard | `/impact` | `indicators` (verified figures, each linked to evidence) |
+| Meet the Founder | `/founder` · `/fr/fondatrice` | `founderQuotes` (verbatim), `founderStatement` (hidden until approved) |
+| Get Involved | `/get-involved` · `/fr/s-engager` | Four pathways; `EngageForm` posts volunteer, partner or collaboration to `/api/forms` |
+| Partnerships | `/partners` · `/fr/partenaires` | `documentedPartners`; proposal PDF built by `scripts/build-partnership-proposal.mjs` |
+| Accountability | `/accountability` · `/fr/transparence` | A project record per story, plus activity by year |
+
+The five strategic pillars (`pillars` in `lib/platform.ts`) carry an honest status: active, emerging or proposed. Items awaiting approval are listed in `docs/platform-approvals.md`.
+
 ## Content sources
 
 Programme and journey content was rebuilt from `docs/content-brief.md`, which summarises what is publicly documented about the Foundation and links every source:

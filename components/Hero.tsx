@@ -1,7 +1,8 @@
 "use client";
 
 import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
-import { HeartHandshake, Play } from "lucide-react";
+import { ArrowRight, HeartHandshake, Play } from "lucide-react";
+import Link from "next/link";
 import { useRef, useState } from "react";
 import { featuredVideos, heroStats } from "@/lib/content";
 import { cn } from "@/lib/cn";
@@ -19,7 +20,7 @@ const bubbles = [
 
 /** Light hero in the logo's language: "Together we can.", the call to action, and three documented figures as bubbles. */
 export function Hero() {
-  const { t, locale } = useI18n();
+  const { t, locale, href } = useI18n();
   const h = t.hero;
   const ref = useRef<HTMLElement>(null);
   const reduce = useReducedMotion();
@@ -39,17 +40,23 @@ export function Hero() {
 
       <div className="container-page grid items-center gap-14 pb-20 lg:grid-cols-12 lg:pb-28">
         <div className="lg:col-span-7">
-          <motion.p {...fade(0.05)} className="eyebrow">{h.eyebrow}</motion.p>
+          <motion.p {...fade(0.05)} className="eyebrow">{t.home2.heroEyebrow}</motion.p>
           <motion.h1 {...fade(0.15)} className="mt-5 text-5xl leading-[1.02] sm:text-6xl lg:text-7xl">
-            <span className="text-teal-600">{h.line1}</span>
-            <span className="block text-purple">{h.line2}</span>
+            <span className="text-teal-600">{t.home2.heroLine1}</span>
+            <span className="block text-purple">{t.home2.heroLine2}</span>
           </motion.h1>
-          <motion.p {...fade(0.3)} className="mt-7 max-w-xl text-lg leading-relaxed text-plum/80">{h.lead}</motion.p>
+          <motion.p {...fade(0.25)} className="mt-6 font-display text-xl font-semibold text-plum sm:text-2xl">{t.home2.heroTagline}</motion.p>
+          <motion.p {...fade(0.3)} className="mt-4 max-w-xl text-lg leading-relaxed text-plum/80">{t.home2.heroLead}</motion.p>
           <motion.div {...fade(0.45)} className="mt-10 flex flex-wrap gap-3">
-            <DonateButton className="btn-teal px-8 py-4 text-base">
-              <HeartHandshake className="h-5 w-5" aria-hidden /> {h.cta}
+            <Link href={href("/impact")} className="btn-teal px-8 py-4 text-base">
+              {t.home2.heroCta} <ArrowRight className="h-5 w-5" aria-hidden />
+            </Link>
+            <DonateButton className="btn-outline px-7 py-4 text-base">
+              <HeartHandshake className="h-5 w-5 text-purple" aria-hidden /> {h.cta}
             </DonateButton>
-            <button type="button" onClick={() => setVideoOpen(true)} className="btn-outline px-7 py-4 text-base">
+          </motion.div>
+          <motion.div {...fade(0.5)} className="mt-5">
+            <button type="button" onClick={() => setVideoOpen(true)} className="inline-flex items-center gap-2 rounded-full py-2 text-sm font-semibold text-plum/80 hover:text-plum">
               <span className="grid h-7 w-7 place-items-center rounded-full bg-purple text-white"><Play className="h-3.5 w-3.5 translate-x-px fill-current" aria-hidden /></span>
               {h.secondary}
             </button>

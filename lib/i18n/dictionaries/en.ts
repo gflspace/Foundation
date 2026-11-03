@@ -2,7 +2,10 @@
  * English copy. `fr.ts` must match this shape exactly (enforced by the `Dictionary` type).
  * Placeholders in curly braces — {email}, {amount}, {min} — are filled in at render time.
  */
+import { platformEn } from "./en-platform";
+
 const en = {
+  ...platformEn,
   locale: "en",
   meta: {
     siteName: "Syndy Emade Foundation",
@@ -113,7 +116,7 @@ const en = {
     readMore: "See the full journey",
     entries: {
       "limbe-orphanage-2015": { when: "October 2015", title: "Before the Foundation: a day at the Limbe orphanage", text: "Years before the Foundation existed, Syndy Emade and her Blue Rain Entertainment crew spend a day with the children of the orphanage at Bota, Limbe, sharing fun moments and listening to their dreams." },
-      "idps-2019": { when: "July 2019", title: "The first outreach: food for 200+ displaced people", text: "The Foundation’s first action. More than 200 people who fled the crisis in the North-West and South-West, now living in Douala, receive food items and a listening ear. Moved by their stories, Syndy Emade announces a back-to-school campaign for their children." },
+      "idps-2019": { when: "11 July 2019", title: "Launch: food for 200+ displaced people", text: "The Foundation is launched at Mabanda-Bonaberi, Douala. More than 200 people who fled the crisis in the North-West and South-West receive food items and a listening ear. Moved by their stories, Syndy Emade announces a back-to-school campaign for their children." },
       launch: { when: "August 2019", title: "The Foundation presents its cause", text: "A month after its first outreach, the Foundation introduces itself in a short film on Syndy Emade TV. Its cause: protecting vulnerable children, starting with street children at risk of exploitation." },
       "school-materials": { when: "August 2019", title: "School materials for 600+ displaced children", text: "Weeks after its launch, the Foundation’s back-to-school campaign reaches children displaced from the North-West and South-West. Nursery and primary pupils, chosen door to door among the poorest families, receive exercise books, textbooks and school bags: more than 600 children in all." },
       "school-fees": { when: "August 2019", title: "School fees for 300 children", text: "Beyond supplies, parents receive help to pay their children’s school fees, so that 300 children can start the year in class. The Foundation calls it its second action, and announces a health follow-up for displaced families next." },

@@ -20,8 +20,9 @@ export function Navbar() {
 
   const nav = [
     { path: "/about", label: t.nav.about },
-    { path: "/projects", label: t.nav.projects },
-    { path: "/creative-legacy", label: t.nav.legacy },
+    { path: "/projects", label: t.nav2.ourWork },
+    { path: "/stories", label: t.nav2.stories },
+    { path: "/impact", label: t.nav2.impact },
     { path: "/media", label: t.nav.media },
   ];
   const other = t.nav.switchLang as Locale;
@@ -60,7 +61,7 @@ export function Navbar() {
           <Logo priority className="h-16 w-auto sm:h-20" />
         </Link>
 
-        <ul className="hidden items-center gap-1 md:flex">
+        <ul className="hidden items-center gap-1 lg:flex">
           {nav.map((item) => {
             const active = path === item.path || path.startsWith(item.path + "/");
             return (
@@ -79,13 +80,13 @@ export function Navbar() {
 
         <div className="flex items-center gap-3">
           <LangSwitch className="px-2 py-2" />
-          <Link href={href("/donate")} className="hidden text-sm font-medium text-plum/80 hover:text-plum xl:inline">
+          <Link href={href("/get-involved")} className="hidden text-sm font-medium text-plum/80 hover:text-plum xl:inline">
             {t.nav.getInvolved}
           </Link>
           <DonateButton className="btn-teal hidden px-5 py-2.5 sm:inline-flex">{t.nav.donate}</DonateButton>
           <button
             type="button"
-            className="rounded-full p-2 text-plum md:hidden"
+            className="rounded-full p-2 text-plum lg:hidden"
             aria-expanded={open}
             aria-controls="mobile-menu"
             aria-label={open ? t.nav.closeMenu : t.nav.openMenu}
@@ -98,9 +99,9 @@ export function Navbar() {
 
       <AnimatePresence>
         {open && (
-          <motion.div id="mobile-menu" className="border-t border-plum/10 bg-white md:hidden" initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }}>
+          <motion.div id="mobile-menu" className="border-t border-plum/10 bg-white lg:hidden" initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }}>
             <ul className="container-page space-y-1 py-4">
-              {[...nav, { path: "/donate", label: t.nav.getInvolved }].map((item) => (
+              {[...nav, { path: "/founder", label: t.nav2.founder }, { path: "/partners", label: t.nav2.partners }, { path: "/get-involved", label: t.nav.getInvolved }].map((item) => (
                 <li key={item.path}>
                   <Link href={href(item.path)} className="block rounded-xl px-4 py-3 text-base font-medium text-plum hover:bg-teal-50">
                     {item.label}
