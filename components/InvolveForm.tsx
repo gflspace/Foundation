@@ -29,7 +29,7 @@ export function InvolveForm() {
   if (state === "done")
     return (
       <div className="card flex flex-col items-center p-10 text-center" role="status">
-        <CheckCircle2 className="h-12 w-12 text-emerald" aria-hidden />
+        <CheckCircle2 className="h-12 w-12 text-violet" aria-hidden />
         <h3 className="mt-4 text-2xl">{v.thanksTitle}</h3>
         <p className="mt-2 max-w-sm text-navy/65">{v.thanksText}</p>
       </div>
@@ -88,7 +88,7 @@ export function InvolveForm() {
       <p className="text-xs text-navy/65">
         {v.privacyPre} <Link href={href("/privacy")} className="underline">{v.privacyLink}</Link>.
       </p>
-      <button className="btn-emerald w-full sm:w-auto" disabled={state === "loading"}>
+      <button className="btn-violet w-full sm:w-auto" disabled={state === "loading"}>
         {state === "loading" && <Loader2 className="h-4 w-4 animate-spin" aria-hidden />}
         {v.submit}
       </button>

@@ -45,7 +45,7 @@ export default function DonatePage(props: LocaleParams) {
           <ul className="mt-10 space-y-4 text-sm text-navy/70">
             {d.trust.map((line, i) => {
               const Icon = trustIcons[i];
-              return <li key={line} className="flex gap-3"><Icon className="h-5 w-5 shrink-0 text-emerald" aria-hidden />{line}</li>;
+              return <li key={line} className="flex gap-3"><Icon className="h-5 w-5 shrink-0 text-violet" aria-hidden />{line}</li>;
             })}
           </ul>
         </div>

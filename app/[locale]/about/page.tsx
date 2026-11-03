@@ -89,7 +89,7 @@ export default function AboutPage(props: LocaleParams) {
               </div>
             </Reveal>
             <Reveal delay={0.1} className="h-full">
-              <div className="card h-full bg-emerald-700 p-8 text-white">
+              <div className="card h-full bg-violet-700 p-8 text-white">
                 <Eye className="h-8 w-8 text-gold-400" aria-hidden />
                 <h3 className="mt-4 text-2xl">{a.visionTitle}</h3>
                 <p className="mt-3 leading-relaxed text-white">{a.vision}</p>
@@ -102,7 +102,7 @@ export default function AboutPage(props: LocaleParams) {
               return (
                 <Reveal key={title} delay={i * 0.08} className="h-full">
                   <div className="card h-full p-6">
-                    <Icon className="h-6 w-6 text-emerald" aria-hidden />
+                    <Icon className="h-6 w-6 text-violet" aria-hidden />
                     <h3 className="mt-3 font-sans text-base font-semibold">{title}</h3>
                     <p className="mt-2 text-sm text-navy/65">{text}</p>
                   </div>

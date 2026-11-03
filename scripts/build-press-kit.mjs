@@ -12,8 +12,8 @@ const tmp = path.join(out, ".build");
 rmSync(tmp, { recursive: true, force: true });
 mkdirSync(tmp, { recursive: true });
 
-const mark = (bg) => `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="512" height="512">${bg ? '<rect width="40" height="40" rx="10" fill="#0F172A"/>' : ""}<circle cx="20" cy="20" r="17.5" fill="none" stroke="#D97706" stroke-width="1.2"/><path d="M20 8c-4 6-8 9-8 14a8 8 0 0 0 16 0c0-5-4-8-8-14Z" fill="#059669"/><path d="M20 16c-2 3-4 4.5-4 7a4 4 0 0 0 8 0c0-2.5-2-4-4-7Z" fill="#FBBF24"/></svg>`;
-const lockup = (dark, sub = "FOUNDATION") => `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 64" width="900" height="192"><g transform="translate(4 12) scale(1)"><circle cx="20" cy="20" r="19" fill="none" stroke="#D97706" stroke-width="1.5"/><path d="M20 8c-4 6-8 9-8 14a8 8 0 0 0 16 0c0-5-4-8-8-14Z" fill="#059669"/><path d="M20 16c-2 3-4 4.5-4 7a4 4 0 0 0 8 0c0-2.5-2-4-4-7Z" fill="#FBBF24"/></g><text x="56" y="34" font-family="Playfair Display, Georgia, serif" font-size="24" font-weight="600" fill="${dark ? "#0F172A" : "#FFFFFF"}">Syndy Emade</text><text x="57" y="52" font-family="Helvetica, Arial, sans-serif" font-size="10" font-weight="700" letter-spacing="4" fill="${dark ? "#B45309" : "#FBBF24"}">${sub}</text></svg>`;
+const mark = (bg) => `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="512" height="512"><path d="M20 2.5 34.5 7.8v11.4c0 9-5.9 15.3-14.5 18.3C11.4 34.5 5.5 28.2 5.5 19.2V7.8Z" fill="${bg ? "#0F172A" : "#FDF8F0"}" stroke="#D4AF37" stroke-width="1.6" stroke-linejoin="round"/><path d="M20 6.2 31.2 10.3v8.9c0 7-4.5 11.9-11.2 14.4-6.7-2.5-11.2-7.4-11.2-14.4v-8.9Z" fill="none" stroke="#6D28D9" stroke-width="0.9"/><text x="20" y="24.6" text-anchor="middle" font-family="Playfair Display, Georgia, serif" font-weight="700" font-size="13" fill="#D4AF37">SE</text></svg>`;
+const lockup = (dark, sub = "FOUNDATION") => `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 64" width="900" height="192"><g transform="translate(2 8) scale(1.2)"><path d="M20 2.5 34.5 7.8v11.4c0 9-5.9 15.3-14.5 18.3C11.4 34.5 5.5 28.2 5.5 19.2V7.8Z" fill="${dark ? "#FDF8F0" : "#0F172A"}" stroke="#D4AF37" stroke-width="1.6" stroke-linejoin="round"/><path d="M20 6.2 31.2 10.3v8.9c0 7-4.5 11.9-11.2 14.4-6.7-2.5-11.2-7.4-11.2-14.4v-8.9Z" fill="none" stroke="#6D28D9" stroke-width="0.9"/><text x="20" y="24.6" text-anchor="middle" font-family="Playfair Display, Georgia, serif" font-weight="700" font-size="13" fill="#D4AF37">SE</text></g><text x="60" y="34" font-family="Playfair Display, Georgia, serif" font-size="24" font-weight="600" fill="${dark ? "#0F172A" : "#FFFFFF"}">Syndy Emade</text><text x="61" y="52" font-family="Helvetica, Arial, sans-serif" font-size="10" font-weight="700" letter-spacing="4" fill="${dark ? "#7A5C0E" : "#D4AF37"}">${sub}</text></svg>`;
 
 writeFileSync(path.join(tmp, "logo-mark.svg"), mark(false));
 writeFileSync(path.join(tmp, "logo-mark-navy.svg"), mark(true));
@@ -25,10 +25,10 @@ const factSheet = (L) => `<!doctype html><html lang="${L.lang}"><head><meta char
 <style>
 @page{size:A4;margin:0}*{box-sizing:border-box}body{margin:0;font-family:'Plus Jakarta Sans',Arial,sans-serif;color:#0F172A;font-size:10.5pt;line-height:1.5}
 header{background:#0F172A;color:#fff;padding:36px 48px 30px}h1,h2{font-family:'Playfair Display',Georgia,serif;font-weight:600;margin:0}
-h1{font-size:28pt;line-height:1.1}.tag{color:#FBBF24;font-style:italic}.eyebrow{font-size:8pt;letter-spacing:.25em;text-transform:uppercase;color:#FBBF24;font-weight:700}
-main{padding:28px 48px;display:grid;grid-template-columns:1.25fr 1fr;gap:28px}h2{font-size:14pt;margin:0 0 8px;color:#0F172A;border-bottom:2px solid #D97706;padding-bottom:4px}
+h1{font-size:28pt;line-height:1.1}.tag{color:#D4AF37;font-style:italic}.eyebrow{font-size:8pt;letter-spacing:.25em;text-transform:uppercase;color:#D4AF37;font-weight:700}
+main{padding:28px 48px;display:grid;grid-template-columns:1.25fr 1fr;gap:28px}h2{font-size:14pt;margin:0 0 8px;color:#0F172A;border-bottom:2px solid #D4AF37;padding-bottom:4px}
 section{margin-bottom:18px}ul{margin:0;padding-left:16px}li{margin:2px 0}dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:4px 12px}dt{font-weight:700}dd{margin:0}
-.pill{display:inline-block;background:#ECFDF5;color:#047857;border-radius:99px;padding:2px 10px;margin:2px 4px 2px 0;font-weight:600;font-size:9pt}
+.pill{display:inline-block;background:#F5F3FF;color:#5B21B6;border-radius:99px;padding:2px 10px;margin:2px 4px 2px 0;font-weight:600;font-size:9pt}
 footer{position:absolute;bottom:0;left:0;right:0;padding:14px 48px;background:#F8FAFC;border-top:1px solid #e2e8f0;font-size:8.5pt;color:#475569}
 </style></head><body>
 <header>${lockup(false, L.sub).replace('width="900" height="192"','width="240" height="51"')}

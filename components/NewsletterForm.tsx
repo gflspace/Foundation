@@ -17,7 +17,7 @@ export function NewsletterForm() {
     }).catch(() => null);
     setState(res?.ok ? "done" : "error");
   }
-  if (state === "done") return <p className="mt-4 text-sm text-emerald-400" role="status">{t.footer.joined}</p>;
+  if (state === "done") return <p className="mt-4 text-sm text-violet-400" role="status">{t.footer.joined}</p>;
   return (
     <form onSubmit={onSubmit} className="mt-4 flex gap-2">
       <label htmlFor="nl-email" className="sr-only">{t.footer.emailLabel}</label>

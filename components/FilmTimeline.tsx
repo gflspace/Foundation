@@ -54,7 +54,7 @@ export function FilmTimeline({ limit }: { limit?: number }) {
         <AnimatePresence initial={false}>
           {byYear.map(([year, items]) => (
             <motion.li key={year} layout initial={{ opacity: 0, x: -12 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -12 }} className="relative pb-10 last:pb-0">
-              <span aria-hidden className="absolute -left-[31px] top-1.5 h-3 w-3 rounded-full bg-gold ring-4 ring-ivory sm:-left-[47px]" />
+              <span aria-hidden className="absolute -left-[31px] top-1.5 h-3 w-3 rounded-full bg-gold ring-4 ring-sand sm:-left-[47px]" />
               <p className="font-display text-2xl text-gold-600">{year}</p>
               <div className="mt-3 grid gap-3 sm:grid-cols-2">
                 {items.map((f) => (
@@ -67,7 +67,7 @@ export function FilmTimeline({ limit }: { limit?: number }) {
                     </div>
                     <p className="text-sm text-navy/65" lang={locale}>{describe(f)}</p>
                     {f.imdb && (
-                      <a href={f.imdb} target="_blank" rel="noopener noreferrer" className="mt-2 inline-flex items-center gap-1 text-xs font-semibold text-emerald-700 hover:underline">
+                      <a href={f.imdb} target="_blank" rel="noopener noreferrer" className="mt-2 inline-flex items-center gap-1 text-xs font-semibold text-violet-700 hover:underline">
                         {ft.viewImdb} <ExternalLink className="h-3 w-3" aria-hidden />
                         <span className="sr-only">{t.common.opensNewTab}</span>
                       </a>

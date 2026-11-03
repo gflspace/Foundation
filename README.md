@@ -20,11 +20,38 @@ npm run dev                  # http://localhost:3000
 | `lib/content.ts` | Language-neutral data: URLs, impact numbers, film list, press links, donation amounts. |
 | `middleware.ts` | Serves English at `/…` and French at `/fr/…` (pages live under `app/[locale]/`). |
 | `app/[locale]/` | Routes: `/`, `/about`, `/projects`, `/projects/[slug]`, `/creative-legacy`, `/media`, `/donate`, `/donate/thank-you`, `/privacy`, `/donation-policy`. Each exists in English and French (`/fr/about`, …). |
-| `components/` | UI: Navbar, Hero, ImpactStrip, PillarCards, ProjectCard, FilmTimeline, DonationForm and modal, InvolveForm, Footer |
+| `components/` | UI: Navbar, Hero (counters and field-log video pop-up), SocialProof, IdentityMatrix, ImpactMap, MediaHub (filters, lightbox, share), PressForm, PillarCards, ProjectCard, FilmTimeline, DonationForm (amount slider) and donation pop-up, InvolveForm, Modal, Footer |
+| `lib/cameroon-map.ts` | Generated SVG outline of south-west and central Cameroon (Natural Earth 1:50m), with the four centres plotted |
 | `lib/jsonld.ts` | schema.org `NGO` and `Person` structured data, with `sameAs` links to Wikipedia, Wikidata, IMDb and others |
 | `app/sitemap.ts`, `app/robots.ts`, `app/opengraph-image.tsx` | SEO |
 
-Design tokens are in `tailwind.config.ts`: Navy `#0F172A`, Emerald `#059669`, Gold `#D97706`, Off-white `#F8FAFC`. Headings use Playfair Display; body text uses Plus Jakarta Sans and Inter.
+Design tokens are in `tailwind.config.ts`, following the enhancement spec §3.1:
+
+| Colour | Hex | Used for |
+| --- | --- | --- |
+| Sovereign Gold | `#D4AF37` | Accents, and button fills with **navy** text (8.5:1). White text on this gold only reaches 2.1:1, so never use it. For gold *text* on light backgrounds use `gold-700` `#7A5C0E` (5.9:1). |
+| Deep Humanitarian Navy | `#0F172A` | Text, dark sections |
+| Empowerment Violet | `#6D28D9` | Links, secondary buttons, the "film icon" tab (white text: 7.1:1) |
+| Warm Humanitarian Sand | `#FDF8F0` | Page background |
+
+Headings use Playfair Display; body text uses Plus Jakarta Sans and Inter. The logo (`components/Logo.tsx`, `app/icon.svg`, the press kit) is a shield with an SE monogram, redrawn from the description in the brief. Replace it with the official vector file once the Foundation supplies one.
+
+## Enhancement spec: status
+
+| Spec item | Status |
+| --- | --- |
+| §3 Palette, glassmorphism, shield and SE logo | Done (logo redrawn from the brief, see above) |
+| §6.1 Hero stage, counters, "Sponsor a child" and "Watch field logs" | Done. The background video slot is ready (`HERO_VIDEO` in `components/Hero.tsx`) but there is no footage yet. "Sponsor a child" opens the donation form with Youth Protection & Care preselected. |
+| §6.2 Two-tab founder section (humanitarian / film icon) | Done (`IdentityMatrix`), using the WAI-ARIA tabs pattern |
+| §6.3 Media gallery: filters, hover effects, lightbox, sharing, links straight to an item | Done (`MediaHub`). Photo stories show placeholders until photos are added (`photoStories[].image`). No video transcripts exist yet, so YouTube captions are requested in the viewer instead. |
+| §6.4 Regional impact map (Buea, Douala, Kumba, Yaoundé) | Done (`ImpactMap`). The activity listed for each city is marked `TODO(verify)`. |
+| §6.5 Donation slider ($10 / $25 / $50 / $100 / custom) | Done. What each amount funds is marked `TODO(verify)`. |
+| §2 "As featured in" carousel, press enquiry form | Done. The carousel lists only real press coverage, and Orange InstaVoice appears as a brand ambassadorship, not as a Foundation sponsor. |
+| §4.1 Gamma image enhancement | **Not done.** There are no source photos. Generating "field" scenes with AI would show events that never happened, so real photos are needed first. |
+| §4.2 Canva video studio | **Not done.** No footage has been supplied. |
+| §5.2 Base44 CMS | **Not done.** Content stays in typed files (`lib/content.ts` and the dictionaries), shaped so they can be swapped for a CMS loader later. |
+| §5.1 Figma prototype | **Not done.** The site itself is the working prototype. |
+| §7 Next.js 15 / Tailwind v4 | **Not done.** The site stays on Next.js 14 and Tailwind 3.4. Every spec feature works on this stack, and upgrading is a separate migration. |
 
 ## Languages
 

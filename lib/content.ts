@@ -51,9 +51,47 @@ export const impact = {
   ],
 };
 
+/**
+ * Hero "live" counters (enhancement spec §6.1), in the same order as `hero.stats` in the dictionaries.
+ * ⚠️  PLACEHOLDER values — confirm with the Foundation; shown with an "illustrative" note while
+ *     `impact.isPlaceholder` is true.
+ */
+export const heroStats = [
+  { value: 5000, suffix: "+" },
+  { value: 12, suffix: "+" },
+  { value: 6, suffix: "" },
+];
+
+/**
+ * Regional centres for the impact map (spec §6.4). Copy for each is in the dictionaries
+ * under `map.centres[id]`. TODO(verify): confirm which activities run in each city.
+ */
+export type CentreId = "buea" | "douala" | "kumba" | "yaounde";
+export const impactCentres: { id: CentreId; programmes: ProjectSlug[]; stories: string[] }[] = [
+  { id: "buea", programmes: ["education", "youth-welfare"], stories: ["school-supplies", "mentorship"] },
+  { id: "douala", programmes: ["mobile-crisis", "women"], stories: ["crisis-unit", "tailoring"] },
+  { id: "kumba", programmes: ["education"], stories: ["scholarships"] },
+  { id: "yaounde", programmes: ["women", "mobile-crisis"], stories: [] },
+];
+
+/**
+ * Media library (spec §6.3). Photo stories have no photography yet: each renders a branded
+ * placeholder until `image` is set to a real, licensed photo (e.g. "/images/field/school-supplies.webp").
+ */
+export type MediaKind = "video" | "photo" | "press" | "bts";
+export type PhotoStory = { id: string; kind: "photo" | "bts"; tone: "violet" | "gold" | "navy"; programme?: ProjectSlug; centre?: CentreId; image?: string };
+export const photoStories: PhotoStory[] = [
+  { id: "school-supplies", kind: "photo", tone: "violet", programme: "education", centre: "buea" },
+  { id: "crisis-unit", kind: "photo", tone: "gold", programme: "mobile-crisis", centre: "douala" },
+  { id: "tailoring", kind: "photo", tone: "navy", programme: "women", centre: "douala" },
+  { id: "scholarships", kind: "photo", tone: "gold", programme: "education", centre: "kumba" },
+  { id: "mentorship", kind: "photo", tone: "violet", programme: "youth-welfare", centre: "buea" },
+  { id: "on-set", kind: "bts", tone: "navy" },
+];
+
 export type PillarKey = "philanthropist" | "humanitarian" | "icon";
-export const pillarKeys: { key: PillarKey; accent: "emerald" | "gold" | "navy" }[] = [
-  { key: "philanthropist", accent: "emerald" },
+export const pillarKeys: { key: PillarKey; accent: "violet" | "gold" | "navy" }[] = [
+  { key: "philanthropist", accent: "violet" },
   { key: "humanitarian", accent: "gold" },
   { key: "icon", accent: "navy" },
 ];
@@ -125,11 +163,15 @@ export const press: { title: string; source: string; url: string; tag: PressTag;
 export const featuredVideos: { id: string; title: { en: string; fr: string } }[] = [];
 
 /** Donation tiers; the impact sentence for each is in the dictionaries (`donate.tiers`). */
+/**
+ * Micro-donation tiers (spec §6.5); impact sentences are in the dictionaries (`donate.tiers`).
+ * XAF amounts are rounded equivalents. TODO(verify): confirm what each amount funds.
+ */
 export const donationTiers = [
+  { usd: 10, xaf: 6000 },
   { usd: 25, xaf: 15000 },
   { usd: 50, xaf: 30000 },
   { usd: 100, xaf: 60000 },
-  { usd: 250, xaf: 150000 },
 ];
 
 /** Gamma decks — paste embed URLs (Share › Embed) to show them on /about and /donate. */

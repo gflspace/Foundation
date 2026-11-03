@@ -2,6 +2,7 @@
 
 import { CreditCard, Heart, Loader2, Lock, Smartphone, Wallet } from "lucide-react";
 import Link from "next/link";
+import { motion, useReducedMotion } from "framer-motion";
 import { useMemo, useState } from "react";
 import { donationTiers, projectSlugs } from "@/lib/content";
 import { cn } from "@/lib/cn";
@@ -35,8 +36,13 @@ export function DonationForm({ defaultProgramme }: { defaultProgramme?: string }
     return currency === "USD" ? tier.usd : tier.xaf;
   }, [custom, tierIndex, currency]);
 
-  const impactLine = tierIndex !== null && !custom ? t.donate.tiers[tierIndex] : null;
+  const isCustom = tierIndex === null || custom !== "";
+  const sliderPos = isCustom ? donationTiers.length : (tierIndex as number);
+  const tierAmount = (i: number) => (currency === "USD" ? donationTiers[i].usd : donationTiers[i].xaf);
+  const impactLine = !isCustom ? t.donate.tiers[tierIndex as number] : null;
+  const reduce = useReducedMotion();
   const num = (n: number) => n.toLocaleString(intlLocale[locale]);
+  const fmtShort = (n: number) => (currency === "USD" ? `$${n}` : n >= 1000 ? `${n / 1000}k` : `${n}`);
   const fmt = (n: number) =>
     currency === "USD" ? (locale === "fr" ? `${num(n)} $` : `$${num(n)}`) : `${num(n)} FCFA`;
 
@@ -129,28 +135,62 @@ export function DonationForm({ defaultProgramme }: { defaultProgramme?: string }
 
       <fieldset>
         <legend className="label">{f.chooseAmount}</legend>
-        <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
-          {donationTiers.map((tier, i) => {
-            const val = currency === "USD" ? tier.usd : tier.xaf;
-            const active = tierIndex === i && !custom;
-            return (
+        {/* Micro-donation slider (enhancement spec §6.5): positions 0–3 are tiers, the last is "custom". */}
+        <div className="rounded-2xl bg-white p-5 shadow-card ring-1 ring-navy/5">
+          <div className="flex items-baseline justify-between gap-3">
+            <p className="font-display text-4xl text-navy" aria-hidden>{valid ? fmt(amount) : "—"}</p>
+            {frequency === "monthly" && <p className="text-sm text-navy/65">{f.perMonth.replace("/", "").trim()}</p>}
+          </div>
+          <label htmlFor="amount-slider" className="sr-only">{f.sliderLabel}</label>
+          <input
+            id="amount-slider"
+            type="range"
+            min={0}
+            max={donationTiers.length}
+            step={1}
+            value={sliderPos}
+            aria-valuetext={isCustom ? f.customTier : fmt(tierAmount(sliderPos))}
+            aria-describedby="amount-slider-hint"
+            onChange={(e) => {
+              const v = Number(e.target.value);
+              if (v === donationTiers.length) {
+                setTierIndex(null);
+              } else {
+                setTierIndex(v);
+                setCustom("");
+              }
+            }}
+            className="range mt-4 w-full"
+            style={{ ["--fill" as string]: `${(sliderPos / donationTiers.length) * 100}%` }}
+          />
+          <div className="mt-2 grid text-center text-xs font-semibold" style={{ gridTemplateColumns: `repeat(${donationTiers.length + 1}, minmax(0, 1fr))` }}>
+            {donationTiers.map((tier, i) => (
               <button
                 key={i}
                 type="button"
-                aria-pressed={active}
+                aria-pressed={!isCustom && tierIndex === i}
                 onClick={() => {
                   setTierIndex(i);
                   setCustom("");
                 }}
-                className={cn(
-                  "rounded-xl border px-3 py-3 text-sm font-bold transition",
-                  active ? "border-gold bg-gold/10 text-gold-700 ring-2 ring-gold/30" : "border-navy/15 bg-white hover:border-navy/40",
-                )}
+                className={cn("rounded-lg py-1.5 transition", !isCustom && tierIndex === i ? "bg-gold/20 text-gold-700" : "text-navy/65 hover:text-navy")}
               >
-                {fmt(val)}
+                {fmtShort(currency === "USD" ? tier.usd : tier.xaf)}
               </button>
-            );
-          })}
+            ))}
+            <button
+              type="button"
+              aria-pressed={isCustom}
+              onClick={() => {
+                setTierIndex(null);
+                document.getElementById("custom-amount")?.focus();
+              }}
+              className={cn("rounded-lg py-1.5 transition", isCustom ? "bg-violet-50 text-violet-700" : "text-navy/65 hover:text-navy")}
+            >
+              {f.customTier}
+            </button>
+          </div>
+          <p id="amount-slider-hint" className="sr-only">{f.sliderHint}</p>
         </div>
         <div className="relative mt-3">
           <label htmlFor="custom-amount" className="sr-only">{f.customAmountLabel}</label>
@@ -162,18 +202,23 @@ export function DonationForm({ defaultProgramme }: { defaultProgramme?: string }
             inputMode="numeric"
             placeholder={f.otherAmount}
             value={custom}
-            onChange={(e) => setCustom(e.target.value.replace(/[^\d]/g, ""))}
+            onChange={(e) => {
+              setTierIndex(null);
+              setCustom(e.target.value.replace(/[^0-9]/g, ""));
+            }}
             className={cn("input", currency === "USD" ? "pl-8" : "pl-16")}
           />
         </div>
-        <p className="mt-3 min-h-[1.25rem] text-sm text-emerald-700" aria-live="polite">
-          {impactLine && (
-            <>
-              <Heart className="mr-1 inline h-4 w-4 -translate-y-px" aria-hidden />
-              {impactLine}
-            </>
-          )}
-        </p>
+        <motion.p
+          key={impactLine ?? "custom"}
+          initial={reduce ? false : { opacity: 0, y: 4 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="mt-3 flex min-h-[2.5rem] items-start gap-2 rounded-xl bg-violet-50 px-3 py-2 text-sm text-violet-800"
+          aria-live="polite"
+        >
+          <Heart className="mt-0.5 h-4 w-4 shrink-0" aria-hidden />
+          {impactLine ?? f.customImpact}
+        </motion.p>
       </fieldset>
 
       <div>
@@ -194,7 +239,7 @@ export function DonationForm({ defaultProgramme }: { defaultProgramme?: string }
               key={key}
               className={cn(
                 "flex cursor-pointer flex-col gap-1 rounded-xl border p-3 transition",
-                method === key ? "border-emerald bg-emerald-50 ring-2 ring-emerald/25" : "border-navy/15 bg-white hover:border-navy/40",
+                method === key ? "border-violet bg-violet-50 ring-2 ring-violet/25" : "border-navy/15 bg-white hover:border-navy/40",
               )}
             >
               <input

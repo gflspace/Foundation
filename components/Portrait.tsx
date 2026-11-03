@@ -10,7 +10,7 @@ export function Portrait({ className, priority = false }: { className?: string; 
   const p = founderPhoto;
   return (
     <figure className={cn("relative", className)}>
-      <div aria-hidden className="absolute inset-0 translate-x-3 translate-y-3 rounded-2xl bg-gradient-to-br from-gold/50 to-emerald/50" />
+      <div aria-hidden className="absolute inset-0 translate-x-3 translate-y-3 rounded-2xl bg-gradient-to-br from-gold/50 to-violet/50" />
       <div className="relative overflow-hidden rounded-2xl bg-navy-800 shadow-card">
         <Image
           src={p.src}

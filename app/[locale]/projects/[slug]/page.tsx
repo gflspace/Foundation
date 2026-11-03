@@ -26,7 +26,7 @@ export function generateMetadata({ params }: Props): Metadata {
   return pageMetadata(locale, `/projects/${params.slug}`, p.title, p.short);
 }
 
-const barColor = ["bg-emerald", "bg-gold", "bg-navy"];
+const barColor = ["bg-violet", "bg-gold", "bg-navy"];
 
 export default function ProjectPage({ params }: Props) {
   const locale = params.locale as Locale;
@@ -44,14 +44,14 @@ export default function ProjectPage({ params }: Props) {
       <section className="container-page grid gap-12 py-24 lg:grid-cols-12">
         <div className="lg:col-span-7">
           <Reveal>
-            <ArtPanel label={fill(pt.photoLabel, { title: p.title })} tone={meta.pillar === "humanitarian" ? "gold" : "emerald"} className="aspect-[16/9] w-full" monogram={p.title.slice(0, 1)} />
+            <ArtPanel label={fill(pt.photoLabel, { title: p.title })} tone={meta.pillar === "humanitarian" ? "gold" : "violet"} className="aspect-[16/9] w-full" monogram={p.title.slice(0, 1)} />
             <p className="mt-8 flex items-center gap-2 text-sm font-medium text-navy/65"><MapPin className="h-4 w-4 text-gold" aria-hidden />{p.regions}</p>
             <p className="mt-4 text-lg leading-relaxed text-navy/75">{p.intro}</p>
             <h2 className="mt-12 text-2xl">{pt.whatWeDo}</h2>
             <ul className="mt-6 grid gap-3 sm:grid-cols-2">
               {p.activities.map((a) => (
                 <li key={a} className="flex gap-3 rounded-xl bg-white p-4 text-sm shadow-card ring-1 ring-navy/5">
-                  <CheckCircle2 className="h-5 w-5 shrink-0 text-emerald" aria-hidden />{a}
+                  <CheckCircle2 className="h-5 w-5 shrink-0 text-violet" aria-hidden />{a}
                 </li>
               ))}
             </ul>

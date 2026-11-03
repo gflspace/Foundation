@@ -6,19 +6,19 @@ import { cn } from "@/lib/cn";
  */
 export function ArtPanel({
   label,
-  tone = "emerald",
+  tone = "violet",
   className,
   monogram = "SE",
 }: {
   label: string;
-  tone?: "emerald" | "gold" | "navy";
+  tone?: "violet" | "gold" | "navy";
   className?: string;
   monogram?: string;
 }) {
   const bg = {
-    emerald: "from-emerald-700 via-emerald to-navy",
+    violet: "from-violet-700 via-violet to-navy",
     gold: "from-gold-600 via-gold to-navy-800",
-    navy: "from-navy-800 via-navy to-emerald-700",
+    navy: "from-navy-800 via-navy to-violet-700",
   }[tone];
   return (
     <div

@@ -68,7 +68,7 @@ export function DonateProvider({ children }: { children: ReactNode }) {
               role="dialog"
               aria-modal="true"
               aria-labelledby="donate-title"
-              className="relative max-h-[92vh] w-full max-w-lg overflow-y-auto rounded-t-3xl bg-ivory p-6 shadow-2xl sm:rounded-3xl sm:p-8"
+              className="relative max-h-[92vh] w-full max-w-lg overflow-y-auto rounded-t-3xl bg-sand p-6 shadow-2xl sm:rounded-3xl sm:p-8"
               initial={{ y: 40, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: 40, opacity: 0 }}

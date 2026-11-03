@@ -8,7 +8,7 @@ import { Reveal } from "./Reveal";
 
 const icons = { philanthropist: HandHeart, humanitarian: Siren, icon: Clapperboard };
 const styles = {
-  emerald: { chip: "bg-emerald/10 text-emerald-700", bar: "bg-emerald" },
+  violet: { chip: "bg-violet/10 text-violet-700", bar: "bg-violet" },
   gold: { chip: "bg-gold/10 text-gold-700", bar: "bg-gold" },
   navy: { chip: "bg-navy/10 text-navy", bar: "bg-navy" },
 };
@@ -34,7 +34,7 @@ export function PillarCards() {
               <ul className="mt-6 space-y-2.5">
                 {p.points.map((pt) => (
                   <li key={pt} className="flex items-start gap-2.5 text-sm text-navy/80">
-                    <Check className="mt-0.5 h-4 w-4 shrink-0 text-emerald" aria-hidden /> {pt}
+                    <Check className="mt-0.5 h-4 w-4 shrink-0 text-violet" aria-hidden /> {pt}
                   </li>
                 ))}
               </ul>

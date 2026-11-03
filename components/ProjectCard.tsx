@@ -6,7 +6,7 @@ import { projectMeta, type ProjectSlug } from "@/lib/content";
 import { ArtPanel } from "./ArtPanel";
 import { useI18n } from "./I18nProvider";
 
-const tone = { philanthropist: "emerald", humanitarian: "gold", icon: "navy" } as const;
+const tone = { philanthropist: "violet", humanitarian: "gold", icon: "navy" } as const;
 
 export function ProjectCard({ slug }: { slug: ProjectSlug }) {
   const { t, href } = useI18n();
@@ -19,7 +19,7 @@ export function ProjectCard({ slug }: { slug: ProjectSlug }) {
         <p className="eyebrow">{p.regions}</p>
         <h3 className="mt-2 text-xl">{p.title}</h3>
         <p className="mt-2 flex-1 text-sm leading-relaxed text-navy/65">{p.short}</p>
-        <span className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-emerald-700">
+        <span className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-violet-700">
           {t.common.learnMore} <ArrowUpRight className="h-4 w-4 transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5" aria-hidden />
         </span>
       </div>

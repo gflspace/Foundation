@@ -3,7 +3,7 @@ import { NextResponse } from "next/server";
 export const runtime = "nodejs";
 
 const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-const TYPES = new Set(["newsletter", "volunteer", "partner"]);
+const TYPES = new Set(["newsletter", "volunteer", "partner", "press"]);
 const clip = (v: unknown, n = 2000) => (typeof v === "string" ? v.trim().slice(0, n) : undefined);
 
 /**
@@ -39,6 +39,7 @@ export async function POST(req: Request) {
     organisation: clip(data.organisation, 200),
     interest: clip(data.interest, 200),
     message: clip(data.message),
+    deadline: clip(data.deadline, 20),
     locale: data.locale === "fr" ? "fr" : "en",
     submittedAt: new Date().toISOString(),
   };
