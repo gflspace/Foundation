@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   },
   twitter: { card: "summary_large_image", title: site.name, description: site.description },
   alternates: { canonical: "/" },
-  robots: { index: true, follow: true },
+  robots: process.env.NEXT_PUBLIC_NOINDEX === "true" ? { index: false, follow: false } : { index: true, follow: true },
 };
 
 export const viewport: Viewport = { themeColor: "#0F172A", width: "device-width", initialScale: 1 };
