@@ -1,10 +1,10 @@
 import { ArrowRight, Award } from "lucide-react";
 import Link from "next/link";
-import { ArtPanel } from "@/components/ArtPanel";
 import { CtaBand } from "@/components/CtaBand";
 import { FilmTimeline } from "@/components/FilmTimeline";
 import { Hero } from "@/components/Hero";
 import { ImpactStrip } from "@/components/ImpactStrip";
+import { Portrait } from "@/components/Portrait";
 import { PillarCards } from "@/components/PillarCards";
 import { ProjectCard } from "@/components/ProjectCard";
 import { Reveal } from "@/components/Reveal";
@@ -44,12 +44,12 @@ export default function HomePage() {
 
       <section className="container-page grid items-center gap-12 py-24 lg:grid-cols-2">
         <Reveal>
-          <ArtPanel label="Portrait of founder Syndy Emade" tone="navy" className="aspect-[4/5] max-h-[560px] w-full" />
+          <Portrait className="mx-auto max-w-md" />
         </Reveal>
         <Reveal delay={0.1}>
           <p className="eyebrow">Meet the founder</p>
           <h2 className="mt-3 text-3xl sm:text-4xl">{founder.name}</h2>
-          <p className="mt-2 text-sm text-navy/55">{founder.roles.join(" · ")}</p>
+          <p className="mt-2 text-sm text-navy/65">{founder.roles.join(" · ")}</p>
           <p className="mt-6 text-lg leading-relaxed text-navy/75">{founder.summary}</p>
           <ul className="mt-8 grid gap-3 sm:grid-cols-2">
             {awards.slice(0, 4).map((a) => (

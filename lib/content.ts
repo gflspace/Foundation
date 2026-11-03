@@ -60,6 +60,22 @@ export const founder = {
     "Born in Kumba and trained in banking and finance at the University of Buea, Syndy Emade rose from her 2010 screen debut to become one of Cameroon’s most recognised actresses and producers. Through Blue Rain Entertainment she has championed stories made in Cameroon for audiences across Africa and beyond — and through the Foundation she turns that visibility into direct, practical help for the communities that raised her.",
 };
 
+/**
+ * Founder portrait — Wikimedia Commons, CC BY-SA 4.0 (attribution required).
+ * Swap for an official Foundation photo when available (put it in /public/images and
+ * update `src`, `credit`, `license`).
+ */
+export const founderPhoto = {
+  src: "https://upload.wikimedia.org/wikipedia/commons/2/24/Emade.jpg",
+  width: 720,
+  height: 1080,
+  alt: "Syndy Emade in a red gown at the Glitz Style Awards, Ghana, 2017",
+  credit: "Abanda bride",
+  license: "CC BY-SA 4.0",
+  licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0",
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:Emade.jpg",
+};
+
 export const awards = [
   { year: "2014", title: "Miss Heritage Cameroon" },
   { year: "2014", title: "Miss Heritage Africa" },

@@ -61,7 +61,7 @@ export function InvolveForm() {
           <input id="f-email" name="email" type="email" required autoComplete="email" className="input" />
         </div>
         <div>
-          <label htmlFor="f-phone" className="label">Phone / WhatsApp <span className="text-navy/40">(optional)</span></label>
+          <label htmlFor="f-phone" className="label">Phone / WhatsApp <span className="text-navy/65">(optional)</span></label>
           <input id="f-phone" name="phone" type="tel" autoComplete="tel" className="input" />
         </div>
         <div>
@@ -83,6 +83,7 @@ export function InvolveForm() {
         <textarea id="f-msg" name="message" rows={4} className="input" />
       </div>
       {state === "error" && <p role="alert" className="rounded-xl bg-red-50 px-4 py-3 text-sm text-red-700">Sorry, that didn’t go through. Please try again or email us.</p>}
+      <p className="text-xs text-navy/65">We’ll only use these details to respond to your application. See our <a href="/privacy" className="underline">privacy policy</a>.</p>
       <button className="btn-emerald w-full sm:w-auto" disabled={state === "loading"}>
         {state === "loading" && <Loader2 className="h-4 w-4 animate-spin" aria-hidden />}
         Submit application

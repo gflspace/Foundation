@@ -17,7 +17,8 @@ export default function ProjectsPage() {
   return (
     <>
       <PageHero eyebrow="Projects & impact" title="Practical help, delivered where it’s needed" intro="Four programmes, three pillars, one commitment: measurable change for the people we serve." />
-      <section className="container-page py-24">
+      <section className="container-page py-24" aria-labelledby="programmes-heading">
+        <h2 id="programmes-heading" className="sr-only">Our programmes</h2>
         <div className="grid gap-6 sm:grid-cols-2">
           {projects.map((p, i) => (
             <Reveal key={p.slug} delay={i * 0.08} className="h-full"><ProjectCard project={p} /></Reveal>

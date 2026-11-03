@@ -47,6 +47,12 @@ Forms are sent to `FORMS_WEBHOOK_URL` (Zapier, Make, Slack or a CRM). If it isn'
 8. **Press kit.** Put the zip at `public/press/syndy-emade-foundation-press-kit.zip`.
 9. **Domain.** Set `NEXT_PUBLIC_SITE_URL` to the production domain.
 
+## Quality
+
+- WCAG 2.1 AA: axe-core reports no violations on any page at 1440px and 390px wide. Gold and emerald buttons use the darker `gold-600` and `emerald-700` shades so white text stays at 4.5:1 contrast or better.
+- Content works without JavaScript: impact figures are server-rendered, and the fade-in sections fall back to fully visible.
+- Preview deployments set `NEXT_PUBLIC_NOINDEX=true`, which adds `noindex` and blocks crawlers in robots.txt.
+
 ## Deploy (Vercel)
 
 ```bash

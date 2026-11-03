@@ -48,7 +48,7 @@ export default function ProjectPage({ params }: Props) {
             </ul>
           </Reveal>
         </div>
-        <aside className="lg:col-span-5">
+        <div className="lg:col-span-5">
           <div className="card sticky top-28 p-8">
             <h2 className="font-sans text-lg font-semibold">How funds are allocated</h2>
             <div className="mt-5 flex h-3 overflow-hidden rounded-full" role="img" aria-label={project.fundingUse.map((f) => `${f.label} ${f.share}%`).join(", ")}>
@@ -62,11 +62,11 @@ export default function ProjectPage({ params }: Props) {
                 </li>
               ))}
             </ul>
-            <p className="mt-4 text-xs text-navy/45">Target allocation; actuals are published in our annual report.</p>
+            <p className="mt-4 text-xs text-navy/65">Target allocation; actuals are published in our annual report.</p>
             <DonateButton programme={project.slug} className="btn-gold mt-8 w-full">Support this programme</DonateButton>
             <Link href="/donate#involve" className="btn-outline mt-3 w-full">Volunteer</Link>
           </div>
-        </aside>
+        </div>
       </section>
       <section className="bg-white py-20">
         <div className="container-page">

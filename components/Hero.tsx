@@ -21,7 +21,7 @@ export function Hero() {
   const y = useTransform(scrollYProgress, [0, 1], [0, reduce ? 0 : 120]);
 
   const fade = (delay: number) =>
-    reduce ? {} : { initial: { opacity: 0, y: 24 }, animate: { opacity: 1, y: 0 }, transition: { duration: 0.8, delay, ease: [0.22, 1, 0.36, 1] } };
+    reduce ? {} : { "data-reveal": "", initial: { opacity: 0, y: 24 }, animate: { opacity: 1, y: 0 }, transition: { duration: 0.8, delay, ease: [0.22, 1, 0.36, 1] } };
 
   return (
     <section ref={ref} className="relative isolate flex min-h-[92svh] items-center overflow-hidden bg-navy text-white">

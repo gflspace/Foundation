@@ -25,8 +25,8 @@ export default function DonatePage() {
           <ul className="mt-8 space-y-4">
             {donationTiers.map((t) => (
               <li key={t.usd} className="flex items-start gap-4 rounded-2xl bg-white p-5 shadow-card ring-1 ring-navy/5">
-                <span className="grid h-12 w-16 shrink-0 place-items-center rounded-xl bg-gold/10 font-display text-lg text-gold-600">${t.usd}</span>
-                <span className="text-sm leading-relaxed text-navy/75">{t.impact}<span className="mt-1 block text-xs text-navy/45">≈ {t.xaf.toLocaleString("fr-FR")} FCFA</span></span>
+                <span className="grid h-12 w-16 shrink-0 place-items-center rounded-xl bg-gold/10 font-display text-lg text-gold-700">${t.usd}</span>
+                <span className="text-sm leading-relaxed text-navy/75">{t.impact}<span className="mt-1 block text-xs text-navy/65">≈ {t.xaf.toLocaleString("fr-FR")} FCFA</span></span>
               </li>
             ))}
           </ul>

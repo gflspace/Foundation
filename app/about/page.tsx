@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Award, BookOpen, Compass, Eye, GraduationCap, MapPin, ShieldCheck, Target } from "lucide-react";
-import { ArtPanel } from "@/components/ArtPanel";
+import { Portrait } from "@/components/Portrait";
 import { CtaBand } from "@/components/CtaBand";
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
@@ -29,16 +29,19 @@ export default function AboutPage() {
 
       <section className="container-page grid gap-12 py-24 lg:grid-cols-12">
         <Reveal className="lg:col-span-5">
-          <ArtPanel label="Portrait of Syndy Emade" tone="gold" className="aspect-[4/5] w-full" />
-          <dl className="card mt-6 divide-y divide-navy/10 text-sm">
+          <Portrait priority />
+          <dl className="card mt-4 divide-y divide-navy/10 text-sm">
             {[
               { icon: MapPin, k: "Born", v: `${founder.born}, ${founder.birthplace}` },
               { icon: GraduationCap, k: "Education", v: founder.education },
               { icon: Award, k: "Full name", v: founder.legalName },
             ].map(({ icon: Icon, k, v }) => (
-              <div key={k} className="flex gap-3 p-4">
-                <Icon className="mt-0.5 h-4 w-4 shrink-0 text-gold" aria-hidden />
-                <div><dt className="font-semibold">{k}</dt><dd className="text-navy/65">{v}</dd></div>
+              <div key={k} className="grid grid-cols-[1rem_1fr] gap-x-3 p-4">
+                <dt className="col-span-2 flex items-center gap-3 font-semibold">
+                  <Icon className="h-4 w-4 shrink-0 text-gold" aria-hidden />
+                  {k}
+                </dt>
+                <dd className="col-start-2 text-navy/65">{v}</dd>
               </div>
             ))}
           </dl>
@@ -60,7 +63,7 @@ export default function AboutPage() {
               {awards.map((a) => (
                 <li key={a.title} className="flex items-baseline gap-4 border-b border-navy/10 pb-3">
                   <span className="w-16 shrink-0 font-display text-lg text-gold-600">{a.year}</span>
-                  <span>{a.title}{a.note && <span className="text-navy/50"> — {a.note}</span>}</span>
+                  <span>{a.title}{a.note && <span className="text-navy/65"> — {a.note}</span>}</span>
                 </li>
               ))}
             </ol>
@@ -70,7 +73,7 @@ export default function AboutPage() {
                 <li key={r} className="rounded-full bg-white px-4 py-2 text-sm shadow-card ring-1 ring-navy/5">{r}</li>
               ))}
             </ul>
-            <p className="mt-8 text-sm text-navy/55">
+            <p className="mt-8 text-sm text-navy/65">
               Reference profiles:{" "}
               <a className="underline hover:text-navy" href={profiles.wikipedia} target="_blank" rel="noopener noreferrer">Wikipedia</a> ·{" "}
               <a className="underline hover:text-navy" href={profiles.imdb} target="_blank" rel="noopener noreferrer">IMDb</a> ·{" "}
@@ -98,7 +101,7 @@ export default function AboutPage() {
               <div className="card h-full bg-emerald-700 p-8 text-white">
                 <Eye className="h-8 w-8 text-gold-400" aria-hidden />
                 <h3 className="mt-4 text-2xl">Our vision</h3>
-                <p className="mt-3 leading-relaxed text-white/85">
+                <p className="mt-3 leading-relaxed text-white">
                   An Africa where every child is safe, every family can recover from crisis, and every talent has the chance to shine.
                 </p>
               </div>

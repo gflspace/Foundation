@@ -23,7 +23,6 @@ export const metadata: Metadata = {
     description: site.description,
     url: site.url,
     locale: "en_US",
-    alternateLocale: ["fr_FR"],
   },
   twitter: { card: "summary_large_image", title: site.name, description: site.description },
   alternates: { canonical: "/" },
@@ -36,6 +35,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${playfair.variable} ${jakarta.variable} ${inter.variable}`}>
       <body className="font-sans">
+        <noscript>
+          <style>{`[data-reveal]{opacity:1!important;transform:none!important}`}</style>
+        </noscript>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify([organizationJsonLd(), founderJsonLd()]) }}

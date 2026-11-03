@@ -20,8 +20,9 @@
   .container-page { @apply mx-auto w-full max-w-content px-4 sm:px-6 lg:px-8; }
   .eyebrow { @apply text-xs font-semibold uppercase tracking-[0.2em] text-gold-600; }
   .btn { @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition-all duration-200 disabled:cursor-not-allowed disabled:opacity-50; }
-  .btn-gold { @apply btn bg-gold text-white hover:bg-gold-600 shadow-glow; }
-  .btn-emerald { @apply btn bg-emerald text-white hover:bg-emerald-700; }
+  /* gold-600/emerald-700 keep white text at ≥4.5:1 (WCAG AA) */
+  .btn-gold { @apply btn bg-gold-600 text-white hover:bg-gold-700 shadow-glow; }
+  .btn-emerald { @apply btn bg-emerald-700 text-white hover:bg-emerald-800; }
   .btn-ghost { @apply btn border border-current/20 hover:bg-white/10; }
   .btn-outline { @apply btn border border-navy/15 bg-white text-navy hover:border-navy/40; }
   .card { @apply rounded-2xl bg-white shadow-card ring-1 ring-navy/5; }

@@ -6,8 +6,8 @@ const config: Config = {
     extend: {
       colors: {
         navy: { DEFAULT: "#0F172A", 900: "#0B1222", 800: "#1E293B", 700: "#334155" },
-        emerald: { DEFAULT: "#059669", 700: "#047857", 400: "#34D399", 50: "#ECFDF5" },
-        gold: { DEFAULT: "#D97706", 600: "#B45309", 400: "#FBBF24", 50: "#FFFBEB" },
+        emerald: { DEFAULT: "#059669", 700: "#047857", 800: "#065F46", 400: "#34D399", 50: "#ECFDF5" },
+        gold: { DEFAULT: "#D97706", 600: "#B45309", 700: "#92400E", 400: "#FBBF24", 50: "#FFFBEB" },
         ivory: "#F8FAFC",
       },
       fontFamily: {

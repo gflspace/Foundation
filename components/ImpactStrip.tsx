@@ -17,7 +17,7 @@ export function ImpactStrip() {
           ))}
         </div>
         {impact.isPlaceholder && (
-          <p className="mt-3 text-center text-xs text-navy/45">Illustrative figures — audited impact data coming soon.</p>
+          <p className="mt-3 text-center text-xs text-navy/65">Illustrative figures — audited impact data coming soon.</p>
         )}
       </div>
     </section>

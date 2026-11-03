@@ -131,7 +131,7 @@ export function DonationForm({ defaultProgramme, compact = false }: { defaultPro
                 onClick={() => { setTierIndex(i); setCustom(""); }}
                 className={cn(
                   "rounded-xl border px-3 py-3 text-sm font-bold transition",
-                  active ? "border-gold bg-gold/10 text-gold-600 ring-2 ring-gold/30" : "border-navy/15 bg-white hover:border-navy/40",
+                  active ? "border-gold bg-gold/10 text-gold-700 ring-2 ring-gold/30" : "border-navy/15 bg-white hover:border-navy/40",
                 )}
               >
                 {fmt(val)}
@@ -141,7 +141,7 @@ export function DonationForm({ defaultProgramme, compact = false }: { defaultPro
         </div>
         <div className="relative mt-3">
           <label htmlFor="custom-amount" className="sr-only">Custom amount</label>
-          <span className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-sm text-navy/50">
+          <span className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-sm text-navy/65">
             {currency === "USD" ? "$" : "FCFA"}
           </span>
           <input
@@ -200,7 +200,7 @@ export function DonationForm({ defaultProgramme, compact = false }: { defaultPro
               <span className="flex items-center gap-2 text-sm font-semibold">
                 <Icon className="h-4 w-4" aria-hidden /> {label}
               </span>
-              <span className="text-xs leading-snug text-navy/55">{hint}</span>
+              <span className="text-xs leading-snug text-navy/65">{hint}</span>
             </label>
           ))}
         </div>
@@ -214,8 +214,12 @@ export function DonationForm({ defaultProgramme, compact = false }: { defaultPro
         {loading ? <Loader2 className="h-5 w-5 animate-spin" aria-hidden /> : <Heart className="h-5 w-5" aria-hidden />}
         {valid ? `Give ${fmt(amount)}${frequency === "monthly" ? " / month" : ""}` : "Give now"}
       </button>
-      <p className="flex items-center justify-center gap-1.5 text-xs text-navy/50">
+      <p className="flex items-center justify-center gap-1.5 text-xs text-navy/65">
         <Lock className="h-3.5 w-3.5" aria-hidden /> Secure, encrypted checkout. We never store card details.
+      </p>
+      <p className="text-center text-xs text-navy/65">
+        By giving you agree to our <a href="/donation-policy" className="underline hover:text-navy">donation terms</a> and{" "}
+        <a href="/privacy" className="underline hover:text-navy">privacy policy</a>.
       </p>
     </form>
   );

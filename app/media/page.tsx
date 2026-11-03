@@ -81,10 +81,10 @@ export default function MediaPage() {
             {press.map((p) => (
               <li key={p.url}>
                 <a href={p.url} target="_blank" rel="noopener noreferrer" className="group flex items-center gap-4 py-5">
-                  <span className="hidden w-24 shrink-0 rounded-full bg-gold/10 px-3 py-1 text-center text-xs font-semibold text-gold-600 sm:block">{p.tag}</span>
+                  <span className="hidden w-24 shrink-0 rounded-full bg-gold/10 px-3 py-1 text-center text-xs font-semibold text-gold-700 sm:block">{p.tag}</span>
                   <span className="flex-1">
                     <span className="block font-medium group-hover:text-emerald-700">{p.title}</span>
-                    <span className="text-sm text-navy/55">{p.source}</span>
+                    <span className="text-sm text-navy/65">{p.source}</span>
                   </span>
                   <ExternalLink className="h-4 w-4 shrink-0 text-navy/30 group-hover:text-emerald-700" aria-hidden />
                   <span className="sr-only">(opens in a new tab)</span>
@@ -93,15 +93,16 @@ export default function MediaPage() {
             ))}
           </ul>
         </div>
-        <aside className="lg:col-span-4">
+        <div className="lg:col-span-4">
           <div className="card sticky top-28 bg-navy p-8 text-white">
             <h2 className="text-2xl">Press kit</h2>
-            <p className="mt-3 text-sm text-white/70">Approved bios, logos, high-resolution photography and fact sheet.</p>
-            {/* Place the zip at /public/press/syndy-emade-foundation-press-kit.zip */}
-            <a href="/press/syndy-emade-foundation-press-kit.zip" className="btn-gold mt-6 w-full"><Download className="h-4 w-4" aria-hidden />Download press kit</a>
+            <p className="mt-3 text-sm text-white/70">Fact sheet and logo files (SVG and PNG). Approved photography available on request.</p>
+            {/* Regenerate with: NODE_PATH=$(npm root -g) node scripts/build-press-kit.mjs */}
+            <a href="/press/syndy-emade-foundation-press-kit.zip" download className="btn-gold mt-6 w-full"><Download className="h-4 w-4" aria-hidden />Download press kit (ZIP)</a>
+            <a href="/press/fact-sheet.pdf" className="btn mt-3 w-full border border-white/25 text-white hover:bg-white/10">View fact sheet (PDF)</a>
             <p className="mt-6 text-sm text-white/70">Media enquiries: <a href={`mailto:${site.email}`} className="text-gold-400 underline">{site.email}</a></p>
           </div>
-        </aside>
+        </div>
       </section>
     </>
   );

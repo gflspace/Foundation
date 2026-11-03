@@ -50,7 +50,11 @@ export function Footer() {
       <div className="border-t border-white/10">
         <div className="container-page flex flex-col gap-2 py-6 text-xs sm:flex-row sm:justify-between">
           <p>© {new Date().getFullYear()} {site.name}. All rights reserved.</p>
-          <p>Registered non-profit · Cameroon</p>
+          <p className="flex flex-wrap gap-x-4 gap-y-1">
+            <Link href="/privacy" className="hover:text-white">Privacy</Link>
+            <Link href="/donation-policy" className="hover:text-white">Donation terms</Link>
+            <span>Registered non-profit · Cameroon</span>
+          </p>
         </div>
       </div>
     </footer>
