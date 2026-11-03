@@ -38,11 +38,17 @@ export type Story = {
   partners: string[];
   video?: string;
   image?: CoverImage;
+  /** Photos from the published coverage of this intervention (credited on the page). */
+  gallery?: CoverImage[];
   sources: Source[];
 };
 
 const yt = (id: string): Source => ({ label: "SYNDY EMADE TV (YouTube)", url: `https://www.youtube.com/watch?v=${id}` });
 const mmi2019: Source = { label: "Mimi Mefo Info, 14 Jul 2019", url: "https://mimimefoinfos.com/anglophone-crisis-cameroons-talented-actress-syndy-emade-weeps-as-idps-present-ordeal/" };
+const DIRECTED = "used at the Foundation’s direction, credited";
+const mmiPhoto = (file: string, alt: string, article: Source): CoverImage => ({
+  src: `https://mimimefoinfos.com/wp-content/uploads/${file}`, alt, credit: "Mimi Mefo Info", sourceUrl: article.url, license: `© Mimi Mefo Info — ${DIRECTED}`, status: "approved",
+});
 const mmi2023: Source = { label: "Mimi Mefo Info, 27 Dec 2023", url: "https://mimimefoinfos.com/syndy-emade-offers-relief-to-visually-impaired-mother-in-douala/" };
 
 /** Stories of Impact, newest first. Each is a completed, documented intervention. */
@@ -51,6 +57,7 @@ export const stories: Story[] = [
     slug: "a-home-for-a-family-2023", journeyIds: ["christmas-2023"], programme: "christmas-outreach", pillar: "relief",
     date: "2023-12", location: "Douala", locationConfirmed: true, partners: [],
     image: journey.find((j) => j.id === "christmas-2023")?.image,
+    gallery: [1, 2, 3, 4, 5].map((n) => mmiPhoto(`2023/12/Syndy${n === 1 ? "" : n - 1}.jpeg`, `Christmas 2023 outreach in Douala, photo ${n} of 5`, mmi2023)),
     sources: [mmi2023],
   },
   {
@@ -73,6 +80,7 @@ export const stories: Story[] = [
   {
     slug: "first-outreach-2019", journeyIds: ["idps-2019"], programme: "displaced-families", pillar: "relief",
     date: "2019-07-11", location: "Mabanda, Bonaberi (Douala IV)", locationConfirmed: true, partners: [], video: "ldMHL4jSUSM",
+    gallery: [mmiPhoto("2019/07/IMG-20190714-WA0087.jpg", "Syndy Emade moved to tears after listening to displaced families, Mabanda-Bonaberi, 11 July 2019", mmi2019)],
     sources: [mmi2019, yt("ldMHL4jSUSM")],
   },
 ];
@@ -131,4 +139,17 @@ export const founderQuotes: { id: "education" | "tears" | "christmas"; source: S
   { id: "education", source: mmi2019 },
   { id: "tears", source: mmi2019 },
   { id: "christmas", source: mmi2023 },
+];
+
+/**
+ * Posts from the Foundation's Facebook page, embedded with Facebook's official plugin (click-to-load).
+ * Their content could not be read from here, so `story` is empty until the Foundation says which
+ * outreach each one shows; then set `story` and the post also appears on that story page.
+ */
+export const facebookPosts: { url: string; kind: "reel" | "photo"; story?: StorySlug }[] = [
+  { url: "https://www.facebook.com/reel/686752872052580", kind: "reel" },
+  { url: "https://www.facebook.com/reel/2735907030024852", kind: "reel" },
+  { url: "https://www.facebook.com/reel/2762045407415791", kind: "reel" },
+  { url: "https://www.facebook.com/reel/1047467799861463", kind: "reel" },
+  { url: "https://www.facebook.com/photo.php?fbid=1070497693141399&set=pb.100066657670379.-2207520000&type=3", kind: "photo" },
 ];

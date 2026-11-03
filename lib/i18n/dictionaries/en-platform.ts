@@ -111,6 +111,8 @@ export const platformEn = {
     noVoices: "The family’s own account has not been published yet.",
     next: "What happens next",
     film: "Watch the film",
+    photos: "Photos",
+    photosCredit: "Photos: {credit}, from its published coverage.",
     sources: "Sources",
     accountability: "See the project record",
     more: "More stories",
@@ -206,6 +208,17 @@ export const platformEn = {
         { text: "We are planning a major back to school campaign and our wish and goal is to try to equip some children with their school needs and school fees to facilitate their return to school.", who: "Syndy Emade, to Mimi Mefo Info", verbatim: true },
       ],
     },
+  },
+
+  facebookUi: {
+    eyebrow: "From our Facebook page",
+    title: "Reels and photos from the field",
+    intro: "Short videos and photos posted by the Foundation. They will be added to their stories as we document each outreach.",
+    reel: "Facebook reel",
+    photo: "Facebook photo",
+    load: "Load from Facebook",
+    consent: "Click to load from Facebook. Facebook may set cookies.",
+    open: "Open on Facebook",
   },
 
   impactUi: {

@@ -2,6 +2,16 @@
 
 Verified November 2026. Every article below was opened (live, or through the Internet Archive when the original is gone) and checked for publication, date and relevance to Syndy Emade. The data lives in `press` and `journey` in `lib/content.ts`.
 
+> **Update, November 2026: publisher photos now in use.** At the Foundation's direction, every press card and the Christmas 2023 and July 2019 stories now show the photo from their own article. Each is credited on the page and links back to its source. The status of each is `approved` with the licence "used at the Foundation's direction, credited". Permission requests to the publishers (see the email template below) are still recommended.
+>
+> - **Christmas 2023 story:** the article's featured photo is the cover, and a gallery shows its other five photos (`Syndy.jpeg`, `Syndy1–4.jpeg` on mimimefoinfos.com).
+> - **July 2019 launch:** the featured photo ("Syndy Emade in tears…") is used on the story and its press card. The article's other images are small copies on a third-party site (joycing.com), several unrelated to the outreach, so they are not used.
+> - **Replaced with the article's own image:** Dcoded TV (both pieces), Culturebene, Y! For Africa and People237 previously showed founder-channel trailers.
+> - **Still held:** the Nexdim Empire orphanage photo, because it shows children in care and needs the orphanage's or guardians' consent.
+> - **Still not used:** Njoka TV's image, which shows a different actress.
+> - **Facebook (Foundation page /photos and /photos_of):** could not be reached. Firecrawl does not support Facebook, this environment's network blocks it, and albums require a login. These need the Foundation's own export.
+> - **Beneficiaries:** the Christmas 2023 photos show the family. They were published by Mimi Mefo Info, but the Foundation should confirm the family is comfortable with them appearing on its website.
+
 **How covers work**
 - An image marked `status: "approved"` is shown. It is cropped to the 16:10 card frame (21:9 in the viewer) and served through Next.js image optimisation as AVIF or WebP at the right size. YouTube thumbnails are taken at 1280×720 where available; 4:3 letterboxed ones are scaled to remove the black bands.
 - An image marked `status: "pending"` is **not shown**. The card shows a designed editorial cover instead: brand gradient, publication name, year, and a verified quote or highlight.
