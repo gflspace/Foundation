@@ -30,9 +30,9 @@ Design tokens are in `tailwind.config.ts`: Navy `#0F172A`, Emerald `#059669`, Go
 
 The site is fully bilingual. English is at the root (`/about`) and French under `/fr` (`/fr/about`). The EN/FR switch in the header keeps visitors on the same page.
 
-- Programme addresses are translated: `/fr/projets` and `/fr/projets/protection-des-jeunes`, `intervention-mobile-de-crise`, `bourses-d-etudes`, `autonomisation-des-femmes`. The mapping is `translatedSegments` in `lib/i18n/config.ts`, and `localePath()` applies it everywhere links are built. The untranslated forms (`/fr/projects/…`) redirect permanently (308) to the French ones.
+- French addresses are fully translated: `/fr/a-propos`, `/fr/projets` (with `/fr/projets/protection-des-jeunes`, `intervention-mobile-de-crise`, `bourses-d-etudes` and `autonomisation-des-femmes`), `/fr/heritage-creatif`, `/fr/medias`, `/fr/faire-un-don`, `/fr/faire-un-don/merci`, `/fr/confidentialite` and `/fr/conditions-de-don`. The mapping is `translatedSegments` in `lib/i18n/config.ts`; `localePath()` applies it to every link, canonical URL, `hreflang` tag, sitemap entry and Stripe return URL. Untranslated forms such as `/fr/about` redirect permanently (308) to the French address.
 - Every page sets `<html lang>` and a canonical URL, plus `hreflang` links to its translation (`x-default` points to English). The sitemap lists both versions.
-- French visitors see amounts in FCFA first, with French number formatting (`30 000 FCFA`). Stripe checkout opens in French and returns to `/fr/donate/thank-you`.
+- French visitors see amounts in FCFA first, with French number formatting (`30 000 FCFA`). Stripe checkout opens in French and returns to `/fr/faire-un-don/merci`.
 - Form submissions include a `locale` field, so replies can go out in the right language.
 - Press coverage keeps each article's original language and marks it "En anglais" or "In French" when that differs from the page.
 - To change any wording, edit the same key in both `en.ts` and `fr.ts`. To add a language, add it to `lib/i18n/config.ts`, create a new dictionary file and update `middleware.ts`.

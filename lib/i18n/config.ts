@@ -6,49 +6,68 @@ export const isLocale = (v: string): v is Locale => (locales as readonly string[
 
 /**
  * Translated URL segments. Pages are built from the internal (English) paths;
- * middleware rewrites the public French URLs onto them.
+ * middleware rewrites the public translated URLs onto them, e.g.
  *   /fr/projets/protection-des-jeunes  →  app/[locale]/projects/[slug] (slug "youth-welfare")
+ *   /fr/faire-un-don/merci             →  app/[locale]/donate/thank-you
  * Keep this file free of server-only imports: middleware (edge) uses it.
  */
-export const translatedSegments: Partial<Record<Locale, { section: Record<string, string>; projects: Record<string, string> }>> = {
+type SegmentMap = { sections: Record<string, string>; children: Record<string, Record<string, string>> };
+
+export const translatedSegments: Partial<Record<Locale, SegmentMap>> = {
   fr: {
-    section: { projects: "projets" },
-    projects: {
-      "youth-welfare": "protection-des-jeunes",
-      "mobile-crisis": "intervention-mobile-de-crise",
-      education: "bourses-d-etudes",
-      women: "autonomisation-des-femmes",
+    sections: {
+      about: "a-propos",
+      projects: "projets",
+      "creative-legacy": "heritage-creatif",
+      media: "medias",
+      donate: "faire-un-don",
+      privacy: "confidentialite",
+      "donation-policy": "conditions-de-don",
+    },
+    children: {
+      projects: {
+        "youth-welfare": "protection-des-jeunes",
+        "mobile-crisis": "intervention-mobile-de-crise",
+        education: "bourses-d-etudes",
+        women: "autonomisation-des-femmes",
+      },
+      donate: { "thank-you": "merci" },
     },
   },
 };
 
 const invert = (m: Record<string, string>) => Object.fromEntries(Object.entries(m).map(([k, v]) => [v, k]));
 
-function splitHash(path: string): [string, string] {
+function splitTail(path: string): [string[], string] {
   const i = path.search(/[?#]/);
-  return i === -1 ? [path, ""] : [path.slice(0, i), path.slice(i)];
+  const [p, tail] = i === -1 ? [path, ""] : [path.slice(0, i), path.slice(i)];
+  return [p.split("/").filter(Boolean), tail];
 }
 
-/** Internal path ("/projects/youth-welfare") → public path for that locale ("/projets/protection-des-jeunes"). */
+/** Internal path ("/donate/thank-you") → public path for that locale ("/faire-un-don/merci"). */
 export function publicPath(locale: Locale, internal: string): string {
   const t = translatedSegments[locale];
   if (!t) return internal;
-  const [p, tail] = splitHash(internal);
-  const m = p.match(/^\/projects(?:\/([^/]+))?\/?$/);
-  if (!m) return internal;
-  const section = `/${t.section.projects}`;
-  return (m[1] ? `${section}/${t.projects[m[1]] ?? m[1]}` : section) + tail;
+  const [segs, tail] = splitTail(internal);
+  const section = segs[0] && t.sections[segs[0]];
+  if (!section) return internal;
+  const out = [section];
+  if (segs[1]) out.push(t.children[segs[0]]?.[segs[1]] ?? segs[1]);
+  out.push(...segs.slice(2));
+  return "/" + out.join("/") + tail;
 }
 
 /** Public path for a locale → internal path, or null when it isn't a translated URL. */
 export function internalPath(locale: Locale, pub: string): string | null {
   const t = translatedSegments[locale];
   if (!t) return null;
-  const [p, tail] = splitHash(pub);
-  const m = p.match(new RegExp(`^/${t.section.projects}(?:/([^/]+))?/?$`));
-  if (!m) return null;
-  const slugs = invert(t.projects);
-  return (m[1] ? `/projects/${slugs[m[1]] ?? m[1]}` : "/projects") + tail;
+  const [segs, tail] = splitTail(pub);
+  const section = segs[0] && invert(t.sections)[segs[0]];
+  if (!section) return null;
+  const out = [section];
+  if (segs[1]) out.push(invert(t.children[section] ?? {})[segs[1]] ?? segs[1]);
+  out.push(...segs.slice(2));
+  return "/" + out.join("/") + tail;
 }
 
 /** English lives at the root (no prefix); other locales are prefixed and use translated segments: /fr/projets/… */

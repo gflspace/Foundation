@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import Stripe from "stripe";
 import { projectSlugs, site } from "@/lib/content";
+import { localePath } from "@/lib/i18n/config";
 import en from "@/lib/i18n/dictionaries/en";
 import fr from "@/lib/i18n/dictionaries/fr";
 
@@ -37,7 +38,6 @@ export async function POST(req: Request) {
   const monthly = body.frequency === "monthly";
   const slug = projectSlugs.find((s) => s === body.programme);
   const programmeName = slug ? t.projects[slug].title : t.form.greatestNeed;
-  const prefix = locale === "fr" ? "/fr" : "";
 
   const stripe = new Stripe(key);
   const origin = req.headers.get("origin") ?? site.url;
@@ -60,8 +60,8 @@ export async function POST(req: Request) {
         },
       ],
       metadata: { programme: slug ?? "greatest-need", locale },
-      success_url: `${origin}${prefix}/donate/thank-you?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: `${origin}${prefix}/donate`,
+      success_url: `${origin}${localePath(locale, "/donate/thank-you")}?session_id={CHECKOUT_SESSION_ID}`,
+      cancel_url: `${origin}${localePath(locale, "/donate")}`,
     });
     return NextResponse.json({ url: session.url });
   } catch (err) {
