@@ -15,6 +15,14 @@ const nextConfig = {
       { protocol: "https", hostname: "upload.wikimedia.org" },
       { protocol: "https", hostname: "i.ytimg.com" },
       { protocol: "https", hostname: "cdn.sanity.io" },
+      // Press cover images: only rendered once marked "approved" in lib/content.ts (see docs/press-images.md).
+      { protocol: "https", hostname: "web.archive.org" },
+      { protocol: "https", hostname: "mimimefoinfos.com" },
+      { protocol: "https", hostname: "cemac-eco.finance" },
+      { protocol: "https", hostname: "cameroonceo.com" },
+      { protocol: "https", hostname: "www.culturebene.com" },
+      { protocol: "https", hostname: "yafri.ca" },
+      { protocol: "https", hostname: "controlpanel.people237.com" },
     ],
   },
   // Programme slugs renamed in Nov 2026 (content rebuilt from documented outreaches).

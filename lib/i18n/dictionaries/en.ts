@@ -96,6 +96,7 @@ const en = {
       bamenda: { name: "Bamenda", region: "North-West Region", headline: "Many of the displaced families we support in Douala fled the crisis in the North-West." },
       buea: { name: "Buea", region: "South-West Region", headline: "Families from the South-West, also affected by the crisis, are among those we support." },
       kumba: { name: "Kumba", region: "South-West Region", headline: "Syndy Emade’s hometown, where her commitment to children began." },
+      limbe: { name: "Limbe", region: "South-West Region", headline: "COVID-19 safety kits for a school in 2020, and a 2015 visit to the children of the Limbe orphanage at Bota." },
     },
   },
 
@@ -111,7 +112,9 @@ const en = {
     watch: "Watch the film",
     readMore: "See the full journey",
     entries: {
-      launch: { when: "August 2019", title: "The Foundation is born", text: "Syndy Emade launches her foundation with a short film on her channel, Syndy Emade TV. Its cause: protecting vulnerable children, starting with street children at risk of exploitation." },
+      "limbe-orphanage-2015": { when: "October 2015", title: "Before the Foundation: a day at the Limbe orphanage", text: "Years before the Foundation existed, Syndy Emade and her Blue Rain Entertainment crew spend a day with the children of the orphanage at Bota, Limbe, sharing fun moments and listening to their dreams." },
+      "idps-2019": { when: "July 2019", title: "The first outreach: food for 200+ displaced people", text: "The Foundation’s first action. More than 200 people who fled the crisis in the North-West and South-West, now living in Douala, receive food items and a listening ear. Moved by their stories, Syndy Emade announces a back-to-school campaign for their children." },
+      launch: { when: "August 2019", title: "The Foundation presents its cause", text: "A month after its first outreach, the Foundation introduces itself in a short film on Syndy Emade TV. Its cause: protecting vulnerable children, starting with street children at risk of exploitation." },
       "school-materials": { when: "August 2019", title: "School materials for 600+ displaced children", text: "Weeks after its launch, the Foundation’s back-to-school campaign reaches children displaced from the North-West and South-West. Nursery and primary pupils, chosen door to door among the poorest families, receive exercise books, textbooks and school bags: more than 600 children in all." },
       "school-fees": { when: "August 2019", title: "School fees for 300 children", text: "Beyond supplies, parents receive help to pay their children’s school fees, so that 300 children can start the year in class. The Foundation calls it its second action, and announces a health follow-up for displaced families next." },
       "covid-schools-2020": { when: "August 2020", title: "Keeping a Limbe school safe from COVID-19", text: "With the Elone Foundation, Syndy Emade and her family visit a school in Limbe to talk with students about the virus. They bring face masks, hand sanitiser, buckets and thermometers, more than the school’s student count, so classes can stay open safely." },
@@ -182,6 +185,7 @@ const en = {
       intro:
         "Thousands of families have fled the crisis in Cameroon’s North-West and South-West regions and rebuilt their lives in Douala with very little. We visit them in Bonaberi and elsewhere with food and essentials, through our mobile crisis relief work, Chantiers Mobiles Crise.",
       delivered: [
+        "Food for more than 200 displaced people in Douala: the Foundation’s first action (July 2019)",
         "Supplies shared with displaced families at Bonaberi, Douala (September 2020)",
         "Food and essential supplies shared with displaced families in Bonaberi, Douala (2021)",
         "Gifts that families say feed their children for days, and that they share with neighbours",
@@ -240,7 +244,7 @@ const en = {
     roles: ["Award-winning actress", "Film & TV producer", "CEO, Blue Rain Entertainment", "Model", "Philanthropist"],
     ambassadorships: [
       "Brand Ambassador, Orange InstaVoice Celeb",
-      "Netflix Producer", // TODO(verify)
+      "Producer of two films on Netflix: Broken and A Man For The Weekend (2021)",
       "CFI Partner", // TODO(verify)
     ],
     summary:
@@ -418,6 +422,12 @@ const en = {
     commons: "Open-licence images on Wikimedia Commons",
     pressEyebrow: "In the press",
     pressTitle: "Coverage & features",
+    highlightsEyebrow: "In the press",
+    highlightsTitle: "What the press says",
+    highlightsAbout: "Recognition",
+    highlightsAll: "All press coverage",
+    archived: "Archived copy: the original page is no longer online.",
+    photo: "Photo",
     inFrench: "In French",
     inEnglish: "In English",
     tags: {
@@ -429,6 +439,8 @@ const en = {
       profile: "Profile",
       ambassador: "Ambassador",
       studio: "Studio",
+      community: "Community",
+      event: "Event",
       foundation: "Foundation",
     },
     kitTitle: "Press kit",

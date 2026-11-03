@@ -10,6 +10,14 @@ import { cn } from "@/lib/cn";
 import { useI18n } from "./I18nProvider";
 
 const [, , VB_W, VB_H] = mapViewBox.split(" ").map(Number);
+/** Buea and Limbe are ~15 km apart: nudge their pins apart slightly so both stay tappable, and put Buea's label on its left. */
+const nudge: Partial<Record<CentreId, [number, number]>> = { buea: [4, -6], limbe: [-6, 6] };
+const pos = (id: CentreId): [number, number] => {
+  const [x, y] = cityPoints[id];
+  const [dx, dy] = nudge[id] ?? [0, 0];
+  return [x + dx, y + dy];
+};
+const labelLeft = new Set<CentreId>(["buea"]);
 
 const pin = {
   work: "h-5 w-5 border-2 border-white bg-teal",
@@ -55,7 +63,7 @@ export function ImpactMap() {
                 {neighbourPaths.map((d, i) => <path key={i} d={d} fill="#2A1238" stroke="#4E2A63" strokeWidth="0.8" />)}
                 <path d={cameroonPath} fill="#3A1C4D" stroke="#00A8A0" strokeWidth="1.6" strokeLinejoin="round" />
                 {impactCentres.filter((c) => c.kind === "origin").map((c) => {
-                  const [x, y] = cityPoints[c.id];
+                  const [x, y] = pos(c.id);
                   const mx = (x + dx) / 2 + 40;
                   const my = (y + dy) / 2;
                   return (
@@ -65,7 +73,7 @@ export function ImpactMap() {
               </svg>
 
               {impactCentres.map((c) => {
-                const [x, y] = cityPoints[c.id];
+                const [x, y] = pos(c.id);
                 const on = c.id === active;
                 return (
                   <button
@@ -81,7 +89,7 @@ export function ImpactMap() {
                       {on && !reduce && <span className="absolute inset-0 animate-ping rounded-full bg-teal/50" />}
                       <span className={cn("relative rounded-full transition", pin[c.kind], on && "scale-125 ring-4 ring-teal/40")} />
                     </span>
-                    <span className={cn("absolute left-1/2 top-full -translate-x-1/2 whitespace-nowrap rounded-full px-2.5 py-0.5 text-xs font-semibold transition", on ? "bg-teal-600 text-white" : "bg-plum/85 text-white ring-1 ring-white/25")}>
+                    <span className={cn("absolute whitespace-nowrap rounded-full px-2.5 py-0.5 text-xs font-semibold transition", labelLeft.has(c.id) ? "right-full top-1/2 -translate-y-1/2" : "left-1/2 top-full -translate-x-1/2", on ? "bg-teal-600 text-white" : "bg-plum/85 text-white ring-1 ring-white/25")}>
                       {m.centres[c.id].name}
                     </span>
                   </button>

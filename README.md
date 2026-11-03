@@ -47,6 +47,7 @@ Programme and journey content was rebuilt from `docs/content-brief.md`, which su
 - **Videos.** The three Syndy Emade TV films are embedded from YouTube (privacy-enhanced, click-to-play), not downloaded and re-hosted: `featuredVideos` in `lib/content.ts`.
 - **Press and Facebook posts.** Paraphrased and linked; no press photos are reused.
 - **Instagram and Facebook pages.** These could not be read automatically: both platforms block scraping. Posts, captions and photos from `instagram.com/syndyemadefoundationcmr` and `facebook.com/SyndyEmadeFoundation` need to be exported by the Foundation and added.
+- **Press and cover images.** Every press article was verified (live or via the Internet Archive). Dead or hijacked links point to archived copies. Cover images are shown only when owned or freely licensed; publisher photos wait for permission behind a designed editorial cover. Sources, permissions and the approval list: `docs/press-images.md`.
 - **Dates.** Journey entries with `dateConfirmed: false` show a "date to confirm" badge until the Foundation confirms them.
 
 Structure: five programmes (`projectMeta` in `lib/content.ts`, copy in `projects` in the dictionaries), each with what has been delivered, what is planned, a headline figure, a film if one exists and its journey moments (`journey`). The journey also feeds the map, the media library ("Our journey" filter) and the programme pages. Old programme URLs redirect to the new ones (`next.config.mjs`).

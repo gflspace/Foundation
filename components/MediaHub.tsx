@@ -5,7 +5,8 @@ import { Check, Copy, ExternalLink, Facebook, MessageCircle, Newspaper, Play, Sh
 import Image from "next/image";
 import Link from "next/link";
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { featuredVideos, journey, press, profiles, projectMeta, type JourneyEntry, type MediaKind, type ProjectSlug } from "@/lib/content";
+import { featuredVideos, journey, press, profiles, projectMeta, type JourneyEntry, type MediaKind, type PressItem, type PressTag, type ProjectSlug } from "@/lib/content";
+import { CoverArt, type CoverTone } from "./CoverArt";
 import { cn } from "@/lib/cn";
 import { fill } from "@/lib/i18n/format";
 import { useI18n } from "./I18nProvider";
@@ -14,13 +15,17 @@ import { Modal, YouTubeEmbed } from "./Modal";
 type Item =
   | { kind: "video"; id: string; title: string; youtubeId: string; programme: ProjectSlug; date: string; duration: string }
   | { kind: "story"; id: string; title: string; entry: JourneyEntry }
-  | { kind: "press"; id: string; title: string; source: string; url: string; tag: string; lang: "en" | "fr" };
+  | { kind: "press"; id: string; title: string; source: string; url: string; tag: string; lang: "en" | "fr"; item: PressItem };
 
 type Filter = "all" | MediaKind;
 const FILTERS: Filter[] = ["all", "video", "story", "press"];
 const matches = (item: Item, f: Filter) => f === "all" || item.kind === f;
 
-const tones = { teal: "from-teal via-teal-600 to-plum", purple: "from-purple via-purple-700 to-plum", plum: "from-plum-800 via-plum to-purple-800" } as const;
+const pressTone: Record<PressTag, CoverTone> = {
+  foundation: "teal", community: "teal",
+  interview: "purple", ranking: "purple", feature: "purple", release: "purple", award: "purple", profile: "purple",
+  ambassador: "plum", studio: "plum", event: "plum",
+};
 
 /** Filterable media library: our films, documented journey moments and press, with a shareable lightbox. */
 export function MediaHub() {
@@ -35,7 +40,9 @@ export function MediaHub() {
     const stories: Item[] = [...journey]
       .sort((a, b) => b.date.localeCompare(a.date))
       .map((e) => ({ kind: "story", id: `story-${e.id}`, title: t.journey.entries[e.id as keyof typeof t.journey.entries].title, entry: e }));
-    const coverage: Item[] = press.map((p, i) => ({ kind: "press", id: `press-${i + 1}`, title: p.title, source: p.source, url: p.url, tag: m.tags[p.tag], lang: p.lang }));
+    const coverage: Item[] = [...press]
+      .sort((a, b) => (b.date || "0").localeCompare(a.date || "0"))
+      .map((p) => ({ kind: "press", id: `press-${p.id}`, title: p.title, source: p.source, url: p.url, tag: m.tags[p.tag], lang: p.lang, item: p }));
     return [...videos, ...stories, ...coverage];
   }, [locale, m, t]);
 
@@ -74,48 +81,47 @@ export function MediaHub() {
     return <Icon className="h-3.5 w-3.5" aria-hidden />;
   }
 
+  const year = (d: string) => d.slice(0, 4);
+  const monthYear = (d: string) => (d.length >= 7 ? new Intl.DateTimeFormat(locale, { month: "long", year: "numeric" }).format(new Date(`${d.slice(0, 7)}-01T12:00:00Z`)) : d.slice(0, 4));
+
   function Visual({ item, className }: { item: Item; className?: string }) {
+    if (item.kind === "press") {
+      const p = item.item;
+      return <CoverArt image={p.image} tone={pressTone[p.tag]} kicker={item.tag} source={p.source} year={p.date ? year(p.date) : undefined} quote={p.quote} highlight={p.highlight} lang={p.lang} className={className} />;
+    }
     const yt = youtubeFor(item);
-    if (yt) return <Image src={`https://i.ytimg.com/vi/${yt}/hqdefault.jpg`} alt="" width={480} height={360} className={cn("object-cover", className)} />;
-    const prog = item.kind === "story" ? projectMeta.find((p) => p.slug === item.entry.programme) : undefined;
-    return (
-      <div className={cn("relative overflow-hidden bg-gradient-to-br", tones[prog?.tone ?? "teal"], className)}>
-        <span aria-hidden className="absolute -right-6 -top-6 h-28 w-28 rounded-full border-[10px] border-white/25" />
-        <span aria-hidden className="absolute bottom-6 left-8 h-12 w-12 rounded-full bg-white/20" />
-        <span aria-hidden className="absolute bottom-16 left-24 h-5 w-5 rounded-full bg-white/25" />
-      </div>
-    );
+    if (item.kind === "story") {
+      const prog = projectMeta.find((x) => x.slug === item.entry.programme);
+      const copy = t.journey.entries[item.entry.id as keyof typeof t.journey.entries];
+      return <CoverArt image={item.entry.image} youtubeId={yt} tone={prog?.tone ?? "teal"} kicker={prog ? t.projects[prog.slug].title : undefined} year={copy.when} highlight={copy.title} className={className} />;
+    }
+    return <CoverArt youtubeId={yt} className={className} />;
   }
 
   function MediaCard({ item, onOpen }: { item: Item; onOpen: () => void }) {
     const isPress = item.kind === "press";
     const yt = youtubeFor(item);
-    const when = item.kind === "story" ? t.journey.entries[item.entry.id as keyof typeof t.journey.entries].when : item.kind === "video" ? item.date.slice(0, 4) : null;
+    const when = item.kind === "story" ? t.journey.entries[item.entry.id as keyof typeof t.journey.entries].when : item.kind === "video" ? item.date.slice(0, 4) : item.item.date ? monthYear(item.item.date) : null;
     return (
       <button
         type="button"
         onClick={onOpen}
         className="group flex h-full w-full flex-col overflow-hidden rounded-2xl bg-white text-left shadow-card ring-1 ring-plum/5 transition duration-300 hover:-translate-y-2 hover:shadow-xl focus-visible:-translate-y-2"
       >
-        {isPress ? (
-          <div className="relative flex aspect-[16/10] flex-col justify-between overflow-hidden bg-purple-50 p-6">
-            <Newspaper aria-hidden className="absolute -bottom-4 -right-4 h-32 w-32 text-purple/15 transition duration-500 group-hover:scale-105" />
-            <span className="relative self-start rounded-full bg-purple/10 px-3 py-1 text-xs font-semibold text-purple-700">{item.tag}</span>
-            <p className="relative font-display text-2xl text-plum">{item.source}</p>
-          </div>
-        ) : (
-          <div className="relative aspect-[16/10] overflow-hidden">
-            <Visual item={item} className="h-full w-full transition duration-500 group-hover:scale-105" />
-            {yt && (
-              <span aria-hidden className="absolute inset-0 grid place-items-center bg-plum/15">
-                <span className="grid h-14 w-14 scale-90 place-items-center rounded-full bg-white text-teal-600 shadow-glow transition duration-300 group-hover:scale-100">
-                  <Play className="h-6 w-6 translate-x-0.5 fill-current" />
-                </span>
+        <div className="relative aspect-[16/10] overflow-hidden">
+          <Visual item={item} className="h-full w-full transition duration-500 group-hover:scale-105" />
+          {yt && (
+            <span aria-hidden className="absolute inset-0 grid place-items-center bg-plum/15">
+              <span className="grid h-14 w-14 scale-90 place-items-center rounded-full bg-white text-teal-600 shadow-glow transition duration-300 group-hover:scale-100">
+                <Play className="h-6 w-6 translate-x-0.5 fill-current" />
               </span>
-            )}
-            {item.kind === "video" && <span className="absolute bottom-3 right-3 rounded-md bg-plum/80 px-2 py-0.5 text-xs font-semibold text-white">{item.duration}</span>}
-          </div>
-        )}
+            </span>
+          )}
+          {item.kind === "video" && <span className="absolute bottom-3 right-3 rounded-md bg-plum/80 px-2 py-0.5 text-xs font-semibold text-white">{item.duration}</span>}
+          {isPress && item.item.image?.status === "approved" && (
+            <span className="absolute bottom-3 left-3 rounded-full bg-white/90 px-3 py-1 text-xs font-semibold text-plum shadow">{item.source}</span>
+          )}
+        </div>
         <div className="flex flex-1 flex-col p-5">
           <p className="flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-teal-600">
             <KindIcon kind={item.kind} />
@@ -123,7 +129,7 @@ export function MediaHub() {
             {when && <span className="font-normal normal-case tracking-normal text-plum/65">· {when}</span>}
           </p>
           <h3 className="mt-2 font-display text-lg leading-snug text-plum" lang={item.kind === "press" ? item.lang : undefined}>{item.title}</h3>
-          {item.kind === "press" && item.lang !== locale && <p className="mt-1 text-xs text-plum/65">{item.lang === "fr" ? m.inFrench : m.inEnglish}</p>}
+          {item.kind === "press" && <p className="mt-1 text-xs text-plum/65">{item.source} · {item.tag}{item.lang !== locale && ` · ${item.lang === "fr" ? m.inFrench : m.inEnglish}`}</p>}
           <span className="mt-auto pt-4 text-sm font-semibold text-purple-700">{m.open} →</span>
         </div>
       </button>
@@ -176,7 +182,7 @@ export function MediaHub() {
     return (
       <div>
         {yt && <YouTubeEmbed id={yt} title={item.title} lang={locale} />}
-        {!yt && item.kind === "story" && <Visual item={item} className="aspect-[21/9] w-full" />}
+        {!yt && <Visual item={item} className="aspect-[21/9] w-full" />}
         <div className="p-6 sm:p-8">
           <p className={cn("flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider", dark ? "text-teal" : "text-teal-600")}>
             <KindIcon kind={item.kind} />
@@ -185,7 +191,22 @@ export function MediaHub() {
           </p>
           <h2 id="media-lightbox-title" className="mt-2 pr-10 text-2xl sm:text-3xl" lang={item.kind === "press" ? item.lang : undefined}>{item.title}</h2>
 
-          {item.kind === "press" && <p className="mt-2 text-plum/75">{item.source} · {item.tag}{item.lang !== locale && ` · ${item.lang === "fr" ? m.inFrench : m.inEnglish}`}</p>}
+          {item.kind === "press" && (
+            <>
+              <p className="mt-2 text-plum/75">{item.source} · {item.tag}{item.item.date && ` · ${monthYear(item.item.date)}`}{item.lang !== locale && ` · ${item.lang === "fr" ? m.inFrench : m.inEnglish}`}</p>
+              {item.item.originalUrl && <p className="mt-2 text-sm text-plum/70">{m.archived}</p>}
+            </>
+          )}
+          {(() => {
+            const img = item.kind === "press" ? item.item.image : item.kind === "story" ? item.entry.image : undefined;
+            if (img?.status !== "approved") return null;
+            return (
+              <p className={cn("mt-3 text-xs", dark ? "text-white/65" : "text-plum/65")}>
+                {m.photo}: <a href={img.sourceUrl} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2">{img.credit}</a>
+                {img.licenseUrl ? <>, <a href={img.licenseUrl} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2">{img.license}</a></> : ` · ${img.license}`}
+              </p>
+            );
+          })()}
           {copy && <p className="mt-4 max-w-2xl text-lg leading-relaxed text-white/85">{copy.text}</p>}
 
           {(programme || entry) && (

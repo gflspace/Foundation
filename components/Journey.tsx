@@ -5,7 +5,7 @@ import { ArrowUpRight, ExternalLink, Play } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useMemo, useState } from "react";
-import { journey, projectMeta, type JourneyEntry, type ProjectSlug } from "@/lib/content";
+import { journey, projectMeta, ytThumb, type JourneyEntry, type ProjectSlug } from "@/lib/content";
 import { cn } from "@/lib/cn";
 import { useI18n } from "./I18nProvider";
 import { Modal, YouTubeEmbed } from "./Modal";
@@ -94,7 +94,7 @@ export function Journey({ programme, limit, showFilters = true }: { programme?: 
                   </div>
                   {e.video && (
                     <button type="button" onClick={() => setVideo(e)} className="group relative aspect-video w-full overflow-hidden rounded-xl sm:w-56" aria-label={`${j.watch}: ${copy.title}`}>
-                      <Image src={`https://i.ytimg.com/vi/${e.video}/hqdefault.jpg`} alt="" width={480} height={360} className="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
+                      <Image src={ytThumb(e.video).src} alt="" fill sizes="224px" className={cn("object-cover transition duration-500", ytThumb(e.video).letterboxed ? "scale-[1.13] group-hover:scale-[1.18]" : "group-hover:scale-105")} />
                       <span aria-hidden className="absolute inset-0 grid place-items-center bg-plum/25 transition group-hover:bg-plum/10">
                         <span className="grid h-12 w-12 place-items-center rounded-full bg-white text-teal-600 shadow-glow"><Play className="h-5 w-5 translate-x-0.5 fill-current" /></span>
                       </span>

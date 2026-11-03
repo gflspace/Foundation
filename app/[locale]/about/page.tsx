@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Award, BookOpen, Compass, Eye, GraduationCap, MapPin, ShieldCheck, Target } from "lucide-react";
 import { CtaBand } from "@/components/CtaBand";
 import { PageHero } from "@/components/PageHero";
+import { PressHighlights } from "@/components/PressHighlights";
 import { Portrait } from "@/components/Portrait";
 import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";
@@ -117,6 +118,7 @@ export default function AboutPage(props: LocaleParams) {
           )}
         </div>
       </section>
+      <PressHighlights ids={["yafrica-2021-netflix", "cameroonceo-2022-profile", "dcoded-2017-best-actress"]} title={t.media.highlightsAbout} className="py-24" />
       <CtaBand />
     </>
   );

@@ -7,6 +7,7 @@ import { IdentityMatrix } from "@/components/IdentityMatrix";
 import { ImpactMap } from "@/components/ImpactMap";
 import { Journey } from "@/components/Journey";
 import { PillarCards } from "@/components/PillarCards";
+import { PressHighlights } from "@/components/PressHighlights";
 import { ProjectCard } from "@/components/ProjectCard";
 import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";
@@ -86,6 +87,8 @@ export default function HomePage(props: LocaleParams) {
           <div className="mt-10"><Journey limit={3} showFilters={false} /></div>
         </div>
       </section>
+
+      <PressHighlights ids={["mmi-2023-visually-impaired-mother", "cemac-2026-big-business", "mmi-2019-idps"]} className="bg-white py-24" />
 
       <IdentityMatrix />
 

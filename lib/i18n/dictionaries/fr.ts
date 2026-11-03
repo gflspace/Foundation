@@ -96,6 +96,7 @@ const fr: Dictionary = {
       douala: { name: "Douala", region: "Région du Littoral · Bonaberi", headline: "Soutien aux familles déplacées, rentrée scolaire et actions de Noël." },
       bamenda: { name: "Bamenda", region: "Région du Nord-Ouest", headline: "Beaucoup des familles déplacées que nous aidons à Douala ont fui la crise du Nord-Ouest." },
       buea: { name: "Buea", region: "Région du Sud-Ouest", headline: "Des familles du Sud-Ouest, également touchées par la crise, font partie de celles que nous soutenons." },
+      limbe: { name: "Limbe", region: "Région du Sud-Ouest", headline: "Des kits anti-COVID-19 pour une école en 2020, et une visite aux enfants de l’orphelinat de Bota, à Limbe, en 2015." },
       kumba: { name: "Kumba", region: "Région du Sud-Ouest", headline: "Ville natale de Syndy Emade, là où est né son engagement pour les enfants." },
     },
   },
@@ -112,7 +113,9 @@ const fr: Dictionary = {
     watch: "Voir le film",
     readMore: "Voir tout notre parcours",
     entries: {
-      launch: { when: "Août 2019", title: "Naissance de la Fondation", text: "Syndy Emade lance sa fondation avec un court film sur sa chaîne, Syndy Emade TV. Sa cause : protéger les enfants vulnérables, à commencer par les enfants des rues exposés à l’exploitation." },
+      "limbe-orphanage-2015": { when: "Octobre 2015", title: "Avant la Fondation : une journée à l’orphelinat de Limbe", text: "Des années avant la création de la Fondation, Syndy Emade et l’équipe de Blue Rain Entertainment passent une journée avec les enfants de l’orphelinat de Bota, à Limbe, à partager des moments de joie et à écouter leurs rêves." },
+      "idps-2019": { when: "Juillet 2019", title: "La première action : des vivres pour plus de 200 déplacés", text: "La première action de la Fondation. Plus de 200 personnes qui ont fui la crise du Nord-Ouest et du Sud-Ouest, installées à Douala, reçoivent des vivres et une oreille attentive. Émue par leurs récits, Syndy Emade annonce une campagne de rentrée scolaire pour leurs enfants." },
+      launch: { when: "Août 2019", title: "La Fondation présente sa cause", text: "Un mois après sa première action, la Fondation se présente dans un court film sur Syndy Emade TV. Sa cause : protéger les enfants vulnérables, à commencer par les enfants des rues exposés à l’exploitation." },
       "school-materials": { when: "Août 2019", title: "Des fournitures pour plus de 600 enfants déplacés", text: "Quelques semaines après sa création, la campagne de rentrée de la Fondation atteint des enfants déplacés du Nord-Ouest et du Sud-Ouest. Des élèves de maternelle et de primaire, choisis de porte en porte parmi les familles les plus pauvres, reçoivent cahiers, livres et sacs : plus de 600 enfants au total." },
       "school-fees": { when: "Août 2019", title: "Les frais de scolarité de 300 enfants", text: "Au-delà des fournitures, les parents reçoivent une aide pour payer la scolarité de leurs enfants, afin que 300 enfants commencent l’année en classe. La Fondation parle de sa deuxième action et annonce un suivi de santé pour les familles déplacées." },
       "covid-schools-2020": { when: "Août 2020", title: "Protéger une école de Limbe contre la COVID-19", text: "Avec la Elone Foundation, Syndy Emade et sa famille se rendent dans une école de Limbe pour sensibiliser les élèves. Elles apportent masques, gel hydroalcoolique, seaux et thermomètres, au-delà du nombre d’élèves annoncé, pour que les cours continuent en sécurité." },
@@ -183,6 +186,7 @@ const fr: Dictionary = {
       intro:
         "Des milliers de familles ont fui la crise des régions du Nord-Ouest et du Sud-Ouest pour reconstruire leur vie à Douala, avec très peu. Nous leur rendons visite à Bonaberi et ailleurs avec des vivres et des produits essentiels, à travers notre action mobile de crise, les Chantiers Mobiles Crise.",
       delivered: [
+        "Des vivres pour plus de 200 déplacés à Douala : la première action de la Fondation (juillet 2019)",
         "Vivres et produits essentiels partagés avec des familles déplacées à Bonaberi, Douala (septembre 2020)",
         "Vivres et produits essentiels partagés avec des familles déplacées à Bonaberi, Douala (2021)",
         "Des dons qui, selon les familles, nourrissent leurs enfants plusieurs jours et sont partagés avec les voisins",
@@ -241,7 +245,7 @@ const fr: Dictionary = {
     roles: ["Actrice primée", "Productrice de cinéma et de télévision", "PDG de Blue Rain Entertainment", "Mannequin", "Philanthrope"],
     ambassadorships: [
       "Ambassadrice de marque, Orange InstaVoice Celeb",
-      "Productrice Netflix", // TODO(verify)
+      "Productrice de deux films sur Netflix : Broken et A Man For The Weekend (2021)",
       "Partenaire CFI", // TODO(verify)
     ],
     summary:
@@ -419,6 +423,12 @@ const fr: Dictionary = {
     commons: "Images sous licence libre sur Wikimedia Commons",
     pressEyebrow: "Dans la presse",
     pressTitle: "Articles et reportages",
+    highlightsEyebrow: "Dans la presse",
+    highlightsTitle: "Ce que dit la presse",
+    highlightsAbout: "Reconnaissance",
+    highlightsAll: "Toute la presse",
+    archived: "Copie archivée : la page d’origine n’est plus en ligne.",
+    photo: "Photo",
     inFrench: "En français",
     inEnglish: "En anglais",
     tags: {
@@ -430,6 +440,8 @@ const fr: Dictionary = {
       profile: "Profil",
       ambassador: "Ambassadrice",
       studio: "Studio",
+      community: "Solidarité",
+      event: "Événement",
       foundation: "Fondation",
     },
     kitTitle: "Dossier de presse",
