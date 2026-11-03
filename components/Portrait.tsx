@@ -1,8 +1,12 @@
+"use client";
+
 import Image from "next/image";
 import { founderPhoto } from "@/lib/content";
 import { cn } from "@/lib/cn";
+import { useI18n } from "./I18nProvider";
 
 export function Portrait({ className, priority = false }: { className?: string; priority?: boolean }) {
+  const { t } = useI18n();
   const p = founderPhoto;
   return (
     <figure className={cn("relative", className)}>
@@ -10,7 +14,7 @@ export function Portrait({ className, priority = false }: { className?: string; 
       <div className="relative overflow-hidden rounded-2xl bg-navy-800 shadow-card">
         <Image
           src={p.src}
-          alt={p.alt}
+          alt={t.founder.photoAlt}
           width={p.width}
           height={p.height}
           priority={priority}
@@ -19,11 +23,9 @@ export function Portrait({ className, priority = false }: { className?: string; 
         />
       </div>
       <figcaption className="mt-5 text-xs text-navy/65">
-        Photo:{" "}
-        <a href={p.sourceUrl} target="_blank" rel="noopener noreferrer" className="underline hover:text-navy">
-          {p.credit}
-        </a>
-        , <a href={p.licenseUrl} target="_blank" rel="noopener noreferrer" className="underline hover:text-navy">{p.license}</a>, via Wikimedia Commons
+        {t.founder.photoCredit}{" "}
+        <a href={p.sourceUrl} target="_blank" rel="noopener noreferrer" className="underline hover:text-navy">{p.credit}</a>,{" "}
+        <a href={p.licenseUrl} target="_blank" rel="noopener noreferrer" className="underline hover:text-navy">{p.license}</a>, {t.founder.photoVia}
       </figcaption>
     </figure>
   );

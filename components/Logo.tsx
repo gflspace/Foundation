@@ -1,4 +1,4 @@
-export function Logo({ dark = false }: { dark?: boolean }) {
+export function Logo({ dark = false, sub = "Foundation" }: { dark?: boolean; sub?: string }) {
   return (
     <span className="flex items-center gap-3">
       <svg viewBox="0 0 40 40" className="h-9 w-9" aria-hidden>
@@ -9,7 +9,7 @@ export function Logo({ dark = false }: { dark?: boolean }) {
       <span className="leading-none">
         <span className={`block font-display text-lg font-semibold ${dark ? "text-navy" : "text-white"}`}>Syndy Emade</span>
         <span className={`block text-[0.65rem] font-semibold uppercase tracking-[0.3em] ${dark ? "text-gold-600" : "text-gold-400"}`}>
-          Foundation
+          {sub}
         </span>
       </span>
     </span>

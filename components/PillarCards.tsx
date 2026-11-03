@@ -1,23 +1,28 @@
+"use client";
+
 import { Check, Clapperboard, HandHeart, Siren } from "lucide-react";
-import { pillars } from "@/lib/content";
+import { pillarKeys } from "@/lib/content";
 import { cn } from "@/lib/cn";
+import { useI18n } from "./I18nProvider";
 import { Reveal } from "./Reveal";
 
 const icons = { philanthropist: HandHeart, humanitarian: Siren, icon: Clapperboard };
 const styles = {
   emerald: { chip: "bg-emerald/10 text-emerald-700", bar: "bg-emerald" },
-  gold: { chip: "bg-gold/10 text-gold-600", bar: "bg-gold" },
+  gold: { chip: "bg-gold/10 text-gold-700", bar: "bg-gold" },
   navy: { chip: "bg-navy/10 text-navy", bar: "bg-navy" },
 };
 
 export function PillarCards() {
+  const { t } = useI18n();
   return (
     <div className="grid gap-6 md:grid-cols-3">
-      {pillars.map((p, i) => {
-        const Icon = icons[p.key];
-        const s = styles[p.accent];
+      {pillarKeys.map(({ key, accent }, i) => {
+        const Icon = icons[key];
+        const s = styles[accent];
+        const p = t.pillars[key];
         return (
-          <Reveal key={p.key} delay={i * 0.1}>
+          <Reveal key={key} delay={i * 0.1} className="h-full">
             <article className="card group relative h-full overflow-hidden p-8 transition duration-300 hover:-translate-y-1 hover:shadow-xl">
               <span aria-hidden className={cn("absolute inset-x-0 top-0 h-1 origin-left scale-x-0 transition-transform duration-500 group-hover:scale-x-100", s.bar)} />
               <span className={cn("inline-grid h-12 w-12 place-items-center rounded-2xl", s.chip)}>

@@ -39,6 +39,7 @@ export async function POST(req: Request) {
     organisation: clip(data.organisation, 200),
     interest: clip(data.interest, 200),
     message: clip(data.message),
+    locale: data.locale === "fr" ? "fr" : "en",
     submittedAt: new Date().toISOString(),
   };
 

@@ -4,12 +4,14 @@ import { AnimatePresence, motion } from "framer-motion";
 import { X } from "lucide-react";
 import { createContext, useCallback, useContext, useEffect, useRef, useState, type ReactNode } from "react";
 import { DonationForm } from "./DonationForm";
+import { useI18n } from "./I18nProvider";
 
 type Ctx = { open: (programme?: string) => void };
 const DonateContext = createContext<Ctx>({ open: () => {} });
 export const useDonate = () => useContext(DonateContext);
 
 export function DonateProvider({ children }: { children: ReactNode }) {
+  const { t } = useI18n();
   const [isOpen, setOpen] = useState(false);
   const [programme, setProgramme] = useState<string | undefined>();
   const dialogRef = useRef<HTMLDivElement>(null);
@@ -76,14 +78,14 @@ export function DonateProvider({ children }: { children: ReactNode }) {
               <button
                 onClick={close}
                 className="absolute right-4 top-4 rounded-full p-2 text-navy/60 hover:bg-navy/5 hover:text-navy"
-                aria-label="Close donation dialog"
+                aria-label={t.form.close}
               >
                 <X className="h-5 w-5" />
               </button>
-              <p className="eyebrow">Give hope today</p>
-              <h2 id="donate-title" className="mt-2 text-2xl sm:text-3xl">Make a donation</h2>
+              <p className="eyebrow">{t.form.modalEyebrow}</p>
+              <h2 id="donate-title" className="mt-2 text-2xl sm:text-3xl">{t.form.modalTitle}</h2>
               <div className="mt-6">
-                <DonationForm defaultProgramme={programme} compact />
+                <DonationForm defaultProgramme={programme} />
               </div>
             </motion.div>
           </motion.div>
@@ -94,7 +96,7 @@ export function DonateProvider({ children }: { children: ReactNode }) {
 }
 
 export function DonateButton({
-  children = "Donate",
+  children,
   className = "btn-gold",
   programme,
 }: {
@@ -103,9 +105,10 @@ export function DonateButton({
   programme?: string;
 }) {
   const { open } = useDonate();
+  const { t } = useI18n();
   return (
     <button type="button" className={className} onClick={() => open(programme)}>
-      {children}
+      {children ?? t.nav.donate}
     </button>
   );
 }

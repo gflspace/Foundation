@@ -16,13 +16,26 @@ npm run dev                  # http://localhost:3000
 
 | Path | Purpose |
 | --- | --- |
-| `lib/content.ts` | **All copy and data**: bio, awards, films, press, programmes, donation tiers, FAQs. Edit here first. |
-| `app/` | Routes: `/`, `/about`, `/projects`, `/projects/[slug]`, `/creative-legacy`, `/media`, `/donate`, `/donate/thank-you` |
+| `lib/i18n/dictionaries/en.ts`, `fr.ts` | **All copy, in English and French**: bio, programmes, awards, FAQs, forms, legal pages. `fr.ts` is type-checked against `en.ts`, so a missing translation fails the build. |
+| `lib/content.ts` | Language-neutral data: URLs, impact numbers, film list, press links, donation amounts. |
+| `middleware.ts` | Serves English at `/…` and French at `/fr/…` (pages live under `app/[locale]/`). |
+| `app/[locale]/` | Routes: `/`, `/about`, `/projects`, `/projects/[slug]`, `/creative-legacy`, `/media`, `/donate`, `/donate/thank-you`, `/privacy`, `/donation-policy`. Each exists in English and French (`/fr/about`, …). |
 | `components/` | UI: Navbar, Hero, ImpactStrip, PillarCards, ProjectCard, FilmTimeline, DonationForm and modal, InvolveForm, Footer |
 | `lib/jsonld.ts` | schema.org `NGO` and `Person` structured data, with `sameAs` links to Wikipedia, Wikidata, IMDb and others |
 | `app/sitemap.ts`, `app/robots.ts`, `app/opengraph-image.tsx` | SEO |
 
 Design tokens are in `tailwind.config.ts`: Navy `#0F172A`, Emerald `#059669`, Gold `#D97706`, Off-white `#F8FAFC`. Headings use Playfair Display; body text uses Plus Jakarta Sans and Inter.
+
+## Languages
+
+The site is fully bilingual. English is at the root (`/about`) and French under `/fr` (`/fr/about`). The EN/FR switch in the header keeps visitors on the same page.
+
+- Every page sets `<html lang>` and a canonical URL, plus `hreflang` links to its translation (`x-default` points to English). The sitemap lists both versions.
+- French visitors see amounts in FCFA first, with French number formatting (`30 000 FCFA`). Stripe checkout opens in French and returns to `/fr/donate/thank-you`.
+- Form submissions include a `locale` field, so replies can go out in the right language.
+- Press coverage keeps each article's original language and marks it "En anglais" or "In French" when that differs from the page.
+- To change any wording, edit the same key in both `en.ts` and `fr.ts`. To add a language, add it to `lib/i18n/config.ts`, create a new dictionary file and update `middleware.ts`.
+- **Before launch:** have a native French speaker review `fr.ts`, ideally someone familiar with Cameroonian usage.
 
 ## Payments
 
@@ -44,7 +57,7 @@ Forms are sent to `FORMS_WEBHOOK_URL` (Zapier, Make, Slack or a CRM). If it isn'
 5. **Hero video.** Add `public/media/hero.mp4` (muted, 4 MB or less) and `public/images/hero-poster.jpg`, then set `HERO_VIDEO = true` in `components/Hero.tsx`.
 6. **YouTube.** Add video IDs to `featuredVideos` in `lib/content.ts`. They embed on `/media` in privacy-enhanced mode.
 7. **Gamma decks.** Set `GAMMA_EMBED_URL` in `app/about/page.tsx` and in `app/donate/page.tsx`.
-8. **Press kit.** `public/press/` contains a generated fact sheet PDF and a logo pack. If the facts change, regenerate them with `NODE_PATH=$(npm root -g) node scripts/build-press-kit.mjs` (requires Playwright).
+8. **Press kit.** `public/press/` contains a generated fact sheet PDF and a logo pack, in English and French (`-fr` files). If the facts change, regenerate them with `NODE_PATH=$(npm root -g) node scripts/build-press-kit.mjs` (requires Playwright).
 9. **Domain.** Set `NEXT_PUBLIC_SITE_URL` to the production domain.
 10. **Legal pages.** `/privacy` and `/donation-policy` are sensible defaults. Have a lawyer review them (search for `TODO(legal)`) and add the Foundation's registered name and address.
 
