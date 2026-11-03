@@ -55,7 +55,7 @@ export function Modal({
     <AnimatePresence>
       {open && (
         <motion.div
-          className="fixed inset-0 z-[70] flex items-center justify-center bg-navy/80 p-3 backdrop-blur-sm sm:p-6"
+          className="fixed inset-0 z-[70] flex items-center justify-center bg-plum/80 p-3 backdrop-blur-sm sm:p-6"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -68,7 +68,7 @@ export function Modal({
             aria-labelledby={labelledBy}
             className={cn(
               "relative max-h-[94vh] w-full max-w-4xl overflow-y-auto rounded-3xl shadow-2xl",
-              tone === "dark" ? "bg-navy text-white ring-1 ring-white/10" : "bg-sand text-navy",
+              tone === "dark" ? "bg-plum text-white ring-1 ring-white/10" : "bg-mist text-plum",
               className,
             )}
             initial={reduce ? false : { scale: 0.96, opacity: 0, y: 16 }}
@@ -83,7 +83,7 @@ export function Modal({
               aria-label={closeLabel}
               className={cn(
                 "absolute right-3 top-3 z-10 rounded-full p-2 transition",
-                tone === "dark" ? "bg-white/10 text-white hover:bg-white/20" : "bg-navy/5 text-navy/70 hover:bg-navy/10 hover:text-navy",
+                tone === "dark" ? "bg-white/10 text-white hover:bg-white/20" : "bg-plum/5 text-plum/70 hover:bg-plum/10 hover:text-plum",
               )}
             >
               <X className="h-5 w-5" />

@@ -29,16 +29,16 @@ export function InvolveForm() {
   if (state === "done")
     return (
       <div className="card flex flex-col items-center p-10 text-center" role="status">
-        <CheckCircle2 className="h-12 w-12 text-violet" aria-hidden />
+        <CheckCircle2 className="h-12 w-12 text-purple" aria-hidden />
         <h3 className="mt-4 text-2xl">{v.thanksTitle}</h3>
-        <p className="mt-2 max-w-sm text-navy/65">{v.thanksText}</p>
+        <p className="mt-2 max-w-sm text-plum/65">{v.thanksText}</p>
       </div>
     );
 
   const partner = type === "partner";
   return (
     <form onSubmit={onSubmit} className="card space-y-5 p-6 sm:p-8" noValidate>
-      <div className="inline-flex rounded-full bg-navy/5 p-1" role="tablist" aria-label={v.type}>
+      <div className="inline-flex rounded-full bg-plum/5 p-1" role="tablist" aria-label={v.type}>
         {(["volunteer", "partner"] as const).map((k) => (
           <button
             key={k}
@@ -46,7 +46,7 @@ export function InvolveForm() {
             role="tab"
             aria-selected={type === k}
             onClick={() => setType(k)}
-            className={cn("rounded-full px-5 py-2 text-sm font-semibold transition", type === k ? "bg-navy text-white" : "text-navy/65")}
+            className={cn("rounded-full px-5 py-2 text-sm font-semibold transition", type === k ? "bg-plum text-white" : "text-plum/65")}
           >
             {k === "volunteer" ? v.volunteer : v.partner}
           </button>
@@ -66,7 +66,7 @@ export function InvolveForm() {
           <input id="f-email" name="email" type="email" required autoComplete="email" className="input" />
         </div>
         <div>
-          <label htmlFor="f-phone" className="label">{v.phone} <span className="text-navy/65">{v.optional}</span></label>
+          <label htmlFor="f-phone" className="label">{v.phone} <span className="text-plum/65">{v.optional}</span></label>
           <input id="f-phone" name="phone" type="tel" autoComplete="tel" className="input" />
         </div>
         <div>
@@ -85,10 +85,10 @@ export function InvolveForm() {
         <textarea id="f-msg" name="message" rows={4} className="input" />
       </div>
       {state === "error" && <p role="alert" className="rounded-xl bg-red-50 px-4 py-3 text-sm text-red-700">{v.error}</p>}
-      <p className="text-xs text-navy/65">
+      <p className="text-xs text-plum/65">
         {v.privacyPre} <Link href={href("/privacy")} className="underline">{v.privacyLink}</Link>.
       </p>
-      <button className="btn-violet w-full sm:w-auto" disabled={state === "loading"}>
+      <button className="btn-purple w-full sm:w-auto" disabled={state === "loading"}>
         {state === "loading" && <Loader2 className="h-4 w-4 animate-spin" aria-hidden />}
         {v.submit}
       </button>

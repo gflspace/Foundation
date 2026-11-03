@@ -7,15 +7,15 @@ import { useI18n } from "./I18nProvider";
 
 /**
  * Server-renders the real figure (for crawlers, no-JS and reduced motion),
- * then counts up from zero the first time it scrolls into view.
+ * then counts up from zero (`plain` skips digit grouping, e.g. for years) the first time it scrolls into view.
  */
-export function Counter({ value, suffix = "" }: { value: number; suffix?: string }) {
+export function Counter({ value, suffix = "", plain = false }: { value: number; suffix?: string; plain?: boolean }) {
   const { locale } = useI18n();
   const ref = useRef<HTMLSpanElement>(null);
   const inView = useInView(ref, { once: true, margin: "-40px" });
   const reduce = useReducedMotion();
   const [display, setDisplay] = useState(value);
-  const fmt = (n: number) => n.toLocaleString(intlLocale[locale]);
+  const fmt = (n: number) => (plain ? String(n) : n.toLocaleString(intlLocale[locale]));
 
   useEffect(() => {
     if (!inView || reduce) return;

@@ -1,13 +1,15 @@
 import type { Metadata } from "next";
-import { CheckCircle2, MapPin } from "lucide-react";
+import { CheckCircle2, MapPin, Sprout } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArtPanel } from "@/components/ArtPanel";
 import { DonateButton } from "@/components/DonateProvider";
+import { Journey } from "@/components/Journey";
 import { PageHero } from "@/components/PageHero";
 import { ProjectCard } from "@/components/ProjectCard";
 import { Reveal } from "@/components/Reveal";
-import { projectMeta, type ProjectSlug } from "@/lib/content";
+import { VideoFeature } from "@/components/VideoFeature";
+import { featuredVideos, journey, projectMeta, type ProjectSlug } from "@/lib/content";
 import { localePath, locales, type Locale } from "@/lib/i18n/config";
 import { fill } from "@/lib/i18n/format";
 import { getDictionary, pageMetadata } from "@/lib/i18n";
@@ -26,8 +28,6 @@ export function generateMetadata({ params }: Props): Metadata {
   return pageMetadata(locale, `/projects/${params.slug}`, p.title, p.short);
 }
 
-const barColor = ["bg-violet", "bg-gold", "bg-navy"];
-
 export default function ProjectPage({ params }: Props) {
   const locale = params.locale as Locale;
   const meta = projectMeta.find((p) => p.slug === params.slug);
@@ -35,48 +35,74 @@ export default function ProjectPage({ params }: Props) {
   const t = getDictionary(locale);
   const p = t.projects[meta.slug];
   const pt = t.project;
+  const video = meta.video ? featuredVideos.find((v) => v.id === meta.video) : undefined;
+  const hasJourney = journey.some((e) => e.programme === meta.slug);
   const others = projectMeta.filter((x) => x.slug !== meta.slug).slice(0, 3);
-  const funding = meta.shares.map((share, i) => ({ label: p.funding[i], share }));
 
   return (
     <>
       <PageHero eyebrow={pt.eyebrow} title={p.title} intro={p.short} />
-      <section className="container-page grid gap-12 py-24 lg:grid-cols-12">
+
+      <section className="container-page grid gap-12 py-20 lg:grid-cols-12 lg:py-24">
         <div className="lg:col-span-7">
           <Reveal>
-            <ArtPanel label={fill(pt.photoLabel, { title: p.title })} tone={meta.pillar === "humanitarian" ? "gold" : "violet"} className="aspect-[16/9] w-full" monogram={p.title.slice(0, 1)} />
-            <p className="mt-8 flex items-center gap-2 text-sm font-medium text-navy/65"><MapPin className="h-4 w-4 text-gold" aria-hidden />{p.regions}</p>
-            <p className="mt-4 text-lg leading-relaxed text-navy/75">{p.intro}</p>
+            {video ? (
+              <VideoFeature id={video.id} title={video.title[locale]} className="w-full" />
+            ) : (
+              <ArtPanel label={fill(pt.photoLabel, { title: p.title })} tone={meta.tone} className="aspect-[16/9] w-full" monogram={p.title.slice(0, 1)} />
+            )}
+            <p className="mt-8 flex items-center gap-2 text-sm font-medium text-plum/70"><MapPin className="h-4 w-4 text-teal-600" aria-hidden />{pt.where}: {p.regions}</p>
+            <p className="mt-4 text-lg leading-relaxed text-plum/80">{p.intro}</p>
+
             <h2 className="mt-12 text-2xl">{pt.whatWeDo}</h2>
-            <ul className="mt-6 grid gap-3 sm:grid-cols-2">
-              {p.activities.map((a) => (
-                <li key={a} className="flex gap-3 rounded-xl bg-white p-4 text-sm shadow-card ring-1 ring-navy/5">
-                  <CheckCircle2 className="h-5 w-5 shrink-0 text-violet" aria-hidden />{a}
+            <ul className="mt-6 space-y-3">
+              {p.delivered.map((a) => (
+                <li key={a} className="flex gap-3 rounded-xl bg-white p-4 shadow-card ring-1 ring-plum/5">
+                  <CheckCircle2 className="h-5 w-5 shrink-0 text-teal-600" aria-hidden />{a}
                 </li>
               ))}
             </ul>
+
+            {p.planned.length > 0 && (
+              <>
+                <h2 className="mt-12 text-2xl">{pt.planned}</h2>
+                <ul className="mt-6 grid gap-3 sm:grid-cols-2">
+                  {p.planned.map((a) => (
+                    <li key={a} className="flex gap-3 rounded-xl border border-dashed border-purple/30 bg-purple-50/60 p-4 text-sm">
+                      <Sprout className="h-5 w-5 shrink-0 text-purple" aria-hidden />{a}
+                    </li>
+                  ))}
+                </ul>
+                <p className="mt-3 text-xs text-plum/65">{pt.plannedNote}</p>
+              </>
+            )}
           </Reveal>
         </div>
+
         <div className="lg:col-span-5">
-          <div className="card sticky top-28 p-8">
-            <h2 className="font-sans text-lg font-semibold">{pt.allocation}</h2>
-            <div className="mt-5 flex h-3 overflow-hidden rounded-full" role="img" aria-label={funding.map((f) => `${f.label} ${f.share}%`).join(", ")}>
-              {funding.map((f, i) => <span key={f.label} className={barColor[i % 3]} style={{ width: `${f.share}%` }} />)}
+          <div className="card sticky top-28 overflow-hidden">
+            <div className="bubbles relative bg-gradient-to-br from-teal-50 to-purple-50 p-8">
+              <p className="font-display text-5xl font-semibold text-teal-700">{p.keyFact}</p>
+              <p className="mt-2 text-plum/80">{p.keyFactLabel}</p>
             </div>
-            <ul className="mt-5 space-y-2 text-sm">
-              {funding.map((f, i) => (
-                <li key={f.label} className="flex items-center justify-between gap-3">
-                  <span className="flex items-center gap-2"><span aria-hidden className={`h-2.5 w-2.5 rounded-full ${barColor[i % 3]}`} />{f.label}</span>
-                  <span className="font-semibold tabular-nums">{locale === "fr" ? `${f.share} %` : `${f.share}%`}</span>
-                </li>
-              ))}
-            </ul>
-            <p className="mt-4 text-xs text-navy/65">{pt.allocationNote}</p>
-            <DonateButton programme={meta.slug} className="btn-gold mt-8 w-full">{pt.support}</DonateButton>
-            <Link href={localePath(locale, "/donate#involve")} className="btn-outline mt-3 w-full">{t.common.volunteer}</Link>
+            <div className="p-8">
+              <DonateButton programme={meta.slug} className="btn-teal w-full">{pt.support}</DonateButton>
+              <Link href={localePath(locale, "/donate#involve")} className="btn-outline mt-3 w-full">{t.common.volunteer}</Link>
+            </div>
           </div>
         </div>
       </section>
+
+      {hasJourney && (
+        <section className="bg-mist py-20" aria-labelledby="programme-journey">
+          <div className="container-page max-w-4xl">
+            <p className="eyebrow">{t.journey.eyebrow}</p>
+            <h2 id="programme-journey" className="mt-3 text-3xl">{pt.journeyTitle}</h2>
+            <div className="mt-10"><Journey programme={meta.slug} showFilters={false} /></div>
+          </div>
+        </section>
+      )}
+
       <section className="bg-white py-20">
         <div className="container-page">
           <h2 className="text-2xl">{pt.others}</h2>

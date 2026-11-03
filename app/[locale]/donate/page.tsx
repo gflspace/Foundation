@@ -33,19 +33,19 @@ export default function DonatePage(props: LocaleParams) {
           <SectionHeading eyebrow={d.impactEyebrow} title={d.impactTitle} />
           <ul className="mt-8 space-y-4">
             {donationTiers.map((tier, i) => (
-              <li key={tier.usd} className="flex items-start gap-4 rounded-2xl bg-white p-5 shadow-card ring-1 ring-navy/5">
-                <span className="grid h-12 min-w-[4rem] shrink-0 place-items-center rounded-xl bg-gold/10 px-2 font-display text-lg text-gold-700">{primary(tier)}</span>
-                <span className="text-sm leading-relaxed text-navy/75">
+              <li key={tier.usd} className="flex items-start gap-4 rounded-2xl bg-white p-5 shadow-card ring-1 ring-plum/5">
+                <span className="grid h-12 min-w-[4rem] shrink-0 place-items-center rounded-xl bg-teal/10 px-2 font-display text-lg text-teal-700">{primary(tier)}</span>
+                <span className="text-sm leading-relaxed text-plum/75">
                   {d.tiers[i]}
-                  <span className="mt-1 block text-xs text-navy/65">{secondary(tier)}</span>
+                  <span className="mt-1 block text-xs text-plum/65">{secondary(tier)}</span>
                 </span>
               </li>
             ))}
           </ul>
-          <ul className="mt-10 space-y-4 text-sm text-navy/70">
+          <ul className="mt-10 space-y-4 text-sm text-plum/70">
             {d.trust.map((line, i) => {
               const Icon = trustIcons[i];
-              return <li key={line} className="flex gap-3"><Icon className="h-5 w-5 shrink-0 text-violet" aria-hidden />{line}</li>;
+              return <li key={line} className="flex gap-3"><Icon className="h-5 w-5 shrink-0 text-purple" aria-hidden />{line}</li>;
             })}
           </ul>
         </div>
@@ -62,14 +62,14 @@ export default function DonatePage(props: LocaleParams) {
           <div className="lg:col-span-5">
             <SectionHeading eyebrow={d.involveEyebrow} title={d.involveTitle} intro={d.involveIntro} />
             <h3 className="mt-12 font-sans text-lg font-semibold">{d.faqTitle}</h3>
-            <div className="mt-4 divide-y divide-navy/10 border-y border-navy/10">
+            <div className="mt-4 divide-y divide-plum/10 border-y border-plum/10">
               {d.faqs.map((f) => (
                 <details key={f.q} className="group py-4">
                   <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-medium">
                     {f.q}
-                    <span aria-hidden className="text-xl text-gold transition group-open:rotate-45">+</span>
+                    <span aria-hidden className="text-xl text-teal transition group-open:rotate-45">+</span>
                   </summary>
-                  <p className="mt-3 text-sm leading-relaxed text-navy/65">{f.a}</p>
+                  <p className="mt-3 text-sm leading-relaxed text-plum/65">{f.a}</p>
                 </details>
               ))}
             </div>

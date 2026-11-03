@@ -17,12 +17,12 @@ export function NewsletterForm() {
     }).catch(() => null);
     setState(res?.ok ? "done" : "error");
   }
-  if (state === "done") return <p className="mt-4 text-sm text-violet-400" role="status">{t.footer.joined}</p>;
+  if (state === "done") return <p className="mt-4 text-sm text-purple-400" role="status">{t.footer.joined}</p>;
   return (
     <form onSubmit={onSubmit} className="mt-4 flex gap-2">
       <label htmlFor="nl-email" className="sr-only">{t.footer.emailLabel}</label>
       <input id="nl-email" name="email" type="email" required placeholder="you@example.com" className="input border-white/10 bg-white/5 text-white placeholder:text-white/40" />
-      <button className="btn-gold shrink-0 px-5" disabled={state === "loading"}>{t.footer.join}</button>
+      <button className="btn-teal shrink-0 px-5" disabled={state === "loading"}>{t.footer.join}</button>
       {state === "error" && <p role="alert" className="sr-only">{t.footer.joinError}</p>}
     </form>
   );

@@ -6,7 +6,7 @@ import { internalPath, localePath, locales, type Locale } from "@/lib/i18n/confi
  * Pages live under app/[locale]/ with internal English paths, so:
  *  - un-prefixed paths are rewritten to /en/…, and explicit /en/… URLs redirect to the clean root path;
  *  - translated French URLs (/fr/projets/protection-des-jeunes) are rewritten to the internal page
- *    (/fr/projects/youth-welfare), and the untranslated form redirects to the translated one.
+ *    (/fr/projects/back-to-school), and the untranslated form redirects to the translated one.
  */
 export function middleware(req: NextRequest) {
   const { pathname } = req.nextUrl;

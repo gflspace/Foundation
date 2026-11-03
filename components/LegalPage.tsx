@@ -22,8 +22,8 @@ export function LegalPage({ t, doc }: { t: Dictionary; doc: { title: string; int
     <>
       <PageHero eyebrow={t.legal.eyebrow} title={doc.title} />
       <article className="container-page max-w-3xl py-20">
-        <p className="text-sm text-navy/65">{t.legal.updatedLabel} {t.legal.updated}</p>
-        <div className="mt-8 space-y-6 leading-relaxed text-navy/80 [&_a]:text-violet-700 [&_a]:underline [&_h2]:mt-12 [&_h2]:text-2xl [&_h2]:text-navy [&_li]:ml-5 [&_li]:list-disc [&_ul]:space-y-2">
+        <p className="text-sm text-plum/65">{t.legal.updatedLabel} {t.legal.updated}</p>
+        <div className="mt-8 space-y-6 leading-relaxed text-plum/80 [&_a]:text-purple-700 [&_a]:underline [&_h2]:mt-12 [&_h2]:text-2xl [&_h2]:text-plum [&_li]:ml-5 [&_li]:list-disc [&_ul]:space-y-2">
           <p><Rich text={doc.intro} /></p>
           {doc.sections.map((s) => (
             <section key={s.h} className="space-y-4">

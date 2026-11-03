@@ -12,14 +12,14 @@ export default function ThankYouPage(props: LocaleParams) {
   const locale = pageLocale(props);
   const t = getDictionary(locale);
   return (
-    <section className="relative grid min-h-[80vh] place-items-center overflow-hidden bg-navy px-4 pb-16 pt-32 text-center text-white">
+    <section className="relative grid min-h-[80vh] place-items-center overflow-hidden bg-plum px-4 pb-16 pt-32 text-center text-white">
       <div aria-hidden className="grain absolute inset-0" />
       <div className="relative max-w-lg">
-        <HeartHandshake className="mx-auto h-14 w-14 text-violet-400" aria-hidden />
+        <HeartHandshake className="mx-auto h-14 w-14 text-purple-400" aria-hidden />
         <h1 className="mt-6 text-4xl">{t.thankYou.title}</h1>
         <p className="mt-4 text-lg text-white/75">{t.thankYou.text}</p>
         <div className="mt-8 flex flex-wrap justify-center gap-3">
-          <Link href={localePath(locale, "/projects")} className="btn-gold">{t.thankYou.see}</Link>
+          <Link href={localePath(locale, "/projects")} className="btn-teal">{t.thankYou.see}</Link>
           <Link href={localePath(locale, "/")} className="btn border border-white/25 text-white hover:bg-white/10">{t.common.backHome}</Link>
         </div>
       </div>

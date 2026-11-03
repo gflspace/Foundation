@@ -15,10 +15,10 @@ export function SectionHeading({
 }) {
   return (
     <div className={cn("max-w-2xl", align === "center" && "mx-auto text-center")}>
-      {eyebrow && <p className={cn("eyebrow", tone === "dark" && "text-gold-400")}>{eyebrow}</p>}
-      <h2 className={cn("mt-3 text-3xl sm:text-4xl", tone === "dark" ? "text-white" : "text-navy")}>{title}</h2>
+      {eyebrow && <p className={cn("eyebrow", tone === "dark" && "text-teal-400")}>{eyebrow}</p>}
+      <h2 className={cn("mt-3 text-3xl sm:text-4xl", tone === "dark" ? "text-white" : "text-plum")}>{title}</h2>
       {intro && (
-        <p className={cn("mt-4 text-base leading-relaxed sm:text-lg", tone === "dark" ? "text-white/70" : "text-navy/70")}>
+        <p className={cn("mt-4 text-base leading-relaxed sm:text-lg", tone === "dark" ? "text-white/70" : "text-plum/70")}>
           {intro}
         </p>
       )}

@@ -8,11 +8,11 @@ const fr: Dictionary = {
   locale: "fr",
   meta: {
     siteName: "Fondation Syndy Emade",
-    tagline: "Un phare d’espoir. Une icône de l’action.",
+    tagline: "Ensemble, nous pouvons.",
     description:
-      "La Fondation Syndy Emade protège les jeunes vulnérables, apporte une aide d’urgence mobile, finance des bourses d’études et renforce les communautés au Cameroun, en Afrique et dans la diaspora.",
+      "La Fondation Syndy Emade se tient aux côtés des enfants vulnérables et des familles déplacées au Cameroun : fournitures et frais de scolarité, vivres et produits essentiels, Noël solidaire et lutte contre l’exploitation des enfants. Ensemble, nous pouvons.",
     keywords: ["Syndy Emade", "Fondation Syndy Emade", "association caritative Cameroun", "protection de l’enfance Cameroun", "aide humanitaire Cameroun", "bourses d’études Cameroun", "Blue Rain Entertainment"],
-    location: "Buea et Douala, Cameroun",
+    location: "Douala, Cameroun",
   },
 
   nav: {
@@ -43,17 +43,20 @@ const fr: Dictionary = {
   },
 
   hero: {
-    eyebrow: "Cameroun · Afrique · Diaspora",
-    line1: "Un phare d’espoir.",
-    line2: "Une icône de l’action.",
-    cta: "Parrainer un enfant",
-    secondary: "Voir les carnets de terrain",
+    eyebrow: "Fondation Syndy Emade · Douala, Cameroun",
+    line1: "Ensemble,",
+    line2: "nous pouvons.",
+    lead:
+      "Depuis 2019, la Fondation Syndy Emade se tient aux côtés des enfants et des familles les plus touchés par la précarité et la crise au Cameroun : fournitures scolaires pour les enfants déplacés, vivres, loyer, et un peu de joie à Noël.",
+    cta: "Faire un don",
+    secondary: "Voir notre histoire",
     promiseLabel: "Notre engagement",
     promise: "Transformer la notoriété en aide concrète — pour chaque enfant, chaque famille et chaque communauté que nous accompagnons.",
     watch: "Voir nos missions sur Syndy Emade TV",
-    stats: ["Jeunes accompagnés", "Grandes initiatives", "Projets de terrain"],
+    stats: ["enfants déplacés équipés pour l’école", "frais de scolarité d’enfants payés", "aux côtés des familles depuis"],
     statsLabel: "Notre impact en bref",
-    videoTitle: "Carnets de terrain — Syndy Emade TV",
+    statsNote: "Chiffres issus de la couverture médiatique de nos actions.",
+    videoTitle: "Notre histoire — Syndy Emade TV",
     videoEmpty: "Les films de nos missions sont publiés sur la chaîne YouTube Syndy Emade TV.",
     videoOpenChannel: "Ouvrir la chaîne sur YouTube",
     close: "Fermer",
@@ -62,34 +65,57 @@ const fr: Dictionary = {
   matrix: {
     eyebrow: "Deux scènes, une même mission",
     title: "L’humanitaire et l’icône du cinéma",
-    intro: "Le travail de Syndy Emade à l’écran et sur le terrain se nourrissent l’un l’autre\u00A0: le cinéma apporte la visibilité, la Fondation la transforme en aide.",
+    intro: "Le travail de Syndy Emade à l’écran et sur le terrain se nourrissent l’un l’autre : le cinéma apporte la visibilité, la Fondation la transforme en aide.",
     tabsLabel: "Choisissez une facette de son parcours",
-    tabs: { humanitarian: "L’humanitaire et philanthrope", icon: "L’icône du cinéma et productrice" },
+    tabs: { humanitarian: "L’humanitaire", icon: "L’icône du cinéma" },
     humanitarianText:
-      "À travers la Fondation, elle mène des actions de protection des jeunes, d’aide d’urgence mobile, de bourses d’études et d’ateliers de couture et d’agriculture pour les femmes au Cameroun.",
+      "À travers la Fondation, elle mène le soutien à la rentrée des enfants déplacés, des actions auprès des familles qui ont fui la crise du Nord-Ouest et du Sud-Ouest, et des visites de Noël aux foyers vulnérables de Douala. Son équipe se rend d’abord dans les foyers, puis elle y va elle-même pour décider qui a le plus besoin d’aide.",
     iconText:
       "Actrice et PDG de Blue Rain Entertainment, elle porte les histoires camerounaises au-delà des frontières — de ses débuts en 2010 aux coproductions avec des stars de Nollywood.",
-    programmesHeading: "Initiatives de la Fondation",
+    programmesHeading: "Programmes de la Fondation",
     filmsHeading: "Films choisis",
     awardsHeading: "Distinctions",
-    crossBorder: "Un cinéma sans frontières\u00A0: des productions camerounaises avec des talents nigérians (Nollywood), dont Alexx Ekubo dans A Man for the Weekend.",
+    crossBorder: "Un cinéma sans frontières : des productions camerounaises avec des talents nigérians (Nollywood), dont Alexx Ekubo dans A Man for the Weekend.",
     seeProgrammes: "Tous les programmes",
     seeFilms: "Toute la filmographie",
   },
 
   map: {
     eyebrow: "Nos zones d’action",
-    title: "Nos centres régionaux",
-    intro: "Sélectionnez une ville pour découvrir les programmes et les récits de terrain qui y sont liés.",
-    mapLabel: "Carte du sud-ouest du Cameroun indiquant les quatre centres régionaux de la Fondation",
+    title: "Des régions en crise jusqu’à Douala",
+    intro: "L’essentiel de notre action documentée se déroule à Douala, notamment à Bonaberi, auprès de familles qui ont fui la crise du Nord-Ouest et du Sud-Ouest. Sélectionnez un lieu pour en savoir plus.",
+    mapLabel: "Carte du sud-ouest du Cameroun montrant Douala, où intervient la Fondation, et Bamenda et Buea, régions d’origine des familles déplacées",
     programmesLabel: "Programmes",
-    storiesLabel: "Récits de terrain",
-    noStories: "Les récits de terrain de ce centre arrivent bientôt.",
+    storiesLabel: "Moments de notre parcours",
+    noStories: "Pas encore d’action documentée ici.",
+    legend: { work: "Où nous intervenons", origin: "D’où viennent les familles déplacées", hometown: "Ville natale de la fondatrice" },
     centres: {
-      buea: { name: "Buea", region: "Région du Sud-Ouest", headline: "Collectes de fournitures scolaires et mentorat des jeunes" },
-      douala: { name: "Douala", region: "Région du Littoral", headline: "Unités mobiles de crise et ateliers de couture pour les femmes" },
-      kumba: { name: "Kumba", region: "Région du Sud-Ouest · ville natale de la fondatrice", headline: "Bourses pour les orphelins et les enfants défavorisés" },
-      yaounde: { name: "Yaoundé", region: "Région du Centre · capitale", headline: "Partenariats nationaux et autonomisation des femmes" },
+      douala: { name: "Douala", region: "Région du Littoral · Bonaberi", headline: "Soutien aux familles déplacées, rentrée scolaire et actions de Noël." },
+      bamenda: { name: "Bamenda", region: "Région du Nord-Ouest", headline: "Beaucoup des familles déplacées que nous aidons à Douala ont fui la crise du Nord-Ouest." },
+      buea: { name: "Buea", region: "Région du Sud-Ouest", headline: "Des familles du Sud-Ouest, également touchées par la crise, font partie de celles que nous soutenons." },
+      kumba: { name: "Kumba", region: "Région du Sud-Ouest", headline: "Ville natale de Syndy Emade, là où est né son engagement pour les enfants." },
+    },
+  },
+
+  journey: {
+    eyebrow: "Notre parcours",
+    title: "Ce que nous avons accompli",
+    intro: "Chaque moment ci-dessous est documenté, avec un lien vers sa source. Filtrez par programme pour suivre un volet de notre action.",
+    filterLabel: "Filtrer par programme",
+    all: "Tous les programmes",
+    dateToConfirm: "date à confirmer",
+    source: "Source",
+    sources: "Sources",
+    watch: "Voir le film",
+    readMore: "Voir tout notre parcours",
+    entries: {
+      launch: { when: "Août 2019", title: "Naissance de la Fondation", text: "Syndy Emade lance sa fondation avec un court film sur sa chaîne, Syndy Emade TV. Sa cause : protéger les enfants vulnérables, à commencer par les enfants des rues exposés à l’exploitation." },
+      "school-materials": { when: "Période de rentrée", title: "Fournitures scolaires pour plus de 600 enfants déplacés", text: "Peu après sa création, la Fondation offre des fournitures scolaires à plus de 600 enfants déplacés par la crise et vivant désormais à Douala." },
+      "school-fees": { when: "Période de rentrée", title: "Frais de scolarité pour 300 enfants", text: "La Fondation paie les frais de scolarité de 300 enfants pour qu’ils restent à l’école, dans le cadre de sa campagne de rentrée pour les enfants défavorisés." },
+      "christmas-2020": { when: "Noël 2020", title: "Noël solidaire à Bonaberi", text: "L’équipe apporte Noël à des familles de Bonaberi, à Douala, avec des cadeaux et des produits de première nécessité. La fondatrice en profite pour dénoncer l’exploitation des enfants des rues." },
+      "idps-2021": { when: "Février 2021", title: "Aux côtés des familles déplacées", text: "La Fondation rend visite à des familles qui ont fui la crise jusqu’à Douala et partage vivres et produits essentiels. Les parents disent que ce don nourrira leurs enfants plusieurs jours, et certains comptent le partager avec leurs voisins. La fondatrice parle de « la première d’une longue série »." },
+      "womens-day": { when: "Journée internationale des femmes", title: "Journée des femmes, en partenariat", text: "La Fondation célèbre la Journée internationale des femmes aux côtés de la Wilmbi Foundation, au plus près des femmes de leurs communautés." },
+      "christmas-2023": { when: "Décembre 2023", title: "Un toit pour une mère et ses trois fils", text: "Lors d’une action de Noël, l’équipe rencontre une mère célibataire malvoyante qui vit dans une seule pièce exiguë avec ses trois fils. La Fondation paie un an de loyer dans un logement plus grand, s’engage à rénover leur pièce et apporte vivres et produits ménagers." },
     },
   },
 
@@ -102,87 +128,99 @@ const fr: Dictionary = {
 
   impact: {
     heading: "Notre impact",
-    labels: ["Jeunes accompagnés", "Missions d’urgence", "Bourses attribuées", "Femmes soutenues"],
-    placeholderNote: "Chiffres indicatifs — données d’impact vérifiées à venir.",
+    labels: [],
+    placeholderNote: "Chiffres issus de la couverture médiatique de nos actions.",
   },
+
 
   pillars: {
     philanthropist: {
       kicker: "Pilier I",
-      title: "La Philanthrope",
-      summary: "Bien-être, protection des jeunes et accès à l’éducation.",
-      points: ["Protection et accompagnement des jeunes", "Bourses d’études", "Formation professionnelle"],
+      title: "Chaque enfant à l’école, chaque enfant protégé",
+      summary: "Éducation et protection pour les enfants en danger.",
+      points: ["Rentrée scolaire", "Protection de l’enfance", "Lutte contre l’exploitation des enfants"],
     },
     humanitarian: {
       kicker: "Pilier II",
-      title: "L’Humanitaire",
-      summary: "Une aide rapide et mobile pour les familles touchées par les crises.",
-      points: ["Intervention mobile de crise", "Missions d’aide d’urgence", "Actions de santé de proximité"],
+      title: "Aucune famille laissée pour compte",
+      summary: "Vivres, toit et dignité pour les familles en crise.",
+      points: ["Familles déplacées", "Noël solidaire", "Aide d’urgence"],
     },
     icon: {
       kicker: "Pilier III",
-      title: "L’Icône culturelle",
-      summary: "Le cinéma et la créativité au service du bien commun.",
-      points: ["Ambassadrice de la culture", "Mentorat des jeunes artistes", "Économie créative"],
+      title: "Une voix qui rassemble",
+      summary: "Une notoriété mise au service de la cause, pour mobiliser partenaires et attention.",
+      points: ["Femmes et partenariats", "Visibilité médiatique de nos causes", "Bénévoles et donateurs"],
     },
   },
 
   projects: {
-    "youth-welfare": {
-      title: "Protection et accompagnement des jeunes",
-      short: "Hébergement, alimentation, bilans de santé et soutien moral pour les jeunes en situation de vulnérabilité.",
+    "back-to-school": {
+      title: "Rentrée scolaire",
+      short: "Fournitures et frais de scolarité pour que les enfants déplacés et défavorisés restent à l’école.",
       intro:
-        "Notre programme d’intervention va à la rencontre des jeunes là où ils se trouvent : hébergement sûr, repas réguliers, bilans de santé et mentors de confiance, complétés par des programmes de réinsertion, des dons de vêtements et des événements communautaires qui leur rendent leur dignité.",
-      activities: [
-        "Placement en hébergement d’urgence et partenariats avec des foyers d’accueil",
-        "Aide alimentaire et dépistages de santé réguliers",
-        "Mentorat, écoute et soutien moral",
-        "Programmes de réinsertion et collectes de vêtements",
+        "La crise et la pauvreté éloignent les enfants de l’école. Notre campagne de rentrée donne aux enfants défavorisés et déplacés le nécessaire pour apprendre, et paie les frais de scolarité quand les familles ne le peuvent pas.",
+      delivered: [
+        "Fournitures scolaires pour plus de 600 enfants déplacés à Douala",
+        "Frais de scolarité payés pour 300 enfants",
+        "Une campagne de rentrée régulière pour les enfants défavorisés",
       ],
-      regions: "Régions du Sud-Ouest et du Littoral",
-      funding: ["Hébergement et alimentation", "Santé et écoute", "Mentorat et événements"],
+      planned: ["Bourses du secondaire et du supérieur", "Formations professionnelles et numériques"],
+      regions: "Douala",
+      keyFact: "600+",
+      keyFactLabel: "enfants déplacés équipés pour l’école",
     },
-    "mobile-crisis": {
-      title: "Intervention mobile de crise",
-      short: "« Chantiers Mobiles Crise » : des unités mobiles qui apportent vivres, eau, kits de santé et abris.",
+    "displaced-families": {
+      title: "Familles déplacées",
+      short: "Vivres et produits essentiels pour les familles qui ont fui la crise du Nord-Ouest et du Sud-Ouest.",
       intro:
-        "Nos unités mobiles — les Chantiers Mobiles Crise — se rendent auprès des familles touchées par les conflits et des personnes déplacées avec des vivres, de l’eau potable, des kits de santé et une aide au logement, en lien avec les autorités locales pour intervenir vite et en toute sécurité.",
-      activities: [
-        "Distribution de vivres et d’eau potable",
-        "Kits de santé et soins médicaux d’urgence",
-        "Matériel d’abri pour les familles déplacées",
-        "Dépistages de santé communautaires",
+        "Des milliers de familles ont fui la crise des régions du Nord-Ouest et du Sud-Ouest pour reconstruire leur vie à Douala, avec très peu. Nous leur rendons visite à Bonaberi et ailleurs avec des vivres et des produits essentiels, à travers notre action mobile de crise, les Chantiers Mobiles Crise.",
+      delivered: [
+        "Vivres et produits essentiels partagés avec des familles déplacées à Bonaberi, Douala (2021)",
+        "Des dons qui, selon les familles, nourrissent leurs enfants plusieurs jours et sont partagés avec les voisins",
+        "Une action que la fondatrice a qualifiée de « première d’une longue série »",
       ],
-      regions: "Zones du Cameroun touchées par les conflits",
-      funding: ["Vivres et eau", "Kits de santé et soins", "Abris et logistique"],
+      planned: ["Kits de santé et soins d’urgence", "Matériel d’abri pour les familles nouvellement déplacées"],
+      regions: "Bonaberi, Douala",
+      keyFact: "2021",
+      keyFactLabel: "action auprès des familles déplacées à Bonaberi",
     },
-    education: {
-      title: "Bourses d’études",
-      short: "Fournitures scolaires et bourses du secondaire et du supérieur pour les orphelins et les enfants défavorisés.",
+    "christmas-outreach": {
+      title: "Noël solidaire",
+      short: "À chaque fête de fin d’année, l’équipe se rend dans des foyers vulnérables et apporte une aide qui dure au-delà de Noël.",
       intro:
-        "L’éducation est le cadeau le plus durable que nous puissions offrir. Chaque trimestre, nous organisons des collectes de fournitures scolaires et attribuons des bourses du secondaire et du supérieur aux orphelins et aux enfants défavorisés, pour que ce soit le talent, et non les circonstances, qui décide de leur avenir.",
-      activities: [
-        "Collectes de fournitures pour la rentrée",
-        "Bourses couvrant les frais de scolarité du secondaire",
-        "Bourses universitaires et aides aux études",
-        "Formations professionnelles et numériques",
+        "Chaque Noël, notre équipe fait du porte-à-porte, souvent dans des quartiers reculés, pour trouver les familles qui ont le plus besoin d’aide. La fondatrice leur rend ensuite visite elle-même. L’aide va au-delà d’un cadeau, des vivres jusqu’à une année de loyer.",
+      delivered: [
+        "Noël solidaire avec des familles de Bonaberi (2020)",
+        "Un an de loyer dans un logement plus grand pour une mère malvoyante et ses trois fils (2023)",
+        "L’engagement de rénover la pièce de la famille, plus des vivres et produits ménagers",
       ],
-      regions: "Régions du Sud-Ouest et du Littoral",
-      funding: ["Frais de scolarité", "Fournitures et uniformes", "Programmes de formation"],
+      planned: ["Un Noël solidaire chaque année, dans davantage de quartiers"],
+      regions: "Douala",
+      keyFact: "1 an",
+      keyFactLabel: "de loyer payé pour une famille dans le besoin (2023)",
+    },
+    "child-protection": {
+      title: "Protection de l’enfance",
+      short: "Aux côtés des enfants des rues, contre l’exploitation des enfants.",
+      intro:
+        "La Fondation a été créée pour protéger les enfants vulnérables, à commencer par les enfants des rues, souvent exploités. Nous prenons la parole à chaque action, et nous construisons des programmes pour leur offrir sécurité, soins et accompagnement.",
+      delivered: ["La cause fondatrice de la Fondation, affirmée publiquement depuis 2019", "Un plaidoyer contre l’exploitation des enfants lors de nos actions"],
+      planned: ["Hébergement et alimentation pour les enfants en danger", "Bilans de santé", "Mentorat par des adultes de confiance"],
+      regions: "Douala",
+      keyFact: "2019",
+      keyFactLabel: "notre cause fondatrice",
     },
     women: {
-      title: "Autonomisation des femmes",
-      short: "Microsubventions et formations en couture et en agriculture pour les veuves et les femmes déplacées.",
+      title: "Femmes et partenariats",
+      short: "Avec des organisations partenaires, au service des femmes et de leurs familles.",
       intro:
-        "Les femmes sont le pilier des communautés, surtout en temps de crise. Notre programme de microsubventions aide les veuves et les femmes déplacées à créer ou relancer une petite activité, avec l’appui de formations en couture et en agriculture.",
-      activities: [
-        "Microsubventions pour petites entreprises",
-        "Formation en couture et confection",
-        "Formation agricole et intrants",
-        "Tontines solidaires et mentorat",
-      ],
-      regions: "Tout le pays, en priorité les communautés déplacées",
-      funding: ["Microsubventions", "Formation professionnelle", "Mentorat et suivi"],
+        "Les femmes sont le pilier des familles, surtout en temps de crise. Nous agissons avec des organisations partenaires pour les soutenir, et nous accueillons volontiers les partenaires qui partagent nos objectifs.",
+      delivered: ["Journée internationale des femmes, en partenariat avec la Wilmbi Foundation"],
+      planned: ["Microsubventions pour des petites entreprises portées par des femmes", "Formation en couture et en agriculture pour les veuves et les femmes déplacées"],
+      regions: "Cameroun",
+      keyFact: "Partenaires",
+      keyFactLabel: "aux côtés d’autres fondations",
     },
   },
 
@@ -226,11 +264,10 @@ const fr: Dictionary = {
   },
 
   home: {
-    pillarsEyebrow: "Trois piliers",
-    pillarsTitle: "Une femme, une voix, trois façons de changer des vies",
-    pillarsIntro:
-      "De l’accompagnement durable des jeunes à l’intervention d’urgence et au mentorat créatif, notre action s’appuie sur les forces que notre fondatrice apporte à chaque communauté.",
-    programmesEyebrow: "Programmes",
+    pillarsEyebrow: "Ce qui nous anime",
+    pillarsTitle: "Trois engagements, une promesse\u00A0: ensemble, nous pouvons",
+    pillarsIntro: "Tout ce que nous faisons revient aux enfants et aux familles qui ont le moins, et aux personnes qui choisissent de se tenir à leurs côtés.",
+    programmesEyebrow: "Nos programmes",
     programmesTitle: "Là où va votre soutien",
     founderEyebrow: "La fondatrice",
     readStory: "Découvrir son parcours",
@@ -239,7 +276,12 @@ const fr: Dictionary = {
     legacyIntro:
       "Plus de 15 ans devant et derrière la caméra avec Blue Rain Entertainment — des histoires qui portent les voix camerounaises à travers l’Afrique et le monde.",
     fullFilmography: "Toute la filmographie",
+    videosEyebrow: "En images",
+    videosTitle: "Notre action, dans nos propres films",
+    videosIntro: "Des courts films de nos actions, publiés sur Syndy Emade TV.",
+    seeAllMedia: "Tous les médias",
   },
+
 
   cta: {
     title: "Chaque don devient un repas, une place en classe, une nuit en sécurité.",
@@ -280,26 +322,30 @@ const fr: Dictionary = {
   },
 
   projectsPage: {
-    metaTitle: "Projets et impact",
-    metaDescription:
-      "Protection des jeunes, intervention mobile de crise, bourses d’études et autonomisation des femmes à travers le Cameroun.",
-    eyebrow: "Projets et impact",
-    title: "Une aide concrète, là où on en a besoin",
-    intro: "Quatre programmes, trois piliers, un engagement : un changement mesurable pour les personnes que nous servons.",
+    metaTitle: "Programmes et impact",
+    metaDescription: "Rentrée scolaire, soutien aux familles déplacées, Noël solidaire, protection de l’enfance, femmes et partenariats, à Douala et au Cameroun.",
+    eyebrow: "Programmes et impact",
+    title: "Une aide concrète, là où on en a le plus besoin",
+    intro: "Cinq programmes construits à partir de ce que nous avons réellement accompli à Douala depuis 2019, et de ce que nous préparons.",
     listHeading: "Nos programmes",
     frameworkEyebrow: "Notre cadre d’action",
-    frameworkTitle: "Les trois piliers",
+    frameworkTitle: "Ce qui nous anime",
   },
+
 
   project: {
     eyebrow: "Programme",
     photoLabel: "{title} sur le terrain",
-    whatWeDo: "Nos actions",
-    allocation: "Répartition des fonds",
-    allocationNote: "Répartition cible ; les montants réels sont publiés dans notre rapport annuel.",
+    whatWeDo: "Ce que nous avons accompli",
+    planned: "Ce que nous préparons",
+    plannedNote: "Actions prévues, selon les financements.",
+    journeyTitle: "Moments de ce programme",
+    watchFilm: "Voir le film",
+    where: "Lieu",
     support: "Soutenir ce programme",
     others: "Autres programmes",
   },
+
 
   legacy: {
     metaTitle: "Filmographie et héritage créatif",
@@ -325,10 +371,10 @@ const fr: Dictionary = {
 
   media: {
     metaTitle: "Médias et presse",
-    metaDescription: "Vidéos de Syndy Emade TV, galeries photo, revue de presse et dossier de presse de la Fondation.",
+    metaDescription: "Les films de nos actions, chaque moment documenté de notre parcours, la revue de presse et le dossier de presse de la Fondation.",
     eyebrow: "Médias et presse",
     title: "Voir nos actions. Partager notre histoire.",
-    intro: "Vidéos de terrain, galeries photo et revue de presse — ainsi que tout ce dont les journalistes ont besoin, au même endroit.",
+    intro: "Nos films, chaque moment documenté de notre parcours et ce que la presse a écrit sur nous — ainsi que tout ce dont les journalistes ont besoin, au même endroit.",
     videoEyebrow: "Vidéo",
     videoTitle: "Syndy Emade TV",
     videoIntro: "Carnets de bord de nos missions humanitaires et coulisses de nos productions.",
@@ -338,20 +384,12 @@ const fr: Dictionary = {
     galleryTitle: "Moments de terrain",
     libraryTitle: "Médiathèque",
     filtersLabel: "Filtrer les médias",
-    filters: { all: "Tous les médias", video: "Vidéos de terrain", photo: "Récits en images", press: "Presse", bts: "Coulisses" },
+    filters: { all: "Tous les médias", video: "Films", story: "Notre parcours", press: "Presse" },
     countOne: "{n} élément",
     countMany: "{n} éléments",
-    stories: {
-      "school-supplies": { title: "Collecte de fournitures pour la rentrée", text: "Des bénévoles préparent et distribuent cahiers, stylos et cartables pour que les enfants commencent l’année prêts à apprendre." },
-      "crisis-unit": { title: "Distribution par une unité mobile de crise", text: "Une équipe des Chantiers Mobiles Crise apporte vivres, eau potable et kits de santé aux familles déplacées, en lien avec les autorités locales." },
-      tailoring: { title: "Atelier de couture pour les femmes", text: "Des veuves et des femmes déplacées apprennent la coupe et la couture, puis reçoivent un équipement et une microsubvention pour se lancer." },
-      scholarships: { title: "Cérémonie de remise des bourses", text: "Des orphelins et des élèves défavorisés reçoivent des bourses du secondaire et du supérieur, pour que le talent, et non les circonstances, décide de leur avenir." },
-      mentorship: { title: "Séance de mentorat avec des jeunes", text: "Des jeunes rencontrent des mentors de confiance pour être guidés, écoutés et soutenus, en complément de bilans de santé." },
-      "on-set": { title: "Sur un tournage de Blue Rain Entertainment", text: "Dans les coulisses d’une production Blue Rain Entertainment, le studio qui porte les histoires camerounaises auprès des publics africains." },
-    },
     photoPending: "Photo à venir",
     channelTitle: "Syndy Emade TV sur YouTube",
-    channelText: "Carnets de bord de nos missions et films des coulisses. Les vidéos à la une apparaîtront ici au fil des publications.",
+    channelText: "D’autres films de nos actions sur la chaîne Syndy Emade TV.",
     open: "Ouvrir",
     readArticle: "Lire l’article",
     close: "Fermer",
@@ -384,6 +422,7 @@ const fr: Dictionary = {
       profile: "Profil",
       ambassador: "Ambassadrice",
       studio: "Studio",
+      foundation: "Fondation",
     },
     kitTitle: "Dossier de presse",
     kitText: "Fiche d’information et logos (SVG et PNG). Photos officielles disponibles sur demande.",
@@ -621,7 +660,7 @@ const fr: Dictionary = {
 
   og: {
     eyebrow: "Fondation Syndy Emade",
-    footer: "Jeunesse · Urgence humanitaire · Bourses d’études · Autonomisation des femmes",
+    footer: "Rentrée scolaire · Familles déplacées · Noël solidaire · Douala, Cameroun",
   },
 };
 

@@ -42,7 +42,7 @@ export function Navbar() {
       hrefLang={other}
       lang={other}
       title={t.nav.switchLong}
-      className={cn("inline-flex items-center gap-1.5 rounded-full text-sm font-semibold text-white/80 hover:text-white", className)}
+      className={cn("inline-flex items-center gap-1.5 rounded-full text-sm font-semibold text-plum/80 hover:text-plum", className)}
     >
       <Languages className="h-4 w-4" aria-hidden />
       <span aria-hidden>{t.nav.switchShort}</span>
@@ -51,13 +51,13 @@ export function Navbar() {
   );
 
   return (
-    <header className={cn("fixed inset-x-0 top-0 z-50 transition-all duration-300", solid ? "bg-navy/95 shadow-lg backdrop-blur-md" : "bg-transparent")}>
-      <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-lg focus:bg-gold-600 focus:px-4 focus:py-2 focus:text-white">
+    <header className={cn("fixed inset-x-0 top-0 z-50 bg-white/95 backdrop-blur-md transition-shadow duration-300", solid ? "shadow-card" : "")}>
+      <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-lg focus:bg-teal-600 focus:px-4 focus:py-2 focus:text-white">
         {t.nav.skip}
       </a>
-      <nav aria-label={t.nav.primary} className="container-page flex h-18 items-center justify-between">
+      <nav aria-label={t.nav.primary} className="container-page flex h-20 items-center justify-between">
         <Link href={href("/")} aria-label={t.nav.home}>
-          <Logo sub={t.nav.logoSub} />
+          <Logo priority className="h-12 w-auto sm:h-14" />
         </Link>
 
         <ul className="hidden items-center gap-1 md:flex">
@@ -68,7 +68,7 @@ export function Navbar() {
                 <Link
                   href={href(item.path)}
                   aria-current={active ? "page" : undefined}
-                  className={cn("rounded-full px-3 py-2 text-sm font-medium transition lg:px-4", active ? "text-gold-400" : "text-white/80 hover:text-white")}
+                  className={cn("rounded-full px-3 py-2 text-sm font-medium transition lg:px-4", active ? "bg-teal-50 text-teal-700" : "text-plum/80 hover:text-plum")}
                 >
                   {item.label}
                 </Link>
@@ -79,13 +79,13 @@ export function Navbar() {
 
         <div className="flex items-center gap-3">
           <LangSwitch className="px-2 py-2" />
-          <Link href={href("/donate")} className="hidden text-sm font-medium text-white/80 hover:text-white xl:inline">
+          <Link href={href("/donate")} className="hidden text-sm font-medium text-plum/80 hover:text-plum xl:inline">
             {t.nav.getInvolved}
           </Link>
-          <DonateButton className="btn-gold hidden px-5 py-2.5 sm:inline-flex">{t.nav.donate}</DonateButton>
+          <DonateButton className="btn-teal hidden px-5 py-2.5 sm:inline-flex">{t.nav.donate}</DonateButton>
           <button
             type="button"
-            className="rounded-full p-2 text-white md:hidden"
+            className="rounded-full p-2 text-plum md:hidden"
             aria-expanded={open}
             aria-controls="mobile-menu"
             aria-label={open ? t.nav.closeMenu : t.nav.openMenu}
@@ -98,17 +98,17 @@ export function Navbar() {
 
       <AnimatePresence>
         {open && (
-          <motion.div id="mobile-menu" className="border-t border-white/10 bg-navy md:hidden" initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }}>
+          <motion.div id="mobile-menu" className="border-t border-plum/10 bg-white md:hidden" initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }}>
             <ul className="container-page space-y-1 py-4">
               {[...nav, { path: "/donate", label: t.nav.getInvolved }].map((item) => (
                 <li key={item.path}>
-                  <Link href={href(item.path)} className="block rounded-xl px-4 py-3 text-base font-medium text-white/90 hover:bg-white/5">
+                  <Link href={href(item.path)} className="block rounded-xl px-4 py-3 text-base font-medium text-plum hover:bg-teal-50">
                     {item.label}
                   </Link>
                 </li>
               ))}
               <li className="pt-2">
-                <DonateButton className="btn-gold w-full">{t.nav.donate}</DonateButton>
+                <DonateButton className="btn-teal w-full">{t.nav.donate}</DonateButton>
               </li>
             </ul>
           </motion.div>

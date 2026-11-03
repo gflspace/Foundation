@@ -14,7 +14,7 @@ export function organizationJsonLd(locale: Locale, t: Dictionary) {
     inLanguage: locale,
     email: site.email,
     founder: { "@id": `${site.url}/#founder` },
-    sameAs: [profiles.facebook, profiles.youtube],
+    sameAs: [profiles.facebook, profiles.instagram, profiles.youtube],
     areaServed: ["Cameroon", "Africa"],
   };
 }
@@ -31,6 +31,6 @@ export function founderJsonLd(t: Dictionary) {
     alumniOf: { "@type": "CollegeOrUniversity", name: "University of Buea" },
     jobTitle: ["Actress", "Film Producer", "Philanthropist"],
     worksFor: { "@type": "Organization", name: "Blue Rain Entertainment" },
-    sameAs: Object.values(profiles),
+    sameAs: [profiles.founderFacebook, profiles.imdb, profiles.wikipedia, profiles.wikidata, profiles.commons, profiles.wikiquote],
   };
 }

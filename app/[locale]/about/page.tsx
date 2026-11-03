@@ -27,7 +27,7 @@ export default function AboutPage(props: LocaleParams) {
       <section className="container-page grid gap-12 py-24 lg:grid-cols-12">
         <Reveal className="lg:col-span-5">
           <Portrait priority />
-          <dl className="card mt-4 divide-y divide-navy/10 text-sm">
+          <dl className="card mt-4 divide-y divide-plum/10 text-sm">
             {[
               { icon: MapPin, k: a.factBorn, v: `${f.born}, ${f.birthplace}` },
               { icon: GraduationCap, k: a.factEducation, v: f.education },
@@ -35,10 +35,10 @@ export default function AboutPage(props: LocaleParams) {
             ].map(({ icon: Icon, k, v }) => (
               <div key={k} className="grid grid-cols-[1rem_1fr] gap-x-3 p-4">
                 <dt className="col-span-2 flex items-center gap-3 font-semibold">
-                  <Icon className="h-4 w-4 shrink-0 text-gold" aria-hidden />
+                  <Icon className="h-4 w-4 shrink-0 text-teal" aria-hidden />
                   {k}
                 </dt>
-                <dd className="col-start-2 text-navy/65">{v}</dd>
+                <dd className="col-start-2 text-plum/65">{v}</dd>
               </div>
             ))}
           </dl>
@@ -47,31 +47,31 @@ export default function AboutPage(props: LocaleParams) {
           <Reveal>
             <p className="eyebrow">{a.founderEyebrow}</p>
             <h2 className="mt-3 text-4xl">{f.name}</h2>
-            <p className="mt-6 text-lg leading-relaxed text-navy/75">{f.summary}</p>
-            <p className="mt-4 leading-relaxed text-navy/75">{a.founderExtra}</p>
+            <p className="mt-6 text-lg leading-relaxed text-plum/75">{f.summary}</p>
+            <p className="mt-4 leading-relaxed text-plum/75">{a.founderExtra}</p>
           </Reveal>
 
           <Reveal delay={0.1}>
             <h3 className="mt-12 text-2xl">{a.honours}</h3>
             <ol className="mt-6 space-y-3">
               {t.awards.map((aw) => (
-                <li key={aw.title} className="flex items-baseline gap-4 border-b border-navy/10 pb-3">
-                  <span className="w-20 shrink-0 font-display text-lg text-gold-600">{aw.year}</span>
-                  <span>{aw.title}{aw.note && <span className="text-navy/65"> — {aw.note}</span>}</span>
+                <li key={aw.title} className="flex items-baseline gap-4 border-b border-plum/10 pb-3">
+                  <span className="w-20 shrink-0 font-display text-lg text-teal-600">{aw.year}</span>
+                  <span>{aw.title}{aw.note && <span className="text-plum/65"> — {aw.note}</span>}</span>
                 </li>
               ))}
             </ol>
             <h3 className="mt-12 text-2xl">{a.roles}</h3>
             <ul className="mt-4 flex flex-wrap gap-2">
               {[...f.roles, ...f.ambassadorships].map((r) => (
-                <li key={r} className="rounded-full bg-white px-4 py-2 text-sm shadow-card ring-1 ring-navy/5">{r}</li>
+                <li key={r} className="rounded-full bg-white px-4 py-2 text-sm shadow-card ring-1 ring-plum/5">{r}</li>
               ))}
             </ul>
-            <p className="mt-8 text-sm text-navy/65">
+            <p className="mt-8 text-sm text-plum/65">
               {a.references}{" "}
-              <a className="underline hover:text-navy" href={profiles.wikipedia} target="_blank" rel="noopener noreferrer">Wikipedia</a> ·{" "}
-              <a className="underline hover:text-navy" href={profiles.imdb} target="_blank" rel="noopener noreferrer">IMDb</a> ·{" "}
-              <a className="underline hover:text-navy" href={profiles.wikidata} target="_blank" rel="noopener noreferrer">Wikidata</a>
+              <a className="underline hover:text-plum" href={profiles.wikipedia} target="_blank" rel="noopener noreferrer">Wikipedia</a> ·{" "}
+              <a className="underline hover:text-plum" href={profiles.imdb} target="_blank" rel="noopener noreferrer">IMDb</a> ·{" "}
+              <a className="underline hover:text-plum" href={profiles.wikidata} target="_blank" rel="noopener noreferrer">Wikidata</a>
             </p>
           </Reveal>
         </div>
@@ -82,15 +82,15 @@ export default function AboutPage(props: LocaleParams) {
           <SectionHeading eyebrow={a.foundationEyebrow} title={a.foundationTitle} align="center" />
           <div className="mt-12 grid gap-6 md:grid-cols-2">
             <Reveal className="h-full">
-              <div className="card h-full bg-navy p-8 text-white">
-                <Target className="h-8 w-8 text-gold-400" aria-hidden />
+              <div className="card h-full bg-plum p-8 text-white">
+                <Target className="h-8 w-8 text-teal-400" aria-hidden />
                 <h3 className="mt-4 text-2xl">{a.missionTitle}</h3>
                 <p className="mt-3 leading-relaxed text-white/75">{a.mission}</p>
               </div>
             </Reveal>
             <Reveal delay={0.1} className="h-full">
-              <div className="card h-full bg-violet-700 p-8 text-white">
-                <Eye className="h-8 w-8 text-gold-400" aria-hidden />
+              <div className="card h-full bg-purple-700 p-8 text-white">
+                <Eye className="h-8 w-8 text-teal-400" aria-hidden />
                 <h3 className="mt-4 text-2xl">{a.visionTitle}</h3>
                 <p className="mt-3 leading-relaxed text-white">{a.vision}</p>
               </div>
@@ -102,16 +102,16 @@ export default function AboutPage(props: LocaleParams) {
               return (
                 <Reveal key={title} delay={i * 0.08} className="h-full">
                   <div className="card h-full p-6">
-                    <Icon className="h-6 w-6 text-violet" aria-hidden />
+                    <Icon className="h-6 w-6 text-purple" aria-hidden />
                     <h3 className="mt-3 font-sans text-base font-semibold">{title}</h3>
-                    <p className="mt-2 text-sm text-navy/65">{text}</p>
+                    <p className="mt-2 text-sm text-plum/65">{text}</p>
                   </div>
                 </Reveal>
               );
             })}
           </div>
           {gamma.aboutDeck && (
-            <div className="mt-12 overflow-hidden rounded-2xl shadow-card ring-1 ring-navy/5">
+            <div className="mt-12 overflow-hidden rounded-2xl shadow-card ring-1 ring-plum/5">
               <iframe src={gamma.aboutDeck} title={a.deckTitle} className="aspect-video w-full" allow="fullscreen" loading="lazy" />
             </div>
           )}

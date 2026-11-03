@@ -1,6 +1,6 @@
 "use client";
 
-import { Facebook, Mail, MapPin, Youtube } from "lucide-react";
+import { Facebook, Instagram, Mail, MapPin, Youtube } from "lucide-react";
 import Link from "next/link";
 import { profiles, projectSlugs, site } from "@/lib/content";
 import { useI18n } from "./I18nProvider";
@@ -17,14 +17,17 @@ export function Footer() {
     { path: "/donate", label: t.nav.donate },
   ];
   return (
-    <footer className="bg-navy-900 text-white/70">
+    <footer className="bg-plum-900 text-white/70">
       <div className="container-page grid gap-12 py-16 md:grid-cols-12">
         <div className="md:col-span-4">
-          <Logo sub={t.nav.logoSub} />
+          <Link href={href("/")} className="inline-block rounded-2xl bg-white p-3 shadow-card"><Logo className="h-16 w-auto" /></Link>
           <p className="mt-5 max-w-xs text-sm leading-relaxed">{t.meta.description}</p>
           <div className="mt-6 flex gap-3">
             <a href={profiles.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="rounded-full bg-white/5 p-2.5 hover:bg-white/10 hover:text-white">
               <Facebook className="h-4 w-4" />
+            </a>
+            <a href={profiles.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="rounded-full bg-white/5 p-2.5 hover:bg-white/10 hover:text-white">
+              <Instagram className="h-4 w-4" />
             </a>
             <a href={profiles.youtube} target="_blank" rel="noopener noreferrer" aria-label={t.footer.youtube} className="rounded-full bg-white/5 p-2.5 hover:bg-white/10 hover:text-white">
               <Youtube className="h-4 w-4" />
@@ -52,8 +55,8 @@ export function Footer() {
           <p className="mt-4 text-sm">{t.footer.newsletterText}</p>
           <NewsletterForm />
           <ul className="mt-6 space-y-2 text-sm">
-            <li className="flex items-center gap-2"><Mail className="h-4 w-4 text-gold-400" aria-hidden /><a href={`mailto:${site.email}`} className="hover:text-white">{site.email}</a></li>
-            <li className="flex items-center gap-2"><MapPin className="h-4 w-4 text-gold-400" aria-hidden />{t.meta.location}</li>
+            <li className="flex items-center gap-2"><Mail className="h-4 w-4 text-teal-400" aria-hidden /><a href={`mailto:${site.email}`} className="hover:text-white">{site.email}</a></li>
+            <li className="flex items-center gap-2"><MapPin className="h-4 w-4 text-teal-400" aria-hidden />{t.meta.location}</li>
           </ul>
         </div>
       </div>

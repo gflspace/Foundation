@@ -41,7 +41,7 @@ export function FilmTimeline({ limit }: { limit?: number }) {
               onClick={() => setFilter(k)}
               className={cn(
                 "rounded-full px-4 py-2 text-sm font-semibold transition",
-                filter === k ? "bg-navy text-white" : "bg-white text-navy/70 ring-1 ring-navy/10 hover:text-navy",
+                filter === k ? "bg-plum text-white" : "bg-white text-plum/70 ring-1 ring-plum/10 hover:text-plum",
               )}
             >
               {ft.filters[k]}
@@ -50,12 +50,12 @@ export function FilmTimeline({ limit }: { limit?: number }) {
         </div>
       )}
 
-      <ol className="relative border-l border-navy/15 pl-6 sm:pl-10">
+      <ol className="relative border-l border-plum/15 pl-6 sm:pl-10">
         <AnimatePresence initial={false}>
           {byYear.map(([year, items]) => (
             <motion.li key={year} layout initial={{ opacity: 0, x: -12 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -12 }} className="relative pb-10 last:pb-0">
-              <span aria-hidden className="absolute -left-[31px] top-1.5 h-3 w-3 rounded-full bg-gold ring-4 ring-sand sm:-left-[47px]" />
-              <p className="font-display text-2xl text-gold-600">{year}</p>
+              <span aria-hidden className="absolute -left-[31px] top-1.5 h-3 w-3 rounded-full bg-teal ring-4 ring-mist sm:-left-[47px]" />
+              <p className="font-display text-2xl text-teal-600">{year}</p>
               <div className="mt-3 grid gap-3 sm:grid-cols-2">
                 {items.map((f) => (
                   <article key={f.title} className="card flex flex-col gap-1 p-5">
@@ -63,11 +63,11 @@ export function FilmTimeline({ limit }: { limit?: number }) {
                       <h3 className="font-display text-lg leading-snug">
                         <cite className="not-italic" lang="en">{f.title}</cite>
                       </h3>
-                      {f.highlight && <Star className="h-4 w-4 shrink-0 fill-gold text-gold" aria-label={ft.highlight} />}
+                      {f.highlight && <Star className="h-4 w-4 shrink-0 fill-teal text-teal" aria-label={ft.highlight} />}
                     </div>
-                    <p className="text-sm text-navy/65" lang={locale}>{describe(f)}</p>
+                    <p className="text-sm text-plum/65" lang={locale}>{describe(f)}</p>
                     {f.imdb && (
-                      <a href={f.imdb} target="_blank" rel="noopener noreferrer" className="mt-2 inline-flex items-center gap-1 text-xs font-semibold text-violet-700 hover:underline">
+                      <a href={f.imdb} target="_blank" rel="noopener noreferrer" className="mt-2 inline-flex items-center gap-1 text-xs font-semibold text-purple-700 hover:underline">
                         {ft.viewImdb} <ExternalLink className="h-3 w-3" aria-hidden />
                         <span className="sr-only">{t.common.opensNewTab}</span>
                       </a>

@@ -14,7 +14,9 @@ export const site = {
 
 /** Official profiles — also emitted as schema.org `sameAs` for the knowledge graph. */
 export const profiles = {
-  facebook: "https://www.facebook.com/SyndyEmadeofficial",
+  facebook: "https://www.facebook.com/SyndyEmadeFoundation/",
+  instagram: "https://www.instagram.com/syndyemadefoundationcmr/",
+  founderFacebook: "https://www.facebook.com/SyndyEmadeofficial",
   youtube: "https://www.youtube.com/channel/UCDbpFFyAeVdE5t8KR6OIQ6g",
   imdb: "https://www.imdb.com/name/nm9931175/",
   wikipedia: "https://en.wikipedia.org/wiki/Syndy_Emade",
@@ -38,73 +40,70 @@ export const founderPhoto = {
 };
 
 /**
- * Impact counters, in the same order as `impact.labels` in the dictionaries.
- * ⚠️  PLACEHOLDER values — replace with audited figures and set `isPlaceholder: false`.
+ * Headline figures. Sourced from public coverage of the Foundation's outreaches
+ * (see docs/content-brief.md). Update here when the Foundation publishes audited totals.
  */
 export const impact = {
-  isPlaceholder: true,
-  values: [
-    { value: 5000, suffix: "+" },
-    { value: 40, suffix: "+" },
-    { value: 250, suffix: "+" },
-    { value: 600, suffix: "+" },
-  ],
+  isPlaceholder: false,
 };
 
-/**
- * Hero "live" counters (enhancement spec §6.1), in the same order as `hero.stats` in the dictionaries.
- * ⚠️  PLACEHOLDER values — confirm with the Foundation; shown with an "illustrative" note while
- *     `impact.isPlaceholder` is true.
- */
-export const heroStats = [
-  { value: 5000, suffix: "+" },
-  { value: 12, suffix: "+" },
-  { value: 6, suffix: "" },
-];
-
-/**
- * Regional centres for the impact map (spec §6.4). Copy for each is in the dictionaries
- * under `map.centres[id]`. TODO(verify): confirm which activities run in each city.
- */
-export type CentreId = "buea" | "douala" | "kumba" | "yaounde";
-export const impactCentres: { id: CentreId; programmes: ProjectSlug[]; stories: string[] }[] = [
-  { id: "buea", programmes: ["education", "youth-welfare"], stories: ["school-supplies", "mentorship"] },
-  { id: "douala", programmes: ["mobile-crisis", "women"], stories: ["crisis-unit", "tailoring"] },
-  { id: "kumba", programmes: ["education"], stories: ["scholarships"] },
-  { id: "yaounde", programmes: ["women", "mobile-crisis"], stories: [] },
-];
-
-/**
- * Media library (spec §6.3). Photo stories have no photography yet: each renders a branded
- * placeholder until `image` is set to a real, licensed photo (e.g. "/images/field/school-supplies.webp").
- */
-export type MediaKind = "video" | "photo" | "press" | "bts";
-export type PhotoStory = { id: string; kind: "photo" | "bts"; tone: "violet" | "gold" | "navy"; programme?: ProjectSlug; centre?: CentreId; image?: string };
-export const photoStories: PhotoStory[] = [
-  { id: "school-supplies", kind: "photo", tone: "violet", programme: "education", centre: "buea" },
-  { id: "crisis-unit", kind: "photo", tone: "gold", programme: "mobile-crisis", centre: "douala" },
-  { id: "tailoring", kind: "photo", tone: "navy", programme: "women", centre: "douala" },
-  { id: "scholarships", kind: "photo", tone: "gold", programme: "education", centre: "kumba" },
-  { id: "mentorship", kind: "photo", tone: "violet", programme: "youth-welfare", centre: "buea" },
-  { id: "on-set", kind: "bts", tone: "navy" },
+/** Hero counters, in the same order as `hero.stats` in the dictionaries. `plain` = no thousands separator. */
+export const heroStats: { value: number; suffix: string; plain?: boolean }[] = [
+  { value: 600, suffix: "+" },
+  { value: 300, suffix: "" },
+  { value: 2019, suffix: "", plain: true },
 ];
 
 export type PillarKey = "philanthropist" | "humanitarian" | "icon";
-export const pillarKeys: { key: PillarKey; accent: "violet" | "gold" | "navy" }[] = [
-  { key: "philanthropist", accent: "violet" },
-  { key: "humanitarian", accent: "gold" },
-  { key: "icon", accent: "navy" },
+export const pillarKeys: { key: PillarKey; accent: "purple" | "teal" | "plum" }[] = [
+  { key: "philanthropist", accent: "teal" },
+  { key: "humanitarian", accent: "purple" },
+  { key: "icon", accent: "plum" },
 ];
 
-export type ProjectSlug = "youth-welfare" | "mobile-crisis" | "education" | "women";
-/** Programme structure; titles and copy are in the dictionaries under `projects[slug]`. */
-export const projectMeta: { slug: ProjectSlug; pillar: PillarKey; shares: number[] }[] = [
-  { slug: "youth-welfare", pillar: "philanthropist", shares: [45, 30, 25] },
-  { slug: "mobile-crisis", pillar: "humanitarian", shares: [40, 35, 25] },
-  { slug: "education", pillar: "philanthropist", shares: [60, 25, 15] },
-  { slug: "women", pillar: "humanitarian", shares: [55, 30, 15] },
+/**
+ * Programmes, built from the Foundation's documented work (docs/content-brief.md).
+ * Copy lives in the dictionaries under `projects[slug]` (delivered = documented, planned = from the brief).
+ */
+export type ProjectSlug = "back-to-school" | "displaced-families" | "christmas-outreach" | "child-protection" | "women";
+export const projectMeta: { slug: ProjectSlug; pillar: PillarKey; tone: "teal" | "purple" | "plum"; video?: string }[] = [
+  { slug: "back-to-school", pillar: "philanthropist", tone: "teal" },
+  { slug: "displaced-families", pillar: "humanitarian", tone: "purple", video: "IRtdVqIK9Nc" },
+  { slug: "christmas-outreach", pillar: "humanitarian", tone: "teal", video: "8_OXBvKZBKY" },
+  { slug: "child-protection", pillar: "philanthropist", tone: "plum", video: "G9f7qKhNiwU" },
+  { slug: "women", pillar: "icon", tone: "purple" },
 ];
 export const projectSlugs = projectMeta.map((p) => p.slug);
+
+/**
+ * "Our journey": documented activities, newest first in the UI. Copy in `journey.entries[id]`.
+ * `dateConfirmed: false` shows a "date to confirm" note. Every entry cites at least one public source.
+ */
+export type Source = { label: string; url: string };
+export type JourneyEntry = { id: string; date: string; dateConfirmed: boolean; programme?: ProjectSlug; video?: string; sources: Source[] };
+export const journey: JourneyEntry[] = [
+  { id: "launch", date: "2019-08", dateConfirmed: true, programme: "child-protection", video: "G9f7qKhNiwU", sources: [{ label: "SYNDY EMADE TV (YouTube)", url: "https://www.youtube.com/watch?v=G9f7qKhNiwU" }] },
+  { id: "school-materials", date: "2019-09", dateConfirmed: false, programme: "back-to-school", sources: [{ label: "Positive Vibes CMR (Facebook)", url: "https://www.facebook.com/positivevibescmr/posts/502011753942883/" }, { label: "Ekwat TV (Facebook)", url: "https://www.facebook.com/EkwatTV/posts/3629789580390638/" }] },
+  { id: "school-fees", date: "2019-10", dateConfirmed: false, programme: "back-to-school", sources: [{ label: "Kesa Magazine (Facebook)", url: "https://www.facebook.com/kesamagazine/posts/3856021907788721/" }] },
+  { id: "christmas-2020", date: "2020-12", dateConfirmed: true, programme: "christmas-outreach", video: "8_OXBvKZBKY", sources: [{ label: "SYNDY EMADE TV (YouTube)", url: "https://www.youtube.com/watch?v=8_OXBvKZBKY" }] },
+  { id: "idps-2021", date: "2021-02", dateConfirmed: true, programme: "displaced-families", video: "IRtdVqIK9Nc", sources: [{ label: "SYNDY EMADE TV (YouTube)", url: "https://www.youtube.com/watch?v=IRtdVqIK9Nc" }, { label: "Newsday Cameroon", url: "https://newsdaycameroon.wordpress.com/tag/douala/" }] },
+  { id: "womens-day", date: "2024-03", dateConfirmed: false, programme: "women", sources: [{ label: "Syndy Emade Foundation (Facebook)", url: "https://www.facebook.com/SyndyEmadeFoundation/" }] },
+  { id: "christmas-2023", date: "2023-12", dateConfirmed: true, programme: "christmas-outreach", sources: [{ label: "Mimi Mefo Info", url: "https://mimimefoinfos.com/syndy-emade-offers-relief-to-visually-impaired-mother-in-douala/" }] },
+];
+
+/**
+ * Map points (south-west/central Cameroon). `work` = documented activity, `origin` = where the
+ * displaced families we support come from, `hometown` = the founder's birthplace.
+ */
+export type CentreId = "douala" | "bamenda" | "buea" | "kumba";
+export const impactCentres: { id: CentreId; kind: "work" | "origin" | "hometown"; programmes: ProjectSlug[]; journey: string[] }[] = [
+  { id: "douala", kind: "work", programmes: ["displaced-families", "christmas-outreach", "back-to-school"], journey: ["idps-2021", "christmas-2020", "christmas-2023", "school-materials"] },
+  { id: "bamenda", kind: "origin", programmes: ["displaced-families"], journey: [] },
+  { id: "buea", kind: "origin", programmes: ["displaced-families"], journey: [] },
+  { id: "kumba", kind: "hometown", programmes: [], journey: [] },
+];
+
+export type MediaKind = "video" | "story" | "press";
 
 export type FilmCredit = "producer" | "lead";
 export type FilmNote = "debut" | "tv" | "nollywood" | "ekubo";
@@ -142,9 +141,11 @@ export const films: Film[] = [
   { year: 2024, title: "A Kiss That Kills", role: "Rita", studio: "Bakia T. Thomas TV", imdb: "https://www.imdb.com/title/tt32395186/" },
 ];
 
-export type PressTag = "interview" | "ranking" | "feature" | "release" | "award" | "profile" | "ambassador" | "studio";
+export type PressTag = "interview" | "ranking" | "feature" | "release" | "award" | "profile" | "ambassador" | "studio" | "foundation";
 /** Press coverage — titles are kept in the publication's original language. */
 export const press: { title: string; source: string; url: string; tag: PressTag; lang: "en" | "fr" }[] = [
+  { title: "Syndy Emade offers relief to visually impaired mother in Douala", source: "Mimi Mefo Info", url: "https://mimimefoinfos.com/syndy-emade-offers-relief-to-visually-impaired-mother-in-douala/", tag: "foundation", lang: "en" },
+  { title: "Syndy Emade Foundation outreach to displaced families in Douala", source: "Newsday Cameroon", url: "https://newsdaycameroon.wordpress.com/tag/douala/", tag: "foundation", lang: "en" },
   { title: "On the film industry in Cameroon & challenges as a female filmmaker", source: "Pulse Nigeria", url: "http://www.pulse.ng/movies/syndy-emade-actress-talks-film-industry-in-cameroon-challenges-as-a-female-filmmaker-getting-into-character-id4908980.html", tag: "interview", lang: "en" },
   { title: "Top five active Cameroonian actresses", source: "Njoka TV", url: "https://blog.njokatv.com/2017/04/18/top-five-active-cameroonian-actresses/", tag: "ranking", lang: "en" },
   { title: "Syndy Emade — Cameroon’s best actress", source: "Dcoded TV", url: "http://dcodedtv.com/syndy-emade-cameroon-s-best-actress/", tag: "feature", lang: "en" },
@@ -156,11 +157,12 @@ export const press: { title: string; source: string; url: string; tag: PressTag;
   { title: "Blue Rain Entertainment coverage", source: "Nexdim Empire", url: "http://nexdimempire.com/tag/blue-rain-entertainment/", tag: "studio", lang: "en" },
 ];
 
-/**
- * YouTube video IDs to feature on /media (the part after `watch?v=`).
- * Leave empty to show the channel call-to-action only. Titles per locale.
- */
-export const featuredVideos: { id: string; title: { en: string; fr: string } }[] = [];
+/** The Foundation's films on SYNDY EMADE TV — embedded (privacy-enhanced), never re-uploaded. */
+export const featuredVideos: { id: string; date: string; duration: string; programme: ProjectSlug; title: { en: string; fr: string } }[] = [
+  { id: "IRtdVqIK9Nc", date: "2021-02-02", duration: "4:47", programme: "displaced-families", title: { en: "Touching moments with displaced families", fr: "Moments forts avec des familles déplacées" } },
+  { id: "8_OXBvKZBKY", date: "2021-01-08", duration: "2:37", programme: "christmas-outreach", title: { en: "Christmas outreach to families at Bonaberi", fr: "Noël solidaire avec des familles de Bonaberi" } },
+  { id: "G9f7qKhNiwU", date: "2019-08-18", duration: "1:00", programme: "child-protection", title: { en: "Introducing the Syndy Emade Foundation", fr: "Présentation de la Fondation Syndy Emade" } },
+];
 
 /** Donation tiers; the impact sentence for each is in the dictionaries (`donate.tiers`). */
 /**

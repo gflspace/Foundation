@@ -57,7 +57,7 @@ export function DonateProvider({ children }: { children: ReactNode }) {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            className="fixed inset-0 z-[60] flex items-end justify-center bg-navy/70 p-0 backdrop-blur-sm sm:items-center sm:p-4"
+            className="fixed inset-0 z-[60] flex items-end justify-center bg-plum/70 p-0 backdrop-blur-sm sm:items-center sm:p-4"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -68,7 +68,7 @@ export function DonateProvider({ children }: { children: ReactNode }) {
               role="dialog"
               aria-modal="true"
               aria-labelledby="donate-title"
-              className="relative max-h-[92vh] w-full max-w-lg overflow-y-auto rounded-t-3xl bg-sand p-6 shadow-2xl sm:rounded-3xl sm:p-8"
+              className="relative max-h-[92vh] w-full max-w-lg overflow-y-auto rounded-t-3xl bg-mist p-6 shadow-2xl sm:rounded-3xl sm:p-8"
               initial={{ y: 40, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: 40, opacity: 0 }}
@@ -77,7 +77,7 @@ export function DonateProvider({ children }: { children: ReactNode }) {
             >
               <button
                 onClick={close}
-                className="absolute right-4 top-4 rounded-full p-2 text-navy/60 hover:bg-navy/5 hover:text-navy"
+                className="absolute right-4 top-4 rounded-full p-2 text-plum/60 hover:bg-plum/5 hover:text-plum"
                 aria-label={t.form.close}
               >
                 <X className="h-5 w-5" />
@@ -97,7 +97,7 @@ export function DonateProvider({ children }: { children: ReactNode }) {
 
 export function DonateButton({
   children,
-  className = "btn-gold",
+  className = "btn-teal",
   programme,
 }: {
   children?: ReactNode;

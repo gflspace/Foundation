@@ -7,7 +7,7 @@ export const isLocale = (v: string): v is Locale => (locales as readonly string[
 /**
  * Translated URL segments. Pages are built from the internal (English) paths;
  * middleware rewrites the public translated URLs onto them, e.g.
- *   /fr/projets/protection-des-jeunes  →  app/[locale]/projects/[slug] (slug "youth-welfare")
+ *   /fr/projets/rentree-scolaire  →  app/[locale]/projects/[slug] (slug "back-to-school")
  *   /fr/faire-un-don/merci             →  app/[locale]/donate/thank-you
  * Keep this file free of server-only imports: middleware (edge) uses it.
  */
@@ -26,11 +26,13 @@ export const translatedSegments: Partial<Record<Locale, SegmentMap>> = {
     },
     children: {
       projects: {
-        "youth-welfare": "protection-des-jeunes",
-        "mobile-crisis": "intervention-mobile-de-crise",
-        education: "bourses-d-etudes",
-        women: "autonomisation-des-femmes",
+        "back-to-school": "rentree-scolaire",
+        "displaced-families": "familles-deplacees",
+        "christmas-outreach": "noel-solidaire",
+        "child-protection": "protection-de-l-enfance",
+        women: "femmes-et-partenariats",
       },
+
       donate: { "thank-you": "merci" },
     },
   },

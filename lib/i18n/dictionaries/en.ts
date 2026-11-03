@@ -6,11 +6,11 @@ const en = {
   locale: "en",
   meta: {
     siteName: "Syndy Emade Foundation",
-    tagline: "A Beacon of Hope. An Icon of Action.",
+    tagline: "Together we can.",
     description:
-      "The Syndy Emade Foundation protects vulnerable youth, delivers mobile crisis relief, funds scholarships and empowers communities across Cameroon, Africa and the diaspora.",
+      "The Syndy Emade Foundation stands with vulnerable children and displaced families in Cameroon: school supplies and fees, food and essentials, Christmas outreach and the fight against child exploitation. Together we can.",
     keywords: ["Syndy Emade", "Syndy Emade Foundation", "Cameroon charity", "youth welfare Cameroon", "crisis relief Cameroon", "scholarships Cameroon", "Blue Rain Entertainment"],
-    location: "Buea & Douala, Cameroon", // TODO(verify)
+    location: "Douala, Cameroon",
   },
 
   nav: {
@@ -42,17 +42,20 @@ const en = {
   },
 
   hero: {
-    eyebrow: "Cameroon · Africa · The Diaspora",
-    line1: "A Beacon of Hope.",
-    line2: "An Icon of Action.",
-    cta: "Sponsor a child",
-    secondary: "Watch field logs",
+    eyebrow: "Syndy Emade Foundation · Douala, Cameroon",
+    line1: "Together",
+    line2: "we can.",
+    lead:
+      "Since 2019, the Syndy Emade Foundation has stood with children and families hit hardest by hardship and conflict in Cameroon, from school supplies for displaced children to food, rent and a little Christmas joy.",
+    cta: "Donate now",
+    secondary: "Watch our story",
     promiseLabel: "Our promise",
     promise: "Turning visibility into practical help — for every child, family and community we reach.",
     watch: "Watch field missions on Syndy Emade TV",
-    stats: ["Youth impacted", "Major initiatives", "Field projects"],
+    stats: ["displaced children equipped for school", "children’s school fees paid", "standing with families since"],
     statsLabel: "Impact at a glance",
-    videoTitle: "Field logs — Syndy Emade TV",
+    statsNote: "Figures as reported in public coverage of our outreaches.",
+    videoTitle: "Our story — Syndy Emade TV",
     videoEmpty: "Mission films are published on the Syndy Emade TV YouTube channel.",
     videoOpenChannel: "Open the channel on YouTube",
     close: "Close",
@@ -63,12 +66,12 @@ const en = {
     title: "The humanitarian and the film icon",
     intro: "Syndy Emade’s work on screen and in the field feed each other: cinema brings the visibility, the Foundation turns it into help.",
     tabsLabel: "Choose a side of her story",
-    tabs: { humanitarian: "The Humanitarian & Philanthropist", icon: "The Film Icon & Producer" },
+    tabs: { humanitarian: "The Humanitarian", icon: "The Film Icon" },
     humanitarianText:
-      "Through the Foundation she leads youth protection, mobile crisis relief, scholarships and women’s tailoring and farming workshops across Cameroon.",
+      "Through the Foundation she leads back-to-school support for displaced children, outreaches to families who fled the crisis in the North-West and South-West regions, and Christmas outreaches to vulnerable households in Douala. Her team visits homes first, then she visits in person to decide who needs help most.",
     iconText:
       "As an actress and CEO of Blue Rain Entertainment she has carried Cameroonian stories across borders — from her 2010 debut to co-productions with Nollywood stars.",
-    programmesHeading: "Foundation initiatives",
+    programmesHeading: "Foundation programmes",
     filmsHeading: "Selected films",
     awardsHeading: "Recognition",
     crossBorder: "Cross-border cinema: Cameroonian productions with Nigerian (Nollywood) talent, including Alexx Ekubo in A Man for the Weekend.",
@@ -78,17 +81,40 @@ const en = {
 
   map: {
     eyebrow: "Where we work",
-    title: "Our regional centres",
-    intro: "Select a city to see the programmes and field stories connected to it.",
-    mapLabel: "Map of south-western Cameroon showing the Foundation’s four regional centres",
+    title: "From the crisis regions to Douala",
+    intro: "Most of our documented work is in Douala, especially Bonaberi, with families who fled the conflict in the North-West and South-West regions. Select a place to learn more.",
+    mapLabel: "Map of south-western Cameroon showing Douala, where the Foundation works, and Bamenda and Buea, the regions displaced families come from",
     programmesLabel: "Programmes",
-    storiesLabel: "Field stories",
-    noStories: "Field stories from this centre are coming soon.",
+    storiesLabel: "Moments from our journey",
+    noStories: "No documented outreach here yet.",
+    legend: { work: "Where we work", origin: "Where displaced families come from", hometown: "Founder’s hometown" },
     centres: {
-      buea: { name: "Buea", region: "Southwest Region", headline: "Back-to-school supply drives & youth mentorship" },
-      douala: { name: "Douala", region: "Littoral Region", headline: "Mobile crisis units & women’s tailoring workshops" },
-      kumba: { name: "Kumba", region: "Southwest Region · the founder’s hometown", headline: "Scholarships for orphans and under-served children" },
-      yaounde: { name: "Yaoundé", region: "Centre Region · capital", headline: "National partnerships and women’s empowerment" },
+      douala: { name: "Douala", region: "Littoral Region · Bonaberi", headline: "Outreach to displaced families, back-to-school support and Christmas outreaches." },
+      bamenda: { name: "Bamenda", region: "North-West Region", headline: "Many of the displaced families we support in Douala fled the crisis in the North-West." },
+      buea: { name: "Buea", region: "South-West Region", headline: "Families from the South-West, also affected by the crisis, are among those we support." },
+      kumba: { name: "Kumba", region: "South-West Region", headline: "Syndy Emade’s hometown, where her commitment to children began." },
+    },
+  },
+
+  journey: {
+    eyebrow: "Our journey",
+    title: "What we’ve done so far",
+    intro: "Every moment below is documented, with a link to its source. Filter by programme to follow one strand of our work.",
+    filterLabel: "Filter by programme",
+    all: "All programmes",
+    dateToConfirm: "date to confirm",
+    source: "Source",
+    sources: "Sources",
+    watch: "Watch the film",
+    readMore: "See the full journey",
+    entries: {
+      launch: { when: "August 2019", title: "The Foundation is born", text: "Syndy Emade launches her foundation with a short film on her channel, Syndy Emade TV. Its cause: protecting vulnerable children, starting with street children at risk of exploitation." },
+      "school-materials": { when: "Back-to-school season", title: "School materials for 600+ displaced children", text: "Shortly after its launch, the Foundation gives school materials to more than 600 children displaced by the crisis and now living in Douala." },
+      "school-fees": { when: "Back-to-school season", title: "School fees for 300 children", text: "The Foundation pays school fees so that 300 children can stay in class, as part of its back-to-school campaign for underprivileged children." },
+      "christmas-2020": { when: "Christmas 2020", title: "Christmas outreach at Bonaberi", text: "The team brings Christmas to families in Bonaberi, Douala, sharing gifts and essentials. The founder uses the moment to speak out against the exploitation of street children." },
+      "idps-2021": { when: "February 2021", title: "Standing with displaced families", text: "The Foundation visits families who fled the crisis to Douala and shares food and essentials. Parents say the gift will feed their children for days, and some plan to share it with neighbours. The founder calls it “the first of many”." },
+      "womens-day": { when: "International Women’s Day", title: "Women’s Day, in partnership", text: "The Foundation marks International Women’s Day alongside the Wilmbi Foundation, standing with women in their communities." },
+      "christmas-2023": { when: "December 2023", title: "A home for a mother and her three sons", text: "On a Christmas outreach, the team meets a visually impaired single mother living in one cramped room with her three sons. The Foundation pays a year’s rent on a larger home, pledges to renovate their room, and delivers food and household essentials." },
     },
   },
 
@@ -101,87 +127,99 @@ const en = {
 
   impact: {
     heading: "Our impact",
-    labels: ["Youth reached", "Crisis relief missions", "Scholarships awarded", "Women supported"],
-    placeholderNote: "Illustrative figures — audited impact data coming soon.",
+    labels: [],
+    placeholderNote: "Figures as reported in public coverage of our outreaches.",
   },
+
 
   pillars: {
     philanthropist: {
       kicker: "Pillar I",
-      title: "The Philanthropist",
-      summary: "Youth welfare, protection and access to education.",
-      points: ["Youth protection & care", "Educational grants", "Vocational training"],
+      title: "Every child in school, every child safe",
+      summary: "Education and protection for children at risk.",
+      points: ["Back to school", "Child protection", "Fighting child exploitation"],
     },
     humanitarian: {
       kicker: "Pillar II",
-      title: "The Humanitarian",
-      summary: "Rapid, mobile relief for families affected by crisis.",
-      points: ["Mobile crisis response", "Emergency relief missions", "Healthcare outreach"],
+      title: "No family left behind",
+      summary: "Food, shelter and dignity for families in crisis.",
+      points: ["Displaced families", "Christmas outreach", "Emergency support"],
     },
     icon: {
       kicker: "Pillar III",
-      title: "The Cultural Icon",
-      summary: "Cinema and creativity as engines for social good.",
-      points: ["Cultural ambassadorship", "Youth & arts mentorship", "Creative economy"],
+      title: "A voice that rallies others",
+      summary: "Using a public platform to bring partners and attention to the cause.",
+      points: ["Women & partnerships", "Media visibility for our causes", "Volunteers and donors"],
     },
   },
 
   projects: {
-    "youth-welfare": {
-      title: "Youth Protection & Care",
-      short: "Shelter, nutrition, medical check-ups and moral support for vulnerable young people.",
+    "back-to-school": {
+      title: "Back to School",
+      short: "School materials and school fees so that displaced and underprivileged children stay in class.",
       intro:
-        "Our youth intervention programme meets young people where they are — providing safe shelter, regular meals, health check-ups and trusted mentors, alongside rehabilitation programmes, clothing donations and community events that restore dignity.",
-      activities: [
-        "Emergency shelter placement and safe-house partnerships",
-        "Nutrition support and regular health screenings",
-        "Mentorship, counselling and moral support",
-        "Rehabilitation programmes and clothing drives",
+        "Conflict and poverty push children out of school. Our back-to-school campaign gives underprivileged and displaced children the basics they need to learn, and pays school fees when families cannot.",
+      delivered: [
+        "School materials for more than 600 displaced children in Douala",
+        "School fees paid for 300 children",
+        "A recurring back-to-school campaign for underprivileged children",
       ],
-      regions: "Southwest & Littoral Regions",
-      funding: ["Shelter & nutrition", "Health & counselling", "Mentorship & events"],
+      planned: ["Secondary and university scholarships", "Vocational and digital-skills training"],
+      regions: "Douala",
+      keyFact: "600+",
+      keyFactLabel: "displaced children equipped for school",
     },
-    "mobile-crisis": {
-      title: "Mobile Crisis Response",
-      short: "“Chantiers Mobiles Crise” — mobile units delivering food, water, health kits and shelter.",
+    "displaced-families": {
+      title: "Displaced Families",
+      short: "Food and essentials for families who fled the crisis in the North-West and South-West regions.",
       intro:
-        "Our mobile crisis units — Chantiers Mobiles Crise — travel to conflict-affected and displaced families with food supplies, clean water, healthcare kits and shelter assistance, coordinating with local leaders to reach people quickly and safely.",
-      activities: [
-        "Food and clean-water distribution",
-        "Healthcare kits and emergency medical support",
-        "Shelter materials for displaced families",
-        "Community health screenings",
+        "Thousands of families have fled the crisis in Cameroon’s North-West and South-West regions and rebuilt their lives in Douala with very little. We visit them in Bonaberi and elsewhere with food and essentials, through our mobile crisis relief work, Chantiers Mobiles Crise.",
+      delivered: [
+        "Food and essential supplies shared with displaced families in Bonaberi, Douala (2021)",
+        "Gifts that families say feed their children for days, and that they share with neighbours",
+        "Outreach the founder described as “the first of many”",
       ],
-      regions: "Conflict-affected areas of Cameroon",
-      funding: ["Food & water", "Health kits & care", "Shelter & logistics"],
+      planned: ["Health kits and emergency medical support", "Shelter materials for newly displaced families"],
+      regions: "Bonaberi, Douala",
+      keyFact: "2021",
+      keyFactLabel: "outreach to displaced families in Bonaberi",
     },
-    education: {
-      title: "Educational Grants",
-      short: "School supplies and secondary / university scholarships for orphans and under-served children.",
+    "christmas-outreach": {
+      title: "Christmas Outreach",
+      short: "Each festive season, the team visits vulnerable homes and brings practical help that lasts beyond Christmas.",
       intro:
-        "Education is the most durable gift we can give. We run school-supply drives each term and award secondary and university scholarships to orphans and under-served children so that talent, not circumstance, decides how far they go.",
-      activities: [
-        "Back-to-school supply drives",
-        "Secondary school fee scholarships",
-        "University scholarships and bursaries",
-        "Vocational and digital-skills training",
+        "Each Christmas, our team goes door to door, often in remote neighbourhoods, to find the families who need help most. The founder then visits them in person. The help goes beyond a gift, from food to a year’s rent.",
+      delivered: [
+        "Christmas outreach to families in Bonaberi (2020)",
+        "A year’s rent on a larger home for a visually impaired mother and her three sons (2023)",
+        "A pledge to renovate the family’s room, plus food and household essentials",
       ],
-      regions: "Southwest & Littoral Regions",
-      funding: ["Tuition & fees", "Supplies & uniforms", "Training programmes"],
+      planned: ["A yearly Christmas outreach in more neighbourhoods"],
+      regions: "Douala",
+      keyFact: "1 year",
+      keyFactLabel: "of rent paid for a family in need (2023)",
+    },
+    "child-protection": {
+      title: "Child Protection",
+      short: "Standing up for street children and against the exploitation of children.",
+      intro:
+        "The Foundation was created to protect vulnerable children, starting with street children, who are often exploited. We speak out at every outreach, and we are building programmes to offer safety, care and guidance.",
+      delivered: ["The Foundation’s founding cause, stated publicly since 2019", "Advocacy against child exploitation at our outreaches"],
+      planned: ["Shelter and nutrition for children at risk", "Health check-ups", "Mentoring by trusted adults"],
+      regions: "Douala",
+      keyFact: "2019",
+      keyFactLabel: "our founding cause",
     },
     women: {
-      title: "Women Empowerment",
-      short: "Micro-grants and vocational training in tailoring and agriculture for widows and displaced women.",
+      title: "Women & Partnerships",
+      short: "Working with partner organisations to support women and their families.",
       intro:
-        "Women hold communities together, especially in crisis. Our micro-grant programme helps widows and displaced women start or rebuild small businesses, backed by vocational training in tailoring and agriculture.",
-      activities: [
-        "Small-business micro-grants",
-        "Tailoring and sewing training",
-        "Agricultural training and inputs",
-        "Peer savings groups and mentoring",
-      ],
-      regions: "Nationwide, prioritising displaced communities",
-      funding: ["Micro-grants", "Vocational training", "Mentoring & follow-up"],
+        "Women hold families together, especially in crisis. We work alongside partner organisations to support them, and we welcome partners who share our goals.",
+      delivered: ["International Women’s Day, in partnership with the Wilmbi Foundation"],
+      planned: ["Micro-grants for women-led small businesses", "Training in tailoring and agriculture for widows and displaced women"],
+      regions: "Cameroon",
+      keyFact: "Partners",
+      keyFactLabel: "working with other foundations",
     },
   },
 
@@ -225,11 +263,10 @@ const en = {
   },
 
   home: {
-    pillarsEyebrow: "Three pillars",
-    pillarsTitle: "One woman’s platform, three ways to change lives",
-    pillarsIntro:
-      "From long-term youth welfare to rapid crisis response and creative mentorship, our work is built around the strengths our founder brings to every community.",
-    programmesEyebrow: "Programmes",
+    pillarsEyebrow: "What drives us",
+    pillarsTitle: "Three commitments, one promise: together we can",
+    pillarsIntro: "Everything we do comes back to children and families who have been left with the least, and to the people who choose to stand with them.",
+    programmesEyebrow: "Our programmes",
     programmesTitle: "Where your support goes",
     founderEyebrow: "Meet the founder",
     readStory: "Read her story",
@@ -238,7 +275,12 @@ const en = {
     legacyIntro:
       "Over 15 years on screen and behind the camera with Blue Rain Entertainment — stories that carry Cameroonian voices across Africa and the world.",
     fullFilmography: "Full filmography",
+    videosEyebrow: "Watch",
+    videosTitle: "Our work, in our own films",
+    videosIntro: "Short films from our outreaches, published on Syndy Emade TV.",
+    seeAllMedia: "All media",
   },
+
 
   cta: {
     title: "Every gift becomes a meal, a classroom seat, a safe night’s sleep.",
@@ -279,25 +321,30 @@ const en = {
   },
 
   projectsPage: {
-    metaTitle: "Projects & Impact",
-    metaDescription: "Youth protection, mobile crisis response, educational grants and women’s empowerment programmes across Cameroon.",
-    eyebrow: "Projects & impact",
-    title: "Practical help, delivered where it’s needed",
-    intro: "Four programmes, three pillars, one commitment: measurable change for the people we serve.",
+    metaTitle: "Programmes & Impact",
+    metaDescription: "Back to school, support for displaced families, Christmas outreach, child protection, and women and partnerships, in Douala and across Cameroon.",
+    eyebrow: "Programmes & impact",
+    title: "Practical help, where it’s needed most",
+    intro: "Five programmes built from what we have actually done in Douala since 2019, and what we are building next.",
     listHeading: "Our programmes",
     frameworkEyebrow: "Our framework",
-    frameworkTitle: "The three pillars",
+    frameworkTitle: "What drives us",
   },
+
 
   project: {
     eyebrow: "Programme",
     photoLabel: "{title} in the field",
-    whatWeDo: "What we do",
-    allocation: "How funds are allocated",
-    allocationNote: "Target allocation; actuals are published in our annual report.",
+    whatWeDo: "What we’ve done",
+    planned: "What we’re building next",
+    plannedNote: "Planned work, subject to funding.",
+    journeyTitle: "Moments from this programme",
+    watchFilm: "Watch the film",
+    where: "Where",
     support: "Support this programme",
     others: "Other programmes",
   },
+
 
   legacy: {
     metaTitle: "Filmography & Creative Legacy",
@@ -323,10 +370,10 @@ const en = {
 
   media: {
     metaTitle: "Media & Press",
-    metaDescription: "Videos from Syndy Emade TV, photo galleries, press coverage and the Foundation press kit.",
+    metaDescription: "Films from our outreaches, every documented moment of our journey, press coverage and the Foundation press kit.",
     eyebrow: "Media & press",
     title: "See the work. Share the story.",
-    intro: "Field videos, photo galleries and press coverage — plus everything journalists need in one place.",
+    intro: "Our films, every documented moment of our journey, and what the press has written about us, plus everything journalists need in one place.",
     videoEyebrow: "Video",
     videoTitle: "Syndy Emade TV",
     videoIntro: "Field logs from humanitarian missions and behind-the-scenes from our productions.",
@@ -336,20 +383,12 @@ const en = {
     galleryTitle: "Moments from the field",
     libraryTitle: "Media library",
     filtersLabel: "Filter media",
-    filters: { all: "All media", video: "Field videos", photo: "Photo stories", press: "Press coverage", bts: "Behind the scenes" },
+    filters: { all: "All media", video: "Films", story: "Our journey", press: "Press coverage" },
     countOne: "{n} item",
     countMany: "{n} items",
-    stories: {
-      "school-supplies": { title: "Back-to-school supply drive", text: "Volunteers pack and hand out exercise books, pens and school bags so that children start the school year ready to learn." },
-      "crisis-unit": { title: "Mobile crisis unit distribution", text: "A Chantiers Mobiles Crise team brings food, clean water and health kits to displaced families, working with local leaders." },
-      tailoring: { title: "Women’s tailoring workshop", text: "Widows and displaced women learn cutting and sewing skills, then receive equipment and a micro-grant to start trading." },
-      scholarships: { title: "Scholarship award day", text: "Orphans and under-served students receive secondary and university scholarships, so that talent, not circumstance, decides how far they go." },
-      mentorship: { title: "Youth mentorship session", text: "Young people meet trusted mentors for guidance, counselling and moral support, alongside health check-ups." },
-      "on-set": { title: "On set with Blue Rain Entertainment", text: "Behind the camera on a Blue Rain Entertainment production: the studio that carries Cameroonian stories to audiences across Africa." },
-    },
     photoPending: "Photo coming soon",
     channelTitle: "Syndy Emade TV on YouTube",
-    channelText: "Mission field logs and behind-the-scenes films. Featured videos will appear here as they are published.",
+    channelText: "More films from our outreaches on the Syndy Emade TV channel.",
     open: "Open",
     readArticle: "Read the article",
     close: "Close",
@@ -382,6 +421,7 @@ const en = {
       profile: "Profile",
       ambassador: "Ambassador",
       studio: "Studio",
+      foundation: "Foundation",
     },
     kitTitle: "Press kit",
     kitText: "Fact sheet and logo files (SVG and PNG). Approved photography available on request.",
@@ -616,7 +656,7 @@ const en = {
 
   og: {
     eyebrow: "Syndy Emade Foundation",
-    footer: "Youth welfare · Crisis relief · Scholarships · Women’s empowerment",
+    footer: "Back to school · Displaced families · Christmas outreach · Douala, Cameroon",
   },
 };
 

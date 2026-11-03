@@ -1,91 +1,72 @@
-// Builds public/press/syndy-emade-foundation-press-kit.zip (fact sheet PDF + logos).
+// Builds public/press/syndy-emade-foundation-press-kit{,-fr}.zip and fact-sheet{,-fr}.pdf
+// (fact sheet + official logo files). Facts come from docs/content-brief.md.
 // Usage: node scripts/build-press-kit.mjs   (requires Playwright + `zip`)
 import { createRequire } from "node:module";
 const require = createRequire(import.meta.url);
 const { chromium } = require("playwright"); // global install is fine: NODE_PATH=$(npm root -g)
 import { execFileSync } from "node:child_process";
-import { mkdirSync, rmSync, writeFileSync } from "node:fs";
+import { copyFileSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import path from "node:path";
 
 const out = path.resolve("public/press");
+const brand = path.resolve("public/brand");
 const tmp = path.join(out, ".build");
 rmSync(tmp, { recursive: true, force: true });
 mkdirSync(tmp, { recursive: true });
 
-const mark = (bg) => `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="512" height="512"><path d="M20 2.5 34.5 7.8v11.4c0 9-5.9 15.3-14.5 18.3C11.4 34.5 5.5 28.2 5.5 19.2V7.8Z" fill="${bg ? "#0F172A" : "#FDF8F0"}" stroke="#D4AF37" stroke-width="1.6" stroke-linejoin="round"/><path d="M20 6.2 31.2 10.3v8.9c0 7-4.5 11.9-11.2 14.4-6.7-2.5-11.2-7.4-11.2-14.4v-8.9Z" fill="none" stroke="#6D28D9" stroke-width="0.9"/><text x="20" y="24.6" text-anchor="middle" font-family="Playfair Display, Georgia, serif" font-weight="700" font-size="13" fill="#D4AF37">SE</text></svg>`;
-const lockup = (dark, sub = "FOUNDATION") => `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 64" width="900" height="192"><g transform="translate(2 8) scale(1.2)"><path d="M20 2.5 34.5 7.8v11.4c0 9-5.9 15.3-14.5 18.3C11.4 34.5 5.5 28.2 5.5 19.2V7.8Z" fill="${dark ? "#FDF8F0" : "#0F172A"}" stroke="#D4AF37" stroke-width="1.6" stroke-linejoin="round"/><path d="M20 6.2 31.2 10.3v8.9c0 7-4.5 11.9-11.2 14.4-6.7-2.5-11.2-7.4-11.2-14.4v-8.9Z" fill="none" stroke="#6D28D9" stroke-width="0.9"/><text x="20" y="24.6" text-anchor="middle" font-family="Playfair Display, Georgia, serif" font-weight="700" font-size="13" fill="#D4AF37">SE</text></g><text x="60" y="34" font-family="Playfair Display, Georgia, serif" font-size="24" font-weight="600" fill="${dark ? "#0F172A" : "#FFFFFF"}">Syndy Emade</text><text x="61" y="52" font-family="Helvetica, Arial, sans-serif" font-size="10" font-weight="700" letter-spacing="4" fill="${dark ? "#7A5C0E" : "#D4AF37"}">${sub}</text></svg>`;
-
-writeFileSync(path.join(tmp, "logo-mark.svg"), mark(false));
-writeFileSync(path.join(tmp, "logo-mark-navy.svg"), mark(true));
-writeFileSync(path.join(tmp, "logo-lockup-on-light.svg"), lockup(true));
-writeFileSync(path.join(tmp, "logo-lockup-on-dark.svg"), lockup(false));
+const logo = `data:image/png;base64,${readFileSync(path.join(brand, "logo.png")).toString("base64")}`;
+const TEAL = "#00756F", PURPLE = "#703890", PLUM = "#2A1238";
 
 const factSheet = (L) => `<!doctype html><html lang="${L.lang}"><head><meta charset="utf-8">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-@page{size:A4;margin:0}*{box-sizing:border-box}body{margin:0;font-family:'Plus Jakarta Sans',Arial,sans-serif;color:#0F172A;font-size:10.5pt;line-height:1.5}
-header{background:#0F172A;color:#fff;padding:36px 48px 30px}h1,h2{font-family:'Playfair Display',Georgia,serif;font-weight:600;margin:0}
-h1{font-size:28pt;line-height:1.1}.tag{color:#D4AF37;font-style:italic}.eyebrow{font-size:8pt;letter-spacing:.25em;text-transform:uppercase;color:#D4AF37;font-weight:700}
-main{padding:28px 48px;display:grid;grid-template-columns:1.25fr 1fr;gap:28px}h2{font-size:14pt;margin:0 0 8px;color:#0F172A;border-bottom:2px solid #D4AF37;padding-bottom:4px}
-section{margin-bottom:18px}ul{margin:0;padding-left:16px}li{margin:2px 0}dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:4px 12px}dt{font-weight:700}dd{margin:0}
-.pill{display:inline-block;background:#F5F3FF;color:#5B21B6;border-radius:99px;padding:2px 10px;margin:2px 4px 2px 0;font-weight:600;font-size:9pt}
-footer{position:absolute;bottom:0;left:0;right:0;padding:14px 48px;background:#F8FAFC;border-top:1px solid #e2e8f0;font-size:8.5pt;color:#475569}
+@page{size:A4;margin:0}*{box-sizing:border-box}body{margin:0;font-family:'Plus Jakarta Sans',Arial,sans-serif;color:${PLUM};font-size:10.5pt;line-height:1.5;position:relative;min-height:297mm}
+header{position:relative;overflow:hidden;padding:32px 48px 26px;display:flex;align-items:center;gap:32px;border-bottom:4px solid #00A8A0}
+header::before{content:"";position:absolute;right:-90px;top:-90px;width:280px;height:280px;border-radius:50%;background:#ECF8F7;z-index:-1}
+header img{width:150px;height:auto}h1,h2{font-family:'Poppins',Arial,sans-serif;font-weight:700;margin:0}
+h1{font-size:30pt;line-height:1.05;color:${TEAL}}h1 span{color:${PURPLE};display:block}.eyebrow{font-size:8pt;letter-spacing:.25em;text-transform:uppercase;color:${TEAL};font-weight:700;margin:0 0 6px}
+main{padding:26px 48px 80px;display:grid;grid-template-columns:1.25fr 1fr;gap:28px}h2{font-size:13pt;margin:0 0 8px;border-bottom:2px solid #7FD6D0;padding-bottom:4px}
+section{margin-bottom:16px}ul{margin:0;padding-left:16px}li{margin:2px 0}dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:4px 12px}dt{font-weight:700}dd{margin:0}
+.stats{display:flex;gap:10px;margin-bottom:16px}.stat{flex:1;border-radius:12px;background:#ECF8F7;padding:10px 12px}.stat b{display:block;font-family:Poppins,Arial;font-size:20pt;color:${TEAL};line-height:1}.stat:nth-child(2) b{color:${PURPLE}}.stat:nth-child(2){background:#F4EEF8}
+.stat small{font-size:8pt}
+footer{position:absolute;bottom:0;left:0;right:0;padding:14px 48px;background:#F7FAFA;border-top:1px solid #D3F0EE;font-size:8.5pt;color:#4E2A63}
 </style></head><body>
-<header>${lockup(false, L.sub).replace('width="900" height="192"','width="240" height="51"')}
-<p class="eyebrow" style="margin-top:18px">${L.eyebrow}</p><h1>${L.l1}<br><span class="tag">${L.l2}</span></h1></header>
+<header><img src="${logo}" alt="Syndy Emade Foundation"><div><p class="eyebrow">${L.eyebrow}</p><h1>${L.l1}<span>${L.l2}</span></h1></div></header>
 ${L.main}
 ${L.footer}
 </body></html>`;
 
 const LANGS = {
-  en: { lang: "en", sub: "FOUNDATION", eyebrow: "Press fact sheet", l1: "A Beacon of Hope.", l2: "An Icon of Action.", suffix: "", pdf: "Syndy-Emade-Foundation-Fact-Sheet.pdf",
-    readme: "Syndy Emade Foundation press kit\n\nFact sheet (PDF), logo mark and lockups (SVG + PNG).\nUse the on-dark lockup on navy or photographic backgrounds; on-light on white.\nPlease do not recolour or distort the logo.\n\nMedia enquiries: hello@syndyemadefoundation.org\n",
+  en: { lang: "en", eyebrow: "Press fact sheet", l1: "Together", l2: "we can.", suffix: "", pdf: "Syndy-Emade-Foundation-Fact-Sheet.pdf",
+    readme: "Syndy Emade Foundation press kit\n\nFact sheet (PDF) and the official logo (PNG).\n- logo.png: transparent background, for white or light backgrounds\n- logo-original.png: as supplied, on white\nThe purple lettering is not legible on dark backgrounds: place the logo on white.\nPlease do not recolour or distort the logo.\n\nMedia enquiries: hello@syndyemadefoundation.org\n",
     main: `<main><div>
-<section><h2>About the Foundation</h2><p>The Syndy Emade Foundation protects vulnerable youth, delivers mobile crisis relief, funds scholarships and empowers communities across Cameroon, Africa and the diaspora.</p></section>
-<section><h2>Three pillars</h2><ul><li><strong>The Philanthropist</strong> — youth protection & care, educational grants, vocational training</li><li><strong>The Humanitarian</strong> — mobile crisis response (“Chantiers Mobiles Crise”), emergency relief, healthcare outreach</li><li><strong>The Cultural Icon</strong> — cinema for social good, youth & arts mentorship, the creative economy</li></ul></section>
-<section><h2>Programmes</h2><span class="pill">Youth Protection & Care</span><span class="pill">Mobile Crisis Response</span><span class="pill">Educational Grants</span><span class="pill">Women Empowerment</span></section>
-<section><h2>Ways to give</h2><p>Card (one-time or monthly), PayPal, and MTN MoMo / Orange Money in XAF.</p></section>
+<section><h2>About the Foundation</h2><p>Founded in 2019 by actress and producer Syndy Emade, the Foundation stands with children and families hit hardest by hardship and by the crisis in Cameroon’s North-West and South-West regions, many of whom now live in Douala.</p></section>
+<div class="stats"><div class="stat"><b>600+</b><small>displaced children given school materials</small></div><div class="stat"><b>300</b><small>children’s school fees paid</small></div><div class="stat"><b>2019</b><small>founded</small></div></div>
+<section><h2>Programmes</h2><ul><li><strong>Back to school</strong>: school materials and fees for displaced and underprivileged children</li><li><strong>Displaced families</strong>: food and essentials for families who fled the crisis, through the “Chantiers Mobiles Crise” outreach (Bonaberi, Douala)</li><li><strong>Christmas outreach</strong>: door-to-door support at the festive season, including a year’s rent for a visually impaired mother and her three sons (2023)</li><li><strong>Child protection</strong>: speaking up for street children and against child exploitation</li><li><strong>Women and partnerships</strong>: work with partner organisations, including International Women’s Day with the Wilmbi Foundation</li></ul></section>
 </div><div>
-<section><h2>The founder</h2><dl><dt>Name</dt><dd>Syndy Emade (Elone Synthia Emade)</dd><dt>Born</dt><dd>21 Nov 1993, Kumba, Cameroon</dd><dt>Education</dt><dd>B.Sc. Banking & Finance, University of Buea</dd><dt>Roles</dt><dd>Actress, producer, CEO of Blue Rain Entertainment, philanthropist</dd></dl></section>
-<section><h2>Honours</h2><ul><li>Miss Heritage Cameroon 2014</li><li>Miss Heritage Africa 2014</li><li>Scoos Academy Award, Best Cameroonian Actress 2017</li><li>Ranked #2 Most Active Cameroonian Actress, Njoka TV 2017</li></ul></section>
-<section><h2>Selected films</h2><p><em>A Man for the Weekend</em> (2017), <em>Broken</em> (2019), <em>4th Generation</em> (2021), <em>Silent Storm</em> (2023), <em>A Kiss That Kills</em> (2024)</p></section>
-</div></main>`, footer: `<footer>Media enquiries: hello@syndyemadefoundation.org · syndyemadefoundation.org · facebook.com/SyndyEmadeofficial · YouTube: Syndy Emade TV</footer>` },
-  fr: { lang: "fr", sub: "FONDATION", eyebrow: "Fiche d’information presse", l1: "Un phare d’espoir.", l2: "Une icône de l’action.", suffix: "-fr", pdf: "Fondation-Syndy-Emade-Fiche-information.pdf",
-    readme: "Dossier de presse de la Fondation Syndy Emade\n\nFiche d’information (PDF), logo et déclinaisons (SVG + PNG).\nUtilisez la version claire sur fond bleu nuit ou photo, et la version foncée sur fond blanc.\nMerci de ne pas modifier les couleurs ni les proportions du logo.\n\nContact presse : hello@syndyemadefoundation.org\n",
+<section><h2>The founder</h2><dl><dt>Name</dt><dd>Syndy Emade (Elone Synthia Emade)</dd><dt>Born</dt><dd>21 Nov 1993, Kumba, Cameroon</dd><dt>Education</dt><dd>B.Sc. Banking &amp; Finance, University of Buea</dd><dt>Roles</dt><dd>Actress, producer, CEO of Blue Rain Entertainment, philanthropist</dd></dl></section>
+<section><h2>In the press</h2><ul><li>Mimi Mefo Info, Dec 2023: Christmas support for a visually impaired mother</li><li>Newsday Cameroon, 2021: outreach to displaced families in Bonaberi</li></ul></section>
+<section><h2>Watch</h2><p>Films of our outreaches on the Syndy Emade TV YouTube channel.</p></section>
+</div></main>`, footer: `<footer>Media enquiries: hello@syndyemadefoundation.org · syndyemadefoundation.org · facebook.com/SyndyEmadeFoundation · instagram.com/syndyemadefoundationcmr · YouTube: Syndy Emade TV</footer>` },
+  fr: { lang: "fr", eyebrow: "Fiche d’information presse", l1: "Ensemble,", l2: "nous pouvons.", suffix: "-fr", pdf: "Fondation-Syndy-Emade-Fiche-information.pdf",
+    readme: "Dossier de presse de la Fondation Syndy Emade\n\nFiche d’information (PDF) et logo officiel (PNG).\n- logo.png : fond transparent, pour fonds blancs ou clairs\n- logo-original.png : version fournie, sur fond blanc\nLe lettrage violet n’est pas lisible sur fond sombre : placez le logo sur fond blanc.\nMerci de ne pas modifier les couleurs ni les proportions du logo.\n\nContact presse : hello@syndyemadefoundation.org\n",
     main: `<main><div>
-<section><h2>La Fondation</h2><p>La Fondation Syndy Emade protège les jeunes vulnérables, apporte une aide d’urgence mobile, finance des bourses d’études et renforce les communautés au Cameroun, en Afrique et dans la diaspora.</p></section>
-<section><h2>Trois piliers</h2><ul><li><strong>La Philanthrope</strong> — protection et accompagnement des jeunes, bourses d’études, formation professionnelle</li><li><strong>L’Humanitaire</strong> — intervention mobile de crise («&nbsp;Chantiers Mobiles Crise&nbsp;»), aide d’urgence, santé de proximité</li><li><strong>L’Icône culturelle</strong> — le cinéma au service du bien commun, mentorat des jeunes artistes, économie créative</li></ul></section>
-<section><h2>Programmes</h2><span class="pill">Protection des jeunes</span><span class="pill">Intervention mobile de crise</span><span class="pill">Bourses d’études</span><span class="pill">Autonomisation des femmes</span></section>
-<section><h2>Comment donner</h2><p>Carte (don ponctuel ou mensuel), PayPal, et MTN MoMo / Orange Money en FCFA.</p></section>
+<section><h2>La Fondation</h2><p>Créée en 2019 par l’actrice et productrice Syndy Emade, la Fondation se tient aux côtés des enfants et des familles les plus touchés par la précarité et par la crise des régions du Nord-Ouest et du Sud-Ouest du Cameroun, dont beaucoup vivent aujourd’hui à Douala.</p></section>
+<div class="stats"><div class="stat"><b>600+</b><small>enfants déplacés équipés pour l’école</small></div><div class="stat"><b>300</b><small>frais de scolarité payés</small></div><div class="stat"><b>2019</b><small>création</small></div></div>
+<section><h2>Programmes</h2><ul><li><strong>Rentrée scolaire</strong> : fournitures et frais de scolarité pour les enfants déplacés et défavorisés</li><li><strong>Familles déplacées</strong> : vivres et produits essentiels pour les familles qui ont fui la crise, avec les «&nbsp;Chantiers Mobiles Crise&nbsp;» (Bonaberi, Douala)</li><li><strong>Noël solidaire</strong> : une aide en porte-à-porte pendant les fêtes, dont un an de loyer pour une mère malvoyante et ses trois fils (2023)</li><li><strong>Protection de l’enfance</strong> : aux côtés des enfants des rues, contre l’exploitation des enfants</li><li><strong>Femmes et partenariats</strong> : des actions avec des organisations partenaires, dont la Journée internationale des femmes avec la Wilmbi Foundation</li></ul></section>
 </div><div>
 <section><h2>La fondatrice</h2><dl><dt>Nom</dt><dd>Syndy Emade (Elone Synthia Emade)</dd><dt>Naissance</dt><dd>21 nov. 1993, Kumba, Cameroun</dd><dt>Formation</dt><dd>Licence en banque et finance, Université de Buea</dd><dt>Fonctions</dt><dd>Actrice, productrice, PDG de Blue Rain Entertainment, philanthrope</dd></dl></section>
-<section><h2>Distinctions</h2><ul><li>Miss Heritage Cameroun 2014</li><li>Miss Heritage Afrique 2014</li><li>Scoos Academy Award, meilleure actrice camerounaise 2017</li><li>2e actrice camerounaise la plus active, Njoka TV 2017</li></ul></section>
-<section><h2>Films choisis</h2><p><em>A Man for the Weekend</em> (2017), <em>Broken</em> (2019), <em>4th Generation</em> (2021), <em>Silent Storm</em> (2023), <em>A Kiss That Kills</em> (2024)</p></section>
-</div></main>`, footer: `<footer>Contact presse&nbsp;: hello@syndyemadefoundation.org · syndyemadefoundation.org/fr · facebook.com/SyndyEmadeofficial · YouTube&nbsp;: Syndy Emade TV</footer>` },
+<section><h2>Dans la presse</h2><ul><li>Mimi Mefo Info, déc. 2023 : soutien de Noël à une mère malvoyante</li><li>Newsday Cameroon, 2021 : action auprès des familles déplacées à Bonaberi</li></ul></section>
+<section><h2>Regarder</h2><p>Les films de nos actions sur la chaîne YouTube Syndy Emade TV.</p></section>
+</div></main>`, footer: `<footer>Contact presse&nbsp;: hello@syndyemadefoundation.org · syndyemadefoundation.org/fr · facebook.com/SyndyEmadeFoundation · instagram.com/syndyemadefoundationcmr · YouTube&nbsp;: Syndy Emade TV</footer>` },
 };
-
 
 const browser = await chromium.launch();
 const page = await browser.newPage();
-for (const f of ["logo-mark", "logo-mark-navy", "logo-lockup-on-light", "logo-lockup-on-dark"]) {
-  await page.goto("file://" + path.join(tmp, f + ".svg"));
-  await page.locator("svg").screenshot({ path: path.join(tmp, f + ".png"), omitBackground: true });
-}
 for (const L of Object.values(LANGS)) {
   const dir = path.join(tmp, L.lang);
   mkdirSync(dir, { recursive: true });
-  for (const f of ["logo-mark", "logo-mark-navy", "logo-lockup-on-light", "logo-lockup-on-dark"]) {
-    for (const ext of ["svg", "png"]) execFileSync("cp", [path.join(tmp, `${f}.${ext}`), dir]);
-  }
-  if (L.lang === "fr") {
-    // French lockups read FONDATION
-    writeFileSync(path.join(dir, "logo-lockup-on-light.svg"), lockup(true, L.sub));
-    writeFileSync(path.join(dir, "logo-lockup-on-dark.svg"), lockup(false, L.sub));
-    for (const f of ["logo-lockup-on-light", "logo-lockup-on-dark"]) {
-      await page.goto("file://" + path.join(dir, f + ".svg"));
-      await page.locator("svg").screenshot({ path: path.join(dir, f + ".png"), omitBackground: true });
-    }
-  }
+  for (const f of ["logo.png", "logo-original.png"]) copyFileSync(path.join(brand, f), path.join(dir, f));
   const html = path.join(dir, "fact-sheet.html");
   writeFileSync(html, factSheet(L));
   await page.goto("file://" + html, { waitUntil: "networkidle" });
@@ -95,7 +76,7 @@ for (const L of Object.values(LANGS)) {
   const zip = path.join(out, `syndy-emade-foundation-press-kit${L.suffix}.zip`);
   rmSync(zip, { force: true });
   execFileSync("zip", ["-qr", zip, "."], { cwd: dir });
-  execFileSync("cp", [path.join(dir, L.pdf), path.join(out, `fact-sheet${L.suffix}.pdf`)]);
+  copyFileSync(path.join(dir, L.pdf), path.join(out, `fact-sheet${L.suffix}.pdf`));
   console.log("wrote", zip);
 }
 await browser.close();

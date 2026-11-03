@@ -30,10 +30,10 @@ export default function CreativeLegacyPage(props: LocaleParams) {
           <div className="lg:sticky lg:top-28">
             <SectionHeading eyebrow={l.studioEyebrow} title={l.studioTitle} intro={l.studioIntro} />
             <div className="card mt-8 p-6">
-              <h3 className="flex items-center gap-2 font-sans text-sm font-semibold"><Award className="h-4 w-4 text-gold" aria-hidden />{l.awards}</h3>
+              <h3 className="flex items-center gap-2 font-sans text-sm font-semibold"><Award className="h-4 w-4 text-teal" aria-hidden />{l.awards}</h3>
               <ul className="mt-4 space-y-3 text-sm">
                 {t.awards.map((a) => (
-                  <li key={a.title} className="flex gap-3"><span className="w-16 shrink-0 font-semibold text-gold-600">{a.year}</span>{a.title}</li>
+                  <li key={a.title} className="flex gap-3"><span className="w-16 shrink-0 font-semibold text-teal-600">{a.year}</span>{a.title}</li>
                 ))}
               </ul>
             </div>
@@ -46,7 +46,7 @@ export default function CreativeLegacyPage(props: LocaleParams) {
         </div>
       </section>
 
-      <section className="bg-navy py-24 text-white">
+      <section className="bg-plum py-24 text-white">
         <div className="container-page">
           <SectionHeading tone="dark" eyebrow={l.advocacyEyebrow} title={l.advocacyTitle} align="center" />
           <div className="mt-12 grid gap-6 md:grid-cols-3">
@@ -55,7 +55,7 @@ export default function CreativeLegacyPage(props: LocaleParams) {
               return (
                 <Reveal key={title} delay={i * 0.08} className="h-full">
                   <div className="h-full rounded-2xl bg-white/5 p-8 ring-1 ring-white/10">
-                    <Icon className="h-7 w-7 text-gold-400" aria-hidden />
+                    <Icon className="h-7 w-7 text-teal-400" aria-hidden />
                     <h3 className="mt-4 text-xl">{title}</h3>
                     <p className="mt-2 text-sm leading-relaxed text-white/70">{text}</p>
                   </div>
