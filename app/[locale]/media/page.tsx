@@ -25,7 +25,7 @@ export default function MediaPage(props: LocaleParams) {
         <MediaHub />
       </section>
 
-      <section id="press" className="scroll-mt-24 bg-plum py-24 text-white">
+      <section id="press" className="scroll-mt-28 bg-plum py-24 text-white">
         <div className="container-page grid gap-12 lg:grid-cols-12">
           <div className="lg:col-span-5">
             <SectionHeading tone="dark" eyebrow={m.pressEyebrow} title={m.kitTitle} intro={m.kitText} />

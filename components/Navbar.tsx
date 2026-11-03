@@ -55,9 +55,9 @@ export function Navbar() {
       <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-lg focus:bg-teal-600 focus:px-4 focus:py-2 focus:text-white">
         {t.nav.skip}
       </a>
-      <nav aria-label={t.nav.primary} className="container-page flex h-20 items-center justify-between">
+      <nav aria-label={t.nav.primary} className="container-page flex h-20 items-center justify-between sm:h-24">
         <Link href={href("/")} aria-label={t.nav.home}>
-          <Logo priority className="h-12 w-auto sm:h-14" />
+          <Logo priority className="h-16 w-auto sm:h-20" />
         </Link>
 
         <ul className="hidden items-center gap-1 md:flex">

@@ -80,7 +80,7 @@ export default function ProjectPage({ params }: Props) {
         </div>
 
         <div className="lg:col-span-5">
-          <div className="card sticky top-28 overflow-hidden">
+          <div className="card sticky top-32 overflow-hidden">
             <div className="bubbles relative bg-gradient-to-br from-teal-50 to-purple-50 p-8">
               <p className="font-display text-5xl font-semibold text-teal-700">{p.keyFact}</p>
               <p className="mt-2 text-plum/80">{p.keyFactLabel}</p>

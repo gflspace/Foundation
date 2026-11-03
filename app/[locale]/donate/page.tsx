@@ -57,7 +57,7 @@ export default function DonatePage(props: LocaleParams) {
         </div>
       </section>
 
-      <section id="involve" className="scroll-mt-24 bg-white py-24">
+      <section id="involve" className="scroll-mt-28 bg-white py-24">
         <div className="container-page grid gap-12 lg:grid-cols-12">
           <div className="lg:col-span-5">
             <SectionHeading eyebrow={d.involveEyebrow} title={d.involveTitle} intro={d.involveIntro} />

@@ -11,6 +11,7 @@ import { ProjectCard } from "@/components/ProjectCard";
 import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";
 import { SocialProof } from "@/components/SocialProof";
+import { StoryFilm } from "@/components/StoryFilm";
 import { VideoFeature } from "@/components/VideoFeature";
 import { featuredVideos, projectSlugs } from "@/lib/content";
 import { localePath } from "@/lib/i18n/config";
@@ -21,7 +22,7 @@ export function generateMetadata(props: LocaleParams): Metadata {
 }
 
 /**
- * Home: hero · press strip · the five programmes · our films · map · latest journey moments ·
+ * Home: hero · story film · press strip · the five programmes · our films · map · latest journey moments ·
  * founder's two stages · what drives us · CTA. The full media library lives on /media.
  */
 export default function HomePage(props: LocaleParams) {
@@ -31,6 +32,7 @@ export default function HomePage(props: LocaleParams) {
   return (
     <>
       <Hero />
+      <StoryFilm />
       <SocialProof />
 
       <section className="bg-white py-24">
@@ -61,8 +63,8 @@ export default function HomePage(props: LocaleParams) {
               {h.seeAllMedia} <ArrowRight className="h-4 w-4" aria-hidden />
             </Link>
           </div>
-          <div className="mt-12 grid gap-6 md:grid-cols-3">
-            {featuredVideos.map((v, i) => (
+          <div className="mt-12 grid gap-6 md:grid-cols-2">
+            {featuredVideos.filter((v) => v.id !== "G9f7qKhNiwU").map((v, i) => (
               <Reveal key={v.id} delay={i * 0.08}>
                 <VideoFeature id={v.id} title={v.title[locale]} />
                 <Link href={localePath(locale, `/projects/${v.programme}`)} className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-teal-700 hover:underline">

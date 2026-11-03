@@ -29,7 +29,7 @@ export default function ProjectsPage(props: LocaleParams) {
           ))}
         </div>
       </section>
-      <section id="journey" className="scroll-mt-24 bg-mist py-24" aria-labelledby="journey-heading">
+      <section id="journey" className="scroll-mt-28 bg-mist py-24" aria-labelledby="journey-heading">
         <div className="container-page max-w-4xl">
           <p className="eyebrow">{t.journey.eyebrow}</p>
           <h2 id="journey-heading" className="mt-3 text-3xl sm:text-4xl">{t.journey.title}</h2>

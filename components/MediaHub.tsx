@@ -227,7 +227,7 @@ export function MediaHub() {
   }
 
   return (
-    <div id="media-library" className="scroll-mt-24">
+    <div id="media-library" className="scroll-mt-28">
       <h2 className="sr-only">{m.libraryTitle}</h2>
       <div className="flex flex-wrap items-center justify-between gap-4">
         <div role="group" aria-label={m.filtersLabel} className="flex flex-wrap gap-2">

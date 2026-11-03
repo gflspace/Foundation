@@ -27,7 +27,7 @@ export default function CreativeLegacyPage(props: LocaleParams) {
 
       <section className="container-page grid gap-12 py-24 lg:grid-cols-12">
         <div className="lg:col-span-4">
-          <div className="lg:sticky lg:top-28">
+          <div className="lg:sticky lg:top-32">
             <SectionHeading eyebrow={l.studioEyebrow} title={l.studioTitle} intro={l.studioIntro} />
             <div className="card mt-8 p-6">
               <h3 className="flex items-center gap-2 font-sans text-sm font-semibold"><Award className="h-4 w-4 text-teal" aria-hidden />{l.awards}</h3>
