@@ -108,8 +108,6 @@ export const platformFr: typeof platformEn = {
     noVoices: "Le témoignage de la famille n’a pas encore été publié.",
     next: "La suite",
     film: "Voir le film",
-    photos: "Photos",
-    photosCredit: "Photos : {credit}, tirées de sa couverture publiée.",
     sources: "Sources",
     accountability: "Voir la fiche du projet",
     more: "Autres histoires",
@@ -205,17 +203,6 @@ export const platformFr: typeof platformEn = {
         { text: "Nous préparons une grande campagne de rentrée scolaire ; notre souhait est d’équiper des enfants en fournitures et de payer leurs frais de scolarité pour faciliter leur retour à l’école. (traduit de l’anglais)", who: "Syndy Emade, à Mimi Mefo Info", verbatim: true },
       ],
     },
-  },
-
-  facebookUi: {
-    eyebrow: "Depuis notre page Facebook",
-    title: "Vidéos et photos du terrain",
-    intro: "De courtes vidéos et des photos publiées par la Fondation. Elles seront ajoutées à leurs histoires au fil de la documentation de chaque action.",
-    reel: "Vidéo Facebook",
-    photo: "Photo Facebook",
-    load: "Charger depuis Facebook",
-    consent: "Cliquez pour charger depuis Facebook. Facebook peut déposer des cookies.",
-    open: "Ouvrir sur Facebook",
   },
 
   impactUi: {

@@ -93,7 +93,7 @@ export const journey: JourneyEntry[] = [
   { id: "idps-2021", date: "2021-02", dateConfirmed: true, programme: "displaced-families", video: "IRtdVqIK9Nc", sources: [{ label: "SYNDY EMADE TV (YouTube)", url: "https://www.youtube.com/watch?v=IRtdVqIK9Nc" }, { label: "Newsday Cameroon", url: "https://newsdaycameroon.wordpress.com/tag/douala/" }] },
   { id: "street-children-2021", date: "2021-02", dateConfirmed: true, programme: "child-protection", video: "1_51miPEC0I", sources: [{ label: "SYNDY EMADE TV (YouTube)", url: "https://www.youtube.com/watch?v=1_51miPEC0I" }] },
   { id: "womens-day", date: "2024-03", dateConfirmed: false, programme: "women", sources: [{ label: "Syndy Emade Foundation (Facebook)", url: "https://www.facebook.com/SyndyEmadeFoundation/" }] },
-  { id: "christmas-2023", date: "2023-12", dateConfirmed: true, programme: "christmas-outreach", image: { src: "https://mimimefoinfos.com/wp-content/uploads/2023/12/IMG_20231227_132835_932.jpg", alt: "Syndy Emade with the family during the Christmas 2023 outreach in Douala", credit: "Mimi Mefo Info", sourceUrl: "https://mimimefoinfos.com/syndy-emade-offers-relief-to-visually-impaired-mother-in-douala/", license: "© Mimi Mefo Info — used at the Foundation’s direction, credited", status: "approved" }, sources: [{ label: "Mimi Mefo Info", url: "https://mimimefoinfos.com/syndy-emade-offers-relief-to-visually-impaired-mother-in-douala/" }] },
+  { id: "christmas-2023", date: "2023-12", dateConfirmed: true, programme: "christmas-outreach", image: { src: "https://mimimefoinfos.com/wp-content/uploads/2023/12/IMG_20231227_132835_932.jpg", alt: "Syndy Emade with the family during the Christmas 2023 outreach in Douala", credit: "Mimi Mefo Info", sourceUrl: "https://mimimefoinfos.com/syndy-emade-offers-relief-to-visually-impaired-mother-in-douala/", license: "© Mimi Mefo Info — permission needed", status: "pending" }, sources: [{ label: "Mimi Mefo Info", url: "https://mimimefoinfos.com/syndy-emade-offers-relief-to-visually-impaired-mother-in-douala/" }] },
 ];
 
 /**
@@ -210,41 +210,41 @@ export const press: PressItem[] = [
     id: "cemac-2026-big-business", title: "How Syndy Emade Turned Cameroonian Cinema Into Big Business", source: "CEMAC ECO FINANCE",
     url: "https://cemac-eco.finance/how-syndy-emade-turned-cameroonian-cinema-into-big-business/", date: "2026-03-13", dateConfirmed: true, tag: "feature", lang: "en",
     highlight: "Blue Rain Entertainment, streaming deals and the Foundation",
-    image: { src: "https://cemac-eco.finance/wp-content/uploads/2026/03/syndy-emade-2.jpg", alt: "Portrait of Syndy Emade, CEMAC ECO FINANCE feature", credit: "CEMAC ECO FINANCE", sourceUrl: "https://cemac-eco.finance/how-syndy-emade-turned-cameroonian-cinema-into-big-business/", license: "© CEMAC ECO FINANCE — used at the Foundation’s direction, credited", status: "approved" },
+    image: { src: "https://cemac-eco.finance/wp-content/uploads/2026/03/syndy-emade-2.jpg", alt: "Portrait of Syndy Emade, CEMAC ECO FINANCE feature", credit: "CEMAC ECO FINANCE", sourceUrl: "https://cemac-eco.finance/how-syndy-emade-turned-cameroonian-cinema-into-big-business/", license: "© CEMAC ECO FINANCE — permission needed", status: "pending" },
   },
   {
     id: "cameroonceo-2022-profile", title: "Syndy Emade, The Consistency of An Ambitious Entrepreneur", source: "Cameroon CEO",
     url: "https://cameroonceo.com/2022/06/24/syndy-emade-the-consistency-of-an-ambitious-entrepreneur/", date: "2022-06-24", dateConfirmed: true, tag: "profile", lang: "en",
     highlight: "CEO of Blue Rain Entertainment, founder of the Syndy Emade Foundation",
-    image: { src: "https://cameroonceo.com/wp-content/uploads/2022/06/Syndy-Emade-www.cameroonceo.com_.png", alt: "Syndy Emade, Cameroon CEO profile", credit: "Cameroon CEO", sourceUrl: "https://cameroonceo.com/2022/06/24/syndy-emade-the-consistency-of-an-ambitious-entrepreneur/", license: "© Cameroon CEO — used at the Foundation’s direction, credited", status: "approved" },
+    image: { src: "https://cameroonceo.com/wp-content/uploads/2022/06/Syndy-Emade-www.cameroonceo.com_.png", alt: "Syndy Emade, Cameroon CEO profile", credit: "Cameroon CEO", sourceUrl: "https://cameroonceo.com/2022/06/24/syndy-emade-the-consistency-of-an-ambitious-entrepreneur/", license: "© Cameroon CEO — permission needed", status: "pending" },
   },
   {
     id: "yafrica-2021-netflix", title: "Netflix acquires two films by Cameroon actress, Syndy Emade", source: "Y! For Africa",
     url: "https://yafri.ca/netflix-acquires-two-films-by-cameroon-actress-syndy-emade/", date: "2021-06-10", dateConfirmed: true, tag: "release", lang: "en",
     quote: "It can only be God.",
-    image: { src: "https://yafri.ca/wp-content/uploads/2021/06/Sydny-Emade.jpg", alt: "Syndy Emade, Y! For Africa Netflix story", credit: "Y! For Africa", sourceUrl: "https://yafri.ca/netflix-acquires-two-films-by-cameroon-actress-syndy-emade/", license: "© Y! For Africa — used at the Foundation’s direction, credited", status: "approved", position: "50% 25%" },
+    image: ownFilm("aQe-1CbmlYg", "“Broken” official trailer, one of the two films acquired by Netflix"),
   },
   {
     id: "people237-2020-beach-party", title: "Syndy Emade organise une « Beach party » à Limbé ce 19 décembre", source: "People237",
     url: "https://www.people237.com/syndy-emade-organise-une-beach-party-a-limbe-ce-19-decembre", date: "2020-12", dateConfirmed: true, tag: "event", lang: "fr",
-    image: { src: "https://controlpanel.people237.com/wp-content/uploads/2020/12/syndy_emade_people237.png", alt: "Syndy Emade’s Limbe beach party announcement", credit: "People237", sourceUrl: "https://www.people237.com/syndy-emade-organise-une-beach-party-a-limbe-ce-19-decembre", license: "© People237 — used at the Foundation’s direction, credited", status: "approved", position: "50% 30%" },
+    image: ownFilm("AuIXJ2uQVCE", "Syndy Emade’s all-white beach party"),
   },
   {
     id: "cemac-2020-heart-to-heart", title: "Heart to heart with Syndy Emade", source: "CEMAC ECO FINANCE",
     url: "https://cemac-eco.finance/heart-to-heart-with-syndy-emade-2/", date: "2020-03-25", dateConfirmed: true, tag: "interview", lang: "en",
     highlight: "On creativity, her fans, her business and the Foundation",
-    image: { src: "https://cemac-eco.finance/wp-content/uploads/2020/03/syndy-emade-5.jpeg", alt: "Syndy Emade, CEMAC ECO FINANCE interview", credit: "CEMAC ECO FINANCE", sourceUrl: "https://cemac-eco.finance/heart-to-heart-with-syndy-emade-2/", license: "© CEMAC ECO FINANCE — used at the Foundation’s direction, credited", status: "approved" },
+    image: { src: "https://cemac-eco.finance/wp-content/uploads/2020/03/syndy-emade-5.jpeg", alt: "Syndy Emade, CEMAC ECO FINANCE interview", credit: "CEMAC ECO FINANCE", sourceUrl: "https://cemac-eco.finance/heart-to-heart-with-syndy-emade-2/", license: "© CEMAC ECO FINANCE — permission needed", status: "pending" },
   },
   {
     id: "mmi-2023-visually-impaired-mother", title: "Syndy Emade offers relief to visually impaired mother in Douala", source: "Mimi Mefo Info",
     url: "https://mimimefoinfos.com/syndy-emade-offers-relief-to-visually-impaired-mother-in-douala/", date: "2023-12-27", dateConfirmed: true, tag: "foundation", lang: "en",
     highlight: "A year’s rent and a fresh start for a mother and her three sons",
-    image: { src: "https://mimimefoinfos.com/wp-content/uploads/2023/12/IMG_20231227_132835_932.jpg", alt: "Syndy Emade with the family during the Christmas 2023 outreach in Douala", credit: "Mimi Mefo Info", sourceUrl: "https://mimimefoinfos.com/syndy-emade-offers-relief-to-visually-impaired-mother-in-douala/", license: "© Mimi Mefo Info — used at the Foundation’s direction, credited", status: "approved" },
+    image: { src: "https://mimimefoinfos.com/wp-content/uploads/2023/12/IMG_20231227_132835_932.jpg", alt: "Syndy Emade with the family during the Christmas 2023 outreach in Douala", credit: "Mimi Mefo Info", sourceUrl: "https://mimimefoinfos.com/syndy-emade-offers-relief-to-visually-impaired-mother-in-douala/", license: "© Mimi Mefo Info — permission needed", status: "pending" },
   },
   {
     id: "mmi-2019-idps", title: "Anglophone Crisis: Cameroon’s talented actress, Syndy Emade weeps as IDPs present ordeal", source: "Mimi Mefo Info",
     url: "https://mimimefoinfos.com/anglophone-crisis-cameroons-talented-actress-syndy-emade-weeps-as-idps-present-ordeal/", date: "2019-07-14", dateConfirmed: true, tag: "foundation", lang: "en",
-    image: { src: "https://mimimefoinfos.com/wp-content/uploads/2019/07/IMG-20190714-WA0087.jpg", alt: "Syndy Emade moved to tears after listening to displaced families, Mabanda-Bonaberi, July 2019", credit: "Mimi Mefo Info", sourceUrl: "https://mimimefoinfos.com/anglophone-crisis-cameroons-talented-actress-syndy-emade-weeps-as-idps-present-ordeal/", license: "© Mimi Mefo Info — used at the Foundation’s direction, credited", status: "approved" },
+    image: ownFilm("ldMHL4jSUSM", "Syndy Emade Foundation film, July 2019"),
   },
   {
     id: "newsday-idps-douala", title: "Syndy Emade Foundation outreach to displaced families in Douala", source: "Newsday Cameroon",
@@ -257,7 +257,7 @@ export const press: PressItem[] = [
     originalUrl: "http://www.pulse.ng/movies/syndy-emade-actress-talks-film-industry-in-cameroon-challenges-as-a-female-filmmaker-getting-into-character-id4908980.html",
     date: "2016-04-12", dateConfirmed: true, tag: "interview", lang: "en",
     quote: "You have to solicit for sponsors and investors for the film.",
-    image: { src: "https://web.archive.org/web/20170814063936im_/https://static.pulse.ng/img/incoming/crop4104563/7504671947-chorizontal-w1200-h630/syndy-emade-2.jpg", alt: "Portrait of Syndy Emade from the Pulse Nigeria interview", credit: "Pulse Nigeria", sourceUrl: "https://web.archive.org/web/20170814063936/http://www.pulse.ng/movies/syndy-emade-actress-talks-film-industry-in-cameroon-challenges-as-a-female-filmmaker-getting-into-character-id4908980.html", license: "© Pulse Nigeria — used at the Foundation’s direction, credited", status: "approved" },
+    image: { src: "https://web.archive.org/web/20170814063936im_/https://static.pulse.ng/img/incoming/crop4104563/7504671947-chorizontal-w1200-h630/syndy-emade-2.jpg", alt: "Portrait of Syndy Emade from the Pulse Nigeria interview", credit: "Pulse Nigeria", sourceUrl: "https://web.archive.org/web/20170814063936/http://www.pulse.ng/movies/syndy-emade-actress-talks-film-industry-in-cameroon-challenges-as-a-female-filmmaker-getting-into-character-id4908980.html", license: "© Pulse Nigeria — permission needed", status: "pending" },
   },
   {
     id: "njoka-2017-ranking", title: "Top five most active Cameroonian actresses", source: "Njoka TV",
@@ -271,14 +271,14 @@ export const press: PressItem[] = [
     url: "https://web.archive.org/web/20190227062249/https://dcodedtv.com/syndy-emade-cameroon-s-best-actress/",
     originalUrl: "http://dcodedtv.com/syndy-emade-cameroon-s-best-actress/",
     date: "2017-06-11", dateConfirmed: true, tag: "feature", lang: "en",
-    image: { src: "https://web.archive.org/web/20190227062249im_/https://dcodedtv.com/wp-content/uploads/2017/06/syndy-emade-cameron-best-actress-606x400.jpg", alt: "Syndy Emade, Dcoded TV feature", credit: "Dcoded TV", sourceUrl: "https://web.archive.org/web/20190227062249/https://dcodedtv.com/syndy-emade-cameron-s-best-actress/", license: "© Dcoded TV — used at the Foundation’s direction, credited", status: "approved", position: "50% 25%" },
+    image: { src: "https://upload.wikimedia.org/wikipedia/commons/2/24/Emade.jpg", alt: "Syndy Emade at the Glitz Style Awards, Ghana, 2017", credit: "Abanda bride", sourceUrl: "https://commons.wikimedia.org/wiki/File:Emade.jpg", license: "CC BY-SA 4.0", licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0", status: "approved", position: "50% 22%" },
   },
   {
     id: "dcoded-2017-a-man-for-the-weekend", title: "Syndy Emade borrows Alexx Ekubo for new movie “A Man For The Weekend”", source: "Dcoded TV",
     url: "https://web.archive.org/web/2019/https://dcodedtv.com/2017/04/12/syndy-emade-borrows-alexx-ekubo-for-new-movie-a-man-for-the-weekend/",
     originalUrl: "http://dcodedtv.com/syndy-emade-borrows-alexx-ekubo-for-new-movie-a-man-for-the-weekend/",
     date: "2017-04-12", dateConfirmed: true, tag: "release", lang: "en",
-    image: { src: "https://web.archive.org/web/2019im_/https://dcodedtv.com/wp-content/uploads/2017/04/Syndy-Emade-and-Alexx-Ekubo-1.jpg", alt: "Syndy Emade and Alexx Ekubo", credit: "Dcoded TV", sourceUrl: "https://web.archive.org/web/2019/https://dcodedtv.com/2017/04/12/syndy-emade-borrows-alexx-ekubo-for-new-movie-a-man-for-the-weekend/", license: "© Dcoded TV — used at the Foundation’s direction, credited", status: "approved", position: "50% 30%" },
+    image: ownFilm("UIFLEhaU4UU", "“A Man For The Weekend” official trailer"),
   },
   {
     id: "kamer360-2014-miss-heritage", title: "Miss Heritage Cameroon 2014 is Syndy Emade", source: "Kamer360",
@@ -286,12 +286,12 @@ export const press: PressItem[] = [
     originalUrl: "https://kamer360.com/2014/09/11/miss-heritage-cameroon-is-syndy-emade/",
     date: "2014-09-11", dateConfirmed: true, tag: "award", lang: "en",
     quote: "I think the purpose of Miss Heritage is to tour the country and show our culture.",
-    image: { src: "https://web.archive.org/web/20160409174646im_/https://kamer360.files.wordpress.com/2014/09/11325_732868690118734_5448433975523537178_n.jpg", alt: "Syndy Emade crowned Miss Heritage Cameroon 2014", credit: "Kamer360", sourceUrl: "https://web.archive.org/web/20160409174646/http://kamer360.com/2014/09/11/miss-heritage-cameroon-is-syndy-emade/", license: "© Kamer360 / photographer unknown — used at the Foundation’s direction, credited", status: "approved" },
+    image: { src: "https://web.archive.org/web/20160409174646im_/https://kamer360.files.wordpress.com/2014/09/11325_732868690118734_5448433975523537178_n.jpg", alt: "Syndy Emade crowned Miss Heritage Cameroon 2014", credit: "Kamer360", sourceUrl: "https://web.archive.org/web/20160409174646/http://kamer360.com/2014/09/11/miss-heritage-cameroon-is-syndy-emade/", license: "© Kamer360 / photographer unknown — permission needed", status: "pending" },
   },
   {
     id: "culturebene-2016-profile", title: "Syndy Emade, la belle aux trois casquettes", source: "Culturebene",
     url: "https://www.culturebene.com/24576-syndy-emade-la-belle-aux-trois-casquettes.html", date: "2016-09-25", dateConfirmed: true, tag: "profile", lang: "fr",
-    image: { src: "https://www.culturebene.com/wp-content/uploads/sites/4/2016/09/IMG-20160816-WA0049.jpg", alt: "Syndy Emade, Culturebene profile", credit: "Culturebene", sourceUrl: "https://www.culturebene.com/24576-syndy-emade-la-belle-aux-trois-casquettes.html", license: "© Culturebene — used at the Foundation’s direction, credited", status: "approved", position: "50% 25%" },
+    image: ownFilm("45EkiHoQiN8", "“Rose on a Grave” official trailer, one of the films the profile cites"),
   },
   {
     id: "henriette-2017-instavoice", title: "Cameroon’s Syndy Emade becomes the new face for InstaVoice Celeb by Orange", source: "Henriette’s Lounge",
@@ -299,7 +299,7 @@ export const press: PressItem[] = [
     originalUrl: "http://www.henrietteslounge.com/2017/04/cameroons-syndy-emade-becomes-new-face.html",
     date: "2017-04", dateConfirmed: true, tag: "ambassador", lang: "en",
     quote: "Getting to the summit of her own world.",
-    image: { src: "https://web.archive.org/web/20180214173540im_/http://www.kamerlink.com/wp-content/uploads/2017/04/syndy.jpg", alt: "Syndy Emade, InstaVoice Celeb announcement", credit: "Kamerlink (via Henriette’s Lounge)", sourceUrl: "https://web.archive.org/web/20180214173540/http://www.henrietteslounge.com/2017/04/cameroons-syndy-emade-becomes-new-face.html", license: "© Kamerlink — used at the Foundation’s direction, credited", status: "approved" },
+    image: { src: "https://web.archive.org/web/20180214173540im_/http://www.kamerlink.com/wp-content/uploads/2017/04/syndy.jpg", alt: "Syndy Emade, InstaVoice Celeb announcement", credit: "Kamerlink (via Henriette’s Lounge)", sourceUrl: "https://web.archive.org/web/20180214173540/http://www.henrietteslounge.com/2017/04/cameroons-syndy-emade-becomes-new-face.html", license: "© Kamerlink — permission needed", status: "pending" },
   },
   {
     id: "nexdim-2015-limbe-orphanage", title: "Blue Rain crew and boss Syndy Emade at the Limbe orphanage at Bota", source: "Nexdim Empire",

@@ -1,19 +1,17 @@
 import type { Metadata } from "next";
 import { ArrowRight, ExternalLink, Quote } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { CoverArt } from "@/components/CoverArt";
-import { FacebookEmbeds } from "@/components/FacebookEmbeds";
 import { DonateButton } from "@/components/DonateProvider";
 import { Reveal } from "@/components/Reveal";
 import { StoryCard } from "@/components/StoryCard";
 import { VideoFeature } from "@/components/VideoFeature";
 import { featuredVideos, projectMeta } from "@/lib/content";
 import { localePath, locales, type Locale } from "@/lib/i18n/config";
-import { fill, formatDate } from "@/lib/i18n/format";
+import { formatDate } from "@/lib/i18n/format";
 import { getDictionary, pageMetadata } from "@/lib/i18n";
-import { facebookPosts, stories, type StorySlug } from "@/lib/platform";
+import { stories, type StorySlug } from "@/lib/platform";
 
 type Props = { params: { locale: string; slug: string } };
 
@@ -84,30 +82,6 @@ export default function StoryPage({ params }: Props) {
               <p className="mt-4 text-lg leading-relaxed text-plum/80">{body}</p>
             </section>
           ))}
-
-          {story.gallery && story.gallery.length > 0 && (
-            <section className="mt-12" aria-labelledby="photos">
-              <h2 id="photos" className="text-2xl sm:text-3xl">{u.photos}</h2>
-              <ul className={story.gallery.length > 1 ? "mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3" : "mt-6"}>
-                {story.gallery.map((img, i) => (
-                  <li key={img.src} className={story.gallery!.length > 1 && i === 0 ? "col-span-2 row-span-2" : undefined}>
-                    <a href={img.sourceUrl} target="_blank" rel="noopener noreferrer" className="group relative block aspect-[4/3] overflow-hidden rounded-2xl bg-plum/5">
-                      <Image src={img.src} alt={img.alt} fill sizes="(min-width: 1024px) 40vw, 50vw" className="object-cover transition duration-500 group-hover:scale-105" style={img.position ? { objectPosition: img.position } : undefined} />
-                      <span className="sr-only">{t.common.opensNewTab}</span>
-                    </a>
-                  </li>
-                ))}
-              </ul>
-              <p className="mt-3 text-xs text-plum/70">{fill(u.photosCredit, { credit: story.gallery[0].credit })}</p>
-            </section>
-          )}
-
-          {facebookPosts.some((p) => p.story === story.slug) && (
-            <section className="mt-12" aria-label={t.facebookUi.eyebrow}>
-              <h2 className="text-2xl sm:text-3xl">{t.facebookUi.eyebrow}</h2>
-              <div className="mt-6"><FacebookEmbeds story={story.slug} /></div>
-            </section>
-          )}
 
           <section className="mt-12" aria-labelledby="voices">
             <h2 id="voices" className="text-2xl sm:text-3xl">{u.voices}</h2>

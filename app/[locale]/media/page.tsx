@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Download, FileText, Mail } from "lucide-react";
-import { FacebookEmbeds } from "@/components/FacebookEmbeds";
 import { MediaHub } from "@/components/MediaHub";
 import { PageHero } from "@/components/PageHero";
 import { PressForm } from "@/components/PressForm";
@@ -16,8 +15,7 @@ export function generateMetadata(props: LocaleParams): Metadata {
 
 export default function MediaPage(props: LocaleParams) {
   const locale = pageLocale(props);
-  const t = getDictionary(locale);
-  const m = t.media;
+  const m = getDictionary(locale).media;
   const suffix = locale === "fr" ? "-fr" : "";
   return (
     <>
@@ -25,15 +23,6 @@ export default function MediaPage(props: LocaleParams) {
 
       <section className="container-page py-20">
         <MediaHub />
-      </section>
-
-      <section id="facebook" className="scroll-mt-28 bg-mist py-20" aria-labelledby="facebook-title">
-        <div className="container-page">
-          <p className="eyebrow">{t.facebookUi.eyebrow}</p>
-          <h2 id="facebook-title" className="mt-3 text-3xl sm:text-4xl">{t.facebookUi.title}</h2>
-          <p className="mt-4 max-w-2xl text-lg text-plum/75">{t.facebookUi.intro}</p>
-          <div className="mt-10"><FacebookEmbeds /></div>
-        </div>
       </section>
 
       <section id="press" className="scroll-mt-28 bg-plum py-24 text-white">
