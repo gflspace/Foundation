@@ -11,7 +11,7 @@ const fr: Dictionary = {
     tagline: "Ensemble, nous pouvons.",
     description:
       "La Fondation Syndy Emade se tient aux côtés des enfants vulnérables et des familles déplacées au Cameroun : fournitures et frais de scolarité, vivres et produits essentiels, Noël solidaire et lutte contre l’exploitation des enfants. Ensemble, nous pouvons.",
-    keywords: ["Syndy Emade", "Fondation Syndy Emade", "association caritative Cameroun", "protection de l’enfance Cameroun", "aide humanitaire Cameroun", "bourses d’études Cameroun", "Blue Rain Entertainment"],
+    keywords: ["Syndy Emade", "Fondation Syndy Emade", "association caritative Cameroun", "protection de l’enfance Cameroun", "aide humanitaire Cameroun", "familles déplacées Douala", "Blue Rain Entertainment"],
     location: "Douala, Cameroun",
   },
 

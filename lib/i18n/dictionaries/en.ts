@@ -9,7 +9,7 @@ const en = {
     tagline: "Together we can.",
     description:
       "The Syndy Emade Foundation stands with vulnerable children and displaced families in Cameroon: school supplies and fees, food and essentials, Christmas outreach and the fight against child exploitation. Together we can.",
-    keywords: ["Syndy Emade", "Syndy Emade Foundation", "Cameroon charity", "youth welfare Cameroon", "crisis relief Cameroon", "scholarships Cameroon", "Blue Rain Entertainment"],
+    keywords: ["Syndy Emade", "Syndy Emade Foundation", "Cameroon charity", "Douala charity", "displaced families Cameroon", "back to school Cameroon", "Blue Rain Entertainment"],
     location: "Douala, Cameroon",
   },
 

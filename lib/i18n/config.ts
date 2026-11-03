@@ -83,9 +83,10 @@ export function localePath(locale: Locale, path = "/"): string {
 /** "/fr/projets/bourses-d-etudes" → { locale: "fr", path: "/projects/education" } (internal path) */
 export function splitLocale(pathname: string): { locale: Locale; path: string } {
   const seg = pathname.split("/")[1] ?? "";
-  if (isLocale(seg) && seg !== defaultLocale) {
+  if (isLocale(seg)) {
+    // English pages are rendered internally under /en (the middleware rewrites / → /en), so strip that too.
     const rest = pathname.slice(seg.length + 1) || "/";
-    return { locale: seg, path: internalPath(seg, rest) ?? rest };
+    return { locale: seg, path: seg === defaultLocale ? rest : internalPath(seg, rest) ?? rest };
   }
   return { locale: defaultLocale, path: pathname || "/" };
 }

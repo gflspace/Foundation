@@ -46,7 +46,7 @@ export function generateMetadata({ params }: { params: { locale: string } }): Me
   };
 }
 
-export const viewport: Viewport = { themeColor: "#0F172A", width: "device-width", initialScale: 1 };
+export const viewport: Viewport = { themeColor: "#00A8A0", width: "device-width", initialScale: 1 };
 
 export default function LocaleLayout({ children, params }: { children: React.ReactNode; params: { locale: string } }) {
   if (!isLocale(params.locale)) notFound();
