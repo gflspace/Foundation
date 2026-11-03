@@ -30,6 +30,7 @@ Design tokens are in `tailwind.config.ts`: Navy `#0F172A`, Emerald `#059669`, Go
 
 The site is fully bilingual. English is at the root (`/about`) and French under `/fr` (`/fr/about`). The EN/FR switch in the header keeps visitors on the same page.
 
+- Programme addresses are translated: `/fr/projets` and `/fr/projets/protection-des-jeunes`, `intervention-mobile-de-crise`, `bourses-d-etudes`, `autonomisation-des-femmes`. The mapping is `translatedSegments` in `lib/i18n/config.ts`, and `localePath()` applies it everywhere links are built. The untranslated forms (`/fr/projects/…`) redirect permanently (308) to the French ones.
 - Every page sets `<html lang>` and a canonical URL, plus `hreflang` links to its translation (`x-default` points to English). The sitemap lists both versions.
 - French visitors see amounts in FCFA first, with French number formatting (`30 000 FCFA`). Stripe checkout opens in French and returns to `/fr/donate/thank-you`.
 - Form submissions include a `locale` field, so replies can go out in the right language.
