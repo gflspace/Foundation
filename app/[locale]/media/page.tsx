@@ -33,7 +33,7 @@ export default function MediaPage(props: LocaleParams) {
             <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-1">
               <a href={`/press/syndy-emade-foundation-press-kit${suffix}.zip`} download className="glass group flex items-center gap-4 rounded-2xl p-5 transition hover:bg-white/15">
                 <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-teal text-plum"><Download className="h-5 w-5" aria-hidden /></span>
-                <span><span className="block font-semibold">{m.kitDownload}</span><span className="text-sm text-white/65">PDF · SVG · PNG</span></span>
+                <span><span className="block font-semibold">{m.kitDownload}</span><span className="text-sm text-white/65">PDF · PNG</span></span>
               </a>
               <a href={`/press/fact-sheet${suffix}.pdf`} className="glass group flex items-center gap-4 rounded-2xl p-5 transition hover:bg-white/15">
                 <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-purple text-white"><FileText className="h-5 w-5" aria-hidden /></span>

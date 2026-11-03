@@ -67,10 +67,10 @@ export const pillarKeys: { key: PillarKey; accent: "purple" | "teal" | "plum" }[
  */
 export type ProjectSlug = "back-to-school" | "displaced-families" | "christmas-outreach" | "child-protection" | "women";
 export const projectMeta: { slug: ProjectSlug; pillar: PillarKey; tone: "teal" | "purple" | "plum"; video?: string }[] = [
-  { slug: "back-to-school", pillar: "philanthropist", tone: "teal" },
+  { slug: "back-to-school", pillar: "philanthropist", tone: "teal", video: "-wQM_qRACTA" },
   { slug: "displaced-families", pillar: "humanitarian", tone: "purple", video: "IRtdVqIK9Nc" },
   { slug: "christmas-outreach", pillar: "humanitarian", tone: "teal", video: "8_OXBvKZBKY" },
-  { slug: "child-protection", pillar: "philanthropist", tone: "plum", video: "G9f7qKhNiwU" },
+  { slug: "child-protection", pillar: "philanthropist", tone: "plum", video: "1_51miPEC0I" },
   { slug: "women", pillar: "icon", tone: "purple" },
 ];
 export const projectSlugs = projectMeta.map((p) => p.slug);
@@ -83,10 +83,13 @@ export type Source = { label: string; url: string };
 export type JourneyEntry = { id: string; date: string; dateConfirmed: boolean; programme?: ProjectSlug; video?: string; sources: Source[] };
 export const journey: JourneyEntry[] = [
   { id: "launch", date: "2019-08", dateConfirmed: true, programme: "child-protection", video: "G9f7qKhNiwU", sources: [{ label: "SYNDY EMADE TV (YouTube)", url: "https://www.youtube.com/watch?v=G9f7qKhNiwU" }] },
-  { id: "school-materials", date: "2019-09", dateConfirmed: false, programme: "back-to-school", sources: [{ label: "Positive Vibes CMR (Facebook)", url: "https://www.facebook.com/positivevibescmr/posts/502011753942883/" }, { label: "Ekwat TV (Facebook)", url: "https://www.facebook.com/EkwatTV/posts/3629789580390638/" }] },
-  { id: "school-fees", date: "2019-10", dateConfirmed: false, programme: "back-to-school", sources: [{ label: "Kesa Magazine (Facebook)", url: "https://www.facebook.com/kesamagazine/posts/3856021907788721/" }] },
+  { id: "school-materials", date: "2019-08", dateConfirmed: true, programme: "back-to-school", video: "-wQM_qRACTA", sources: [{ label: "SYNDY EMADE TV (YouTube)", url: "https://www.youtube.com/watch?v=-wQM_qRACTA" }, { label: "Positive Vibes CMR (Facebook)", url: "https://www.facebook.com/positivevibescmr/posts/502011753942883/" }, { label: "Ekwat TV (Facebook)", url: "https://www.facebook.com/EkwatTV/posts/3629789580390638/" }] },
+  { id: "school-fees", date: "2019-08", dateConfirmed: true, programme: "back-to-school", video: "3Wx_TaG5sFc", sources: [{ label: "SYNDY EMADE TV (YouTube)", url: "https://www.youtube.com/watch?v=3Wx_TaG5sFc" }, { label: "Kesa Magazine (Facebook)", url: "https://www.facebook.com/kesamagazine/posts/3856021907788721/" }] },
+  { id: "covid-schools-2020", date: "2020-08", dateConfirmed: true, programme: "back-to-school", video: "vqR0Lb9Wguo", sources: [{ label: "SYNDY EMADE TV (YouTube)", url: "https://www.youtube.com/watch?v=vqR0Lb9Wguo" }] },
+  { id: "idps-2020", date: "2020-09", dateConfirmed: true, programme: "displaced-families", video: "w4Xt6EOS1lU", sources: [{ label: "SYNDY EMADE TV (YouTube)", url: "https://www.youtube.com/watch?v=w4Xt6EOS1lU" }] },
   { id: "christmas-2020", date: "2020-12", dateConfirmed: true, programme: "christmas-outreach", video: "8_OXBvKZBKY", sources: [{ label: "SYNDY EMADE TV (YouTube)", url: "https://www.youtube.com/watch?v=8_OXBvKZBKY" }] },
   { id: "idps-2021", date: "2021-02", dateConfirmed: true, programme: "displaced-families", video: "IRtdVqIK9Nc", sources: [{ label: "SYNDY EMADE TV (YouTube)", url: "https://www.youtube.com/watch?v=IRtdVqIK9Nc" }, { label: "Newsday Cameroon", url: "https://newsdaycameroon.wordpress.com/tag/douala/" }] },
+  { id: "street-children-2021", date: "2021-02", dateConfirmed: true, programme: "child-protection", video: "1_51miPEC0I", sources: [{ label: "SYNDY EMADE TV (YouTube)", url: "https://www.youtube.com/watch?v=1_51miPEC0I" }] },
   { id: "womens-day", date: "2024-03", dateConfirmed: false, programme: "women", sources: [{ label: "Syndy Emade Foundation (Facebook)", url: "https://www.facebook.com/SyndyEmadeFoundation/" }] },
   { id: "christmas-2023", date: "2023-12", dateConfirmed: true, programme: "christmas-outreach", sources: [{ label: "Mimi Mefo Info", url: "https://mimimefoinfos.com/syndy-emade-offers-relief-to-visually-impaired-mother-in-douala/" }] },
 ];
@@ -97,7 +100,7 @@ export const journey: JourneyEntry[] = [
  */
 export type CentreId = "douala" | "bamenda" | "buea" | "kumba";
 export const impactCentres: { id: CentreId; kind: "work" | "origin" | "hometown"; programmes: ProjectSlug[]; journey: string[] }[] = [
-  { id: "douala", kind: "work", programmes: ["displaced-families", "christmas-outreach", "back-to-school"], journey: ["idps-2021", "christmas-2020", "christmas-2023", "school-materials"] },
+  { id: "douala", kind: "work", programmes: ["displaced-families", "christmas-outreach", "back-to-school"], journey: ["street-children-2021", "idps-2021", "idps-2020", "christmas-2020", "christmas-2023", "school-materials"] },
   { id: "bamenda", kind: "origin", programmes: ["displaced-families"], journey: [] },
   { id: "buea", kind: "origin", programmes: ["displaced-families"], journey: [] },
   { id: "kumba", kind: "hometown", programmes: [], journey: [] },
@@ -158,9 +161,15 @@ export const press: { title: string; source: string; url: string; tag: PressTag;
 ];
 
 /** The Foundation's films on SYNDY EMADE TV — embedded (privacy-enhanced), never re-uploaded. */
-export const featuredVideos: { id: string; date: string; duration: string; programme: ProjectSlug; title: { en: string; fr: string } }[] = [
-  { id: "IRtdVqIK9Nc", date: "2021-02-02", duration: "4:47", programme: "displaced-families", title: { en: "Touching moments with displaced families", fr: "Moments forts avec des familles déplacées" } },
-  { id: "8_OXBvKZBKY", date: "2021-01-08", duration: "2:37", programme: "christmas-outreach", title: { en: "Christmas outreach to families at Bonaberi", fr: "Noël solidaire avec des familles de Bonaberi" } },
+/** Films from the Foundation's own channel, SYNDY EMADE TV. `home` = shown in the home page film strip. */
+export const featuredVideos: { id: string; date: string; duration: string; programme: ProjectSlug; home?: boolean; title: { en: string; fr: string } }[] = [
+  { id: "1_51miPEC0I", date: "2021-02-02", duration: "2:20", programme: "child-protection", home: true, title: { en: "A day with children living on the street", fr: "Une journée avec les enfants des rues" } },
+  { id: "IRtdVqIK9Nc", date: "2021-02-02", duration: "4:47", programme: "displaced-families", home: true, title: { en: "Touching moments with displaced families", fr: "Moments forts avec des familles déplacées" } },
+  { id: "8_OXBvKZBKY", date: "2021-01-08", duration: "2:37", programme: "christmas-outreach", home: true, title: { en: "Christmas outreach to families at Bonaberi", fr: "Noël solidaire avec des familles de Bonaberi" } },
+  { id: "w4Xt6EOS1lU", date: "2020-09-19", duration: "4:47", programme: "displaced-families", title: { en: "Supplies for displaced families at Bonaberi", fr: "Des vivres pour les familles déplacées de Bonaberi" } },
+  { id: "vqR0Lb9Wguo", date: "2020-08-05", duration: "3:23", programme: "back-to-school", title: { en: "COVID-19 safety kits for a school in Limbe", fr: "Des kits anti-COVID-19 pour une école de Limbe" } },
+  { id: "-wQM_qRACTA", date: "2019-08-23", duration: "1:45", programme: "back-to-school", title: { en: "Back to school 2019: supplies and school fees", fr: "Rentrée 2019 : fournitures et frais de scolarité" } },
+  { id: "3Wx_TaG5sFc", date: "2019-08-23", duration: "1:22", programme: "back-to-school", title: { en: "Back-to-school donations", fr: "Dons pour la rentrée scolaire" } },
   { id: "G9f7qKhNiwU", date: "2019-08-18", duration: "1:00", programme: "child-protection", title: { en: "Introducing the Syndy Emade Foundation", fr: "Présentation de la Fondation Syndy Emade" } },
 ];
 

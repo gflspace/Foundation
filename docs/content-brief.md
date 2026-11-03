@@ -67,3 +67,17 @@ Logo motif: rising bubbles/circles, and a child on a swing inside the "d" of Syn
 ## Not obtained
 
 - The Foundation's Instagram (@syndyemadefoundationcmr) and Facebook page (/SyndyEmadeFoundation). Both block automated access. Post captions and photos need to come from the Foundation, for example through an account data export.
+
+## Additions from SYNDY EMADE TV (YouTube channel @SyndyEmadeOfficial), November 2026
+
+Dates are YouTube publish dates; descriptions are paraphrased from the films' auto-captions.
+
+| Film | Published | Programme | What it shows |
+| --- | --- | --- | --- |
+| [Syndy Emade Foundation back to school](https://www.youtube.com/watch?v=-wQM_qRACTA) | 23 Aug 2019 | Back to School | French news report: nursery and primary pupils displaced from the North-West and South-West, chosen door to door among the poorest families, receive exercise books, textbooks and bags; parents get help with school fees. Described as the Foundation's second action; a health follow-up for displaced families is announced. |
+| [Back to school donations by Syndy Emade](https://www.youtube.com/watch?v=3Wx_TaG5sFc) | 23 Aug 2019 | Back to School | Same campaign (no usable captions). |
+| [Syndy Emade Foundation (COVID-19 relief, Limbe)](https://www.youtube.com/watch?v=vqR0Lb9Wguo) | 5 Aug 2020 | Back to School | With the Elone Foundation: talk with students; face masks, hand sanitiser, buckets and thermometers for a Limbe school, exceeding the student count. |
+| [Syndy Emade Foundation donates to IDPs at Bonaberi](https://www.youtube.com/watch?v=w4Xt6EOS1lU) | 19 Sep 2020 | Displaced Families | Food and supplies for families who fled the crisis from Bamenda to Douala; a host says it will help feed the children; a mother plans to share with her parents in the village. |
+| [Syndy Emade donates to street children](https://www.youtube.com/watch?v=1_51miPEC0I) | 2 Feb 2021 | Child Protection | A few hours with children living on the street; buckets, soap and umbrellas so they can earn tips washing cars and sheltering people; food and drinks shared. |
+
+Not used: "Syndy Emade Foundation" (16 Jul 2019, [ldMHL4jSUSM](https://www.youtube.com/watch?v=ldMHL4jSUSM)) has no captions or description, so its content could not be confirmed; "Syndy Emade sends message on Corona Virus for UNICEF" (26 Mar 2020) is the founder's own advocacy, not a Foundation activity.

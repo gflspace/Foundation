@@ -112,10 +112,13 @@ const en = {
     readMore: "See the full journey",
     entries: {
       launch: { when: "August 2019", title: "The Foundation is born", text: "Syndy Emade launches her foundation with a short film on her channel, Syndy Emade TV. Its cause: protecting vulnerable children, starting with street children at risk of exploitation." },
-      "school-materials": { when: "Back-to-school season", title: "School materials for 600+ displaced children", text: "Shortly after its launch, the Foundation gives school materials to more than 600 children displaced by the crisis and now living in Douala." },
-      "school-fees": { when: "Back-to-school season", title: "School fees for 300 children", text: "The Foundation pays school fees so that 300 children can stay in class, as part of its back-to-school campaign for underprivileged children." },
+      "school-materials": { when: "August 2019", title: "School materials for 600+ displaced children", text: "Weeks after its launch, the Foundation’s back-to-school campaign reaches children displaced from the North-West and South-West. Nursery and primary pupils, chosen door to door among the poorest families, receive exercise books, textbooks and school bags: more than 600 children in all." },
+      "school-fees": { when: "August 2019", title: "School fees for 300 children", text: "Beyond supplies, parents receive help to pay their children’s school fees, so that 300 children can start the year in class. The Foundation calls it its second action, and announces a health follow-up for displaced families next." },
+      "covid-schools-2020": { when: "August 2020", title: "Keeping a Limbe school safe from COVID-19", text: "With the Elone Foundation, Syndy Emade and her family visit a school in Limbe to talk with students about the virus. They bring face masks, hand sanitiser, buckets and thermometers, more than the school’s student count, so classes can stay open safely." },
+      "idps-2020": { when: "September 2020", title: "Supplies for displaced families at Bonaberi", text: "The Foundation shares food and supplies with families at Bonaberi who fled the crisis from Bamenda to Douala. “It takes a little to put a smile on somebody’s face,” the team says. A host says it will help feed the children in their care, and one mother plans to share hers with her parents in the village." },
       "christmas-2020": { when: "Christmas 2020", title: "Christmas outreach at Bonaberi", text: "The team brings Christmas to families in Bonaberi, Douala, sharing gifts and essentials. The founder uses the moment to speak out against the exploitation of street children." },
       "idps-2021": { when: "February 2021", title: "Standing with displaced families", text: "The Foundation visits families who fled the crisis to Douala and shares food and essentials. Parents say the gift will feed their children for days, and some plan to share it with neighbours. The founder calls it “the first of many”." },
+      "street-children-2021": { when: "February 2021", title: "A day with children living on the street", text: "The team spends a few hours with children living on the street. Many already wash cars or open doors for a tip, so the Foundation gives them buckets, soap and umbrellas to earn more safely, then shares food and drinks with them." },
       "womens-day": { when: "International Women’s Day", title: "Women’s Day, in partnership", text: "The Foundation marks International Women’s Day alongside the Wilmbi Foundation, standing with women in their communities." },
       "christmas-2023": { when: "December 2023", title: "A home for a mother and her three sons", text: "On a Christmas outreach, the team meets a visually impaired single mother living in one cramped room with her three sons. The Foundation pays a year’s rent on a larger home, pledges to renovate their room, and delivers food and household essentials." },
     },
@@ -163,12 +166,13 @@ const en = {
       intro:
         "Conflict and poverty push children out of school. Our back-to-school campaign gives underprivileged and displaced children the basics they need to learn, and pays school fees when families cannot.",
       delivered: [
-        "School materials for more than 600 displaced children in Douala",
-        "School fees paid for 300 children",
+        "School materials for more than 600 displaced children in Douala (August 2019)",
+        "School fees paid for 300 children (August 2019)",
+        "COVID-19 safety kits for a school in Limbe, with the Elone Foundation (2020)",
         "A recurring back-to-school campaign for underprivileged children",
       ],
       planned: ["Secondary and university scholarships", "Vocational and digital-skills training"],
-      regions: "Douala",
+      regions: "Douala, Limbe",
       keyFact: "600+",
       keyFactLabel: "displaced children equipped for school",
     },
@@ -178,6 +182,7 @@ const en = {
       intro:
         "Thousands of families have fled the crisis in Cameroon’s North-West and South-West regions and rebuilt their lives in Douala with very little. We visit them in Bonaberi and elsewhere with food and essentials, through our mobile crisis relief work, Chantiers Mobiles Crise.",
       delivered: [
+        "Supplies shared with displaced families at Bonaberi, Douala (September 2020)",
         "Food and essential supplies shared with displaced families in Bonaberi, Douala (2021)",
         "Gifts that families say feed their children for days, and that they share with neighbours",
         "Outreach the founder described as “the first of many”",
@@ -207,7 +212,7 @@ const en = {
       short: "Standing up for street children and against the exploitation of children.",
       intro:
         "The Foundation was created to protect vulnerable children, starting with street children, who are often exploited. We speak out at every outreach, and we are building programmes to offer safety, care and guidance.",
-      delivered: ["The Foundation’s founding cause, stated publicly since 2019", "Advocacy against child exploitation at our outreaches"],
+      delivered: ["Buckets, soap, umbrellas and a shared meal for children living on the street (2021)", "The Foundation’s founding cause, stated publicly since 2019", "Advocacy against child exploitation at our outreaches"],
       planned: ["Shelter and nutrition for children at risk", "Health check-ups", "Mentoring by trusted adults"],
       regions: "Douala",
       keyFact: "2019",
@@ -427,7 +432,7 @@ const en = {
       foundation: "Foundation",
     },
     kitTitle: "Press kit",
-    kitText: "Fact sheet and logo files (SVG and PNG). Approved photography available on request.",
+    kitText: "Fact sheet and the official logo (PNG). Approved photography available on request.",
     kitDownload: "Download press kit (ZIP)",
     kitFactSheet: "View fact sheet (PDF)",
     enquiries: "Media enquiries:",

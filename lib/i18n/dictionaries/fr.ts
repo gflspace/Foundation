@@ -113,10 +113,13 @@ const fr: Dictionary = {
     readMore: "Voir tout notre parcours",
     entries: {
       launch: { when: "Août 2019", title: "Naissance de la Fondation", text: "Syndy Emade lance sa fondation avec un court film sur sa chaîne, Syndy Emade TV. Sa cause : protéger les enfants vulnérables, à commencer par les enfants des rues exposés à l’exploitation." },
-      "school-materials": { when: "Période de rentrée", title: "Fournitures scolaires pour plus de 600 enfants déplacés", text: "Peu après sa création, la Fondation offre des fournitures scolaires à plus de 600 enfants déplacés par la crise et vivant désormais à Douala." },
-      "school-fees": { when: "Période de rentrée", title: "Frais de scolarité pour 300 enfants", text: "La Fondation paie les frais de scolarité de 300 enfants pour qu’ils restent à l’école, dans le cadre de sa campagne de rentrée pour les enfants défavorisés." },
+      "school-materials": { when: "Août 2019", title: "Des fournitures pour plus de 600 enfants déplacés", text: "Quelques semaines après sa création, la campagne de rentrée de la Fondation atteint des enfants déplacés du Nord-Ouest et du Sud-Ouest. Des élèves de maternelle et de primaire, choisis de porte en porte parmi les familles les plus pauvres, reçoivent cahiers, livres et sacs : plus de 600 enfants au total." },
+      "school-fees": { when: "Août 2019", title: "Les frais de scolarité de 300 enfants", text: "Au-delà des fournitures, les parents reçoivent une aide pour payer la scolarité de leurs enfants, afin que 300 enfants commencent l’année en classe. La Fondation parle de sa deuxième action et annonce un suivi de santé pour les familles déplacées." },
+      "covid-schools-2020": { when: "Août 2020", title: "Protéger une école de Limbe contre la COVID-19", text: "Avec la Elone Foundation, Syndy Emade et sa famille se rendent dans une école de Limbe pour sensibiliser les élèves. Elles apportent masques, gel hydroalcoolique, seaux et thermomètres, au-delà du nombre d’élèves annoncé, pour que les cours continuent en sécurité." },
+      "idps-2020": { when: "Septembre 2020", title: "Des vivres pour les familles déplacées de Bonaberi", text: "La Fondation partage vivres et produits essentiels avec des familles de Bonaberi qui ont fui la crise de Bamenda vers Douala. « Il suffit de peu pour faire sourire quelqu’un », dit l’équipe. Un hôte explique que cela aidera à nourrir les enfants dont il a la charge, et une mère compte partager avec ses parents au village." },
       "christmas-2020": { when: "Noël 2020", title: "Noël solidaire à Bonaberi", text: "L’équipe apporte Noël à des familles de Bonaberi, à Douala, avec des cadeaux et des produits de première nécessité. La fondatrice en profite pour dénoncer l’exploitation des enfants des rues." },
       "idps-2021": { when: "Février 2021", title: "Aux côtés des familles déplacées", text: "La Fondation rend visite à des familles qui ont fui la crise jusqu’à Douala et partage vivres et produits essentiels. Les parents disent que ce don nourrira leurs enfants plusieurs jours, et certains comptent le partager avec leurs voisins. La fondatrice parle de « la première d’une longue série »." },
+      "street-children-2021": { when: "Février 2021", title: "Une journée avec les enfants des rues", text: "L’équipe passe quelques heures avec des enfants qui vivent dans la rue. Beaucoup lavent déjà des voitures ou ouvrent des portières contre un pourboire : la Fondation leur offre seaux, savon et parapluies pour gagner un peu plus en sécurité, puis partage avec eux à manger et à boire." },
       "womens-day": { when: "Journée internationale des femmes", title: "Journée des femmes, en partenariat", text: "La Fondation célèbre la Journée internationale des femmes aux côtés de la Wilmbi Foundation, au plus près des femmes de leurs communautés." },
       "christmas-2023": { when: "Décembre 2023", title: "Un toit pour une mère et ses trois fils", text: "Lors d’une action de Noël, l’équipe rencontre une mère célibataire malvoyante qui vit dans une seule pièce exiguë avec ses trois fils. La Fondation paie un an de loyer dans un logement plus grand, s’engage à rénover leur pièce et apporte vivres et produits ménagers." },
     },
@@ -164,12 +167,13 @@ const fr: Dictionary = {
       intro:
         "La crise et la pauvreté éloignent les enfants de l’école. Notre campagne de rentrée donne aux enfants défavorisés et déplacés le nécessaire pour apprendre, et paie les frais de scolarité quand les familles ne le peuvent pas.",
       delivered: [
-        "Fournitures scolaires pour plus de 600 enfants déplacés à Douala",
-        "Frais de scolarité payés pour 300 enfants",
+        "Fournitures scolaires pour plus de 600 enfants déplacés à Douala (août 2019)",
+        "Frais de scolarité payés pour 300 enfants (août 2019)",
+        "Des kits anti-COVID-19 pour une école de Limbe, avec la Elone Foundation (2020)",
         "Une campagne de rentrée régulière pour les enfants défavorisés",
       ],
       planned: ["Bourses du secondaire et du supérieur", "Formations professionnelles et numériques"],
-      regions: "Douala",
+      regions: "Douala, Limbe",
       keyFact: "600+",
       keyFactLabel: "enfants déplacés équipés pour l’école",
     },
@@ -179,6 +183,7 @@ const fr: Dictionary = {
       intro:
         "Des milliers de familles ont fui la crise des régions du Nord-Ouest et du Sud-Ouest pour reconstruire leur vie à Douala, avec très peu. Nous leur rendons visite à Bonaberi et ailleurs avec des vivres et des produits essentiels, à travers notre action mobile de crise, les Chantiers Mobiles Crise.",
       delivered: [
+        "Vivres et produits essentiels partagés avec des familles déplacées à Bonaberi, Douala (septembre 2020)",
         "Vivres et produits essentiels partagés avec des familles déplacées à Bonaberi, Douala (2021)",
         "Des dons qui, selon les familles, nourrissent leurs enfants plusieurs jours et sont partagés avec les voisins",
         "Une action que la fondatrice a qualifiée de « première d’une longue série »",
@@ -208,7 +213,7 @@ const fr: Dictionary = {
       short: "Aux côtés des enfants des rues, contre l’exploitation des enfants.",
       intro:
         "La Fondation a été créée pour protéger les enfants vulnérables, à commencer par les enfants des rues, souvent exploités. Nous prenons la parole à chaque action, et nous construisons des programmes pour leur offrir sécurité, soins et accompagnement.",
-      delivered: ["La cause fondatrice de la Fondation, affirmée publiquement depuis 2019", "Un plaidoyer contre l’exploitation des enfants lors de nos actions"],
+      delivered: ["Seaux, savon, parapluies et un repas partagé avec des enfants des rues (2021)", "La cause fondatrice de la Fondation, affirmée publiquement depuis 2019", "Un plaidoyer contre l’exploitation des enfants lors de nos actions"],
       planned: ["Hébergement et alimentation pour les enfants en danger", "Bilans de santé", "Mentorat par des adultes de confiance"],
       regions: "Douala",
       keyFact: "2019",
@@ -428,7 +433,7 @@ const fr: Dictionary = {
       foundation: "Fondation",
     },
     kitTitle: "Dossier de presse",
-    kitText: "Fiche d’information et logos (SVG et PNG). Photos officielles disponibles sur demande.",
+    kitText: "Fiche d’information et logo officiel (PNG). Photos officielles disponibles sur demande.",
     kitDownload: "Télécharger le dossier de presse (ZIP)",
     kitFactSheet: "Voir la fiche d’information (PDF)",
     enquiries: "Contact presse :",

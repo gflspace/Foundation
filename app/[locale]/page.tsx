@@ -63,8 +63,8 @@ export default function HomePage(props: LocaleParams) {
               {h.seeAllMedia} <ArrowRight className="h-4 w-4" aria-hidden />
             </Link>
           </div>
-          <div className="mt-12 grid gap-6 md:grid-cols-2">
-            {featuredVideos.filter((v) => v.id !== "G9f7qKhNiwU").map((v, i) => (
+          <div className="mt-12 grid gap-6 md:grid-cols-3">
+            {featuredVideos.filter((v) => v.home).map((v, i) => (
               <Reveal key={v.id} delay={i * 0.08}>
                 <VideoFeature id={v.id} title={v.title[locale]} />
                 <Link href={localePath(locale, `/projects/${v.programme}`)} className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-teal-700 hover:underline">
