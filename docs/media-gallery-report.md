@@ -62,6 +62,7 @@ Galleries live in two places, with no new pages and no new navigation:
 6. **COVID-19 Limbe post.** The Facebook URL for the ELONE post wasn’t located; the film remains the source. Its date stays August 2020 (from the film).
 7. **Clothes giveaway date.** The appeal says “tomorrow Sunday” (26 Jan 2020) and the thank-you says “yesterday” (27 Jan). The site shows January 2020.
 8. **Facebook videos** (3 share links) remain unavailable.
+9. **Christmas 2023: one home or two?** Mimi Mefo Info says the Foundation paid a year’s rent on a more spacious home. The Foundation’s post says it paid “their house rent” and renovated “the house”. The story now shows both accounts (“What we did” follows the article, “What changed” the post). Please confirm whether the renovated house is the new home.
 
 ## Media inventory
 
