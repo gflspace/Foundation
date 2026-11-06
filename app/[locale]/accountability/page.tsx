@@ -54,7 +54,7 @@ export default function AccountabilityPage(props: LocaleParams) {
                 <div className="flex flex-wrap items-start justify-between gap-4 border-b border-plum/10 bg-mist px-6 py-5">
                   <div>
                     <p className="text-xs font-semibold uppercase tracking-wider text-teal-600">
-                      {formatDate(locale, story.date)} · {story.location}{!story.locationConfirmed && ` (${s.locationToConfirm})`} · {t.projects[story.programme].title}
+                      {formatDate(locale, story.date)} · {story.location}{!story.locationConfirmed && ` (${s.locationToConfirm})`}{story.programme && ` · ${t.projects[story.programme].title}`}
                     </p>
                     <h2 className="mt-1 text-2xl">{c.title}</h2>
                   </div>

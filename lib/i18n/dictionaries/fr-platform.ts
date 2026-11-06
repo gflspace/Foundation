@@ -112,9 +112,74 @@ export const platformFr: typeof platformEn = {
     accountability: "Voir la fiche du projet",
     more: "Autres histoires",
     support: "Soutenir ce type d’action",
+
+    gallery: "En images",
+    galleryIntro: "Photographies issues de l’album de la Fondation, dans l’ordre où la journée s’est déroulée.",
+    photoCredit: "Photos",
+    originalPost: "Publication d’origine",
+    enlarge: "Agrandir la photo",
+    photoOf: "Photo {n} sur {total}",
+    prevPhoto: "Photo précédente",
+    nextPhoto: "Photo suivante",
+    closePhoto: "Fermer",
+  },
+
+  galleryUi: {
+    eyebrow: "En images",
+    title: "Notre action, dans les photographies de la Fondation",
+    intro: "Chaque album ci-dessous est l’archive de la Fondation pour une action documentée, rattachée à sa publication d’origine et au récit complet. Les photos de personnes en situation sensible ne sont pas publiées, par respect pour leur dignité.",
+    photos: "{n} photos",
+    viewStory: "Voir le récit et toutes les photos",
+    credit: "Photos : {credit}",
+    categories: {
+      relief: "Vivres, produits essentiels et un toit : aux côtés des familles déplacées et des foyers en difficulté.",
+      education: "Fournitures scolaires, salles de classe sûres et outils concrets pour les jeunes.",
+      women: "Aux côtés des femmes dans les moments clés, à commencer par les jeunes mères.",
+      community: "Des collectes de quartier qui transforment ce que chacun peut donner en aide pour les autres.",
+      environment: "Aucune action documentée pour l’instant.",
+    },
   },
 
   storyEntries: {
+    "womens-day-limbe-2024": {
+      title: "Un premier cadeau pour les nouveau-nés, le jour de la Journée des femmes",
+      dek: "8 mars 2024, hôpital de district de Limbé : avec la Wilmbi Foundation, l’essentiel pour les jeunes mères et leurs bébés.",
+      reached: "Jeunes mères de la maternité de l’hôpital de district de Limbé",
+      objective: "Célébrer la Journée internationale des femmes aux côtés des femmes, à l’un des moments les plus exigeants de leur vie : les premiers jours de la maternité.",
+      challenge: "À la sortie de la maternité, les jeunes mères ont besoin de l’essentiel pour leur nouveau-né, à un moment où chaque dépense compte.",
+      action: "La Fondation s’est associée à la Wilmbi Foundation pour apporter aux jeunes mères de l’hôpital de district de Limbé des colis de première nécessité pour leurs nouveau-nés (baignoires, paniers et produits de soin), remis dans le service avec le personnel soignant.",
+      change: "Les jeunes mères du service ont reçu l’essentiel pour les premières semaines de leur bébé.",
+      next: "L’autonomisation des femmes est un pilier émergent de la Fondation. Nous publierons ici ses prochaines actions.",
+      voices: [
+        { text: "Mettre au monde un être humain est ce qu’il y a de plus magique. Nous encourageons chaque femme à rester résiliente, quelles que soient les difficultés. (traduit de l’anglais)", who: "La Fondation Syndy Emade, sur Facebook", verbatim: true },
+      ],
+    },
+    "year-end-bonaberi-2020": {
+      title: "Finir 2020 avec les familles déplacées de Bonabéri",
+      dek: "Décembre 2020 : colis de vivres, danses et prières avec des familles déplacées, grâce à B&T Logistics.",
+      reached: "Familles déplacées accueillies à Gateway Bonabéri, Douala",
+      objective: "Clore une année difficile en apportant des vivres et un moment partagé aux familles déplacées par la crise.",
+      challenge: "Des familles ayant fui la crise dans les régions du Nord-Ouest et du Sud-Ouest passaient les fêtes loin de chez elles, souvent avec peu de choses à mettre sur la table.",
+      action: "La Fondation a soutenu des familles déplacées à Bonabéri grâce à B&T Logistics, qui s’est associée à elle pour aider davantage de personnes. La famille SIANI a également donné par l’intermédiaire de la Fondation. Les familles ont reçu des sacs de vivres à Gateway Bonabéri, qui a ouvert ses portes pour l’occasion.",
+      change: "Les familles sont reparties avec des vivres pour les fêtes, après un après-midi de sourires, de danses et de prières.",
+      next: "La Fondation est retournée auprès des familles déplacées en février 2021 et poursuit ce travail à travers son programme Familles déplacées.",
+      voices: [
+        { text: "Les sourires, les danses et les prières nous remplissent de joie, et nous espérons faire davantage. (traduit de l’anglais)", who: "La Fondation Syndy Emade, sur Facebook", verbatim: true },
+      ],
+    },
+    "clothes-makepe-2020": {
+      title: "Des vêtements pour les familles de Makepe Missoke",
+      dek: "Janvier 2020 : un appel aux vêtements inutilisés, puis une distribution pour les familles du quartier Makepe Missoke, à Douala.",
+      reached: "Familles et enfants de Makepe Missoke, Douala",
+      objective: "Transformer les vêtements que l’on ne porte plus en aide pour des enfants qui ont très peu à se mettre.",
+      challenge: "Certains enfants ont si peu de vêtements que, selon les mots de la Fondation, ils portent un seul t-shirt pendant une semaine avant de pouvoir le laver.",
+      action: "La Fondation a invité le public à apporter les vêtements qu’il ne porte plus, puis a organisé une distribution à Makepe Missoke avec les bénévoles et les soutiens venus l’aider.",
+      change: "Les familles de Makepe Missoke ont reçu les vêtements donnés. Comme l’a écrit la Fondation : « Nous avons touché des vies. »",
+      next: "Le développement communautaire est un pilier proposé de la Fondation ; ses programmes seront décrits ici une fois confirmés.",
+      voices: [
+        { text: "Rien n’est jamais trop petit pour faire sourire quelqu’un ou illuminer sa journée. (traduit de l’anglais)", who: "La Fondation Syndy Emade, appel sur Facebook", verbatim: true },
+      ],
+    },
     "a-home-for-a-family-2023": {
       title: "Un toit pour une mère et ses trois fils",
       dek: "Noël 2023 : une mère malvoyante, une seule pièce exiguë, et un an de loyer pour un nouveau logement.",
@@ -123,8 +188,8 @@ export const platformFr: typeof platformEn = {
       challenge: "Une mère célibataire malvoyante vivait avec ses trois fils dans une seule pièce exiguë, à Douala.",
       action:
         "Lors de son action de Noël 2023, l’équipe de la Fondation a visité des foyers dans des quartiers reculés, puis Syndy Emade s’est rendue elle-même chez eux pour décider qui avait le plus besoin d’aide. La Fondation a payé un an de loyer pour un logement adapté et plus spacieux, et a livré du riz, de l’huile, de l’eau minérale, du savon et d’autres produits ménagers.",
-      change: "Pour l’année à venir, la famille dispose d’un logement plus spacieux au loyer payé, et de provisions pour les mois suivants.",
-      next: "La Fondation s’est engagée à rénover entièrement la pièce où vivait la famille. Son achèvement n’a pas encore été rapporté ; nous le publierons ici.",
+      change: "Selon la Fondation, elle a payé un an de loyer, entièrement rénové la maison jusqu’au portail avec un nouveau système de drainage, remeublé le logement et rempli le garde-manger.",
+      next: "Le témoignage de la famille n’a pas été publié. Toute suite sera publiée ici.",
       voices: [
         { text: "Pour ce Noël, à travers la Fondation Syndy Emade, j’ai décidé de choisir au hasard quelques familles et de faire en sorte que leur Noël soit rempli de bonheur. (traduit de l’anglais)", who: "Syndy Emade, à Mimi Mefo Info", verbatim: true },
         { text: "J’ai demandé à mon équipe de visiter au hasard des foyers dans des quartiers reculés, puis je me suis rendue chez eux moi-même pour décider qui avait le plus besoin de nous. (traduit de l’anglais)", who: "Syndy Emade, à Mimi Mefo Info", verbatim: true },
@@ -161,10 +226,10 @@ export const platformFr: typeof platformEn = {
     "covid-school-kits-limbe-2020": {
       title: "Protéger une école de Limbe contre la COVID-19",
       dek: "Août 2020 : masques, gel, seaux et thermomètres pour que les cours continuent en sécurité.",
-      reached: "Les élèves et le personnel d’une école de Limbe",
+      reached: "Élèves et personnel d’établissements de Limbé, dont le Government High School Batoke and Bobende",
       objective: "Aider une école à rouvrir en sécurité pendant la pandémie de COVID-19.",
       challenge: "Les écoles avaient besoin d’équipements de protection de base pour que élèves et enseignants reprennent les cours pendant la pandémie.",
-      action: "Avec la Elone Foundation, Syndy Emade et sa famille ont sensibilisé les élèves au virus et offert masques, gel hydroalcoolique, seaux et thermomètres. Ayant reçu le nombre d’élèves de l’école, l’équipe a choisi d’en apporter davantage.",
+      action: "Avec la Elone Foundation, Syndy Emade et sa famille ont sensibilisé les élèves au virus et offert masques, gel hydroalcoolique, seaux et thermomètres. Ayant reçu le nombre d’élèves de l’école, l’équipe a choisi d’en apporter davantage. Le Government High School Batoke and Bobende figurait parmi les établissements de Limbé bénéficiaires.",
       change: "L’école a reçu assez d’équipements de protection pour chaque élève, afin que les cours continuent avec prise de température et gestes barrières.",
       next: "Les écoles sûres font partie du pilier Éducation et jeunesse.",
       voices: [

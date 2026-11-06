@@ -4,6 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { CoverArt } from "@/components/CoverArt";
 import { DonateButton } from "@/components/DonateProvider";
+import { PhotoGallery } from "@/components/PhotoGallery";
 import { Reveal } from "@/components/Reveal";
 import { StoryCard } from "@/components/StoryCard";
 import { VideoFeature } from "@/components/VideoFeature";
@@ -38,12 +39,15 @@ export default function StoryPage({ params }: Props) {
   const film = story.video ? featuredVideos.find((v) => v.id === story.video) : undefined;
   const more = stories.filter((s) => s.slug !== story.slug).slice(0, 3);
   const pillar = t.pillars5.items[story.pillar];
+  const kicker = story.programme ? t.projects[story.programme].title : pillar.title;
 
   const glance: [string, React.ReactNode][] = [
     [u.when, formatDate(locale, story.date)],
     [u.where, <>{story.location}{!story.locationConfirmed && <span className="ml-1 text-xs text-plum/60">({u.locationToConfirm})</span>}</>],
     [u.reached, c.reached],
-    [u.programme, <Link key="p" href={localePath(locale, `/projects/${story.programme}`)} className="font-medium text-teal-700 underline-offset-4 hover:underline">{t.projects[story.programme].title}</Link>],
+    ...(story.programme
+      ? ([[u.programme, <Link key="p" href={localePath(locale, `/projects/${story.programme}`)} className="font-medium text-teal-700 underline-offset-4 hover:underline">{t.projects[story.programme].title}</Link>]] as [string, React.ReactNode][])
+      : []),
     [u.pillar, `${pillar.number} · ${pillar.title}`],
     ...(story.partners.length ? ([[u.partners, story.partners.join(", ")]] as [string, React.ReactNode][]) : []),
   ];
@@ -67,7 +71,7 @@ export default function StoryPage({ params }: Props) {
             {story.video ? (
               <VideoFeature id={story.video} title={film?.title[locale] ?? c.title} />
             ) : (
-              <CoverArt image={story.image} tone={tone} kicker={t.projects[story.programme].title} year={story.date.slice(0, 4)} highlight={c.reached} className="aspect-[16/9] w-full rounded-2xl" sizes="(min-width: 1024px) 66vw, 100vw" />
+              <CoverArt image={story.image} tone={tone} kicker={kicker} year={story.date.slice(0, 4)} highlight={c.reached} className="aspect-[16/9] w-full rounded-2xl" sizes="(min-width: 1024px) 66vw, 100vw" />
             )}
           </Reveal>
 
@@ -82,6 +86,8 @@ export default function StoryPage({ params }: Props) {
               <p className="mt-4 text-lg leading-relaxed text-plum/80">{body}</p>
             </section>
           ))}
+
+          <PhotoGallery slug={story.slug} />
 
           <section className="mt-12" aria-labelledby="voices">
             <h2 id="voices" className="text-2xl sm:text-3xl">{u.voices}</h2>

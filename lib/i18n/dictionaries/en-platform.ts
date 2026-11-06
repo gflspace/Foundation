@@ -115,9 +115,73 @@ export const platformEn = {
     accountability: "See the project record",
     more: "More stories",
     support: "Support work like this",
+    gallery: "In pictures",
+    galleryIntro: "Photographs from the Foundation’s own album of this activity, in the order the day unfolded.",
+    photoCredit: "Photos",
+    originalPost: "Original post",
+    enlarge: "Enlarge photo",
+    photoOf: "Photo {n} of {total}",
+    prevPhoto: "Previous photo",
+    nextPhoto: "Next photo",
+    closePhoto: "Close",
+  },
+
+  galleryUi: {
+    eyebrow: "In pictures",
+    title: "The work, in the Foundation’s own photographs",
+    intro: "Every album below is the Foundation’s own record of a documented activity, matched to its original post and to the full story. Photos of people in sensitive situations are left out to protect their dignity.",
+    photos: "{n} photos",
+    viewStory: "See the story and all photos",
+    credit: "Photos: {credit}",
+    categories: {
+      relief: "Food, essentials and a home: standing with displaced families and households in crisis.",
+      education: "School supplies, safe classrooms and practical tools for young people.",
+      women: "Standing with women at key moments, starting with new mothers.",
+      community: "Neighbourhood drives that turn what people can spare into help for others.",
+      environment: "No documented activity yet.",
+    },
   },
 
   storyEntries: {
+    "womens-day-limbe-2024": {
+      title: "A first gift for newborns, on International Women’s Day",
+      dek: "8 March 2024, Limbe District Hospital: with the Wilmbi Foundation, essentials for new mothers and their babies.",
+      reached: "New mothers on the maternity ward of Limbe District Hospital",
+      objective: "Mark International Women’s Day by standing with women at one of life’s most demanding moments: the first days of motherhood.",
+      challenge: "New mothers leave hospital needing the basics for their newborns, at a time when every expense counts.",
+      action: "The Foundation partnered with the Wilmbi Foundation to bring new mothers at Limbe District Hospital packs of basic needs for their newborns, including baby baths, baskets and care essentials, handed over on the ward with the hospital’s nursing staff.",
+      change: "New mothers on the ward received essentials for their babies’ first weeks.",
+      next: "Women’s empowerment is an emerging pillar of the Foundation. We will report future activities here as they take place.",
+      voices: [
+        { text: "Women bringing another human into this world is most magical. We encourage every woman to keep being resilient no matter the odds.", who: "The Syndy Emade Foundation, on Facebook", verbatim: true },
+      ],
+    },
+    "year-end-bonaberi-2020": {
+      title: "Ending 2020 with displaced families at Bonaberi",
+      dek: "December 2020: food packs, dancing and prayers with displaced families, made possible with B&T Logistics.",
+      reached: "Displaced families at Gateway Bonaberi, Douala",
+      objective: "Close a hard year by bringing food and company to families displaced by the crisis.",
+      challenge: "Families who had fled the crisis in the North-West and South-West regions faced the festive season far from home, many with little to put on the table.",
+      action: "The Foundation reached out to displaced families at Bonaberi through B&T Logistics, which partnered with the Foundation so that more people could be served. The SIANI family also gave through the Foundation. Families received sacks of food at Gateway Bonaberi, which opened its doors for the day.",
+      change: "Families went home with food for the festive season, after an afternoon of smiles, dancing and prayers.",
+      next: "The Foundation returned to displaced families in February 2021 and continues this work through its Displaced Families programme.",
+      voices: [
+        { text: "The smiles, dance and prayers bring us joy as we hope to do more.", who: "The Syndy Emade Foundation, on Facebook", verbatim: true },
+      ],
+    },
+    "clothes-makepe-2020": {
+      title: "Clothes for families at Makepe Missoke",
+      dek: "January 2020: an appeal for unused clothes, and a giveaway for families in the Makepe Missoke neighbourhood of Douala.",
+      reached: "Families and children at Makepe Missoke, Douala",
+      objective: "Turn clothes people no longer wear into help for children who have very little to wear.",
+      challenge: "Some children have so few clothes that, in the Foundation’s words, they wear one T-shirt for a week before it can be washed.",
+      action: "The Foundation asked the public to bring clothes they no longer wear, then held a giveaway of the clothes at Makepe Missoke with the volunteers and supporters who joined.",
+      change: "Families at Makepe Missoke received the donated clothes. As the Foundation put it: “We touched lives.”",
+      next: "Community Development is a proposed pillar of the Foundation; its programmes will be described here once confirmed.",
+      voices: [
+        { text: "Nothing is ever little to put a smile on someone’s face or make their day.", who: "The Syndy Emade Foundation, appeal on Facebook", verbatim: true },
+      ],
+    },
     "a-home-for-a-family-2023": {
       title: "A home for a mother and her three sons",
       dek: "Christmas 2023: a visually impaired single mother, one cramped room, and a year’s rent on a new home.",
@@ -126,8 +190,8 @@ export const platformEn = {
       challenge: "A visually impaired single mother was living in cramped quarters, a single room, with her three sons in Douala.",
       action:
         "During its Christmas 2023 outreach, the Foundation’s team visited homes in remote areas, and Syndy Emade then visited in person to decide who needed help most. The Foundation paid one year’s rent for a suitable, more spacious home, and delivered bags of rice, cooking oil, mineral water, soap and other household necessities.",
-      change: "For the coming year the family has a more spacious home with the rent paid, and a stocked pantry for the months ahead.",
-      next: "The Foundation pledged a full renovation of the family’s current single-room home. Its completion has not yet been reported; we will publish it here.",
+      change: "According to the Foundation, it paid the family’s rent for one year, completely renovated the house up to the gate with a new drainage system, refurnished it and fully stocked it with food provisions.",
+      next: "The family’s own account has not been published. Any follow-up will be reported here.",
       voices: [
         { text: "For this Christmas, through Syndy Emade Foundation, I decided to randomly pick some families and make sure their Christmas is filled with happiness.", who: "Syndy Emade, to Mimi Mefo Info", verbatim: true },
         { text: "I had my team randomly visit some homes in some remote areas and then I got to visit their homes myself to best decide who needed us the most.", who: "Syndy Emade, to Mimi Mefo Info", verbatim: true },
@@ -164,10 +228,10 @@ export const platformEn = {
     "covid-school-kits-limbe-2020": {
       title: "Keeping a school in Limbe safe from COVID-19",
       dek: "August 2020: masks, sanitiser, buckets and thermometers so classes could continue safely.",
-      reached: "Students and staff of a school in Limbe",
+      reached: "Students and staff of schools in Limbe, including Government High School Batoke and Bobende",
       objective: "Help a school reopen safely during the COVID-19 pandemic.",
       challenge: "Schools needed basic protective equipment so that pupils and teachers could return to class during the pandemic.",
-      action: "With the Elone Foundation, Syndy Emade and her family talked with the students about the virus and donated face masks, hand sanitiser, buckets and thermometers. Given the school’s student count, the team chose to bring more than that number.",
+      action: "With the Elone Foundation, Syndy Emade and her family talked with the students about the virus and donated face masks, hand sanitiser, buckets and thermometers. Given the school’s student count, the team chose to bring more than that number. Government High School Batoke and Bobende was among the schools in Limbe that received donations.",
       change: "The school received enough protective equipment for every student, so classes could continue with temperature checks and hygiene measures in place.",
       next: "Safe schools are part of the Education & Youth Development pillar.",
       voices: [

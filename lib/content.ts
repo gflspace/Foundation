@@ -1,3 +1,5 @@
+import { albumCoverImage } from "./gallery";
+
 /**
  * Language-neutral data (URLs, numbers, film titles, press links).
  * All translatable copy lives in lib/i18n/dictionaries/{en,fr}.ts.
@@ -91,9 +93,9 @@ export const journey: JourneyEntry[] = [
   { id: "idps-2020", date: "2020-09", dateConfirmed: true, programme: "displaced-families", video: "w4Xt6EOS1lU", sources: [{ label: "SYNDY EMADE TV (YouTube)", url: "https://www.youtube.com/watch?v=w4Xt6EOS1lU" }] },
   { id: "christmas-2020", date: "2020-12", dateConfirmed: true, programme: "christmas-outreach", video: "8_OXBvKZBKY", sources: [{ label: "SYNDY EMADE TV (YouTube)", url: "https://www.youtube.com/watch?v=8_OXBvKZBKY" }] },
   { id: "idps-2021", date: "2021-02", dateConfirmed: true, programme: "displaced-families", video: "IRtdVqIK9Nc", sources: [{ label: "SYNDY EMADE TV (YouTube)", url: "https://www.youtube.com/watch?v=IRtdVqIK9Nc" }, { label: "Newsday Cameroon", url: "https://newsdaycameroon.wordpress.com/tag/douala/" }] },
-  { id: "street-children-2021", date: "2021-02", dateConfirmed: true, programme: "child-protection", video: "1_51miPEC0I", sources: [{ label: "SYNDY EMADE TV (YouTube)", url: "https://www.youtube.com/watch?v=1_51miPEC0I" }] },
-  { id: "womens-day", date: "2024-03", dateConfirmed: false, programme: "women", sources: [{ label: "Syndy Emade Foundation (Facebook)", url: "https://www.facebook.com/SyndyEmadeFoundation/" }] },
-  { id: "christmas-2023", date: "2023-12", dateConfirmed: true, programme: "christmas-outreach", image: { src: "https://mimimefoinfos.com/wp-content/uploads/2023/12/IMG_20231227_132835_932.jpg", alt: "Syndy Emade with the family during the Christmas 2023 outreach in Douala", credit: "Mimi Mefo Info", sourceUrl: "https://mimimefoinfos.com/syndy-emade-offers-relief-to-visually-impaired-mother-in-douala/", license: "© Mimi Mefo Info — permission needed", status: "pending" }, sources: [{ label: "Mimi Mefo Info", url: "https://mimimefoinfos.com/syndy-emade-offers-relief-to-visually-impaired-mother-in-douala/" }] },
+  { id: "street-children-2021", date: "2020-12", dateConfirmed: true, programme: "child-protection", video: "1_51miPEC0I", sources: [{ label: "SYNDY EMADE TV (YouTube)", url: "https://www.youtube.com/watch?v=1_51miPEC0I" }] },
+  { id: "womens-day", date: "2024-03-08", dateConfirmed: true, programme: "women", image: albumCoverImage("womens-day-limbe-2024"), sources: [{ label: "Syndy Emade Foundation on Facebook, 8 Mar 2024", url: "https://www.facebook.com/photo/?fbid=746115817620334" }] },
+  { id: "christmas-2023", date: "2023-12", dateConfirmed: true, programme: "christmas-outreach", image: albumCoverImage("a-home-for-a-family-2023"), sources: [{ label: "Mimi Mefo Info", url: "https://mimimefoinfos.com/syndy-emade-offers-relief-to-visually-impaired-mother-in-douala/" }] },
 ];
 
 /**

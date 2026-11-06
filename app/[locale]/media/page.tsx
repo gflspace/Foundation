@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Download, FileText, Mail } from "lucide-react";
+import { MediaGallery } from "@/components/MediaGallery";
 import { MediaHub } from "@/components/MediaHub";
 import { PageHero } from "@/components/PageHero";
 import { PressForm } from "@/components/PressForm";
@@ -23,6 +24,12 @@ export default function MediaPage(props: LocaleParams) {
 
       <section className="container-page py-20">
         <MediaHub />
+      </section>
+
+      <section id="in-pictures" className="scroll-mt-28 bg-mist py-20">
+        <div className="container-page">
+          <MediaGallery />
+        </div>
       </section>
 
       <section id="press" className="scroll-mt-28 bg-plum py-24 text-white">

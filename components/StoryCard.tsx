@@ -17,7 +17,7 @@ export function StoryCard({ slug, featured = false }: { slug: StorySlug; feature
   return (
     <Link href={href(`/stories/${slug}`)} className="card group flex h-full flex-col overflow-hidden transition duration-300 hover:-translate-y-1.5 hover:shadow-xl">
       <div className={featured ? "relative aspect-[16/9] overflow-hidden" : "relative aspect-[16/10] overflow-hidden"}>
-        <CoverArt image={s.image} youtubeId={s.video} tone={tone} kicker={t.projects[s.programme].title} year={s.date.slice(0, 4)} highlight={copy.reached} className="h-full w-full transition duration-700 group-hover:scale-105" />
+        <CoverArt image={s.image} youtubeId={s.video} tone={tone} kicker={s.programme ? t.projects[s.programme].title : t.pillars5.items[s.pillar].title} year={s.date.slice(0, 4)} highlight={copy.reached} className="h-full w-full transition duration-700 group-hover:scale-105" />
         {s.video && (
           <span aria-hidden className="absolute right-4 top-4 grid h-10 w-10 place-items-center rounded-full bg-white/90 text-teal-600 shadow">
             <Play className="h-4 w-4 translate-x-px fill-current" />
