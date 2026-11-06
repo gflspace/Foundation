@@ -347,7 +347,7 @@ export const platformEn = {
     skills: "Skills you could offer",
     organisation: "Organisation",
     orgType: "Type of organisation",
-    orgTypes: { corporate: "Company", ngo: "NGO or foundation", institution: "Institution or government", international: "International organisation", diaspora: "Diaspora group" },
+    orgTypes: { corporate: "Company", ngo: "NGO or foundation", institution: "Institution or government", international: "International organisation", diaspora: "Diaspora group", school: "School or university", community: "Faith or community group", other: "Other" },
     projectTitle: "Initiative title",
     message: "Message",
     proposal: "Describe the need, the community and what you would like to do together",

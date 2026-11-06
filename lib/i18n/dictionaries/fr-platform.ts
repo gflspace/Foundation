@@ -345,7 +345,7 @@ export const platformFr: typeof platformEn = {
     skills: "Compétences que vous pouvez offrir",
     organisation: "Organisation",
     orgType: "Type d’organisation",
-    orgTypes: { corporate: "Entreprise", ngo: "ONG ou fondation", institution: "Institution ou administration", international: "Organisation internationale", diaspora: "Groupe de la diaspora" },
+    orgTypes: { corporate: "Entreprise", ngo: "ONG ou fondation", institution: "Institution ou administration", international: "Organisation internationale", diaspora: "Groupe de la diaspora", school: "École ou université", community: "Groupe religieux ou communautaire", other: "Autre" },
     projectTitle: "Titre de l’initiative",
     message: "Message",
     proposal: "Décrivez le besoin, la communauté et ce que vous aimeriez faire ensemble",

@@ -11,6 +11,7 @@ export function InvolveForm() {
   const v = t.involve;
   const [type, setType] = useState<"volunteer" | "partner">("volunteer");
   const [state, setState] = useState<"idle" | "loading" | "done" | "error">("idle");
+  const [area, setArea] = useState("");
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -36,6 +37,10 @@ export function InvolveForm() {
     );
 
   const partner = type === "partner";
+  const options = partner ? v.partnerOptions : v.volunteerOptions;
+  const selected = options.includes(area) ? area : options[0];
+  /** "Other" is always the last option: it asks the applicant to describe their interest. */
+  const isOther = selected === options[options.length - 1];
   return (
     <form onSubmit={onSubmit} className="card space-y-5 p-6 sm:p-8" noValidate>
       <div className="inline-flex rounded-full bg-plum/5 p-1" role="tablist" aria-label={v.type}>
@@ -76,13 +81,14 @@ export function InvolveForm() {
       </div>
       <div>
         <label htmlFor="f-area" className="label">{partner ? v.partnershipType : v.interest}</label>
-        <select id="f-area" name="interest" className="input" required>
-          {(partner ? v.partnerOptions : v.volunteerOptions).map((o) => <option key={o}>{o}</option>)}
+        <select id="f-area" name="interest" className="input" required value={selected} onChange={(e) => setArea(e.target.value)}>
+          {options.map((o) => <option key={o}>{o}</option>)}
         </select>
       </div>
       <div>
         <label htmlFor="f-msg" className="label">{v.message}</label>
-        <textarea id="f-msg" name="message" rows={4} className="input" />
+        {isOther && <p id="f-msg-hint" className="mb-2 text-sm text-purple-700">{v.otherHint}</p>}
+        <textarea id="f-msg" name="message" rows={4} className="input" required={isOther} aria-describedby={isOther ? "f-msg-hint" : undefined} />
       </div>
       {state === "error" && <p role="alert" className="rounded-xl bg-red-50 px-4 py-3 text-sm text-red-700">{v.error}</p>}
       <p className="text-xs text-plum/65">
