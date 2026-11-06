@@ -188,9 +188,8 @@ export const platformEn = {
       reached: "One family: a mother and her three sons",
       objective: "Find the households in greatest need at Christmas and give them lasting help, not just a gift.",
       challenge: "A visually impaired single mother was living in cramped quarters, a single room, with her three sons in Douala.",
-      action:
-        "During its Christmas 2023 outreach, the Foundation’s team visited homes in remote areas, and Syndy Emade then visited in person to decide who needed help most. The Foundation paid one year’s rent for a suitable, more spacious home, and delivered bags of rice, cooking oil, mineral water, soap and other household necessities.",
-      change: "According to the Foundation, it paid the family’s rent for one year, completely renovated the house up to the gate with a new drainage system, refurnished it and fully stocked it with food provisions.",
+      action: "During its Christmas 2023 outreach, the Foundation’s team visited homes in remote areas, and Syndy Emade then visited in person to decide who needed help most. The Foundation paid one year’s rent on a more spacious home for the family, completely renovated it up to the gate with a new drainage system, refurnished it, and stocked it with rice, cooking oil, mineral water, soap and other household necessities.",
+      change: "The family moved from one cramped room into a renovated, furnished home with a year’s rent paid and a stocked pantry for the months ahead.",
       next: "The family’s own account has not been published. Any follow-up will be reported here.",
       voices: [
         { text: "For this Christmas, through Syndy Emade Foundation, I decided to randomly pick some families and make sure their Christmas is filled with happiness.", who: "Syndy Emade, to Mimi Mefo Info", verbatim: true },
@@ -198,13 +197,13 @@ export const platformEn = {
       ],
     },
     "street-children-2021": {
-      title: "A day with children living on the street",
-      dek: "Buckets, soap and umbrellas so children who already work for tips can do it more safely, and a meal shared together.",
-      reached: "Children living on the street",
-      objective: "Meet children living on the street with dignity and give them practical tools, not just charity.",
-      challenge: "Many children living on the street already wash cars or open car doors for a tip, without asking for anything more. As Syndy Emade says in the film, it is not their wish to be on the street.",
-      action: "The team spent a few hours with the children and gave them basic necessities: buckets and soap to wash cars, and umbrellas to shelter people for tips. They also shared food and drinks with them.",
-      change: "The children received tools to earn a little more on their own terms, and an afternoon of company and a shared meal.",
+      title: "A day with young people living on the street",
+      dek: "December 2020: buckets, soap and umbrellas so young people who already work for tips can earn more safely, and a meal shared together.",
+      reached: "Young people living on the street in Douala",
+      objective: "Meet young people living on the street with dignity and give them practical tools, not just charity.",
+      challenge: "Many young people living on the street already wash cars or open car doors for a tip, without asking for anything more. As Syndy Emade says in the film, it is not their wish to be on the street.",
+      action: "The team spent part of the day with the young people and gave them basic necessities to keep them self-employed: buckets, soap and brushes to wash clothes and cars, umbrellas to shelter people from rain or sun for tips, and face masks and sanitiser. Everyone shared a meal and drinks.",
+      change: "The young people received tools to earn a little more on their own terms, and an afternoon of company and a shared meal.",
       next: "Child protection remains the Foundation’s founding cause. Shelter, health check-ups and mentoring are planned, subject to funding.",
       voices: [
         { text: "It is not their wish to find themselves on the street; they really want to do something.", who: "Syndy Emade, in the film", verbatim: false },
@@ -247,7 +246,7 @@ export const platformEn = {
       challenge: "After three years of crisis in the North-West and South-West, many displaced children had been out of school, and many parents could not afford to send them back.",
       action:
         "Nursery and primary pupils were chosen door to door from among the poorest families. They received school supplies (exercise books, textbooks and bags), and parents received help to pay their children’s school fees.",
-      change: "More than 600 displaced children started the school year with the materials they needed, and school fees were paid for 300 children.",
+      change: "More than 600 displaced children started the school year with the materials they needed, and school fees were paid for 300 children (figures from the Foundation’s films). The Foundation’s Facebook post of 18 August 2019 reports books and basic school necessities for over 300 underprivileged children at that day’s distribution, and 25 children sponsored to school.",
       next: "The Foundation announced a health follow-up for displaced families as its next campaign, and runs a back-to-school campaign every year.",
       voices: [
         { text: "Education is the key pointer in our lives, I can only dream to see every child educated.", who: "Syndy Emade, to Mimi Mefo Info (July 2019)", verbatim: true },

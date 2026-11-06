@@ -124,9 +124,9 @@ const en = {
       "idps-2020": { when: "September 2020", title: "Supplies for displaced families at Bonaberi", text: "The Foundation shares food and supplies with families at Bonaberi who fled the crisis from Bamenda to Douala. “It takes a little to put a smile on somebody’s face,” the team says. A host says it will help feed the children in their care, and one mother plans to share hers with her parents in the village." },
       "christmas-2020": { when: "Christmas 2020", title: "Christmas outreach at Bonaberi", text: "The team brings Christmas to families in Bonaberi, Douala, sharing gifts and essentials. The founder uses the moment to speak out against the exploitation of street children." },
       "idps-2021": { when: "February 2021", title: "Standing with displaced families", text: "The Foundation visits families who fled the crisis to Douala and shares food and essentials. Parents say the gift will feed their children for days, and some plan to share it with neighbours. The founder calls it “the first of many”." },
-      "street-children-2021": { when: "December 2020", title: "A day with children living on the street", text: "The team spends a few hours with children living on the street. Many already wash cars or open doors for a tip, so the Foundation gives them buckets, soap and umbrellas to earn more safely, then shares food and drinks with them." },
+      "street-children-2021": { when: "December 2020", title: "A day with young people living on the street", text: "The team spends part of the day with young people living on the street. Many already wash cars or open doors for a tip, so the Foundation gives them buckets, soap and umbrellas to earn more safely, then shares food and drinks with them." },
       "womens-day": { when: "8 March 2024", title: "Women’s Day, in partnership", text: "On International Women’s Day, the Foundation and the Wilmbi Foundation bring essentials for newborns to new mothers at Limbe District Hospital." },
-      "christmas-2023": { when: "December 2023", title: "A home for a mother and her three sons", text: "On a Christmas outreach, the team meets a visually impaired single mother living in one cramped room with her three sons. The Foundation pays a year’s rent on a larger home, pledges to renovate their room, and delivers food and household essentials." },
+      "christmas-2023": { when: "December 2023", title: "A home for a mother and her three sons", text: "On a Christmas outreach, the team meets a visually impaired single mother living in one cramped room with her three sons. The Foundation pays a year’s rent on a larger home, renovates and furnishes it, and stocks it with food and household essentials." },
     },
   },
 
@@ -219,7 +219,7 @@ const en = {
       short: "Standing up for street children and against the exploitation of children.",
       intro:
         "The Foundation was created to protect vulnerable children, starting with street children, who are often exploited. We speak out at every outreach, and we are building programmes to offer safety, care and guidance.",
-      delivered: ["Buckets, soap, umbrellas and a shared meal for children living on the street (2021)", "The Foundation’s founding cause, stated publicly since 2019", "Advocacy against child exploitation at our outreaches"],
+      delivered: ["Buckets, soap, umbrellas and a shared meal for young people living on the street (December 2020)", "The Foundation’s founding cause, stated publicly since 2019", "Advocacy against child exploitation at our outreaches"],
       planned: ["Shelter and nutrition for children at risk", "Health check-ups", "Mentoring by trusted adults"],
       regions: "Douala",
       keyFact: "2019",

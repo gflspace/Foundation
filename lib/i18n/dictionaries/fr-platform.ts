@@ -186,9 +186,8 @@ export const platformFr: typeof platformEn = {
       reached: "Une famille : une mère et ses trois fils",
       objective: "Trouver à Noël les foyers les plus démunis et leur apporter une aide durable, pas seulement un cadeau.",
       challenge: "Une mère célibataire malvoyante vivait avec ses trois fils dans une seule pièce exiguë, à Douala.",
-      action:
-        "Lors de son action de Noël 2023, l’équipe de la Fondation a visité des foyers dans des quartiers reculés, puis Syndy Emade s’est rendue elle-même chez eux pour décider qui avait le plus besoin d’aide. La Fondation a payé un an de loyer pour un logement adapté et plus spacieux, et a livré du riz, de l’huile, de l’eau minérale, du savon et d’autres produits ménagers.",
-      change: "Selon la Fondation, elle a payé un an de loyer, entièrement rénové la maison jusqu’au portail avec un nouveau système de drainage, remeublé le logement et rempli le garde-manger.",
+      action: "Lors de son action de Noël 2023, l’équipe de la Fondation a visité des foyers dans des quartiers reculés, puis Syndy Emade s’est rendue elle-même chez eux pour décider qui avait le plus besoin d’aide. La Fondation a payé un an de loyer pour un logement plus spacieux, l’a entièrement rénové jusqu’au portail avec un nouveau système de drainage, l’a remeublé et y a livré riz, huile, eau minérale, savon et autres produits ménagers.",
+      change: "La famille est passée d’une seule pièce exiguë à un logement rénové et meublé, avec un an de loyer payé et des provisions pour les mois suivants.",
       next: "Le témoignage de la famille n’a pas été publié. Toute suite sera publiée ici.",
       voices: [
         { text: "Pour ce Noël, à travers la Fondation Syndy Emade, j’ai décidé de choisir au hasard quelques familles et de faire en sorte que leur Noël soit rempli de bonheur. (traduit de l’anglais)", who: "Syndy Emade, à Mimi Mefo Info", verbatim: true },
@@ -196,13 +195,13 @@ export const platformFr: typeof platformEn = {
       ],
     },
     "street-children-2021": {
-      title: "Une journée avec les enfants des rues",
-      dek: "Seaux, savon et parapluies pour des enfants qui travaillent déjà contre un pourboire, et un repas partagé.",
-      reached: "Des enfants qui vivent dans la rue",
-      objective: "Rencontrer avec dignité les enfants qui vivent dans la rue et leur donner des outils concrets, pas seulement la charité.",
-      challenge: "Beaucoup d’enfants des rues lavent déjà des voitures ou ouvrent des portières contre un pourboire, sans rien demander de plus. Comme le dit Syndy Emade dans le film, ce n’est pas leur choix d’être dans la rue.",
-      action: "L’équipe a passé quelques heures avec les enfants et leur a donné l’essentiel : des seaux et du savon pour laver les voitures, et des parapluies pour abriter les passants contre un pourboire. Ils ont aussi partagé à manger et à boire.",
-      change: "Les enfants ont reçu des outils pour gagner un peu plus à leur façon, et un après-midi de compagnie autour d’un repas.",
+      title: "Une journée avec les jeunes qui vivent dans la rue",
+      dek: "Décembre 2020 : seaux, savon et parapluies pour des jeunes qui travaillent déjà contre un pourboire, et un repas partagé.",
+      reached: "Des jeunes qui vivent dans la rue, à Douala",
+      objective: "Rencontrer avec dignité les jeunes qui vivent dans la rue et leur donner des outils concrets, pas seulement la charité.",
+      challenge: "Beaucoup de jeunes qui vivent dans la rue lavent déjà des voitures ou ouvrent des portières contre un pourboire, sans rien demander de plus. Comme le dit Syndy Emade dans le film, ce n’est pas leur choix d’être dans la rue.",
+      action: "L’équipe a passé une partie de la journée avec ces jeunes et leur a donné l’essentiel pour travailler à leur compte : seaux, savon et brosses pour laver vêtements et voitures, parapluies pour abriter les passants du soleil ou de la pluie contre un pourboire, ainsi que masques et gel hydroalcoolique. Tous ont partagé un repas et des boissons.",
+      change: "Les jeunes ont reçu des outils pour gagner un peu plus à leur façon, et un après-midi de compagnie autour d’un repas.",
       next: "La protection de l’enfance reste la cause fondatrice de la Fondation. Hébergement, bilans de santé et mentorat sont prévus, selon les financements.",
       voices: [
         { text: "Ce n’est pas leur choix de se retrouver dans la rue ; ils veulent vraiment faire quelque chose.", who: "Syndy Emade, dans le film", verbatim: false },
@@ -245,7 +244,7 @@ export const platformFr: typeof platformEn = {
       challenge: "Après trois années de crise dans le Nord-Ouest et le Sud-Ouest, beaucoup d’enfants déplacés n’allaient plus à l’école, et beaucoup de parents ne pouvaient pas les y renvoyer.",
       action:
         "Des élèves de maternelle et de primaire ont été choisis de porte en porte parmi les familles les plus pauvres. Ils ont reçu des fournitures (cahiers, livres et sacs), et les parents ont reçu une aide pour payer la scolarité de leurs enfants.",
-      change: "Plus de 600 enfants déplacés ont commencé l’année avec le matériel nécessaire, et les frais de scolarité de 300 enfants ont été payés.",
+      change: "Plus de 600 enfants déplacés ont commencé l’année avec le matériel nécessaire, et les frais de scolarité de 300 enfants ont été payés (chiffres des films de la Fondation). La publication Facebook de la Fondation du 18 août 2019 fait état de livres et de fournitures pour plus de 300 enfants défavorisés lors de la distribution de ce jour, et de 25 enfants parrainés pour leur scolarité.",
       next: "La Fondation a annoncé un suivi de santé pour les familles déplacées comme prochaine campagne, et organise une campagne de rentrée chaque année.",
       voices: [
         { text: "L’éducation est la clé de nos vies ; je ne peux que rêver de voir chaque enfant instruit. (traduit de l’anglais)", who: "Syndy Emade, à Mimi Mefo Info (juillet 2019)", verbatim: true },

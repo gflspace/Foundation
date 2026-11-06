@@ -52,17 +52,20 @@ Galleries live in two places, with no new pages and no new navigation:
 
 **Unchanged:** framework, navigation, homepage layout, design system, every other page and feature. Type check and build pass. The axe audit finds no violations on 23 pages at 1440 and 390 px. There is no horizontal scroll on mobile and no broken images.
 
-## Outstanding items (need human approval)
+## Decisions (6 November 2026)
 
-1. **Consent before public launch.** Children and displaced families can be identified in most published albums. The photos are already public on the Foundation’s Facebook page and the preview is not indexed, but the Foundation should confirm consent before the site goes public. Held back until then: the Christmas 2023 family’s faces (#022, #025) and the mothers and newborns on the ward (14 photos).
-2. **Street outreach wording.** The photos show mostly young men, and the post says “youth” and “homeless”. The story title says “children”, from the film. Please confirm the wording.
-3. **Back-to-school figures.** The post says “over 300 underprivileged children” and “25 children were sponsored to school”. The site says 600+ equipped and 300 fees paid, from the films. These need reconciling; the site is unchanged until you decide.
-4. **Unidentified sets.** “Special thank the CEO” (#125–129) and #137–138 in the Sept 2020 folder.
-5. **Partners on banners.** The ELONE Foundation’s banner and umbrellas appear in the Dec 2020 street outreach, but the post doesn’t name it as a partner. It is not listed as one.
-6. **COVID-19 Limbe post.** The Facebook URL for the ELONE post wasn’t located; the film remains the source. Its date stays August 2020 (from the film).
-7. **Clothes giveaway date.** The appeal says “tomorrow Sunday” (26 Jan 2020) and the thank-you says “yesterday” (27 Jan). The site shows January 2020.
-8. **Facebook videos** (3 share links) remain unavailable.
-9. **Christmas 2023: one home or two?** Mimi Mefo Info says the Foundation paid a year’s rent on a more spacious home. The Foundation’s post says it paid “their house rent” and renovated “the house”. The story now shows both accounts (“What we did” follows the article, “What changed” the post). Please confirm whether the renovated house is the new home.
+- **Consent:** the 16 photos of identifiable vulnerable people stay held until the Foundation confirms consent. Consent for the other identifiable people in published albums is still to be confirmed before public launch.
+- **Back-to-school figures:** the film figures stay, and the Facebook post’s figures (300+ children, 25 sponsored) are added beside them, with both sources named.
+- **Street outreach:** retitled “A day with young people living on the street”, with the activity details from the 3 Dec 2020 post (brushes, masks, sanitiser).
+- **Christmas 2023:** confirmed as one home. The story now reads: a year’s rent on a more spacious home, fully renovated with new drainage, refurnished and stocked.
+
+## Still open
+
+1. Unidentified sets: “Special thank the CEO” (#125–129) and #137–138.
+2. The ELONE Foundation’s banner appears at the Dec 2020 street outreach, but it is not listed as a partner.
+3. The Facebook URL for the COVID-19 Limbe post (ELONE) was not located; date August 2020 from the film.
+4. Clothes giveaway date: 26 or 27 Jan 2020 (shown as January 2020).
+5. The 3 Facebook videos are unavailable.
 
 ## Media inventory
 

@@ -124,9 +124,9 @@ const fr: Dictionary = {
       "idps-2020": { when: "Septembre 2020", title: "Des vivres pour les familles déplacées de Bonaberi", text: "La Fondation partage vivres et produits essentiels avec des familles de Bonaberi qui ont fui la crise de Bamenda vers Douala. « Il suffit de peu pour faire sourire quelqu’un », dit l’équipe. Un hôte explique que cela aidera à nourrir les enfants dont il a la charge, et une mère compte partager avec ses parents au village." },
       "christmas-2020": { when: "Noël 2020", title: "Noël solidaire à Bonaberi", text: "L’équipe apporte Noël à des familles de Bonaberi, à Douala, avec des cadeaux et des produits de première nécessité. La fondatrice en profite pour dénoncer l’exploitation des enfants des rues." },
       "idps-2021": { when: "Février 2021", title: "Aux côtés des familles déplacées", text: "La Fondation rend visite à des familles qui ont fui la crise jusqu’à Douala et partage vivres et produits essentiels. Les parents disent que ce don nourrira leurs enfants plusieurs jours, et certains comptent le partager avec leurs voisins. La fondatrice parle de « la première d’une longue série »." },
-      "street-children-2021": { when: "Décembre 2020", title: "Une journée avec les enfants des rues", text: "L’équipe passe quelques heures avec des enfants qui vivent dans la rue. Beaucoup lavent déjà des voitures ou ouvrent des portières contre un pourboire : la Fondation leur offre seaux, savon et parapluies pour gagner un peu plus en sécurité, puis partage avec eux à manger et à boire." },
+      "street-children-2021": { when: "Décembre 2020", title: "Une journée avec les jeunes qui vivent dans la rue", text: "L’équipe passe une partie de la journée avec des jeunes qui vivent dans la rue. Beaucoup lavent déjà des voitures ou ouvrent des portières contre un pourboire : la Fondation leur offre seaux, savon et parapluies pour gagner un peu plus en sécurité, puis partage avec eux à manger et à boire." },
       "womens-day": { when: "8 mars 2024", title: "Journée des femmes, en partenariat", text: "Pour la Journée internationale des femmes, la Fondation et la Wilmbi Foundation apportent l’essentiel pour les nouveau-nés aux jeunes mères de l’hôpital de district de Limbé." },
-      "christmas-2023": { when: "Décembre 2023", title: "Un toit pour une mère et ses trois fils", text: "Lors d’une action de Noël, l’équipe rencontre une mère célibataire malvoyante qui vit dans une seule pièce exiguë avec ses trois fils. La Fondation paie un an de loyer dans un logement plus grand, s’engage à rénover leur pièce et apporte vivres et produits ménagers." },
+      "christmas-2023": { when: "Décembre 2023", title: "Un toit pour une mère et ses trois fils", text: "Lors d’une action de Noël, l’équipe rencontre une mère célibataire malvoyante qui vit dans une seule pièce exiguë avec ses trois fils. La Fondation paie un an de loyer dans un logement plus grand, le rénove, le meuble et y apporte vivres et produits ménagers." },
     },
   },
 
@@ -219,7 +219,7 @@ const fr: Dictionary = {
       short: "Aux côtés des enfants des rues, contre l’exploitation des enfants.",
       intro:
         "La Fondation a été créée pour protéger les enfants vulnérables, à commencer par les enfants des rues, souvent exploités. Nous prenons la parole à chaque action, et nous construisons des programmes pour leur offrir sécurité, soins et accompagnement.",
-      delivered: ["Seaux, savon, parapluies et un repas partagé avec des enfants des rues (2021)", "La cause fondatrice de la Fondation, affirmée publiquement depuis 2019", "Un plaidoyer contre l’exploitation des enfants lors de nos actions"],
+      delivered: ["Seaux, savon, parapluies et un repas partagé avec des jeunes qui vivent dans la rue (décembre 2020)", "La cause fondatrice de la Fondation, affirmée publiquement depuis 2019", "Un plaidoyer contre l’exploitation des enfants lors de nos actions"],
       planned: ["Hébergement et alimentation pour les enfants en danger", "Bilans de santé", "Mentorat par des adultes de confiance"],
       regions: "Douala",
       keyFact: "2019",
