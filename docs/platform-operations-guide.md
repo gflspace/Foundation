@@ -20,6 +20,8 @@ For the environment assessment, see `platform-operations-assessment.md`.
 | TXT | `titan1._domainkey` | *(DKIM value from the Titan panel, step 1.4)* | 1 hour |
 | TXT | `_dmarc` | `v=DMARC1; p=none; rua=mailto:admin@syndyemadefoundation.org; fo=1` | 1 hour |
 
+**If you use Hostinger Email** (included with the Cloud plan) instead of Titan, use the values hPanel shows you. They are normally MX `mx1.hostinger.com` (5) and `mx2.hostinger.com` (10), SPF `v=spf1 include:_spf.mail.hostinger.com ~all`, and DKIM as CNAME records. Then use `SMTP_HOST=smtp.hostinger.com` in step 3. Always prefer the exact values hPanel displays over this table.
+
 Do not delete GoDaddy's existing NS or SOA records. After 2–4 weeks of clean reports, change DMARC to `p=quarantine`.
 **When you approve the public launch**, the website records (A/CNAME to Hostinger) will be added the same way. They are not part of this step, so the preview stays private.
 
