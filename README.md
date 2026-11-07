@@ -128,7 +128,7 @@ Forms are sent to `FORMS_WEBHOOK_URL` (Zapier, Make, Slack or a CRM). If it isn'
 
 ## Deploy (Hostinger preview, current)
 
-The preview runs at https://darkslateblue-lapwing-351030.hostingersite.com on the Hostinger Cloud Professional plan. The target is recorded in `.hostinger/site.json`. It isn't connected to a Hostinger Git installation, so deploys are done from an archive:
+The site runs at https://www.syndyemadefoundation.org on the Hostinger Cloud Professional plan. The target is recorded in `.hostinger/site.json`. It isn't connected to a Hostinger Git installation, so deploys are done from an archive:
 
 1. `git archive --format=zip -o app.zip HEAD`, then commit `app.zip` alone to the `hostinger-archive` branch and push.
 2. Hostinger API: `POST /accounts/{user}/websites/{domain}/git/repositories/deploy` with `branch: hostinger-archive` and `directory: _deploy`. This pulls the archive into `public_html/_deploy/`.
