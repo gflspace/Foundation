@@ -11,7 +11,8 @@ git -c user.name="SEF maintenance" -c user.email="admin@syndyemadefoundation.org
 for i in 1 2 3; do timeout 180 git push -q origin hostinger-archive && break; sleep 5; done
 B=https://developers.hostinger.com/api/hosting/v1/accounts/u671799052/websites/forestgreen-owl-883522.hostingersite.com
 A='Authorization: Bearer placeholder'
-for i in 1 2 3 4 5 6; do r=$(curl -sS -X POST "$B/git/repositories/deploy" -H "$A" -H 'Content-Type: application/json' -d '{"repository_url":"https://github.com/gflspace/Foundation.git","branch":"hostinger-archive","directory":"_deploy"}'); echo "$r" | grep -q '"is_success":true' && break; sleep $((i*10)); done
+for i in 1 2 3 4 5 6; do r=$(curl -sS -X POST "$B/git/repositories/deploy" -H "$A" -H 'Content-Type: application/json' -d '{"repository_url":"https://github.com/gflspace/Foundation.git","branch":"hostinger-archive","directory":"_deploy"}'); echo "$r" | grep -q '"is_success":true' && ok=1 && break; sleep $((i*10)); done
+[ "${ok:-0}" = 1 ] || { echo "git deploy failed: $(echo "$r" | head -c 400)"; exit 1; }
 sleep 20
 id=$(curl -sS -X POST "$B/nodejs/builds" -H "$A" -H 'Content-Type: application/json' -d '{"node_version":20,"app_type":"next","output_directory":".next","build_script":"build","package_manager":"npm","source_type":"archive","source_options":{"archive_path":"_deploy/app.zip"}}' | python3 -c "import sys,json;print(json.load(sys.stdin).get('uuid'))")
 for i in $(seq 1 40); do s=$(curl -sS "$B/nodejs/builds/$id" -H "$A" | python3 -c "import sys,json;print(json.load(sys.stdin).get('state'))"); case $s in pending|running) sleep 15;; *) echo "deploy $H: $s"; [ "$s" = completed ]; exit;; esac; done
