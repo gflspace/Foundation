@@ -5,8 +5,8 @@ set -euo pipefail
 REPO=$(git rev-parse --show-toplevel); H=$(git -C "$REPO" rev-parse --short HEAD)
 W=$(mktemp -d)
 git clone -q --depth 1 -b hostinger-archive https://github.com/gflspace/Foundation.git "$W/d"
-mkdir -p "$W/d/_deploy" && git -C "$REPO" archive --format=zip -o "$W/d/_deploy/app.zip" HEAD
-cd "$W/d" && git add _deploy/app.zip
+git -C "$REPO" archive --format=zip -o "$W/d/app.zip" HEAD
+cd "$W/d" && git add app.zip
 git -c user.name="SEF maintenance" -c user.email="admin@syndyemadefoundation.org" commit -q -m "Deploy $H" || true
 for i in 1 2 3; do timeout 180 git push -q origin hostinger-archive && break; sleep 5; done
 B=https://developers.hostinger.com/api/hosting/v1/accounts/u671799052/websites/forestgreen-owl-883522.hostingersite.com
