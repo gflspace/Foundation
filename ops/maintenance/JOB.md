@@ -80,4 +80,6 @@ Context for a file comes from: the file's Drive **description**, a note file in 
 8. **Email the report.** After the deploy is live, fetch `https://darkslateblue-lapwing-351030.hostingersite.com/api/ops/run-report`
    with Firecrawl (`maxAge: 0`). It emails this run's report to the admin from the Foundation mailbox, signed by the
    Tech Support Team, once per run. Expect `"status":"sent"`; record anything else under `issues` for next week.
+   Links to the site's own pages are rewritten to the current site address automatically. To re-send a corrected
+   report for the same run, increase `revision` in last-run.json and deploy again.
 9. **Finish** with a short summary: published, waiting for approval (with questions), issues.

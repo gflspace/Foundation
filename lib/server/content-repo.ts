@@ -18,6 +18,8 @@ export type MonitorWeek = { from: string; to: string; runs: number; failed: numb
 export type ActivityGroup = { category: string; count: number; items: { title: string; url: string }[] };
 
 export type MaintenanceRun = {
+  /** Bumped when a report is corrected and re-sent for the same run. */
+  revision?: number;
   lastRun: string | null;
   summary: string;
   health?: HealthCheck[];
@@ -34,8 +36,19 @@ export type MaintenanceRun = {
 /** Written by the weekly maintenance job (ops/maintenance/last-run.json, committed + deployed). */
 export async function lastMaintenanceRun(): Promise<MaintenanceRun | null> {
   try {
-    return JSON.parse(await readFile(path.join(process.cwd(), "ops/maintenance/last-run.json"), "utf8"));
+    const raw = await readFile(path.join(process.cwd(), "ops/maintenance/last-run.json"), "utf8");
+    // Links to the Foundation's own pages always point at the address the site runs on now,
+    // so reports keep working after a move (old preview address, then the real domain).
+    return JSON.parse(raw, (key, value) => (key === "url" && typeof value === "string" ? siteLink(value) : value));
   } catch {
     return null;
   }
+}
+
+const OWN_HOST = /^https?:\/\/(?:[a-z0-9-]+\.hostingersite\.com|(?:www\.)?syndyemadefoundation\.org)(?=\/|$)/i;
+
+/** Rewrite a link to one of the Foundation's own site addresses onto the current site address. */
+export function siteLink(url: string): string {
+  const base = (process.env.NEXT_PUBLIC_SITE_URL || "https://www.syndyemadefoundation.org").replace(/\/+$/, "");
+  return url.replace(OWN_HOST, base);
 }

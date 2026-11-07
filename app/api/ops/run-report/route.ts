@@ -15,11 +15,13 @@ export const dynamic = "force-dynamic";
 export async function GET() {
   const run = await lastMaintenanceRun();
   if (!run?.lastRun) return NextResponse.json({ ok: true, status: "no-run" });
+  // A corrected report for the same run (revision bumped in last-run.json) is sent once more.
+  const key = run.revision ? `${run.lastRun}#${run.revision}` : run.lastRun;
   const sent = await readJson<{ lastRun?: string }>("run-report-sent.json", {});
-  if (sent.lastRun === run.lastRun) return NextResponse.json({ ok: true, status: "already-sent", lastRun: run.lastRun });
+  if (sent.lastRun === key) return NextResponse.json({ ok: true, status: "already-sent", lastRun: run.lastRun });
   if (!mailConfigured() || !adminEmail()) return NextResponse.json({ ok: false, status: "mail-not-configured" }, { status: 503 });
   const r = buildRunReport(run);
   const ok = await sendMail({ to: adminEmail(), subject: r.subject, text: r.text, html: r.html, replyTo: "support@syndyemadefoundation.org", kind: "maintenance-report", ref: run.lastRun });
-  if (ok) await writeJson("run-report-sent.json", { lastRun: run.lastRun, at: new Date().toISOString() });
+  if (ok) await writeJson("run-report-sent.json", { lastRun: key, at: new Date().toISOString() });
   return NextResponse.json({ ok, status: ok ? "sent" : "send-failed", lastRun: run.lastRun }, { status: ok ? 200 : 502 });
 }

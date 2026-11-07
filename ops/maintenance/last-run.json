@@ -1,35 +1,36 @@
 {
+  "revision": 1,
   "lastRun": "2026-11-07T13:41:55Z",
   "summary": "TEST REPORT requested by the admin. The website is healthy: all 5 key checks pass and email is configured. This first week covers the site launch, so every story, photo, video and press item counts as new. Google Drive is connected and its 7 folders are still empty, so nothing is waiting for approval.",
   "nextRun": "2026-11-09T05:17:00Z",
   "health": [
     {
       "name": "Status check (storage + email)",
-      "url": "https://forestgreen-owl-883522.hostingersite.com/api/health",
+      "url": "https://darkslateblue-lapwing-351030.hostingersite.com/api/health",
       "ok": true,
       "status": 200
     },
     {
       "name": "Homepage (English)",
-      "url": "https://forestgreen-owl-883522.hostingersite.com/",
+      "url": "https://darkslateblue-lapwing-351030.hostingersite.com/",
       "ok": true,
       "status": 200
     },
     {
       "name": "Homepage (French)",
-      "url": "https://forestgreen-owl-883522.hostingersite.com/fr",
+      "url": "https://darkslateblue-lapwing-351030.hostingersite.com/fr",
       "ok": true,
       "status": 200
     },
     {
       "name": "Stories of Impact",
-      "url": "https://forestgreen-owl-883522.hostingersite.com/stories",
+      "url": "https://darkslateblue-lapwing-351030.hostingersite.com/stories",
       "ok": true,
       "status": 200
     },
     {
       "name": "Media & Press",
-      "url": "https://forestgreen-owl-883522.hostingersite.com/media",
+      "url": "https://darkslateblue-lapwing-351030.hostingersite.com/media",
       "ok": true,
       "status": 200
     }
@@ -81,39 +82,39 @@
         "items": [
           {
             "title": "9 photo(s) · a home for a family 2023",
-            "url": "https://forestgreen-owl-883522.hostingersite.com/stories/a-home-for-a-family-2023#in-pictures"
+            "url": "https://darkslateblue-lapwing-351030.hostingersite.com/stories/a-home-for-a-family-2023#in-pictures"
           },
           {
             "title": "10 photo(s) · back to school 2019",
-            "url": "https://forestgreen-owl-883522.hostingersite.com/stories/back-to-school-2019#in-pictures"
+            "url": "https://darkslateblue-lapwing-351030.hostingersite.com/stories/back-to-school-2019#in-pictures"
           },
           {
             "title": "6 photo(s) · clothes makepe 2020",
-            "url": "https://forestgreen-owl-883522.hostingersite.com/stories/clothes-makepe-2020#in-pictures"
+            "url": "https://darkslateblue-lapwing-351030.hostingersite.com/stories/clothes-makepe-2020#in-pictures"
           },
           {
             "title": "9 photo(s) · covid school kits limbe 2020",
-            "url": "https://forestgreen-owl-883522.hostingersite.com/stories/covid-school-kits-limbe-2020#in-pictures"
+            "url": "https://darkslateblue-lapwing-351030.hostingersite.com/stories/covid-school-kits-limbe-2020#in-pictures"
           },
           {
             "title": "6 photo(s) · displaced families bonaberi 2020",
-            "url": "https://forestgreen-owl-883522.hostingersite.com/stories/displaced-families-bonaberi-2020#in-pictures"
+            "url": "https://darkslateblue-lapwing-351030.hostingersite.com/stories/displaced-families-bonaberi-2020#in-pictures"
           },
           {
             "title": "10 photo(s) · first outreach 2019",
-            "url": "https://forestgreen-owl-883522.hostingersite.com/stories/first-outreach-2019#in-pictures"
+            "url": "https://darkslateblue-lapwing-351030.hostingersite.com/stories/first-outreach-2019#in-pictures"
           },
           {
             "title": "9 photo(s) · street children 2021",
-            "url": "https://forestgreen-owl-883522.hostingersite.com/stories/street-children-2021#in-pictures"
+            "url": "https://darkslateblue-lapwing-351030.hostingersite.com/stories/street-children-2021#in-pictures"
           },
           {
             "title": "7 photo(s) · womens day limbe 2024",
-            "url": "https://forestgreen-owl-883522.hostingersite.com/stories/womens-day-limbe-2024#in-pictures"
+            "url": "https://darkslateblue-lapwing-351030.hostingersite.com/stories/womens-day-limbe-2024#in-pictures"
           },
           {
             "title": "12 photo(s) · year end bonaberi 2020",
-            "url": "https://forestgreen-owl-883522.hostingersite.com/stories/year-end-bonaberi-2020#in-pictures"
+            "url": "https://darkslateblue-lapwing-351030.hostingersite.com/stories/year-end-bonaberi-2020#in-pictures"
           }
         ]
       },
@@ -161,39 +162,39 @@
         "items": [
           {
             "title": "A first gift for newborns, on International Women’s Day",
-            "url": "https://forestgreen-owl-883522.hostingersite.com/stories/womens-day-limbe-2024"
+            "url": "https://darkslateblue-lapwing-351030.hostingersite.com/stories/womens-day-limbe-2024"
           },
           {
             "title": "A home for a mother and her three sons",
-            "url": "https://forestgreen-owl-883522.hostingersite.com/stories/a-home-for-a-family-2023"
+            "url": "https://darkslateblue-lapwing-351030.hostingersite.com/stories/a-home-for-a-family-2023"
           },
           {
             "title": "Ending 2020 with displaced families at Bonaberi",
-            "url": "https://forestgreen-owl-883522.hostingersite.com/stories/year-end-bonaberi-2020"
+            "url": "https://darkslateblue-lapwing-351030.hostingersite.com/stories/year-end-bonaberi-2020"
           },
           {
             "title": "A day with young people living on the street",
-            "url": "https://forestgreen-owl-883522.hostingersite.com/stories/street-children-2021"
+            "url": "https://darkslateblue-lapwing-351030.hostingersite.com/stories/street-children-2021"
           },
           {
             "title": "Supplies for families who fled the crisis",
-            "url": "https://forestgreen-owl-883522.hostingersite.com/stories/displaced-families-bonaberi-2020"
+            "url": "https://darkslateblue-lapwing-351030.hostingersite.com/stories/displaced-families-bonaberi-2020"
           },
           {
             "title": "Keeping a school in Limbe safe from COVID-19",
-            "url": "https://forestgreen-owl-883522.hostingersite.com/stories/covid-school-kits-limbe-2020"
+            "url": "https://darkslateblue-lapwing-351030.hostingersite.com/stories/covid-school-kits-limbe-2020"
           },
           {
             "title": "Clothes for families at Makepe Missoke",
-            "url": "https://forestgreen-owl-883522.hostingersite.com/stories/clothes-makepe-2020"
+            "url": "https://darkslateblue-lapwing-351030.hostingersite.com/stories/clothes-makepe-2020"
           },
           {
             "title": "Back to school: 600 children equipped, 300 school fees paid",
-            "url": "https://forestgreen-owl-883522.hostingersite.com/stories/back-to-school-2019"
+            "url": "https://darkslateblue-lapwing-351030.hostingersite.com/stories/back-to-school-2019"
           },
           {
             "title": "The first outreach: food for more than 200 displaced people",
-            "url": "https://forestgreen-owl-883522.hostingersite.com/stories/first-outreach-2019"
+            "url": "https://darkslateblue-lapwing-351030.hostingersite.com/stories/first-outreach-2019"
           }
         ]
       },
@@ -203,51 +204,51 @@
         "items": [
           {
             "title": "limbe-orphanage-2015 (2015-10)",
-            "url": "https://forestgreen-owl-883522.hostingersite.com/media#story-limbe-orphanage-2015"
+            "url": "https://darkslateblue-lapwing-351030.hostingersite.com/media#story-limbe-orphanage-2015"
           },
           {
             "title": "idps-2019 (2019-07)",
-            "url": "https://forestgreen-owl-883522.hostingersite.com/media#story-idps-2019"
+            "url": "https://darkslateblue-lapwing-351030.hostingersite.com/media#story-idps-2019"
           },
           {
             "title": "launch (2019-08)",
-            "url": "https://forestgreen-owl-883522.hostingersite.com/media#story-launch"
+            "url": "https://darkslateblue-lapwing-351030.hostingersite.com/media#story-launch"
           },
           {
             "title": "school-materials (2019-08)",
-            "url": "https://forestgreen-owl-883522.hostingersite.com/media#story-school-materials"
+            "url": "https://darkslateblue-lapwing-351030.hostingersite.com/media#story-school-materials"
           },
           {
             "title": "school-fees (2019-08)",
-            "url": "https://forestgreen-owl-883522.hostingersite.com/media#story-school-fees"
+            "url": "https://darkslateblue-lapwing-351030.hostingersite.com/media#story-school-fees"
           },
           {
             "title": "covid-schools-2020 (2020-08)",
-            "url": "https://forestgreen-owl-883522.hostingersite.com/media#story-covid-schools-2020"
+            "url": "https://darkslateblue-lapwing-351030.hostingersite.com/media#story-covid-schools-2020"
           },
           {
             "title": "idps-2020 (2020-09)",
-            "url": "https://forestgreen-owl-883522.hostingersite.com/media#story-idps-2020"
+            "url": "https://darkslateblue-lapwing-351030.hostingersite.com/media#story-idps-2020"
           },
           {
             "title": "christmas-2020 (2020-12)",
-            "url": "https://forestgreen-owl-883522.hostingersite.com/media#story-christmas-2020"
+            "url": "https://darkslateblue-lapwing-351030.hostingersite.com/media#story-christmas-2020"
           },
           {
             "title": "idps-2021 (2021-02)",
-            "url": "https://forestgreen-owl-883522.hostingersite.com/media#story-idps-2021"
+            "url": "https://darkslateblue-lapwing-351030.hostingersite.com/media#story-idps-2021"
           },
           {
             "title": "street-children-2021 (2020-12)",
-            "url": "https://forestgreen-owl-883522.hostingersite.com/media#story-street-children-2021"
+            "url": "https://darkslateblue-lapwing-351030.hostingersite.com/media#story-street-children-2021"
           },
           {
             "title": "womens-day (2024-03-08)",
-            "url": "https://forestgreen-owl-883522.hostingersite.com/media#story-womens-day"
+            "url": "https://darkslateblue-lapwing-351030.hostingersite.com/media#story-womens-day"
           },
           {
             "title": "christmas-2023 (2023-12)",
-            "url": "https://forestgreen-owl-883522.hostingersite.com/media#story-christmas-2023"
+            "url": "https://darkslateblue-lapwing-351030.hostingersite.com/media#story-christmas-2023"
           }
         ]
       },
@@ -262,67 +263,67 @@
         "items": [
           {
             "title": "How Syndy Emade Turned Cameroonian Cinema Into Big Business",
-            "url": "https://forestgreen-owl-883522.hostingersite.com/media#press-cemac-2026-big-business"
+            "url": "https://darkslateblue-lapwing-351030.hostingersite.com/media#press-cemac-2026-big-business"
           },
           {
             "title": "Syndy Emade, The Consistency of An Ambitious Entrepreneur",
-            "url": "https://forestgreen-owl-883522.hostingersite.com/media#press-cameroonceo-2022-profile"
+            "url": "https://darkslateblue-lapwing-351030.hostingersite.com/media#press-cameroonceo-2022-profile"
           },
           {
             "title": "Netflix acquires two films by Cameroon actress, Syndy Emade",
-            "url": "https://forestgreen-owl-883522.hostingersite.com/media#press-yafrica-2021-netflix"
+            "url": "https://darkslateblue-lapwing-351030.hostingersite.com/media#press-yafrica-2021-netflix"
           },
           {
             "title": "Syndy Emade organise une « Beach party » à Limbé ce 19 décembre",
-            "url": "https://forestgreen-owl-883522.hostingersite.com/media#press-people237-2020-beach-party"
+            "url": "https://darkslateblue-lapwing-351030.hostingersite.com/media#press-people237-2020-beach-party"
           },
           {
             "title": "Heart to heart with Syndy Emade",
-            "url": "https://forestgreen-owl-883522.hostingersite.com/media#press-cemac-2020-heart-to-heart"
+            "url": "https://darkslateblue-lapwing-351030.hostingersite.com/media#press-cemac-2020-heart-to-heart"
           },
           {
             "title": "Syndy Emade offers relief to visually impaired mother in Douala",
-            "url": "https://forestgreen-owl-883522.hostingersite.com/media#press-mmi-2023-visually-impaired-mother"
+            "url": "https://darkslateblue-lapwing-351030.hostingersite.com/media#press-mmi-2023-visually-impaired-mother"
           },
           {
             "title": "Anglophone Crisis: Cameroon’s talented actress, Syndy Emade weeps as IDPs present ordeal",
-            "url": "https://forestgreen-owl-883522.hostingersite.com/media#press-mmi-2019-idps"
+            "url": "https://darkslateblue-lapwing-351030.hostingersite.com/media#press-mmi-2019-idps"
           },
           {
             "title": "Syndy Emade Foundation outreach to displaced families in Douala",
-            "url": "https://forestgreen-owl-883522.hostingersite.com/media#press-newsday-idps-douala"
+            "url": "https://darkslateblue-lapwing-351030.hostingersite.com/media#press-newsday-idps-douala"
           },
           {
             "title": "Syndy Emade: Actress talks film industry in Cameroon, challenges as a female filmmaker, getting into character",
-            "url": "https://forestgreen-owl-883522.hostingersite.com/media#press-pulse-2016-interview"
+            "url": "https://darkslateblue-lapwing-351030.hostingersite.com/media#press-pulse-2016-interview"
           },
           {
             "title": "Top five most active Cameroonian actresses",
-            "url": "https://forestgreen-owl-883522.hostingersite.com/media#press-njoka-2017-ranking"
+            "url": "https://darkslateblue-lapwing-351030.hostingersite.com/media#press-njoka-2017-ranking"
           },
           {
             "title": "Is Syndy Emade Cameroon’s best actress?",
-            "url": "https://forestgreen-owl-883522.hostingersite.com/media#press-dcoded-2017-best-actress"
+            "url": "https://darkslateblue-lapwing-351030.hostingersite.com/media#press-dcoded-2017-best-actress"
           },
           {
             "title": "Syndy Emade borrows Alexx Ekubo for new movie “A Man For The Weekend”",
-            "url": "https://forestgreen-owl-883522.hostingersite.com/media#press-dcoded-2017-a-man-for-the-weekend"
+            "url": "https://darkslateblue-lapwing-351030.hostingersite.com/media#press-dcoded-2017-a-man-for-the-weekend"
           },
           {
             "title": "Miss Heritage Cameroon 2014 is Syndy Emade",
-            "url": "https://forestgreen-owl-883522.hostingersite.com/media#press-kamer360-2014-miss-heritage"
+            "url": "https://darkslateblue-lapwing-351030.hostingersite.com/media#press-kamer360-2014-miss-heritage"
           },
           {
             "title": "Syndy Emade, la belle aux trois casquettes",
-            "url": "https://forestgreen-owl-883522.hostingersite.com/media#press-culturebene-2016-profile"
+            "url": "https://darkslateblue-lapwing-351030.hostingersite.com/media#press-culturebene-2016-profile"
           },
           {
             "title": "Cameroon’s Syndy Emade becomes the new face for InstaVoice Celeb by Orange",
-            "url": "https://forestgreen-owl-883522.hostingersite.com/media#press-henriette-2017-instavoice"
+            "url": "https://darkslateblue-lapwing-351030.hostingersite.com/media#press-henriette-2017-instavoice"
           },
           {
             "title": "Blue Rain crew and boss Syndy Emade at the Limbe orphanage at Bota",
-            "url": "https://forestgreen-owl-883522.hostingersite.com/media#press-nexdim-2015-limbe-orphanage"
+            "url": "https://darkslateblue-lapwing-351030.hostingersite.com/media#press-nexdim-2015-limbe-orphanage"
           }
         ]
       },
@@ -332,27 +333,27 @@
         "items": [
           {
             "title": "fact-sheet-fr.pdf",
-            "url": "https://forestgreen-owl-883522.hostingersite.com/press/fact-sheet-fr.pdf"
+            "url": "https://darkslateblue-lapwing-351030.hostingersite.com/press/fact-sheet-fr.pdf"
           },
           {
             "title": "fact-sheet.pdf",
-            "url": "https://forestgreen-owl-883522.hostingersite.com/press/fact-sheet.pdf"
+            "url": "https://darkslateblue-lapwing-351030.hostingersite.com/press/fact-sheet.pdf"
           },
           {
             "title": "partnership-proposal.pdf",
-            "url": "https://forestgreen-owl-883522.hostingersite.com/press/partnership-proposal.pdf"
+            "url": "https://darkslateblue-lapwing-351030.hostingersite.com/press/partnership-proposal.pdf"
           },
           {
             "title": "proposition-de-partenariat.pdf",
-            "url": "https://forestgreen-owl-883522.hostingersite.com/press/proposition-de-partenariat.pdf"
+            "url": "https://darkslateblue-lapwing-351030.hostingersite.com/press/proposition-de-partenariat.pdf"
           },
           {
             "title": "syndy-emade-foundation-press-kit-fr.zip",
-            "url": "https://forestgreen-owl-883522.hostingersite.com/press/syndy-emade-foundation-press-kit-fr.zip"
+            "url": "https://darkslateblue-lapwing-351030.hostingersite.com/press/syndy-emade-foundation-press-kit-fr.zip"
           },
           {
             "title": "syndy-emade-foundation-press-kit.zip",
-            "url": "https://forestgreen-owl-883522.hostingersite.com/press/syndy-emade-foundation-press-kit.zip"
+            "url": "https://darkslateblue-lapwing-351030.hostingersite.com/press/syndy-emade-foundation-press-kit.zip"
           }
         ]
       }
@@ -369,6 +370,7 @@
   "pending": [],
   "published": [],
   "issues": [
-    "The 15-minute GitHub site monitor was enabled today but has not run yet (0 runs). If it still shows 0 next week, start it once from GitHub → Actions → Site monitor → Run workflow."
+    "The 15-minute GitHub site monitor was enabled today but has not run yet (0 runs). If it still shows 0 next week, start it once from GitHub → Actions → Site monitor → Run workflow.",
+    "Report re-sent 7 Nov: page links pointed at the old preview address (deleted website); they now follow the site's current address automatically."
   ]
 }
