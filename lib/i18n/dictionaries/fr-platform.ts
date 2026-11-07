@@ -354,6 +354,7 @@ export const platformFr: typeof platformEn = {
     error: "Une erreur s’est produite. Réessayez ou écrivez-nous.",
     thanksTitle: "Merci",
     thanksText: "Votre message est bien arrivé à la Fondation. Nous répondons sous quelques jours ouvrés.",
+    refLabel: "Votre référence",
     privacy: "Vos coordonnées servent uniquement à vous répondre. Voir notre politique de confidentialité.",
     kindnessEyebrow: "Un geste de bonté",
     kindnessTitle: "Un besoin précis. Un objectif. Un bilan public.",

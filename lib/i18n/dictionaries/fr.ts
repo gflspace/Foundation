@@ -560,6 +560,7 @@ const fr: Dictionary = {
     error: "Désolé, l’envoi a échoué. Merci de réessayer ou de nous écrire.",
     thanksTitle: "Merci !",
     thanksText: "Nous avons bien reçu votre candidature et vous recontacterons sous 5 jours ouvrés.",
+    refLabel: "Votre référence",
   },
 
   footer: {

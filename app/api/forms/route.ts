@@ -1,14 +1,26 @@
 import { NextResponse } from "next/server";
+import { newRef, processSubmission, type FormType, type Submission } from "@/lib/server/submissions";
 
 export const runtime = "nodejs";
 
 const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-const TYPES = new Set(["newsletter", "volunteer", "partner", "collaboration", "press"]);
-const clip = (v: unknown, n = 2000) => (typeof v === "string" ? v.trim().slice(0, n) : undefined);
+const TYPES = new Set<FormType>(["newsletter", "volunteer", "partner", "collaboration", "press"]);
+const clip = (v: unknown, n = 2000) => (typeof v === "string" && v.trim() ? v.trim().slice(0, n) : undefined);
+
+// Light rate limit per client: 8 submissions per 10 minutes (in memory, per server process).
+const hits = new Map<string, number[]>();
+function limited(ip: string) {
+  const now = Date.now();
+  const recent = (hits.get(ip) ?? []).filter((t) => now - t < 10 * 60_000);
+  recent.push(now);
+  hits.set(ip, recent);
+  return recent.length > 8;
+}
 
 /**
- * Receives newsletter, volunteer, partnership and collaboration-proposal submissions and forwards them
- * to FORMS_WEBHOOK_URL (Zapier / Make / Slack / CRM). Without a webhook, it logs.
+ * Receives every website form (newsletter, volunteer, partner, collaboration, press).
+ * Validates on the server, stores the submission with a reference ID, emails the administrator,
+ * sends the visitor an acknowledgement, and optionally forwards to FORMS_WEBHOOK_URL.
  */
 export async function POST(req: Request) {
   let data: Record<string, unknown>;
@@ -21,19 +33,23 @@ export async function POST(req: Request) {
   // Honeypot: bots fill hidden fields. Pretend success.
   if (data.company_website) return NextResponse.json({ ok: true });
 
-  const type = clip(data.type, 20);
+  const ip = (req.headers.get("x-forwarded-for") || "").split(",")[0].trim() || "unknown";
+  if (limited(ip)) return NextResponse.json({ error: "Too many submissions. Please try again later." }, { status: 429 });
+
+  const type = clip(data.type, 20) as FormType | undefined;
   const email = clip(data.email, 200);
   if (!type || !TYPES.has(type) || !email || !EMAIL.test(email)) {
     return NextResponse.json({ error: "Please provide a valid email." }, { status: 400 });
   }
-  if (type !== "newsletter" && !clip(data.name, 200)) {
-    return NextResponse.json({ error: "Please provide your name." }, { status: 400 });
-  }
+  const name = clip(data.name, 200);
+  if (type !== "newsletter" && !name) return NextResponse.json({ error: "Please provide your name." }, { status: 400 });
 
-  const payload = {
+  const now = new Date();
+  const submission: Submission = {
+    ref: newRef(type, now),
     type,
     email,
-    name: clip(data.name, 200),
+    name,
     phone: clip(data.phone, 50),
     location: clip(data.location, 200),
     organisation: clip(data.organisation, 200),
@@ -42,15 +58,18 @@ export async function POST(req: Request) {
     message: clip(data.message),
     deadline: clip(data.deadline, 20),
     locale: data.locale === "fr" ? "fr" : "en",
-    submittedAt: new Date().toISOString(),
+    submittedAt: now.toISOString(),
   };
+
+  const outcome = await processSubmission(submission);
 
   const hook = process.env.FORMS_WEBHOOK_URL;
   if (hook) {
-    const res = await fetch(hook, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(payload) }).catch(() => null);
-    if (!res?.ok) return NextResponse.json({ error: "Could not submit right now." }, { status: 502 });
-  } else {
-    console.info("[forms] submission (no FORMS_WEBHOOK_URL set):", payload.type, payload.email);
+    await fetch(hook, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(submission) }).catch(() => null);
   }
-  return NextResponse.json({ ok: true });
+
+  if (!outcome.stored && !outcome.admin) {
+    return NextResponse.json({ error: "Could not submit right now. Please try again or email us." }, { status: 502 });
+  }
+  return NextResponse.json({ ok: true, ref: submission.ref });
 }

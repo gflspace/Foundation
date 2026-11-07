@@ -11,6 +11,7 @@ export function InvolveForm() {
   const v = t.involve;
   const [type, setType] = useState<"volunteer" | "partner">("volunteer");
   const [state, setState] = useState<"idle" | "loading" | "done" | "error">("idle");
+  const [ref, setRef] = useState("");
   const [area, setArea] = useState("");
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -24,6 +25,7 @@ export function InvolveForm() {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ ...body, type, locale }),
     }).catch(() => null);
+    if (res?.ok) setRef(((await res.json().catch(() => ({}))) as { ref?: string }).ref ?? "");
     setState(res?.ok ? "done" : "error");
   }
 
@@ -33,6 +35,7 @@ export function InvolveForm() {
         <CheckCircle2 className="h-12 w-12 text-purple" aria-hidden />
         <h3 className="mt-4 text-2xl">{v.thanksTitle}</h3>
         <p className="mt-2 max-w-sm text-plum/65">{v.thanksText}</p>
+        {ref && <p className="mt-4 rounded-full bg-mist px-4 py-1.5 text-sm text-plum">{v.refLabel}: <strong className="font-semibold">{ref}</strong></p>}
       </div>
     );
 

@@ -15,6 +15,7 @@ export function EngageForm({ defaultKind = "volunteer", lockKind = false }: { de
   const u = t.involveUi;
   const [kind, setKind] = useState<Kind>(defaultKind);
   const [state, setState] = useState<"idle" | "loading" | "done" | "error">("idle");
+  const [ref, setRef] = useState("");
 
   // /get-involved?kind=collaboration#form preselects the pathway.
   useEffect(() => {
@@ -30,6 +31,7 @@ export function EngageForm({ defaultKind = "volunteer", lockKind = false }: { de
     setState("loading");
     const body = Object.fromEntries(new FormData(form).entries());
     const res = await fetch("/api/forms", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ ...body, type: kind, locale }) }).catch(() => null);
+    if (res?.ok) setRef(((await res.json().catch(() => ({}))) as { ref?: string }).ref ?? "");
     setState(res?.ok ? "done" : "error");
   }
 
@@ -39,6 +41,7 @@ export function EngageForm({ defaultKind = "volunteer", lockKind = false }: { de
         <CheckCircle2 className="h-12 w-12 text-teal-600" aria-hidden />
         <h3 className="mt-4 text-2xl">{u.thanksTitle}</h3>
         <p className="mt-2 max-w-sm text-plum/75">{u.thanksText}</p>
+        {ref && <p className="mt-4 rounded-full bg-mist px-4 py-1.5 text-sm text-plum">{u.refLabel}: <strong className="font-semibold">{ref}</strong></p>}
       </div>
     );
 

@@ -1,0 +1,43 @@
+# Scheduled website monitoring. Runs on GitHub's servers, independent of any Claude session.
+# Alerts open a GitHub issue labelled "site-monitor" (GitHub emails the repository owner) and close it on
+# recovery. Once the Foundation mailbox exists, add the SMTP_* secrets and ALERT_EMAIL to also email it.
+name: Site monitor
+on:
+  schedule:
+    - cron: "*/15 * * * *"   # health checks every 15 minutes (UTC)
+    - cron: "17 7 * * 1"     # weekly report, Mondays 07:17 UTC (08:17 in Douala)
+  workflow_dispatch:
+    inputs:
+      report:
+        description: "Also send the weekly report"
+        type: boolean
+        default: false
+permissions:
+  contents: read
+  issues: write
+concurrency:
+  group: site-monitor
+  cancel-in-progress: false
+jobs:
+  monitor:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: scripts/ops
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm install --no-save --no-package-lock nodemailer@6.9.16
+      - name: Run checks
+        env:
+          SITE_URL: ${{ vars.SITE_URL || 'https://forestgreen-owl-883522.hostingersite.com' }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          ALERT_EMAIL: ${{ secrets.ALERT_EMAIL }}
+          SMTP_HOST: ${{ secrets.SMTP_HOST }}
+          SMTP_PORT: ${{ secrets.SMTP_PORT }}
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASS: ${{ secrets.SMTP_PASS }}
+        run: node scripts/ops/monitor.mjs ${{ (github.event.schedule == '17 7 * * 1' || inputs.report) && '--report' || '' }}

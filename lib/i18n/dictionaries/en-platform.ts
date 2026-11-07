@@ -356,6 +356,7 @@ export const platformEn = {
     error: "Something went wrong. Please try again or email us.",
     thanksTitle: "Thank you",
     thanksText: "Your message has reached the Foundation. We reply within a few working days.",
+    refLabel: "Your reference",
     privacy: "We use your details only to reply to you. See our privacy policy.",
     kindnessEyebrow: "One Act of Kindness",
     kindnessTitle: "One specific need. One target. A public report.",
