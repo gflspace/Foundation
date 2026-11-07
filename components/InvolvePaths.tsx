@@ -5,6 +5,7 @@ import Link from "next/link";
 import { cn } from "@/lib/cn";
 import { DonateButton } from "./DonateProvider";
 import { useI18n } from "./I18nProvider";
+import { onlineGiving } from "@/lib/giving";
 
 const paths = [
   { key: "volunteer", icon: Users, to: "/get-involved?kind=volunteer#form", tone: "bg-teal-50 text-teal-700" },
@@ -25,7 +26,7 @@ export function InvolvePaths({ className }: { className?: string }) {
           <>
             <span className={cn("grid h-12 w-12 place-items-center rounded-2xl", tone)}><Icon className="h-6 w-6" aria-hidden /></span>
             <span className="mt-5 block font-display text-xl font-semibold text-plum">{p.title}</span>
-            <span className="mt-2 block flex-1 text-sm leading-relaxed text-plum/75">{p.text}</span>
+            <span className="mt-2 block flex-1 text-sm leading-relaxed text-plum/75">{key === "support" && !onlineGiving ? t.giving.supportText : p.text}</span>
             <span className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-purple-700">{p.cta} <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" aria-hidden /></span>
           </>
         );

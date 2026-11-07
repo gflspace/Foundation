@@ -500,6 +500,21 @@ const fr: Dictionary = {
     deckTitle: "Présentation partenariats",
   },
 
+  giving: {
+    title: "Donner en nous contactant",
+    text: "Le don en ligne est en cours de mise en place. Pour donner dès aujourd’hui, écrivez à notre équipe : indiquez le montant et le programme que vous souhaitez soutenir, et nous vous répondrons personnellement avec la marche à suivre.",
+    cta: "Nous écrire",
+    subject: "Je souhaite faire un don à la Fondation Syndy Emade",
+    body: "Bonjour,\n\nJe souhaite faire un don à la Fondation Syndy Emade.\n\nMontant :\nProgramme (ou besoin le plus urgent) :\nMon pays :\n\nMerci.",
+    other: "Vous préférez donner de votre temps ? Devenez bénévole ou partenaire",
+    ctaText: "Chaque don compte. Contactez-nous pour donner, ou offrez votre temps.",
+    metaDescription: "Contactez-nous pour faire un don, ou devenez bénévole ou partenaire de la Fondation Syndy Emade.",
+    intro: "Choisissez le programme que vous souhaitez soutenir et contactez-nous. Nous vous accompagnons pour donner — en toute transparence.",
+    trust: "Notre équipe répond personnellement à chaque demande de don.",
+    faqQ: "Comment puis-je donner dès maintenant ?",
+    faqA: "Écrivez à {email} en indiquant le montant et le programme que vous souhaitez soutenir. Nous vous répondrons personnellement avec la marche à suivre. Le don en ligne par carte, PayPal et Mobile Money est en cours de mise en place.",
+    supportText: "Contactez-nous pour soutenir le programme de votre choix.",
+  },
   form: {
     modalEyebrow: "Offrez de l’espoir aujourd’hui",
     modalTitle: "Faire un don",

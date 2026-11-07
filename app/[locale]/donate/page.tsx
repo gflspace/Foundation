@@ -7,18 +7,28 @@ import { SectionHeading } from "@/components/SectionHeading";
 import { donationTiers, gamma } from "@/lib/content";
 import { formatNumber } from "@/lib/i18n/config";
 import { getDictionary, pageLocale, pageMetadata, type LocaleParams } from "@/lib/i18n";
+import { givingEmail, onlineGiving } from "@/lib/giving";
 
 export function generateMetadata(props: LocaleParams): Metadata {
   const locale = pageLocale(props);
-  const d = getDictionary(locale).donate;
-  return pageMetadata(locale, "/donate", d.metaTitle, d.metaDescription);
+  const t = getDictionary(locale);
+  return pageMetadata(locale, "/donate", t.donate.metaTitle, onlineGiving ? t.donate.metaDescription : t.giving.metaDescription);
 }
 
 const trustIcons = [ShieldCheck, HandCoins, HeartHandshake];
 
 export default function DonatePage(props: LocaleParams) {
   const locale = pageLocale(props);
-  const d = getDictionary(locale).donate;
+  const dict = getDictionary(locale);
+  const g = dict.giving;
+  const base = dict.donate;
+  // While online giving is off, drop the claims about card/PayPal/Mobile Money checkouts (see lib/giving.ts).
+  const d = onlineGiving ? base : {
+    ...base,
+    intro: g.intro,
+    trust: [g.trust, ...base.trust.slice(1)],
+    faqs: [base.faqs[0], { q: g.faqQ, a: g.faqA.replace("{email}", givingEmail) }, ...base.faqs.slice(3)],
+  };
   // French visitors see FCFA first; English visitors see USD first.
   const primary = (tier: (typeof donationTiers)[number]) =>
     locale === "fr" ? `${formatNumber(locale, tier.xaf)} FCFA` : `$${tier.usd}`;

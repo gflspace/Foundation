@@ -1,11 +1,12 @@
 "use client";
 
-import { CreditCard, Heart, Loader2, Lock, Smartphone, Wallet } from "lucide-react";
+import { CreditCard, Heart, Loader2, Lock, Mail, Smartphone, Wallet } from "lucide-react";
 import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 import { useMemo, useState } from "react";
 import { donationTiers, projectSlugs } from "@/lib/content";
 import { cn } from "@/lib/cn";
+import { givingEmail, givingMethods, onlineGiving } from "@/lib/giving";
 import { intlLocale } from "@/lib/i18n/config";
 import { fill } from "@/lib/i18n/format";
 import { useI18n } from "./I18nProvider";
@@ -16,7 +17,30 @@ type Currency = "USD" | "XAF";
 const PAYPAL_ID = process.env.NEXT_PUBLIC_PAYPAL_DONATE_BUTTON_ID;
 const FLW_LINK = process.env.NEXT_PUBLIC_FLUTTERWAVE_PAYMENT_LINK;
 
-export function DonationForm({ defaultProgramme }: { defaultProgramme?: string }) {
+/** Shown instead of the checkout while no online giving method is switched on (see lib/giving.ts). */
+function GiveByContact() {
+  const { t, href } = useI18n();
+  const g = t.giving;
+  const mailto = `mailto:${givingEmail}?subject=${encodeURIComponent(g.subject)}&body=${encodeURIComponent(g.body)}`;
+  return (
+    <div className="space-y-5 text-center sm:text-left">
+      <span className="mx-auto grid h-12 w-12 place-items-center rounded-full bg-purple-50 text-purple sm:mx-0"><Heart className="h-6 w-6" aria-hidden /></span>
+      <div>
+        <h3 className="text-2xl">{g.title}</h3>
+        <p className="mt-2 text-plum/70">{g.text}</p>
+      </div>
+      <a href={mailto} className="btn-teal w-full sm:w-auto"><Mail className="h-4 w-4" aria-hidden /> {g.cta}</a>
+      <p className="text-sm text-plum/60"><a href={`mailto:${givingEmail}`} className="font-medium text-teal-700 underline underline-offset-4">{givingEmail}</a></p>
+      <p className="text-sm"><Link href={href("/donate#involve")} className="text-plum/70 underline underline-offset-4 hover:text-plum">{g.other}</Link></p>
+    </div>
+  );
+}
+
+export function DonationForm(props: { defaultProgramme?: string }) {
+  return onlineGiving ? <OnlineDonationForm {...props} /> : <GiveByContact />;
+}
+
+function OnlineDonationForm({ defaultProgramme }: { defaultProgramme?: string }) {
   const { t, locale, href } = useI18n();
   const f = t.form;
   const [frequency, setFrequency] = useState<"once" | "monthly">("once");
@@ -25,7 +49,7 @@ export function DonationForm({ defaultProgramme }: { defaultProgramme?: string }
   const [tierIndex, setTierIndex] = useState<number | null>(1);
   const [custom, setCustom] = useState("");
   const [programme, setProgramme] = useState(defaultProgramme ?? "greatest-need");
-  const [method, setMethod] = useState<Method>("card");
+  const [method, setMethod] = useState<Method>((["card", "momo", "paypal"] as const).find((m) => givingMethods[m]) ?? "card");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -84,11 +108,11 @@ export function DonationForm({ defaultProgramme }: { defaultProgramme?: string }
     }
   }
 
-  const methods: { key: Method; icon: typeof CreditCard }[] = [
+  const methods = ([
     { key: "card", icon: CreditCard },
     { key: "momo", icon: Smartphone },
     { key: "paypal", icon: Wallet },
-  ];
+  ] as { key: Method; icon: typeof CreditCard }[]).filter((m) => givingMethods[m.key]);
 
   return (
     <form onSubmit={submit} className="space-y-6" noValidate>

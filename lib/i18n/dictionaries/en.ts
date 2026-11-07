@@ -497,6 +497,21 @@ const en = {
     deckTitle: "Partnership deck",
   },
 
+  giving: {
+    title: "Give by getting in touch",
+    text: "Online giving is being set up. To give today, write to our support team: tell us the amount and the programme you would like to support, and we will reply personally with how to give.",
+    cta: "Write to us",
+    subject: "I would like to give to the Syndy Emade Foundation",
+    body: "Hello,\n\nI would like to give to the Syndy Emade Foundation.\n\nAmount:\nProgramme (or greatest need):\nMy country:\n\nThank you.",
+    other: "Prefer to give your time? Volunteer or partner with us",
+    ctaText: "Every gift counts. Get in touch to give, or offer your time.",
+    metaDescription: "Get in touch to give, or apply to volunteer and partner with the Syndy Emade Foundation.",
+    intro: "Choose the programme you want to support and get in touch. We’ll guide you through giving — transparently.",
+    trust: "Our team replies personally to every gift enquiry.",
+    faqQ: "How can I give right now?",
+    faqA: "Write to {email} with the amount and the programme you would like to support. We will reply personally with how to give. Online card, PayPal and Mobile Money giving is being set up.",
+    supportText: "Get in touch to support the programme of your choice.",
+  },
   form: {
     modalEyebrow: "Give hope today",
     modalTitle: "Make a donation",
