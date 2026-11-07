@@ -1,6 +1,6 @@
 {
-  "lastRun": null,
-  "summary": "The daily maintenance job has not run yet.",
+  "lastRun": "2026-11-07T13:11:09Z",
+  "summary": "Test run (admin request): the site is healthy (5 key pages and the status check load; email configured). Google Drive is connected: FOUNDATION-CONTENT has its 7 folders, all empty, so nothing was reviewed or published.",
   "processed": [],
   "pending": [],
   "published": [],

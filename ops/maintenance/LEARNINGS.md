@@ -9,3 +9,4 @@ Format: `- YYYY-MM-DD · what happened · what to do next time`
 - 2026-11-07 · Newborn and ward photos are held pending consent · Never publish photos of identifiable patients or children without a consent record.
 - 2026-11-07 · The YouTube channel "Syndy Emade TV" is the founder's, not the Foundation's · Don't present it as the Foundation's channel; ask admin before linking videos.
 - 2026-11-07 · Facebook and Instagram are login-walled · Use only the official public embed for captions; never bypass logins.
+- 2026-11-07 · A scheduled task that starts a fresh session gets no connectors here, so Drive and Firecrawl were missing · Run the job in the admin's main session, which holds the connectors.
