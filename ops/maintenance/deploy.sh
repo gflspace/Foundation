@@ -3,10 +3,12 @@
 # Credentials are injected by the environment proxy; the Bearer value below is a placeholder.
 set -euo pipefail
 REPO=$(git rev-parse --show-toplevel); H=$(git -C "$REPO" rev-parse --short HEAD)
-W=$(mktemp -d); git -C "$REPO" archive --format=zip -o "$W/app.zip" HEAD
-cd "$W" && git init -q && git checkout -q -b hostinger-archive && mkdir _deploy && mv app.zip _deploy/
-git add _deploy && git -c user.name="SEF maintenance" -c user.email="admin@syndyemadefoundation.org" commit -q -m "Deploy $H"
-git push -q -f https://github.com/gflspace/Foundation.git hostinger-archive:hostinger-archive
+W=$(mktemp -d)
+git clone -q --depth 1 -b hostinger-archive https://github.com/gflspace/Foundation.git "$W/d"
+mkdir -p "$W/d/_deploy" && git -C "$REPO" archive --format=zip -o "$W/d/_deploy/app.zip" HEAD
+cd "$W/d" && git add _deploy/app.zip
+git -c user.name="SEF maintenance" -c user.email="admin@syndyemadefoundation.org" commit -q -m "Deploy $H" || true
+for i in 1 2 3; do timeout 180 git push -q origin hostinger-archive && break; sleep 5; done
 B=https://developers.hostinger.com/api/hosting/v1/accounts/u671799052/websites/forestgreen-owl-883522.hostingersite.com
 A='Authorization: Bearer placeholder'
 for i in 1 2 3 4 5 6; do r=$(curl -sS -X POST "$B/git/repositories/deploy" -H "$A" -H 'Content-Type: application/json' -d '{"repository_url":"https://github.com/gflspace/Foundation.git","branch":"hostinger-archive","directory":"_deploy"}'); echo "$r" | grep -q '"is_success":true' && break; sleep $((i*10)); done
