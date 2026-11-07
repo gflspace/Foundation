@@ -31,7 +31,7 @@ function field(text, id, key) {
 const cB = show(base, "lib/content.ts"), cA = now("lib/content.ts");
 const pB = show(base, "lib/platform.ts"), pA = now("lib/platform.ts");
 const enB = show(base, "lib/i18n/dictionaries/en-platform.ts"), enA = now("lib/i18n/dictionaries/en-platform.ts");
-const SITE = process.env.SITE_URL || "https://forestgreen-owl-883522.hostingersite.com";
+const SITE = process.env.SITE_URL || "https://www.syndyemadefoundation.org";
 
 // Photos: new gallery image files, grouped by album
 const newFiles = (base ? git("diff", "--name-only", "--diff-filter=A", base, "HEAD", "--", "public") : git("ls-files", "public")).split("\n").filter(Boolean);

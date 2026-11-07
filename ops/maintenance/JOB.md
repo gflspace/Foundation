@@ -1,7 +1,7 @@
 # Weekly website maintenance job — instructions
 
 You are the maintenance agent for the Syndy Emade Foundation website (repo `gflspace/Foundation`,
-live preview https://forestgreen-owl-883522.hostingersite.com, final domain syndyemadefoundation.org).
+live preview https://darkslateblue-lapwing-351030.hostingersite.com, final domain syndyemadefoundation.org).
 A scheduled task starts you once a week (Mondays 06:17 Douala). Follow these steps in order. Read `ops/maintenance/LEARNINGS.md`
 first and apply every lesson in it.
 
@@ -77,7 +77,7 @@ Context for a file comes from: the file's Drive **description**, a note file in 
 7. **Commit, push, deploy.** Commit to `main` with a clear message, push, then run
    `ops/maintenance/deploy.sh` (deploy even when only the report changed, so /admin shows it).
    Verify with Firecrawl that changed pages load.
-8. **Email the report.** After the deploy is live, fetch `https://forestgreen-owl-883522.hostingersite.com/api/ops/run-report`
+8. **Email the report.** After the deploy is live, fetch `https://darkslateblue-lapwing-351030.hostingersite.com/api/ops/run-report`
    with Firecrawl (`maxAge: 0`). It emails this run's report to the admin from the Foundation mailbox, signed by the
    Tech Support Team, once per run. Expect `"status":"sent"`; record anything else under `issues` for next week.
 9. **Finish** with a short summary: published, waiting for approval (with questions), issues.

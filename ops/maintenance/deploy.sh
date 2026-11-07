@@ -11,7 +11,9 @@ git -C "$REPO" archive --format=zip -o "$W/d/app.zip" HEAD
 cd "$W/d" && git add app.zip
 git -c user.name="SEF maintenance" -c user.email="admin@syndyemadefoundation.org" commit -q -m "Deploy $H" || true
 for i in 1 2 3; do timeout 180 git push -q origin hostinger-archive && break; sleep 5; done
-B=https://developers.hostinger.com/api/hosting/v1/accounts/u671799052/websites/forestgreen-owl-883522.hostingersite.com
+# Hostinger website to deploy to (change when the site moves to its real domain).
+SITE_DOMAIN=${SITE_DOMAIN:-darkslateblue-lapwing-351030.hostingersite.com}
+B=https://developers.hostinger.com/api/hosting/v1/accounts/u671799052/websites/$SITE_DOMAIN
 A='Authorization: Bearer placeholder'
 for i in 1 2 3 4 5 6; do r=$(curl -sS -X POST "$B/git/repositories/deploy" -H "$A" -H 'Content-Type: application/json' -d '{"repository_url":"https://github.com/gflspace/Foundation.git","branch":"hostinger-archive","directory":"_deploy"}'); echo "$r" | grep -q '"is_success":true' && ok=1 && break; sleep $((i*10)); done
 [ "${ok:-0}" = 1 ] || { echo "git deploy failed: $(echo "$r" | head -c 400)"; exit 1; }

@@ -2,7 +2,7 @@ import "server-only";
 import type { MaintenanceRun } from "./content-repo";
 import { driveRoot } from "./content-repo";
 
-const SITE = process.env.NEXT_PUBLIC_SITE_URL || "https://forestgreen-owl-883522.hostingersite.com";
+const SITE = process.env.NEXT_PUBLIC_SITE_URL || "https://www.syndyemadefoundation.org";
 const TZ = process.env.SEF_TIMEZONE || "Africa/Douala";
 const esc = (s: string) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 const day = (iso: string) => new Date(iso).toLocaleDateString("en-GB", { timeZone: TZ, weekday: "short", day: "numeric", month: "short" });
