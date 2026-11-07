@@ -6,14 +6,14 @@
 
 The website itself is in very good shape: every page, form, link, the admin area, accessibility and mobile layout passed. Launch is blocked by **two setup items outside the code**: the real domain is not connected, and search engines are still told to stay away. *(Update, same day: the donation blocker B2 is resolved; see below.)* Each is a settings change, not a rebuild. Once they are done and re-tested, the decision becomes **GO**.
 
-## Re-test on the real domain (7 Nov, evening): GO, pending one live form test
+## Re-test on the real domain (7 Nov, evening): GO ✅ (launched)
 
 - B1 ✅ resolved: syndyemadefoundation.org released from the other Hostinger account (ownership verified by TXT record), connected to the website in account u671799052, SSL active on the bare domain and www.
 - B3 ✅ resolved: `NEXT_PUBLIC_NOINDEX=false`, `NEXT_PUBLIC_SITE_URL=https://www.syndyemadefoundation.org`. robots.txt allows indexing and lists the sitemap; pages send `index, follow`; share images and links use the real domain.
 - S1 ✅ resolved: DKIM live.
 - Live checks: health (storage + mail) OK; all 56 sitemap URLs on the real domain; donate (contact to give), get involved, a French story, accountability, press fact sheet and admin sign-in (still `noindex`) load over https.
 - Deploys, the GitHub site monitor and the weekly maintenance job now target https://www.syndyemadefoundation.org.
-- Remaining: S2, one real form submitted on the live site, with both emails received.
+- S2 ✅ resolved: a real Volunteer form was submitted on the live site; the visitor confirmation and the admin notification both arrived.
 
 ## Blockers (must fix before launch)
 
