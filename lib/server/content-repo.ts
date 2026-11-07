@@ -5,10 +5,11 @@ import registry from "@/ops/content-registry.json";
 /** Google Drive content repository (private: shown only inside /admin). */
 export const driveRoot = `https://drive.google.com/drive/folders/${registry.root.driveId}`;
 
-const UPLOAD = ["Photos", "Videos", "Blog-Posts", "News", "Announcements", "Press-Releases", "Documents"];
-export const uploadFolders = registry.folders
-  .filter((f) => f.path.startsWith("01-INCOMING-CONTENT/") && UPLOAD.includes(f.path.split("/")[1]))
-  .map((f) => ({ name: f.path.split("/")[1].replace(/-/g, " "), url: `https://drive.google.com/drive/folders/${f.driveId}`, destination: f.destination }));
+export const uploadFolders = registry.folders.map((f) => ({
+  name: f.path.replace(/-/g, " "),
+  url: `https://drive.google.com/drive/folders/${f.driveId}`,
+  destination: f.destination,
+}));
 
 export type MaintenanceRun = {
   lastRun: string | null;

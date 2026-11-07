@@ -1,32 +1,67 @@
 {
-  "_about": "Folder-to-website mapping registry for the content engine. The engine adds an entry (status 'proposed') whenever it finds a folder not listed here, and only applies entries with status 'active'. approval: 'auto' publishes eligible content, 'admin' always waits for approval. Governance rules in docs/platform-operations-guide.md always override 'auto'.",
-  "root": { "name": "FOUNDATION-CONTENT", "driveId": "1bRXgS6MgbMEFxOBhJQm5oAtO24GKK8pH", "owner": "gflspace@gmail.com (share with admin@syndyemadefoundation.org once it exists)" },
+  "_about": "Folder-to-website mapping for the daily maintenance job (ops/maintenance/JOB.md). FOUNDATION-CONTENT holds exactly these 7 upload folders. Nothing is published until the admin stars the file in Drive (approval). Governance rules in JOB.md always apply.",
+  "root": {
+    "name": "FOUNDATION-CONTENT",
+    "driveId": "1bRXgS6MgbMEFxOBhJQm5oAtO24GKK8pH",
+    "owner": "gflspace@gmail.com"
+  },
   "timezone": "Africa/Douala",
   "folders": [
-    { "path": "01-INCOMING-CONTENT/Photos", "driveId": "10IFNED1yWPmqC-iwNkAqvVJPfkvomtIl", "type": "photo", "destination": "story gallery (matched by notes/date) or /media#in-pictures", "approval": "admin", "status": "active" },
-    { "path": "01-INCOMING-CONTENT/Videos", "driveId": "1Q7WwCHM2ANBGtVfSozHtbLUKOaj9I8SB", "type": "video", "destination": "/media library (Films) + matching story", "approval": "admin", "status": "active" },
-    { "path": "01-INCOMING-CONTENT/Blog-Posts", "driveId": "1uFv3C9D8BVU5JXzC6fBNgj0ptKPDKApw", "type": "article", "destination": "/stories (Stories of Impact)", "approval": "admin", "status": "active" },
-    { "path": "01-INCOMING-CONTENT/News", "driveId": "1hRMAYPnn-BFjh6t65y8Bo3CdBRJ3N36q", "type": "news", "destination": "/media (journey moment)", "approval": "admin", "status": "active" },
-    { "path": "01-INCOMING-CONTENT/Announcements", "driveId": "1Rd0Ze_rTOVNvS0leRk6FlsEtFL9kwroZ", "type": "announcement", "destination": "homepage campaign banner", "approval": "admin", "status": "active" },
-    { "path": "01-INCOMING-CONTENT/Press-Releases", "driveId": "1e4Ow-LNXh3iDGZhQxHwQ5TWF2h2MfId6", "type": "press-release", "destination": "/media#press", "approval": "admin", "status": "active" },
-    { "path": "01-INCOMING-CONTENT/Documents", "driveId": "1XgY9nUIX4B70UFph7E_iMRUdAg8Z4c4f", "type": "document", "destination": "supporting evidence (accountability / press kit)", "approval": "admin", "status": "active" },
-    { "path": "02-PROJECTS-AND-INITIATIVES/Women-Empowerment", "driveId": "1eEs4Ec7hIF0psGVCsy4DNH-oOcj3byHd", "type": "project", "destination": "pillar: women · /projects/women", "approval": "admin", "status": "active" },
-    { "path": "02-PROJECTS-AND-INITIATIVES/Education-and-Youth", "driveId": "1dGDR8i0elJTZTrAnRhBULpTUuCOAw_sA", "type": "project", "destination": "pillar: education · /projects/back-to-school", "approval": "admin", "status": "active" },
-    { "path": "02-PROJECTS-AND-INITIATIVES/Humanitarian-Relief", "driveId": "1RfSJkcnmnQ_cGQSOdDXVOoRvveVhg12U", "type": "project", "destination": "pillar: relief · /projects/displaced-families", "approval": "admin", "status": "active" },
-    { "path": "02-PROJECTS-AND-INITIATIVES/Environmental-Sustainability", "driveId": "1rT1V1X3gl-a3cPfS3bc8gFdpJ9lkbNFc", "type": "project", "destination": "pillar: environment (proposed pillar: needs confirmation before any programme claim)", "approval": "admin", "status": "active" },
-    { "path": "02-PROJECTS-AND-INITIATIVES/Community-Development", "driveId": "1dbboEnxIihr4ZFp0vzjsSHAVPV4W7xI4", "type": "project", "destination": "pillar: community", "approval": "admin", "status": "active" },
-    { "path": "03-FOUNDER-AND-FOUNDATION-STORIES/Founder-Profile", "driveId": "1dV_mGpWaumA5Zb7UII-W0ajVogRtzeug", "type": "founder", "destination": "/founder", "approval": "admin", "status": "active" },
-    { "path": "03-FOUNDER-AND-FOUNDATION-STORIES/Foundation-Activities", "driveId": "1XExuX1SQvJ9ZfXUtxf5EBu4tmxfTBhJK", "type": "activity", "destination": "journey timeline + story", "approval": "admin", "status": "active" },
-    { "path": "03-FOUNDER-AND-FOUNDATION-STORIES/Interviews", "driveId": "11Qb_ncqX1YzhClPjJ_FZUx9NUSNV8iFL", "type": "press", "destination": "/media press coverage", "approval": "admin", "status": "active" },
-    { "path": "03-FOUNDER-AND-FOUNDATION-STORIES/Media-Coverage", "driveId": "1nx0arW0sFnuZIBeNkKE-7DVisDEUok_g", "type": "press", "destination": "/media press coverage", "approval": "admin", "status": "active" },
-    { "path": "04-GALLERIES/Photo-Gallery", "driveId": "19DVlkLKYOvUbNGaI2uqpfLqzWGbh1pG3", "type": "photo", "destination": "/media#in-pictures", "approval": "admin", "status": "active" },
-    { "path": "04-GALLERIES/Video-Gallery", "driveId": "1XoJ846oR-uXZtfwCdNcF5G7P5WdXI1aA", "type": "video", "destination": "/media library (Films)", "approval": "admin", "status": "active" },
-    { "path": "04-GALLERIES/Event-Galleries", "driveId": "1-Vj5VapSZS4upw3s5Tq1VoB0tom3yFj7", "type": "album", "destination": "story album (one subfolder per event)", "approval": "admin", "status": "active" },
-    { "path": "05-WEBSITE-ANNOUNCEMENTS/General-Announcements", "driveId": "1vsvr4mn1X-zw30rskKenGsHUOaezyz2A", "type": "announcement", "destination": "homepage campaign banner", "approval": "admin", "status": "active" },
-    { "path": "05-WEBSITE-ANNOUNCEMENTS/Upcoming-Events", "driveId": "1mMBbawqbRumLi_O0IvM3hcHkp4-yNQZd", "type": "event", "destination": "homepage banner / get involved", "approval": "admin", "status": "active" },
-    { "path": "05-WEBSITE-ANNOUNCEMENTS/Campaigns", "driveId": "1tRjBNi2vzkgmTbcK7zx_SUHzkkTvNQJu", "type": "campaign", "destination": "One Act of Kindness campaigns (financial: always admin)", "approval": "admin", "status": "active" },
-    { "path": "06-SUPPORTING-INFORMATION", "driveId": "1God1YC2-BOvCW2wvdhU1_e6I960TyDli", "type": "context", "destination": "read as notes for captions, dates, sources, consent (never published directly)", "approval": "n/a", "status": "active" },
-    { "path": "07-PROCESSED-CONTENT", "driveId": "1FgJK8AULC9741Vpyax5NUzxX2htBt8F5", "type": "workflow", "destination": "Ready-for-Publication 1_M33b9yyP2-j14hHjysmUOIJ18o6xZa2 · Published 1wkEMNOKv4qgL22nQrSIrxNNER2sn7O98 · Pending-Review 1jFWfr0-u5QePS5NLZklwwTd8mSUlcWEu · Rejected-or-Archived 1n140gAs3gChdSvzVSQh7UOek3f6Z7fex", "approval": "n/a", "status": "active" },
-    { "path": "08-SYSTEM-OPERATIONS", "driveId": "1BlQxRGxMNqCG1PEQbGbBbhAlR7sysPuR", "type": "reports", "destination": "Automation-Logs 1DR1S3eUstq7AvEyZ0YiFhEwmD41x0agZ · Website-Health-Reports 1yquRg7vLyPhINbTqh2Z5qgBZbDcbRa6p · Content-Processing-Reports 1OM8zmEHVF4agHILtqqAPoShIlT-2nDKs · Backup-Reports 14bOmy9DWCsD1S4eKjvSX99ymJchbkI1Q", "approval": "n/a", "status": "active" }
+    {
+      "path": "Photos",
+      "driveId": "10IFNED1yWPmqC-iwNkAqvVJPfkvomtIl",
+      "type": "photo",
+      "destination": "story gallery (matched by notes/date) or /media#in-pictures",
+      "approval": "admin",
+      "status": "active"
+    },
+    {
+      "path": "Videos",
+      "driveId": "1Q7WwCHM2ANBGtVfSozHtbLUKOaj9I8SB",
+      "type": "video",
+      "destination": "/media library (Films) + matching story",
+      "approval": "admin",
+      "status": "active"
+    },
+    {
+      "path": "Blog-Posts",
+      "driveId": "1uFv3C9D8BVU5JXzC6fBNgj0ptKPDKApw",
+      "type": "article",
+      "destination": "/stories (Stories of Impact)",
+      "approval": "admin",
+      "status": "active"
+    },
+    {
+      "path": "News",
+      "driveId": "1hRMAYPnn-BFjh6t65y8Bo3CdBRJ3N36q",
+      "type": "news",
+      "destination": "/media (journey moment)",
+      "approval": "admin",
+      "status": "active"
+    },
+    {
+      "path": "Announcements",
+      "driveId": "1Rd0Ze_rTOVNvS0leRk6FlsEtFL9kwroZ",
+      "type": "announcement",
+      "destination": "homepage campaign banner",
+      "approval": "admin",
+      "status": "active"
+    },
+    {
+      "path": "Press-Releases",
+      "driveId": "1e4Ow-LNXh3iDGZhQxHwQ5TWF2h2MfId6",
+      "type": "press-release",
+      "destination": "/media#press",
+      "approval": "admin",
+      "status": "active"
+    },
+    {
+      "path": "Documents",
+      "driveId": "1XgY9nUIX4B70UFph7E_iMRUdAg8Z4c4f",
+      "type": "document",
+      "destination": "supporting evidence (accountability / press kit)",
+      "approval": "admin",
+      "status": "active"
+    }
   ]
 }
