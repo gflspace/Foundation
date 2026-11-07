@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# Deploys the current HEAD of the Foundation repo to Hostinger (Node.js web app).
+# Credentials are injected by the environment proxy; the Bearer value below is a placeholder.
+set -euo pipefail
+REPO=$(git rev-parse --show-toplevel); H=$(git -C "$REPO" rev-parse --short HEAD)
+W=$(mktemp -d); git -C "$REPO" archive --format=zip -o "$W/app.zip" HEAD
+cd "$W" && git init -q && git checkout -q -b hostinger-archive && mkdir _deploy && mv app.zip _deploy/
+git add _deploy && git -c user.name="SEF maintenance" -c user.email="admin@syndyemadefoundation.org" commit -q -m "Deploy $H"
+git push -q -f https://github.com/gflspace/Foundation.git hostinger-archive:hostinger-archive
+B=https://developers.hostinger.com/api/hosting/v1/accounts/u671799052/websites/forestgreen-owl-883522.hostingersite.com
+A='Authorization: Bearer placeholder'
+for i in 1 2 3 4 5 6; do r=$(curl -sS -X POST "$B/git/repositories/deploy" -H "$A" -H 'Content-Type: application/json' -d '{"repository_url":"https://github.com/gflspace/Foundation.git","branch":"hostinger-archive","directory":"_deploy"}'); echo "$r" | grep -q '"is_success":true' && break; sleep $((i*10)); done
+sleep 20
+id=$(curl -sS -X POST "$B/nodejs/builds" -H "$A" -H 'Content-Type: application/json' -d '{"node_version":20,"app_type":"next","output_directory":".next","build_script":"build","package_manager":"npm","source_type":"archive","source_options":{"archive_path":"_deploy/app.zip"}}' | python3 -c "import sys,json;print(json.load(sys.stdin).get('uuid'))")
+for i in $(seq 1 40); do s=$(curl -sS "$B/nodejs/builds/$id" -H "$A" | python3 -c "import sys,json;print(json.load(sys.stdin).get('state'))"); case $s in pending|running) sleep 15;; *) echo "deploy $H: $s"; [ "$s" = completed ]; exit;; esac; done
+echo "deploy $H: timeout"; exit 1

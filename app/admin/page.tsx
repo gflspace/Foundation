@@ -3,6 +3,7 @@ import { adminEnabled, isAdmin } from "@/lib/server/admin-auth";
 import { mailConfigured, adminEmail } from "@/lib/server/mail";
 import { dataDir, readJson, readRecords } from "@/lib/server/store";
 import type { Submission } from "@/lib/server/submissions";
+import { driveRoot, lastMaintenanceRun, uploadFolders } from "@/lib/server/content-repo";
 
 export const dynamic = "force-dynamic";
 export const runtime = "nodejs";
@@ -40,11 +41,12 @@ export default async function Admin({ searchParams }: { searchParams: { e?: stri
   if (!adminEnabled()) notFound();
   if (!isAdmin()) return <Login error={searchParams.e} />;
 
-  const [subs, mail, status, monitor] = await Promise.all([
+  const [subs, mail, status, monitor, maint] = await Promise.all([
     readRecords<Submission>("submissions.jsonl"),
     readRecords<Mail>("email-log.jsonl"),
     readRecords<{ ref: string; admin?: boolean; ack?: boolean }>("submission-status.jsonl"),
     readJson<Monitor>("monitor-state.json", {}),
+    lastMaintenanceRun(),
   ]);
   const filter = TYPES.includes(searchParams.type as (typeof TYPES)[number]) ? searchParams.type! : "all";
   const list = subs.filter((s) => filter === "all" || s.type === filter).reverse().slice(0, 100);
@@ -89,6 +91,31 @@ export default async function Admin({ searchParams }: { searchParams: { e?: stri
         <Card title="Totals">
           <ul className="space-y-1">{Object.entries(counts).map(([k, v]) => <li key={k} className="flex justify-between capitalize"><span>{k}</span><span>{v}</span></li>)}</ul>
           <p className="mt-3 text-xs text-plum/60">Records stored in {dataDir()}</p>
+        </Card>
+      </div>
+
+
+      <div className="grid gap-6 md:grid-cols-2">
+        <Card title="Content repository (Google Drive)">
+          <p className="text-plum/70">Upload new material here. The daily maintenance job checks it, verifies it and prepares website updates for your approval.</p>
+          <a href={driveRoot} target="_blank" rel="noopener noreferrer" className="mt-3 inline-block rounded-full bg-plum px-4 py-2 text-xs font-semibold text-white">Open FOUNDATION-CONTENT ↗</a>
+          <ul className="mt-4 space-y-1.5">
+            {uploadFolders.map((f) => (
+              <li key={f.url} className="flex justify-between gap-3"><a href={f.url} target="_blank" rel="noopener noreferrer" className="font-medium text-teal-700 underline underline-offset-2">{f.name} ↗</a><span className="text-right text-xs text-plum/60">{f.destination}</span></li>
+            ))}
+          </ul>
+          <p className="mt-3 text-xs text-plum/60">Add a short note with each batch: what, when, where, partners, and whether consent was given for any children or vulnerable people shown.</p>
+        </Card>
+        <Card title="Content maintenance job">
+          {maint?.lastRun ? (
+            <>
+              <p className="text-plum/70">Last run: {fmt(maint.lastRun)}</p>
+              <p className="mt-2">{maint.summary}</p>
+              {maint.pending.length > 0 && (<><p className="mt-3 font-medium">Waiting for your decision ({maint.pending.length})</p><ul className="mt-1 list-disc space-y-1 pl-5">{maint.pending.map((x, i) => <li key={i}><strong>{x.file}</strong>: {x.question}</li>)}</ul></>)}
+              {maint.published.length > 0 && (<><p className="mt-3 font-medium">Published</p><ul className="mt-1 list-disc space-y-1 pl-5">{maint.published.map((x, i) => <li key={i}><a className="text-teal-700" href={x.url}>{x.title}</a></li>)}</ul></>)}
+              {maint.issues.length > 0 && (<><p className="mt-3 font-medium text-red-700">Issues</p><ul className="mt-1 list-disc space-y-1 pl-5">{maint.issues.map((x, i) => <li key={i}>{x}</li>)}</ul></>)}
+            </>
+          ) : <p className="text-plum/70">{maint?.summary ?? "No run recorded yet."}</p>}
         </Card>
       </div>
 
