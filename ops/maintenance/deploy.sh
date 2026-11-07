@@ -3,6 +3,8 @@
 # Credentials are injected by the environment proxy; the Bearer value below is a placeholder.
 set -euo pipefail
 REPO=$(git rev-parse --show-toplevel); H=$(git -C "$REPO" rev-parse --short HEAD)
+# Never deploy duplicate records or images.
+node "$REPO/scripts/ops/check-duplicates.mjs" || { echo "deploy stopped: duplicates found"; exit 1; }
 W=$(mktemp -d)
 git clone -q --depth 1 -b hostinger-archive https://github.com/gflspace/Foundation.git "$W/d"
 git -C "$REPO" archive --format=zip -o "$W/d/app.zip" HEAD

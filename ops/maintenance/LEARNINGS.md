@@ -10,3 +10,4 @@ Format: `- YYYY-MM-DD · what happened · what to do next time`
 - 2026-11-07 · The YouTube channel "Syndy Emade TV" is the founder's, not the Foundation's · Don't present it as the Foundation's channel; ask admin before linking videos.
 - 2026-11-07 · Facebook and Instagram are login-walled · Use only the official public embed for captions; never bypass logins.
 - 2026-11-07 · A scheduled task that starts a fresh session gets no connectors here, so Drive and Firecrawl were missing · Run the job in the admin's main session, which holds the connectors.
+- 2026-11-07 · Admin asked that nothing already on the site be added twice · Run scripts/ops/check-duplicates.mjs on every candidate; same event = update the existing record, never add a second.

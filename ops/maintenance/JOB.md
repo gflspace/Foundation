@@ -21,6 +21,12 @@ first and apply every lesson in it.
 6. **Preserve the site**: structure, design, English + French kept in sync. Do not bypass logins or bot
    checks, do not scrape private content.
 7. **No secrets** in commits, logs or reports. No model names in commits.
+8. **No duplicates.** Before proposing anything, check it is not already on the site: same photo
+   (run `node scripts/ops/check-duplicates.mjs <downloaded files>`; "ALREADY ON SITE" = duplicate),
+   same event (same date + programme + place as an existing story or journey entry: update that
+   record instead of adding a new one), same press article (same URL or title), same video (same ID).
+   A duplicate upload is recorded as `rejected` with reason "already on the site: <where>".
+   `deploy.sh` runs the same check and refuses to deploy if duplicates exist.
 
 ## Folder map
 `FOUNDATION-CONTENT` (`1bRXgS6MgbMEFxOBhJQm5oAtO24GKK8pH`) holds exactly 7 folders. Their IDs and website
@@ -50,7 +56,7 @@ Context for a file comes from: the file's Drive **description**, a note file in 
    fails, revert that item and report it. Set its status to `published` with the page URL.
 4. **Review new uploads.** With the Google Drive connector, list files in the 7 folders that are not yet
    in `items` (skip sub-folders' own names, note files, and names starting with `.`). For each file:
-   read it and its context, then either
+   read it and its context, check it against rule 8 (duplicates), then either
    - reject it (duplicate, blurry, stock image, personal data, contradicts the site) → `rejected` + reason, or
    - write a short proposal (what will change, where, caption, source) → `proposed` + one-line note.
      If something is missing or doubtful, the note is the question for the admin.
