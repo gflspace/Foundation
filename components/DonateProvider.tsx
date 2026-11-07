@@ -6,8 +6,8 @@ import { createContext, useCallback, useContext, useEffect, useRef, useState, ty
 import { DonationForm } from "./DonationForm";
 import { useI18n } from "./I18nProvider";
 
-type Ctx = { open: (programme?: string) => void };
-const DonateContext = createContext<Ctx>({ open: () => {} });
+type Ctx = { open: (programme?: string) => void; close: () => void };
+const DonateContext = createContext<Ctx>({ open: () => {}, close: () => {} });
 export const useDonate = () => useContext(DonateContext);
 
 export function DonateProvider({ children }: { children: ReactNode }) {
@@ -52,7 +52,7 @@ export function DonateProvider({ children }: { children: ReactNode }) {
   }, [isOpen, close]);
 
   return (
-    <DonateContext.Provider value={{ open }}>
+    <DonateContext.Provider value={{ open, close }}>
       {children}
       <AnimatePresence>
         {isOpen && (

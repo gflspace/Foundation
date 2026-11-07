@@ -9,6 +9,7 @@ import { cn } from "@/lib/cn";
 import { givingEmail, givingMethods, onlineGiving } from "@/lib/giving";
 import { intlLocale } from "@/lib/i18n/config";
 import { fill } from "@/lib/i18n/format";
+import { useDonate } from "./DonateProvider";
 import { useI18n } from "./I18nProvider";
 
 type Method = "card" | "momo" | "paypal";
@@ -20,6 +21,7 @@ const FLW_LINK = process.env.NEXT_PUBLIC_FLUTTERWAVE_PAYMENT_LINK;
 /** Shown instead of the checkout while no online giving method is switched on (see lib/giving.ts). */
 function GiveByContact() {
   const { t, href } = useI18n();
+  const { close } = useDonate();
   const g = t.giving;
   const mailto = `mailto:${givingEmail}?subject=${encodeURIComponent(g.subject)}&body=${encodeURIComponent(g.body)}`;
   return (
@@ -31,7 +33,7 @@ function GiveByContact() {
       </div>
       <a href={mailto} className="btn-teal w-full sm:w-auto"><Mail className="h-4 w-4" aria-hidden /> {g.cta}</a>
       <p className="text-sm text-plum/60"><a href={`mailto:${givingEmail}`} className="font-medium text-teal-700 underline underline-offset-4">{givingEmail}</a></p>
-      <p className="text-sm"><Link href={href("/donate#involve")} className="text-plum/70 underline underline-offset-4 hover:text-plum">{g.other}</Link></p>
+      <p className="text-sm"><Link href={href("/get-involved")} onClick={close} className="text-plum/70 underline underline-offset-4 hover:text-plum">{g.other}</Link></p>
     </div>
   );
 }
