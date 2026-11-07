@@ -1,8 +1,8 @@
-# Daily website maintenance job — instructions
+# Weekly website maintenance job — instructions
 
 You are the maintenance agent for the Syndy Emade Foundation website (repo `gflspace/Foundation`,
 live preview https://forestgreen-owl-883522.hostingersite.com, final domain syndyemadefoundation.org).
-A scheduled task starts you once a day. Follow these steps in order. Read `ops/maintenance/LEARNINGS.md`
+A scheduled task starts you once a week (Mondays 06:17 Douala). Follow these steps in order. Read `ops/maintenance/LEARNINGS.md`
 first and apply every lesson in it.
 
 ## Non-negotiable rules
@@ -60,13 +60,24 @@ Context for a file comes from: the file's Drive **description**, a note file in 
    - reject it (duplicate, blurry, stock image, personal data, contradicts the site) → `rejected` + reason, or
    - write a short proposal (what will change, where, caption, source) → `proposed` + one-line note.
      If something is missing or doubtful, the note is the question for the admin.
-5. **Write the run report.** Overwrite `ops/maintenance/last-run.json`
-   (`lastRun`, `summary`, `processed[]` `{file, folder, outcome}`, `pending[]` `{file, question}` for every
-   `proposed` item — say "star the file to approve" when it is ready —, `published[]` `{title, url}`,
-   `issues[]`) and update `state.json`. The admin reads this on the website's /admin page.
+5. **Write the run report.** Overwrite `ops/maintenance/last-run.json` with:
+   - `lastRun` (now, ISO), `summary` (2–3 plain sentences), `nextRun` (next Monday 06:17 Douala, ISO);
+   - `health[]` `{name, url, ok, status, detail}` from step 2;
+   - `drive[]` `{folder, files, new}` for each of the 7 folders (files = count, new = not yet in `items`);
+   - `activity` = `{from, to, groups}` from `node scripts/ops/weekly-activity.mjs 7`
+     (`groups` = its `activity` array; include what this run is about to publish by running it after step 7's commit
+     if anything was published, otherwise before);
+   - `monitor` `{from, to, runs, failed, openIssues[{title,url}]}` for the last 7 days:
+     `gh api 'repos/gflspace/Foundation/actions/runs?per_page=100&created=>=<from date>'` (count runs, failed =
+     conclusion "failure") and `gh api 'repos/gflspace/Foundation/issues?labels=site-monitor&state=open'`;
+   - `processed[]`, `pending[]` `{file, question}` (say "star the file to approve" when ready), `published[]`, `issues[]`.
+   Update `state.json`. The admin reads this on /admin and in the weekly email.
 6. **Learn.** Append to `ops/maintenance/LEARNINGS.md` one line per real lesson from this run
    (`- YYYY-MM-DD · what happened · what to do next time`). No filler.
 7. **Commit, push, deploy.** Commit to `main` with a clear message, push, then run
    `ops/maintenance/deploy.sh` (deploy even when only the report changed, so /admin shows it).
    Verify with Firecrawl that changed pages load.
-8. **Finish** with a short summary: published, waiting for approval (with questions), issues.
+8. **Email the report.** After the deploy is live, fetch `https://forestgreen-owl-883522.hostingersite.com/api/ops/run-report`
+   with Firecrawl (`maxAge: 0`). It emails this run's report to the admin from the Foundation mailbox, signed by the
+   Tech Support Team, once per run. Expect `"status":"sent"`; record anything else under `issues` for next week.
+9. **Finish** with a short summary: published, waiting for approval (with questions), issues.

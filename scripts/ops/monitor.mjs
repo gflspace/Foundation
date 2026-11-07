@@ -75,7 +75,8 @@ async function sendEmail(subject, text) {
   const nodemailer = (await import("nodemailer")).default;
   const port = Number(process.env.SMTP_PORT || 465);
   const t = nodemailer.createTransport({ host: SMTP_HOST, port, secure: port === 465, auth: { user: SMTP_USER, pass: SMTP_PASS } });
-  await t.sendMail({ from: `"Foundation website monitor" <${SMTP_USER}>`, to: ALERT_EMAIL, subject, text });
+  const signature = "\n\n--\nTech Support Team\nSyndy Emade Foundation\nsupport@syndyemadefoundation.org\n\"Together we can.\"";
+  await t.sendMail({ from: `"Syndy Emade Foundation – Tech Support" <${SMTP_USER}>`, to: ALERT_EMAIL, replyTo: "support@syndyemadefoundation.org", subject, text: text + signature });
   return true;
 }
 const gh = async (method, url, body) => {

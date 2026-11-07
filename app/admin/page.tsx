@@ -97,7 +97,7 @@ export default async function Admin({ searchParams }: { searchParams: { e?: stri
 
       <div className="grid gap-6 md:grid-cols-2">
         <Card title="Content repository (Google Drive)">
-          <p className="text-plum/70">Upload new material here. The daily maintenance job checks and verifies it, then lists proposed updates below. <strong>Star a file in Drive to approve it</strong>; it is published on the next run.</p>
+          <p className="text-plum/70">Upload new material here. The weekly maintenance job (Mondays) checks and verifies it, then lists proposed updates below. <strong>Star a file in Drive to approve it</strong>; it is published on the next run.</p>
           <a href={driveRoot} target="_blank" rel="noopener noreferrer" className="mt-3 inline-block rounded-full bg-plum px-4 py-2 text-xs font-semibold text-white">Open FOUNDATION-CONTENT ↗</a>
           <ul className="mt-4 space-y-1.5">
             {uploadFolders.map((f) => (
