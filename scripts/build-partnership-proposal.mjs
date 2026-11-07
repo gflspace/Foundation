@@ -40,7 +40,7 @@ const L = {
     whyTitle: "Why partner with us", why: ["A track record you can check: every outreach is documented on film or in the press", "Transparent reporting: each partnership gets a public project record with objectives, activities, outcomes and evidence", "Reach: a founder who is one of Cameroon’s best-known actresses and producers", "Local knowledge: our team visits homes first, so support reaches those who need it most"],
     waysTitle: "Ways to partner", ways: ["Fund a project in an established programme (e.g. the annual back-to-school campaign)", "Sponsor a “One Act of Kindness” campaign for one specific, verified need", "Help build a proposed pillar: women’s economic opportunity, community development, environment", "In-kind support: school supplies, food, logistics, professional skills"],
     howTitle: "How it works", how: ["Tell us what you would like to support", "We agree a project, its objectives and how results will be reported", "The project is delivered and documented", "Results are published on our Accountability page and shared with you"],
-    contactTitle: "Let’s talk", contact: "Write to hello@syndyemadefoundation.org or use the form at syndyemadefoundation.org/partners",
+    contactTitle: "Let’s talk", contact: "Write to contact@syndyemadefoundation.org or use the form at syndyemadefoundation.org/partners",
     foot: "Syndy Emade Foundation · Douala, Cameroon · syndyemadefoundation.org · Figures as of November 2026, each documented on the website’s Impact and Accountability pages.",
   },
   fr: {
@@ -54,7 +54,7 @@ const L = {
     whyTitle: "Pourquoi devenir partenaire", why: ["Un bilan vérifiable : chaque action est documentée en film ou dans la presse", "Des résultats publiés : chaque partenariat a sa fiche publique avec objectifs, activités, résultats et preuves", "Portée : une fondatrice parmi les actrices et productrices les plus connues du Cameroun", "Connaissance du terrain : notre équipe visite d’abord les foyers, pour que l’aide arrive à ceux qui en ont le plus besoin"],
     waysTitle: "Formes de partenariat", ways: ["Financer un projet d’un programme établi (par ex. la campagne de rentrée annuelle)", "Parrainer une campagne « Un geste de bonté » pour un besoin précis et vérifié", "Aider à construire un pilier proposé : opportunités économiques des femmes, développement communautaire, environnement", "Soutien en nature : fournitures scolaires, vivres, logistique, compétences"],
     howTitle: "Déroulement", how: ["Dites-nous ce que vous souhaitez soutenir", "Nous convenons d’un projet, de ses objectifs et du suivi des résultats", "Le projet est réalisé et documenté", "Les résultats sont publiés sur notre page Transparence et partagés avec vous"],
-    contactTitle: "Parlons-en", contact: "Écrivez à hello@syndyemadefoundation.org ou utilisez le formulaire sur syndyemadefoundation.org/fr/partenaires",
+    contactTitle: "Parlons-en", contact: "Écrivez à contact@syndyemadefoundation.org ou utilisez le formulaire sur syndyemadefoundation.org/fr/partenaires",
     foot: "Fondation Syndy Emade · Douala, Cameroun · syndyemadefoundation.org · Chiffres à novembre 2026, chacun documenté sur les pages Impact et Transparence du site.",
   },
 };

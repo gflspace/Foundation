@@ -61,7 +61,16 @@ export function Footer() {
           <p className="mt-4 text-sm">{t.footer.newsletterText}</p>
           <NewsletterForm />
           <ul className="mt-6 space-y-2 text-sm">
-            <li className="flex items-center gap-2"><Mail className="h-4 w-4 text-teal-400" aria-hidden /><a href={`mailto:${site.email}`} className="hover:text-white">{site.email}</a></li>
+            {([
+              ["contact", t.footer.emailContact],
+              ["info", t.footer.emailInfo],
+              ["support", t.footer.emailSupport],
+            ] as const).map(([k, label]) => (
+              <li key={k} className="flex items-start gap-2">
+                <Mail className="mt-0.5 h-4 w-4 shrink-0 text-teal-400" aria-hidden />
+                <span><span className="block text-xs text-white/60">{label}</span><a href={`mailto:${site.emails[k]}`} className="break-all hover:text-white">{site.emails[k]}</a></span>
+              </li>
+            ))}
             <li className="flex items-center gap-2"><MapPin className="h-4 w-4 text-teal-400" aria-hidden />{t.meta.location}</li>
           </ul>
         </div>

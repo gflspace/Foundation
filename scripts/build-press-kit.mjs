@@ -38,7 +38,7 @@ ${L.footer}
 
 const LANGS = {
   en: { lang: "en", eyebrow: "Press fact sheet", l1: "Together", l2: "we can.", suffix: "", pdf: "Syndy-Emade-Foundation-Fact-Sheet.pdf",
-    readme: "Syndy Emade Foundation press kit\n\nFact sheet (PDF) and the official logo (PNG).\n- logo.png: transparent background, for white or light backgrounds\n- logo-original.png: as supplied, on white\nThe purple lettering is not legible on dark backgrounds: place the logo on white.\nPlease do not recolour or distort the logo.\n\nMedia enquiries: hello@syndyemadefoundation.org\n",
+    readme: "Syndy Emade Foundation press kit\n\nFact sheet (PDF) and the official logo (PNG).\n- logo.png: transparent background, for white or light backgrounds\n- logo-original.png: as supplied, on white\nThe purple lettering is not legible on dark backgrounds: place the logo on white.\nPlease do not recolour or distort the logo.\n\nMedia enquiries: info@syndyemadefoundation.org\n",
     main: `<main><div>
 <section><h2>About the Foundation</h2><p>Founded in 2019 by actress and producer Syndy Emade, the Foundation stands with children and families hit hardest by hardship and by the crisis in Cameroon’s North-West and South-West regions, many of whom now live in Douala.</p></section>
 <div class="stats"><div class="stat"><b>600+</b><small>displaced children given school materials</small></div><div class="stat"><b>300</b><small>children’s school fees paid</small></div><div class="stat"><b>2019</b><small>founded</small></div></div>
@@ -47,9 +47,9 @@ const LANGS = {
 <section><h2>The founder</h2><dl><dt>Name</dt><dd>Syndy Emade (Elone Synthia Emade)</dd><dt>Born</dt><dd>21 Nov 1993, Kumba, Cameroon</dd><dt>Education</dt><dd>B.Sc. Banking &amp; Finance, University of Buea</dd><dt>Roles</dt><dd>Actress, producer, CEO of Blue Rain Entertainment, philanthropist</dd></dl></section>
 <section><h2>In the press</h2><ul><li>Mimi Mefo Info, Dec 2023: Christmas support for a visually impaired mother</li><li>Newsday Cameroon, 2021: outreach to displaced families in Bonaberi</li></ul></section>
 <section><h2>Watch</h2><p>Films of our outreaches on the Syndy Emade TV YouTube channel.</p></section>
-</div></main>`, footer: `<footer>Media enquiries: hello@syndyemadefoundation.org · syndyemadefoundation.org · facebook.com/SyndyEmadeFoundation · instagram.com/syndyemadefoundationcmr · YouTube: Syndy Emade TV</footer>` },
+</div></main>`, footer: `<footer>Media enquiries: info@syndyemadefoundation.org · syndyemadefoundation.org · facebook.com/SyndyEmadeFoundation · instagram.com/syndyemadefoundationcmr · YouTube: Syndy Emade TV</footer>` },
   fr: { lang: "fr", eyebrow: "Fiche d’information presse", l1: "Ensemble,", l2: "nous pouvons.", suffix: "-fr", pdf: "Fondation-Syndy-Emade-Fiche-information.pdf",
-    readme: "Dossier de presse de la Fondation Syndy Emade\n\nFiche d’information (PDF) et logo officiel (PNG).\n- logo.png : fond transparent, pour fonds blancs ou clairs\n- logo-original.png : version fournie, sur fond blanc\nLe lettrage violet n’est pas lisible sur fond sombre : placez le logo sur fond blanc.\nMerci de ne pas modifier les couleurs ni les proportions du logo.\n\nContact presse : hello@syndyemadefoundation.org\n",
+    readme: "Dossier de presse de la Fondation Syndy Emade\n\nFiche d’information (PDF) et logo officiel (PNG).\n- logo.png : fond transparent, pour fonds blancs ou clairs\n- logo-original.png : version fournie, sur fond blanc\nLe lettrage violet n’est pas lisible sur fond sombre : placez le logo sur fond blanc.\nMerci de ne pas modifier les couleurs ni les proportions du logo.\n\nContact presse : info@syndyemadefoundation.org\n",
     main: `<main><div>
 <section><h2>La Fondation</h2><p>Créée en 2019 par l’actrice et productrice Syndy Emade, la Fondation se tient aux côtés des enfants et des familles les plus touchés par la précarité et par la crise des régions du Nord-Ouest et du Sud-Ouest du Cameroun, dont beaucoup vivent aujourd’hui à Douala.</p></section>
 <div class="stats"><div class="stat"><b>600+</b><small>enfants déplacés équipés pour l’école</small></div><div class="stat"><b>300</b><small>frais de scolarité payés</small></div><div class="stat"><b>2019</b><small>création</small></div></div>
@@ -58,7 +58,7 @@ const LANGS = {
 <section><h2>La fondatrice</h2><dl><dt>Nom</dt><dd>Syndy Emade (Elone Synthia Emade)</dd><dt>Naissance</dt><dd>21 nov. 1993, Kumba, Cameroun</dd><dt>Formation</dt><dd>Licence en banque et finance, Université de Buea</dd><dt>Fonctions</dt><dd>Actrice, productrice, PDG de Blue Rain Entertainment, philanthrope</dd></dl></section>
 <section><h2>Dans la presse</h2><ul><li>Mimi Mefo Info, déc. 2023 : soutien de Noël à une mère malvoyante</li><li>Newsday Cameroon, 2021 : action auprès des familles déplacées à Bonaberi</li></ul></section>
 <section><h2>Regarder</h2><p>Les films de nos actions sur la chaîne YouTube Syndy Emade TV.</p></section>
-</div></main>`, footer: `<footer>Contact presse&nbsp;: hello@syndyemadefoundation.org · syndyemadefoundation.org/fr · facebook.com/SyndyEmadeFoundation · instagram.com/syndyemadefoundationcmr · YouTube&nbsp;: Syndy Emade TV</footer>` },
+</div></main>`, footer: `<footer>Contact presse&nbsp;: info@syndyemadefoundation.org · syndyemadefoundation.org/fr · facebook.com/SyndyEmadeFoundation · instagram.com/syndyemadefoundationcmr · YouTube&nbsp;: Syndy Emade TV</footer>` },
 };
 
 const browser = await chromium.launch();

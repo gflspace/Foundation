@@ -8,7 +8,7 @@ For the environment assessment, see `platform-operations-assessment.md`.
 ### 1. Create the mailbox in Hostinger (Titan)
 1. hPanel → **Emails** → *Add domain* → `syndyemadefoundation.org` (choose “I have this domain elsewhere”). If the existing Titan Business plan is tied to another domain, add a mailbox plan for this one.
 2. Create the mailbox **`admin@syndyemadefoundation.org`** with a strong password.
-3. Optional but recommended: aliases `hello@` and `info@` → `admin@` (both are already printed on the site and in old Facebook posts).
+3. Create the public addresses shown on the site — `contact@` (general), `info@` (information & press) and `support@` (donors & volunteers) — as mailboxes or as aliases/forwarders to `admin@`. Optionally also alias `hello@` (it appears in older material).
 4. In the Titan panel, open *DNS records* and copy the **DKIM** value it shows for the domain.
 
 ### 2. Add these records in GoDaddy (Domain → DNS → Add record)

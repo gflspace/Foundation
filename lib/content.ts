@@ -11,7 +11,13 @@ import { albumCoverImage } from "./gallery";
 export const site = {
   name: "Syndy Emade Foundation",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.syndyemadefoundation.org",
-  email: "hello@syndyemadefoundation.org", // TODO(verify): official inbox
+  /** General enquiries — the default address everywhere one email is shown. */
+  email: "contact@syndyemadefoundation.org",
+  emails: {
+    contact: "contact@syndyemadefoundation.org", // general enquiries
+    info: "info@syndyemadefoundation.org", // information, media and press
+    support: "support@syndyemadefoundation.org", // donors, volunteers, accountability questions
+  },
 };
 
 /** Official profiles — also emitted as schema.org `sameAs` for the knowledge graph. */

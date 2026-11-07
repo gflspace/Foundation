@@ -576,6 +576,9 @@ const fr: Dictionary = {
     privacy: "Confidentialité",
     terms: "Conditions de don",
     registered: "Association à but non lucratif · Cameroun",
+    emailContact: "Renseignements généraux",
+    emailInfo: "Information et presse",
+    emailSupport: "Soutien aux donateurs et bénévoles",
     youtube: "YouTube — Syndy Emade TV",
   },
 

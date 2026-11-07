@@ -102,7 +102,7 @@ function ackMail(s: Submission) {
   const text = `${hello}\n\n${body}\n\n${a.ref}${colon} ${s.ref}\n\n${a.sign}`;
   return {
     to: s.email,
-    replyTo: adminEmail() || undefined,
+    replyTo: process.env.MAIL_REPLY_TO || adminEmail() || undefined,
     subject: `${subject} (${s.ref})`,
     text,
     html: `<div style="font-family:Arial,sans-serif;font-size:15px;color:#2b1630;line-height:1.5"><p>${esc(hello)}</p><p>${esc(body)}</p><p><strong>${esc(a.ref)}${colon}</strong> ${esc(s.ref)}</p><p style="color:#00a8a0">${esc(a.sign)}</p></div>`,

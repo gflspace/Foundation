@@ -102,7 +102,7 @@ export default function AccountabilityPage(props: LocaleParams) {
           <div>
             <h2 id="reports" className="text-2xl">{u.reportsTitle}</h2>
             <p className="mt-2 max-w-3xl text-plum/75">{u.reportsText}</p>
-            <a href={`mailto:${site.email}`} className="btn-outline mt-6"><Mail className="h-4 w-4" aria-hidden />{u.questions}</a>
+            <a href={`mailto:${site.emails.support}`} className="btn-outline mt-6"><Mail className="h-4 w-4" aria-hidden />{u.questions}</a>
           </div>
         </div>
       </section>

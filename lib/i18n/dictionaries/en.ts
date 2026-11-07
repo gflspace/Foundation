@@ -573,6 +573,9 @@ const en = {
     privacy: "Privacy",
     terms: "Donation terms",
     registered: "Registered non-profit · Cameroon",
+    emailContact: "General enquiries",
+    emailInfo: "Information & press",
+    emailSupport: "Donor & volunteer support",
     youtube: "YouTube — Syndy Emade TV",
   },
 

@@ -49,7 +49,7 @@ export default function MediaPage(props: LocaleParams) {
             </div>
             <p className="mt-8 flex items-center gap-2 text-sm text-white/75">
               <Mail className="h-4 w-4 text-teal" aria-hidden />{m.enquiries}{" "}
-              <a href={`mailto:${site.email}`} className="font-medium text-teal underline underline-offset-4">{site.email}</a>
+              <a href={`mailto:${site.emails.info}`} className="font-medium text-teal underline underline-offset-4">{site.emails.info}</a>
             </p>
           </div>
           <div className="glass rounded-3xl p-6 sm:p-8 lg:col-span-7">
