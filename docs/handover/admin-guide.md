@@ -46,21 +46,21 @@ All addresses start with https://www.syndyemadefoundation.org.
 | Service | Used for | Where | Sign in as |
 |---|---|---|---|
 | Website admin | Form messages | syndyemadefoundation.org/admin | Admin password (Hostinger setting ADMIN_PASSWORD) |
-| Hostinger (hPanel) | Hosting, settings, Redeploy, SSL, email plan | hpanel.hostinger.com | gflspace@gmail.com · account u671799052 |
+| Hostinger (hPanel) | Hosting, settings, Redeploy, SSL, email plan | hpanel.hostinger.com | The Foundation's Hostinger account |
 | Titan webmail | Foundation mailbox | hPanel → Emails, or Titan webmail | admin@syndyemadefoundation.org |
 | GoDaddy | Domain & DNS | godaddy.com → My Products → DNS | Foundation GoDaddy login |
-| Google Drive | Website content | drive.google.com → FOUNDATION-CONTENT | gflspace@gmail.com |
-| Google Search Console | Google visibility | search.google.com/search-console | gflspace@gmail.com |
-| GitHub | Code, history, monitor | github.com/gflspace/Foundation | gflspace GitHub account |
+| Content folder | Website content (photos, videos, stories, news) | syndyemadefoundation.org/admin → Upload content | Admin password |
+| Google Search Console | Google visibility | search.google.com/search-console | The Foundation's Google account |
+| GitHub | Code, history, monitor | Foundation code repository | Ask Tech Support for access |
 | Figma | Designs | Foundation design file | Foundation Figma account |
 
-**Email:** admin@ is the mailbox (sends website emails, receives notifications and weekly reports). contact@ (footer), info@ (media/press) and support@ (donate, accountability, Tech Support) forward to admin@.
+**Email:** admin@ is the mailbox (sends website emails, receives notifications and weekly reports). contact@ (general enquiries from the public, shown in the footer), info@ (information, media and press requests) and support@ (donations and help; also Tech Support) forward to admin@.
 **If the admin@ password changes:** update SMTP_PASS in Hostinger → Environment variables, then Redeploy.
 
 ## 4. How-to
 **A. Answer form messages:** open /admin → sign in → “Needs your attention” → search/filter → reply from admin@ quoting the reference (e.g. SEF-VOL-…) → “Retry emails” if one failed → sign out.
 
-**B. Add content:** upload to the right FOUNDATION-CONTENT folder → add context (file description or a “NOTE - …” file: what, where, when, who; consent for children) → star ⭐ to approve → published on Monday, report emailed.
+**B. Add content:** open /admin → sign in → Upload content → put the file in the right folder → add context (file description or a “NOTE - …” file: what, where, when, who; consent for children) → star ⭐ the file in Google Drive to approve → published on Monday, report emailed.
 
 | Folder | Appears on | Upload |
 |---|---|---|
@@ -95,4 +95,4 @@ All addresses start with https://www.syndyemadefoundation.org.
 
 **Still to do:** confirm “CFI Partner”, donation amount descriptions, annual impact report; consent/details for photos on hold; review Hostinger Vulnerabilities; optional online giving and monitor email alerts.
 
-**Reference:** docs/launch-readiness-2026-11-07.md, docs/go-live-regression-2026-11-07.md, ops/maintenance/JOB.md. **Tech Support Team:** support@syndyemadefoundation.org
+**Reference:** docs/launch-readiness-2026-11-07.md, docs/go-live-regression-2026-11-07.md, ops/maintenance/JOB.md. **Tech Support:** support@syndyemadefoundation.org
