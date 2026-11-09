@@ -1,14 +1,14 @@
 {
-  "revision": 1,
-  "lastRun": "2026-11-07T13:41:55Z",
-  "summary": "TEST REPORT requested by the admin. The website is healthy: all 5 key checks pass and email is configured. This first week covers the site launch, so every story, photo, video and press item counts as new. Google Drive is connected and its 7 folders are still empty, so nothing is waiting for approval.",
-  "nextRun": "2026-11-09T05:17:00Z",
+  "lastRun": "2026-11-09T05:18:00Z",
+  "summary": "First regular weekly check. The website is healthy: all 5 key checks pass, email works, and the automatic site monitor passed every check this week. No new files were uploaded through Upload content, so nothing was published and nothing is waiting for your approval. The activity list below still includes the website launch on 7 November, which falls inside this week.",
+  "nextRun": "2026-11-16T05:17:00Z",
   "health": [
     {
       "name": "Status check (storage + email)",
       "url": "https://www.syndyemadefoundation.org/api/health",
       "ok": true,
-      "status": 200
+      "status": 200,
+      "detail": "storage and email both OK"
     },
     {
       "name": "Homepage (English)",
@@ -26,7 +26,8 @@
       "name": "Stories of Impact",
       "url": "https://www.syndyemadefoundation.org/stories",
       "ok": true,
-      "status": 200
+      "status": 200,
+      "detail": "9 stories listed"
     },
     {
       "name": "Media & Press",
@@ -73,8 +74,8 @@
     }
   ],
   "activity": {
-    "from": "2026-10-31T13:41:55.882Z",
-    "to": "2026-11-07T13:41:55.940Z",
+    "from": "2026-11-02T05:18:26.902Z",
+    "to": "2026-11-09T05:18:28.783Z",
     "groups": [
       {
         "category": "Photos",
@@ -360,9 +361,9 @@
     ]
   },
   "monitor": {
-    "from": "2026-10-31T13:41:55.882Z",
-    "to": "2026-11-07T13:41:55Z",
-    "runs": 0,
+    "from": "2026-11-02T05:18:00Z",
+    "to": "2026-11-09T05:18:00Z",
+    "runs": 9,
     "failed": 0,
     "openIssues": []
   },
@@ -370,7 +371,6 @@
   "pending": [],
   "published": [],
   "issues": [
-    "The 15-minute GitHub site monitor was enabled today but has not run yet (0 runs). If it still shows 0 next week, start it once from GitHub → Actions → Site monitor → Run workflow.",
-    "Report re-sent 7 Nov: page links pointed at the old preview address (deleted website); they now follow the site's current address automatically."
+    "Not a problem for visitors: GitHub starts the site monitor about every 4 hours instead of every 15 minutes (it slows scheduled checks on quiet projects). All 9 checks this week passed. No action needed."
   ]
 }
